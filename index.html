@@ -41,26 +41,29 @@
       }
     }
 
-    /* 3. 푸터 (화면 하단 고정 및 중앙 정렬) */
-    #footer {
-        background: #ffffff !important;
-        width: 100% !important;
-        padding: 6rem 0 !important;
-        margin: 0 !important;
-        border-top: 1px solid #eeeeee !important;
-        text-align: center !important;
-        /* 아래 속성은 푸터가 가끔 왼쪽으로 치우칠 때 해결해줍니다 */
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-    }
+/* 5. 푸터 완전 해결 버전 */
+#footer {
+    background: #ffffff !important;
+    width: 100vw !important; /* 브라우저 너비 전체 사용 */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    padding: 6rem 0 !important;
+    border-top: 1px solid #eeeeee !important;
+    text-align: center !important;
+    display: block !important;
+    clear: both; /* 주변 요소 간섭 방지 */
+}
 
-    #footer p {
-        color: #bbb !important;
-        font-size: 0.75rem;
-        letter-spacing: 0.2rem;
-        margin: 0 !important;
-    }
+#footer p {
+    color: #bbb !important;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    margin: 0 !important;
+    width: 100%;
+}
 </style>
 
 
