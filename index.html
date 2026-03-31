@@ -21,24 +21,51 @@
         text-transform: uppercase;
     }
 
-    /* 2. 프로젝트 그리드 (반응형 대응) */
-    @media screen and (min-width: 981px) {
-      #project-section .project-grid {
-        display: flex !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        margin: 2rem 0 !important;
-      }
-      #project-section .project-grid article {
-        flex: 1 !important;
-        padding: 4rem 2rem !important;
-        border-left: 1px solid #e5e5e5 !important;
-        text-align: center !important;
-      }
-      #project-section .project-grid article:first-child {
-        border-left: none !important;
-      }
-    }
+/* 2. 프로젝트 그리드 최적화 */
+@media screen and (min-width: 981px) {
+  #project-section .project-grid {
+    display: flex !important;
+    align-items: stretch !important; /* 모든 카드의 높이를 가장 긴 것에 맞춤 */
+    gap: 0; /* 테두리가 겹치도록 설정 */
+  }
+
+  #project-section .project-grid article {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important; /* 세로 정렬 */
+    justify-content: flex-start !important; /* 위에서부터 정렬 */
+    padding: 3rem 2rem !important;
+    border-left: 1px solid #e5e5e5 !important;
+    text-align: center !important;
+  }
+
+  /* 제목(h2) 영역의 높이를 고정하여 줄바꿈 상관없이 균형 맞춤 */
+  #project-section .project-grid article header.major {
+    min-height: 5rem !important; /* 두 줄인 Brand Campaign에 맞춘 높이 */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* 이미지 스타일 */
+#project-section .project-grid article .image.fit {
+    margin: 0 0 2rem 0 !important;
+    display: block;
+    overflow: hidden;
+}
+
+#project-section .project-grid article .image.fit img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* 마우스 올렸을 때 효과용 */
+}
+
+#project-section .project-grid article:hover img {
+    transform: scale(1.05); /* 살짝 커지는 효과 (선택사항) */
+}
+	  
 
     /* 5. 푸터 완전 해결 버전 */
     
