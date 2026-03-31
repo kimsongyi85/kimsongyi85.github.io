@@ -7,36 +7,96 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    /* 원본 레이아웃을 해치지 않고 3단으로만 정렬하는 추가 코드 */
-    @media screen and (min-width: 981px) {
-      #project.posts {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 2rem !important;
+    /* [핵심] 프로젝트 섹션 깨짐 방지 스타일 */
+    #project .posts {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 0 !important;
+      text-align: center; /* 모든 텍스트 중앙 정렬 */
+    }
+
+    #project article {
+      padding: 2.5rem 1.5rem !important; /* 위아래 간격 충분히, 좌우 여백 */
+      border-left: solid 1px #eeeeee; /* 회색 구분선 */
+      margin: 0 !important;
+      width: auto !important;
+      box-sizing: border-box; /* 패딩 포함 크기 계산 */
+    }
+
+    #project article:first-child {
+      border-left: none;
+    }
+
+    /* 날짜 스타일 */
+    #project article header.major span.date {
+      font-size: 0.8rem;
+      letter-spacing: 0.1rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* 프로젝트 제목 스타일 */
+    #project article h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      margin: 0 0 1.5rem 0;
+      line-height: 1.4;
+    }
+
+    /* [스크린샷 해결 포인트] 프로젝트 설명글 스타일 */
+    #project article p {
+      font-size: 0.9rem;
+      line-height: 1.8; /* 줄 간격 시원하게 */
+      color: #666;
+      margin-bottom: 2rem;
+      text-align: center;
+      
+      /* 글씨가 세로로 다닥다닥 붙는 현상 해결 */
+      word-break: keep-all; /* 한글 단어 단위 줄 바꿈 (베리 중요) */
+      width: 100%;
+      display: inline-block;
+    }
+
+    /* 이미지 스타일 */
+    #project article .image.fit {
+      margin: 0 auto 1.5rem auto;
+      max-width: 90%;
+      display: block;
+    }
+
+    /* 버튼 중앙 정렬 */
+    #project article .actions.special {
+      text-align: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    /* 어워드 섹션 중앙 정렬 */
+    #award header.major {
+      text-align: center;
+      border-bottom: none;
+      margin-top: 5rem;
+    }
+
+    /* 모바일 대응 (화면 작아지면 1단으로) */
+    @media screen and (max-width: 980px) {
+      #project .posts {
+        grid-template-columns: 1fr !important;
       }
       #project article {
-        border-left: solid 1px #eeeeee;
-        padding-left: 2rem;
-        margin: 0 !important;
-        text-align: center; /* 텍스트 중앙 정렬 */
-      }
-      #project article:first-of-type {
         border-left: none;
-        padding-left: 0;
+        border-bottom: 1px solid #eeeeee;
+        padding: 3rem 1rem !important;
       }
-    }
-    /* 타이틀 중앙 정렬 */
-    #project .major h2 {
-      text-align: center;
-      width: 100%;
-      margin-bottom: 3rem;
     }
   </style>
  </head>
  <body class="is-preload">
-    
+
   <div id="wrapper" class="fade-in">
-    
+
     <div id="intro">
       <h1>Brand Designer</h1>
       <p>with strong experience in Brand Content Design</p>
@@ -45,11 +105,11 @@
        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
       </ul>
      </div>
-    
+
     <header id="header">
       <a href="index.html" class="logo">SONGYI</a>
      </header>
-    
+
     <nav id="nav">
       <ul class="links">
        <li class="active"><a href="#main">HOME</a></li>
@@ -58,14 +118,13 @@
        <li><a href="#award">Award</a></li>
       </ul>
      </nav>
-    
+
     <div id="main">
-    
+
       <article id="about" class="post featured">
         <header class="major">
          <span class="date">April 25, 2026</span>
-         <h2>AND THIS IS A<br />
-         MASSIVE HEADLINE</h2>
+         <h2>AND THIS IS A<br />MASSIVE HEADLINE</h2>
          <div style="text-align: left; display: inline-block; margin-top: 2rem;">
           <p><strong>Name:</strong> Kim Song Yi<br />
           <strong>E-mail:</strong> kimsongyi85@gmail.com<br />
@@ -78,118 +137,51 @@
          <li><a href="#" class="button large">portfolio</a></li>
         </ul>
        </article>
-    
-      <section id="project" class="posts">
-        <header class="major" style="grid-column: span 3; border-bottom: none; margin-bottom: 2rem;">
+
+      <section id="project">
+        <header class="major" style="text-align: center; border-bottom: none; margin-bottom: 3rem;">
          <h2 style="font-size: 2rem;">PROJECT</h2>
         </header>
         
-        <article>
-         <header>
-          <span class="date">April 24, 2026</span>
-          <h2 style="font-size: 1.2rem;">Branding</h2>
-         </header>
-         <a href="branding.html" class="image fit"><img src="images/500.jpg" alt="" /></a>
-         <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
-         <ul class="actions special">
-          <li><a href="branding.html" class="button">바로가기</a></li>
-         </ul>
-        </article>
-        
-        <article>
-         <header>
-          <span class="date">April 22, 2026</span>
-          <h2 style="font-size: 1.2rem;">Web Mobile</h2>
-         </header>
-         <a href="#" class="image fit"><img src="images/500.jpg" alt="" /></a>
-         <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
-         <ul class="actions special">
-          <li><a href="#" class="button">바로가기</a></li>
-         </ul>
-        </article>
-        
-        <article>
-         <header>
-          <span class="date">April 18, 2026</span>
-          <h2 style="font-size: 1.2rem;">Brand Campaign</h2>
-         </header>
-         <a href="#" class="image fit"><img src="images/500.jpg" alt="" /></a>
-         <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
-         <ul class="actions special">
-          <li><a href="#" class="button">바로가기</a></li>
-         </ul>
-        </article>
+        <div class="posts">
+          <article>
+           <header class="major">
+            <span class="date">April 24, 2026</span>
+            <h2>Branding</h2>
+           </header>
+           <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
+           <ul class="actions special">
+            <li><a href="branding.html" class="button">바로가기</a></li>
+           </ul>
+          </article>
+          
+          <article>
+           <header class="major">
+            <span class="date">April 22, 2026</span>
+            <h2>Web Mobile</h2>
+           </header>
+           <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
+           <ul class="actions special">
+            <li><a href="#" class="button">바로가기</a></li>
+           </ul>
+          </article>
+          
+          <article>
+           <header class="major">
+            <span class="date">April 18, 2026</span>
+            <h2>Brand Campaign</h2>
+           </header>
+           <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
+           <ul class="actions special">
+            <li><a href="#" class="button">바로가기</a></li>
+           </ul>
+          </article>
+        </div>
        </section>
-    
+
       <section id="award">
-        <header class="major" style="text-align: center; border-bottom: none; margin-top: 3rem;">
+        <header class="major">
          <h2 style="font-size: 2rem;">AWARD</h2>
         </header>
         <div class="table-wrapper">
-         <table style="text-align: center; margin: 0 auto; width: auto; min-width: 300px;">
-          <tbody>
-           <tr><td>공모전 1등</td></tr>
-           <tr><td>공모전 2등</td></tr>
-           <tr><td>공모전 3등</td></tr>
-          </tbody>
-         </table>
-        </div>
-       </section>
-    
-     </div>
-    
-    <footer id="footer">
-      <section>
-       <form method="post" action="#">
-        <div class="fields">
-         <div class="field">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
-         </div>
-         <div class="field">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
-         </div>
-         <div class="field">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="3"></textarea>
-         </div>
-        </div>
-        <ul class="actions">
-         <li><input type="submit" value="Send Message" /></li>
-        </ul>
-       </form>
-      </section>
-      <section class="split contact">
-       <section>
-        <h3>Address</h3>
-        <p>Incheon, South Korea</p>
-       </section>
-       <section>
-        <h3>Email</h3>
-        <p><a href="#">kimsongyi85@gmail.com</a></p>
-       </section>
-       <section style="border-top: solid 1px rgba(0,0,0,0.1); padding-top: 2rem;">
-        <h3>Social / Location</h3>
-        <p>Based in Incheon, KOREA<br />
-        Contact at kimsongyi85@gmail.com</p>
-       </section>
-      </section>
-     </footer>
-    
-    <div id="copyright">
-      <ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul>
-     </div>
-    
-   </div>
-    
-  <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.scrollex.min.js"></script>
-   <script src="assets/js/jquery.scrolly.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
-    
- </body>
-</html>
+         <table style="text-align: center; margin:
