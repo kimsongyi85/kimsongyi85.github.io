@@ -1,6 +1,17 @@
-/* 1. 프로젝트 섹션 3단 강제 고정 */
-@media screen and (min-width: 981px) {
-    #project .posts {
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>SONGYI DESIGN</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* [긴급 레이아웃 복구 및 3단 고정 스타일] */
+    
+    /* 1. PC 버전: 프로젝트 3단 강제 고정 */
+    @media screen and (min-width: 981px) {
+      #project .posts {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
@@ -9,64 +20,86 @@
         gap: 0 !important;
         width: 100% !important;
         margin: 2rem 0 !important;
-    }
+        border-top: 1px solid #eeeeee !important;
+      }
 
-    #project .posts article {
+      #project .posts article {
         flex: 1 !important;
-        width: 33.33% !important; /* 정확히 3등분 */
-        padding: 4rem 2rem !important; /* 여백 충분히 */
+        width: 33.33% !important;
+        padding: 4rem 2rem !important;
         border-left: 1px solid #eeeeee !important;
         margin: 0 !important;
         text-align: center !important;
         box-sizing: border-box !important;
         display: flex !important;
         flex-direction: column !important;
-    }
+        justify-content: space-between !important;
+        background: #ffffff !important;
+      }
 
-    #project .posts article:first-child {
+      #project .posts article:first-child {
         border-left: none !important;
-    }
+      }
 
-    /* 2. 텍스트 깨짐(한 글자씩 떨어짐) 방지 */
-    #project .posts article p {
+      /* 텍스트 가로 너비 확보 및 줄바꿈 교정 (한 글자씩 떨어짐 방지) */
+      #project .posts article p {
         width: 100% !important;
         max-width: 100% !important;
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important;
         line-height: 1.8 !important;
-        word-break: keep-all !important; /* 단어 단위로 줄바꿈 */
-        white-space: normal !important; /* 자동 줄바꿈 허용 */
-        margin: 0 auto 2rem auto !important;
+        color: #666 !important;
+        margin-bottom: 2rem !important;
+        word-break: keep-all !important; /* 단어 단위 줄바꿈 */
+        white-space: normal !important;
         display: block !important;
-    }
-    
-    #project .posts article h2 {
-        white-space: nowrap !important; /* 제목은 한 줄 고정 */
+      }
+
+      #project .posts article h2 {
         font-size: 1.3rem !important;
+        letter-spacing: 0.1rem !important;
+        margin-bottom: 1.5rem !important;
+        white-space: nowrap !important;
+      }
     }
-}
 
-/* 3. 어워드 섹션 위치 및 디자인 교정 */
-#award {
-    clear: both !important;
-    padding-top: 5rem !important;
-    text-align: center !important;
-}
+    /* 2. 하단 섹션(Award 등) 레이아웃 밀림 방지 */
+    #main > section, #main > article {
+      clear: both !important;
+      width: 100% !important;
+      display: block !important;
+    }
 
-#award table {
-    margin: 2rem auto !important;
-    width: 100% !important;
-    max-width: 600px !important;
-}
+    #award {
+      padding: 5rem 0 !important;
+      text-align: center !important;
+    }
 
-/* 4. 모바일 레이아웃 (980px 이하) */
-@media screen and (max-width: 980px) {
-    #project .posts {
+    #award table {
+      margin: 2rem auto !important;
+      width: auto !important;
+      min-width: 300px !important;
+      text-align: center !important;
+    }
+
+    /* 3. 모바일 레이아웃 (980px 이하) */
+    @media screen and (max-width: 980px) {
+      #project .posts {
         display: block !important;
-    }
-    #project .posts article {
+      }
+      #project .posts article {
         width: 100% !important;
         border-left: none !important;
         border-bottom: 1px solid #eeeeee !important;
         padding: 3rem 1.5rem !important;
+      }
     }
-}
+  </style>
+ </head>
+ <body class="is-preload">
+
+  <div id="wrapper" class="fade-in">
+
+    <div id="intro">
+      <h1>Brand Designer</h1>
+      <p>with strong experience in Brand Content Design</p>
+      <p style="font-size: 0.8em; opacity: 0.8;">I am a brand designer specialized in digital design, product storytelling,<br />and visual brand communication.</p
