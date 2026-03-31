@@ -7,9 +7,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    /* [긴급 레이아웃 복구 및 3단 고정 스타일] */
-    
-    /* 1. PC 버전: 프로젝트 3단 강제 고정 */
+    /* 1. PC 버전: 프로젝트 3단 고정 및 컬러 활성화 */
     @media screen and (min-width: 981px) {
       #project .posts {
         display: flex !important;
@@ -34,72 +32,146 @@
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;
-        background: #ffffff !important;
+        background: transparent !important; /* 배경을 투명하게 해서 템플릿 색상 투영 */
       }
 
-      #project .posts article:first-child {
-        border-left: none !important;
-      }
+      #project .posts article:first-child { border-left: none !important; }
 
-      /* 텍스트 가로 너비 확보 및 줄바꿈 교정 (한 글자씩 떨어짐 방지) */
-      #project .posts article p {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 0.9rem !important;
-        line-height: 1.8 !important;
-        color: #666 !important;
-        margin-bottom: 2rem !important;
-        word-break: keep-all !important; /* 단어 단위 줄바꿈 */
-        white-space: normal !important;
-        display: block !important;
-      }
-
+      /* 제목과 텍스트가 구겨지지 않게 보호 */
       #project .posts article h2 {
+        color: #212931 !important; /* 템플릿 기본 진한색 */
         font-size: 1.3rem !important;
-        letter-spacing: 0.1rem !important;
-        margin-bottom: 1.5rem !important;
         white-space: nowrap !important;
       }
-    }
 
-    /* 2. 하단 섹션(Award 등) 레이아웃 밀림 방지 */
-    #main > section, #main > article {
-      clear: both !important;
-      width: 100% !important;
-      display: block !important;
-    }
-
-    #award {
-      padding: 5rem 0 !important;
-      text-align: center !important;
-    }
-
-    #award table {
-      margin: 2rem auto !important;
-      width: auto !important;
-      min-width: 300px !important;
-      text-align: center !important;
-    }
-
-    /* 3. 모바일 레이아웃 (980px 이하) */
-    @media screen and (max-width: 980px) {
-      #project .posts {
-        display: block !important;
+      #project .posts article p {
+        font-size: 0.9rem !important;
+        line-height: 1.8 !important;
+        word-break: keep-all !important;
+        margin-bottom: 2rem !important;
       }
-      #project .posts article {
-        width: 100% !important;
-        border-left: none !important;
-        border-bottom: 1px solid #eeeeee !important;
-        padding: 3rem 1.5rem !important;
+    }
+
+    /* 2. 버튼 컬러 활성화 (파란색 계열 복구) */
+    #project .posts article .button {
+      border-color: #18bfef !important; /* 포인트 컬러 강제 부여 */
+      color: #18bfef !important;
+    }
+
+    #project .posts article .button:hover {
+      background-color: rgba(24, 191, 239, 0.1) !important;
+      color: #18bfef !important;
+    }
+
+    /* 3. 어워드 및 하단 레이아웃 */
+    #award { padding: 5rem 0; text-align: center; clear: both; }
+    #award table { margin: 0 auto; width: auto; min-width: 300px; }
+
+    /* 모바일 대응 */
+    @media screen and (max-width: 980px) {
+      #project .posts { display: block !important; }
+      #project .posts article { 
+        width: 100% !important; 
+        border-left: none !important; 
+        border-bottom: 1px solid #eeeeee !important; 
       }
     }
   </style>
  </head>
  <body class="is-preload">
-
   <div id="wrapper" class="fade-in">
-
     <div id="intro">
       <h1>Brand Designer</h1>
       <p>with strong experience in Brand Content Design</p>
-      <p style="font-size: 0.8em; opacity: 0.8;">I am a brand designer specialized in digital design, product storytelling,<br />and visual brand communication.</p
+      <p style="font-size: 0.8em; opacity: 0.8;">I am a brand designer specialized in digital design, product storytelling,<br />and visual brand communication.</p>
+      <ul class="actions">
+       <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+    </div>
+
+    <header id="header">
+      <a href="index.html" class="logo">SONGYI</a>
+    </header>
+
+    <nav id="nav">
+      <ul class="links">
+       <li class="active"><a href="#main">HOME</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="#project">Project</a></li>
+       <li><a href="#award">Award</a></li>
+      </ul>
+    </nav>
+
+    <div id="main">
+      <article id="about" class="post featured">
+        <header class="major">
+         <span class="date">April 25, 2026</span>
+         <h2>KIM SONG YI</h2>
+         <div style="text-align: left; display: inline-block; margin-top: 2rem;">
+          <p><strong>Name:</strong> Kim Song Yi<br />
+          <strong>E-mail:</strong> kimsongyi85@gmail.com<br />
+          <strong>Call:</strong> 010-9994-0335<br />
+          <strong>Place:</strong> Incheon, KOREA</p>
+         </div>
+        </header>
+        <a href="#" class="image main"><img src="images/500.jpg" alt="" /></a>
+        <ul class="actions special">
+         <li><a href="#" class="button large">portfolio</a></li>
+        </ul>
+      </article>
+
+      <section id="project">
+        <header class="major" style="text-align: center; border-bottom: none; margin-bottom: 3rem;">
+         <h2 style="font-size: 2rem;">PROJECT</h2>
+        </header>
+        <div class="posts">
+          <article>
+           <header class="major"><span class="date">April 24, 2026</span><h2>Branding</h2></header>
+           <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
+           <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
+          </article>
+          <article>
+           <header class="major"><span class="date">April 22, 2026</span><h2>Web Mobile</h2></header>
+           <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
+           <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
+          </article>
+          <article>
+           <header class="major"><span class="date">April 18, 2026</span><h2>Brand Campaign</h2></header>
+           <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
+           <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="award">
+        <header class="major"><h2 style="font-size: 2rem;">AWARD</h2></header>
+        <div class="table-wrapper">
+         <table>
+          <tbody>
+           <tr><td>공모전 1등</td></tr>
+           <tr><td>공모전 2등</td></tr>
+           <tr><td>공모전 3등</td></tr>
+          </tbody>
+         </table>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer">
+      <section class="split contact">
+       <section><h3>Address</h3><p>Incheon, South Korea</p></section>
+       <section><h3>Email</h3><p><a href="mailto:kimsongyi85@gmail.com">kimsongyi85@gmail.com</a></p></section>
+      </section>
+    </footer>
+    <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+ </body>
+</html>
