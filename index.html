@@ -8,29 +8,76 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
+    /* 1. 프로젝트 섹션 3단 고정 레이아웃 (원상복귀) */
+    @media screen and (min-width: 981px) {
+      #project-section .project-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        margin: 2rem 0 !important;
+        border-top: none !important;
+      }
 
- /* 날짜 양옆의 선을 투명하게 만들고 크기를 0으로 고정 */
-#project-section .project-grid article header.major .date:before,
-#project-section .project-grid article header.major .date:after,
-#project-section .project-grid article header.major:before,
-#project-section .project-grid article header.major:after {
-    display: none !important;
-    content: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    width: 0 !important;
-    height: 0 !important;
-}
+      #project-section .project-grid article {
+        flex: 1 !important;
+        width: 33.33% !important;
+        padding: 4rem 2rem !important;
+        border-left: 1px solid #e5e5e5 !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+      }
 
-/* 날짜 자체의 스타일 초기화 (혹시 선이 배경으로 잡혀있을 경우 대비) */
-#project-section .project-grid article header.major .date {
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
- </style>
+      #project-section .project-grid article:first-child {
+        border-left: none !important;
+      }
+    }
 
-  
+    /* 2. 날짜 양옆의 회색 잔선 제거 (강력 버전) */
+    #project-section .project-grid article header.major:after,
+    #project-section .project-grid article header.major:before,
+    #project-section .project-grid article header.major .date:after,
+    #project-section .project-grid article header.major .date:before {
+        display: none !important;
+        content: none !important;
+    }
+
+    /* 3. '바로가기' 버튼 디자인 */
+    #project-section .project-grid article .button {
+        display: inline-block !important;
+        border: 1px solid #212931 !important;
+        padding: 0 1.5rem !important;
+        height: 3rem !important;
+        line-height: 3rem !important;
+        color: #212931 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        font-size: 0.8rem !important;
+    }
+
+    #project-section .project-grid article .button:hover {
+        background-color: #212931 !important;
+        color: #ffffff !important;
+    }
+
+    /* 4. AWARD 섹션 가로 정렬 */
+    #award-section table {
+        width: 100% !important;
+        max-width: 1000px !important;
+        margin: 2rem auto !important;
+    }
+
+    /* 5. 푸터 디자인 정리 (깨지는 부분 제거 및 여백 조절) */
+    #footer {
+        padding: 4rem 0 !important;
+        border-top: 1px solid #eeeeee !important;
+        text-align: center !important;
+    }
+
+    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+  </style>
  </head>
  <body class="is-preload">
   <div id="wrapper" class="fade-in">
@@ -81,17 +128,17 @@
         </header>
         <div class="project-grid">
           <article>
-           <header class="major"><span class="date">April 24, 2026</span><h2>Branding</h2></header>
+           <header class="major"><h2>Branding</h2></header>
            <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
            <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
           </article>
           <article>
-           <header class="major"><span class="date">April 22, 2026</span><h2>Web Mobile</h2></header>
+           <header class="major"><h2>Web Mobile</h2></header>
            <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
            <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
           </article>
           <article>
-           <header class="major"><span class="date">April 18, 2026</span><h2>Brand Campaign</h2></header>
+           <header class="major"><h2>Brand Campaign</h2></header>
            <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
            <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
           </article>
@@ -112,8 +159,9 @@
       </section>
     </div>
 
-   
-    <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li></ul></div>
+    <footer id="footer">
+    </footer>
+    <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
   </div>
 
   <script src="assets/js/jquery.min.js"></script>
