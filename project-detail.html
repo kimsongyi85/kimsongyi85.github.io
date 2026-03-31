@@ -6,77 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  
   <style>
+    /* 상세페이지 전용 추가 스타일 */
+    #main > .project-header { text-align: center; padding: 4rem 0; border-bottom: 1px solid #eee; }
+    .project-info-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 4rem 0; text-align: left; }
+    .info-label { font-weight: 700; text-transform: uppercase; color: #333; display: block; margin-bottom: 0.5rem; }
+    .project-content img { width: 100%; margin-bottom: 2rem; display: block; }
+    .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
+    .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
+    
+    /* 스크린샷처럼 이미지가 안 뜰 때를 대비한 최소 높이 */
+    .project-content img { min-height: 200px; background: #f9f9f9; }
 
-   // 현재 주소에서 id 값 가져오기 (예: roast)
-const urlParams = new URLSearchParams(window.location.search);
-const projectId = urlParams.get('id');
-
-// 데이터에서 해당 정보 찾아 화면에 뿌려주기
-const data = PROJECT_DATA[projectId];
-
-if (data) {
-    document.getElementById('project-title').innerText = data.title;
-    document.getElementById('project-concept').innerText = data.concept;
-    // ... 이미지들도 자동으로 생성!
-}
-
-   
-    /* 상세페이지 전용 스타일 */
-    .project-header {
-      text-align: center;
-      padding: 4rem 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .project-info-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 3rem;
-      margin: 4rem 0;
-      text-align: left;
-    }
-
-    .info-label {
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-      display: block;
-      margin-bottom: 0.5rem;
-      color: #333;
-    }
-
-    .project-content img {
-      width: 100%;
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    .color-palette {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .color-circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: 1px solid #eee;
-    }
-
-    /* 하단 다음 프로젝트 이동 버튼 */
-    .project-nav {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #eee;
-      padding-top: 3rem;
-      margin-top: 5rem;
-    }
-
-    @media screen and (max-width: 736px) {
-      .project-info-grid { grid-template-columns: 1fr; }
-    }
+    @media screen and (max-width: 736px) { .project-info-grid { grid-template-columns: 1fr; } }
   </style>
  </head>
  <body class="is-preload">
@@ -84,57 +27,53 @@ if (data) {
   <div id="wrapper">
 
     <header id="header">
-      <a href="branding.html" class="logo">BACK TO LIST</a>
+      <a href="index.html" class="logo">SONGYI</a>
     </header>
+
+    <nav id="nav">
+      <ul class="links">
+       <li><a href="index.html">HOME</a></li>
+       <li class="active"><a href="javascript:history.back();">BACK TO LIST</a></li>
+       <li><a href="index.html#project">Project</a></li>
+       <li><a href="index.html#award">Award</a></li>
+      </ul>
+    </nav>
 
     <div id="main">
       
       <section class="project-header">
-        <span class="date">Design Project / 2026</span>
-        <h1 style="font-size: 3rem; margin: 1rem 0;">ROAST ARCHIVE</h1>
-        <p>Specialty Coffee Brand Identity Design</p>
+        <span id="project-date" class="date">Design Project / 2026</span>
+        <h1 id="project-title" style="font-size: 3rem; margin: 1rem 0;">ROAST ARCHIVE</h1>
+        <p id="project-sub">Specialty Coffee Brand Identity Design</p>
       </section>
 
       <section class="project-info-grid">
         <div>
           <div style="margin-bottom: 2rem;">
-            <span class="info-label">Client</span>
-            <p>Roast Archive Co.</p>
-          </div>
-          <div style="margin-bottom: 2rem;">
             <span class="info-label">Role</span>
-            <p>Brand Identity, Package Design,<br>Art Direction</p>
+            <p id="project-role">Brand Identity, Package Design, Art Direction</p>
           </div>
           <div>
             <span class="info-label">Colors</span>
-            <div class="color-palette">
-              <div class="color-circle" style="background: #1a1a1a;"></div> <div class="color-circle" style="background: #d4a373;"></div> <div class="color-circle" style="background: #fefae0;"></div> </div>
+            <div id="project-colors" class="color-palette">
+              </div>
           </div>
         </div>
         <div>
           <span class="info-label">Concept</span>
-          <p style="font-size: 1.1rem; line-height: 1.8;">
-            '기록'이라는 키워드를 중심으로 스페셜티 커피의 본질을 시각화했습니다. 
-            단순히 마시는 음료를 넘어, 원두의 원산지와 로스팅 프로파일을 아카이브하는 
-            즐거움을 전달하기 위해 그리드 시스템과 타이포그래피 중심의 미니멀한 디자인을 적용했습니다.
-            패키지 디자인에는 친환경 재생지를 사용하여 브랜드의 지속 가능한 가치를 더했습니다.
+          <p id="project-concept" style="font-size: 1.1rem; line-height: 1.8;">
+            데이터를 불러오는 중입니다... (자바스크립트가 실행되면 바뀝니다)
           </p>
         </div>
       </section>
 
-      <section class="project-content">
-        <img src="images/detail_01.jpg" alt="Logo Design Concept" />
-        
-        <img src="images/detail_02.jpg" alt="Business Card & Stationery" />
-        
-        <img src="images/detail_03.jpg" alt="Package Design Mockup" />
-        
-        <img src="images/detail_04.jpg" alt="Brand Mood" />
-      </section>
+      <section id="project-images" class="project-content">
+        </section>
 
-      <footer class="project-nav">
-        <a href="#" class="button small">← Previous Project</a>
-        <a href="#" class="button small">Next Project →</a>
+      <footer style="display: flex; justify-content: space-between; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid #eee;">
+        <a href="#" class="button small">← Previous</a>
+        <a href="javascript:history.back();" class="button">LIST</a>
+        <a href="#" class="button small">Next →</a>
       </footer>
 
     </div>
@@ -145,7 +84,55 @@ if (data) {
 
   </div>
 
+  <script>
+    const PROJECT_DATA = {
+      "roast": {
+        title: "ROAST ARCHIVE",
+        date: "Design Project / 2026",
+        sub: "Specialty Coffee Brand Identity",
+        role: "Brand Identity, Package Design",
+        concept: "'기록'이라는 키워드를 중심으로 스페셜티 커피의 본질을 시각화했습니다. 그리드 시스템과 타이포그래피 중심의 미니멀한 디자인을 적용했습니다.",
+        colors: ["#1a1a1a", "#d4a373", "#fefae0"],
+        images: ["images/500.jpg", "images/500.jpg", "images/500.jpg"] 
+      }
+      // ... 다른 데이터들 추가 ...
+    };
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id') || 'roast'; // 기본값 roast
+    const data = PROJECT_DATA[projectId];
+
+    if (data) {
+      document.getElementById('project-title').innerText = data.title;
+      document.getElementById('project-date').innerText = data.date;
+      document.getElementById('project-sub').innerText = data.sub;
+      document.getElementById('project-role').innerText = data.role;
+      document.getElementById('project-concept').innerText = data.concept;
+
+      const colorBox = document.getElementById('project-colors');
+      data.colors.forEach(color => {
+        const div = document.createElement('div');
+        div.className = 'color-circle';
+        div.style.backgroundColor = color;
+        colorBox.appendChild(div);
+      });
+
+      const imageBox = document.getElementById('project-images');
+      data.images.forEach(imgSrc => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = "Project Image";
+        imageBox.appendChild(img);
+      });
+    }
+  </script>
+
   <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
  </body>
 </html>
