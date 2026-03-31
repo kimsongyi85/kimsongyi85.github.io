@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>Project Detail - SONGYI DESIGN</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* 상세페이지 전용 스타일 */
+    .project-header {
+      text-align: center;
+      padding: 4rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      margin: 4rem 0;
+      text-align: left;
+    }
+
+    .info-label {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .project-content img {
+      width: 100%;
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    .color-palette {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .color-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #eee;
+    }
+
+    /* 하단 다음 프로젝트 이동 버튼 */
+    .project-nav {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 3rem;
+      margin-top: 5rem;
+    }
+
+    @media screen and (max-width: 736px) {
+      .project-info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+ </head>
+ <body class="is-preload">
+
+  <div id="wrapper">
+
+    <header id="header">
+      <a href="branding.html" class="logo">BACK TO LIST</a>
+    </header>
+
+    <div id="main">
+      
+      <section class="project-header">
+        <span class="date">Design Project / 2026</span>
+        <h1 style="font-size: 3rem; margin: 1rem 0;">ROAST ARCHIVE</h1>
+        <p>Specialty Coffee Brand Identity Design</p>
+      </section>
+
+      <section class="project-info-grid">
+        <div>
+          <div style="margin-bottom: 2rem;">
+            <span class="info-label">Client</span>
+            <p>Roast Archive Co.</p>
+          </div>
+          <div style="margin-bottom: 2rem;">
+            <span class="info-label">Role</span>
+            <p>Brand Identity, Package Design,<br>Art Direction</p>
+          </div>
+          <div>
+            <span class="info-label">Colors</span>
+            <div class="color-palette">
+              <div class="color-circle" style="background: #1a1a1a;"></div> <div class="color-circle" style="background: #d4a373;"></div> <div class="color-circle" style="background: #fefae0;"></div> </div>
+          </div>
+        </div>
+        <div>
+          <span class="info-label">Concept</span>
+          <p style="font-size: 1.1rem; line-height: 1.8;">
+            '기록'이라는 키워드를 중심으로 스페셜티 커피의 본질을 시각화했습니다. 
+            단순히 마시는 음료를 넘어, 원두의 원산지와 로스팅 프로파일을 아카이브하는 
+            즐거움을 전달하기 위해 그리드 시스템과 타이포그래피 중심의 미니멀한 디자인을 적용했습니다.
+            패키지 디자인에는 친환경 재생지를 사용하여 브랜드의 지속 가능한 가치를 더했습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="project-content">
+        <img src="images/detail_01.jpg" alt="Logo Design Concept" />
+        
+        <img src="images/detail_02.jpg" alt="Business Card & Stationery" />
+        
+        <img src="images/detail_03.jpg" alt="Package Design Mockup" />
+        
+        <img src="images/detail_04.jpg" alt="Brand Mood" />
+      </section>
+
+      <footer class="project-nav">
+        <a href="#" class="button small">← Previous Project</a>
+        <a href="#" class="button small">Next Project →</a>
+      </footer>
+
+    </div>
+
+    <div id="copyright">
+      <ul><li>&copy; SONGYI DESIGN</li></ul>
+    </div>
+
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+ </body>
+</html>
