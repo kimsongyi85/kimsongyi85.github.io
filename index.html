@@ -21,33 +21,43 @@
         text-transform: uppercase;
     }
 
-/* 2. 프로젝트 그리드 최적화 */
+
+
+
+
+	  /* 프로젝트 그리드 높이 통일 레이아웃 */
 @media screen and (min-width: 981px) {
-  #project-section .project-grid {
-    display: flex !important;
-    align-items: stretch !important; /* 모든 카드의 높이를 가장 긴 것에 맞춤 */
-    gap: 0; /* 테두리가 겹치도록 설정 */
-  }
+    #project-section .project-grid {
+        display: flex !important;
+        align-items: stretch !important; /* 모든 칸의 전체 높이를 동일하게 맞춤 */
+    }
 
-  #project-section .project-grid article {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important; /* 세로 정렬 */
-    justify-content: flex-start !important; /* 위에서부터 정렬 */
-    padding: 3rem 2rem !important;
-    border-left: 1px solid #e5e5e5 !important;
-    text-align: center !important;
-  }
+    #project-section .project-grid article {
+        flex: 1 !important;
+        display: flex !important;
+        flex-direction: column !important; /* 위아래로 요소 배치 */
+        justify-content: flex-start !important;
+        padding: 3rem 2rem !important;
+    }
 
-  /* 제목(h2) 영역의 높이를 고정하여 줄바꿈 상관없이 균형 맞춤 */
-  #project-section .project-grid article header.major {
-    min-height: 5rem !important; /* 두 줄인 Brand Campaign에 맞춘 높이 */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 1rem !important;
-  }
+    /* ★ 핵심: 제목 영역의 높이를 고정 ★ */
+    #project-section .project-grid article header.major {
+        /* 두 줄 높이에 맞춰 최소 높이 지정 (수치는 보면서 조절 가능) */
+        min-height: 5rem !important; 
+        display: flex !important;
+        align-items: center !important; /* 글자가 한 줄일 때도 세로 중앙에 오게 함 */
+        justify-content: center !important;
+        margin-bottom: 1.5rem !important;
+        border: none !important;
+    }
+
+    /* 본문 텍스트 영역도 높이를 맞춰주면 버튼 위치가 칼같이 맞습니다 */
+    #project-section .project-grid article p {
+        min-height: 4rem !important;
+        margin-bottom: 2rem !important;
+    }
 }
+
 
 /* 이미지 스타일 */
 #project-section .project-grid article .image.fit {
