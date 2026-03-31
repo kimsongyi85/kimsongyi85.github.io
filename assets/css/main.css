@@ -4686,4 +4686,49 @@ input, select, textarea {
 			visibility: visible;
 		}
 
+		/* --- 디자인 정밀 보정 시작 --- */
+
+/* 1. 날짜 양옆의 회색 가로선 싹 지우기 */
+#project-section .project-grid article header.major:after,
+#project-section .project-grid article header.major:before,
+#project .posts article header.major:after,
+#project .posts article header.major:before {
+    display: none !important;
+}
+
+/* 2. 프로젝트 박스 사이의 경계선(세로선/가로선) 지우기 */
+#project-section .project-grid article,
+#project .posts article {
+    border: none !important;
+}
+#project-section .project-grid,
+#project .posts {
+    border-top: none !important;
+}
+
+/* 3. '바로가기' 파란색 글씨 -> 검정색으로 강제 변경 */
+#project-section .project-grid article .button,
+#project .posts article .button {
+    color: #212931 !important;        /* 글씨 검정 */
+    border-color: #212931 !important;  /* 테두리 검정 */
+    box-shadow: none !important;       /* 푸르스름한 그림자 제거 */
+}
+
+/* 4. 버튼에 마우스 올렸을 때(Hover) 효과 */
+#project-section .project-grid article .button:hover,
+#project .posts article .button:hover {
+    background-color: #212931 !important; /* 배경 검정 */
+    color: #ffffff !important;           /* 글씨 흰색 */
+}
+
+/* 5. 어워드 섹션 상단 선도 깔끔하게 지우기 */
+#award-section, #award {
+    border-top: none !important;
+}
+
+/* ---디자인 정밀 보정 끝 --- */
+
+
+		
+
 	}
