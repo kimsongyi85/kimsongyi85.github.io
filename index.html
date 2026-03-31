@@ -92,6 +92,53 @@
       }
     }
   </style>
+  <style>
+  /* [해결책] 프로젝트 섹션을 3단으로 강제 정의 */
+  @media screen and (min-width: 981px) {
+    #project.posts {
+      display: flex !important;
+      flex-wrap: nowrap !important; /* 한 줄에 다 들어오게 고정 */
+      justify-content: space-between !important;
+      align-items: stretch !important;
+      gap: 0 !important;
+    }
+
+    #project.posts article {
+      flex: 1 !important; /* 3개가 똑같은 너비를 가짐 */
+      width: 33.33% !important;
+      border-left: 1px solid #eeeeee !important;
+      padding: 3rem 1.5rem !important;
+      margin: 0 !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+    }
+
+    #project.posts article:first-child {
+      border-left: none !important;
+    }
+
+    /* 글자가 세로로 뭉치는 현상 방지 */
+    #project.posts article p {
+      word-break: keep-all !important; /* 단어 단위 줄바꿈 */
+      line-height: 1.6 !important;
+      margin-bottom: 2rem !important;
+      min-height: 4.8em; /* 설명글 높이 통일 */
+    }
+  }
+
+  /* 모바일에서는 깔끔하게 1단으로 변경 */
+  @media screen and (max-width: 980px) {
+    #project.posts { display: block !important; }
+    #project.posts article { 
+      border-left: none !important; 
+      border-bottom: 1px solid #eeeeee !important; 
+      width: 100% !important;
+    }
+  }
+</style>
+  
  </head>
  <body class="is-preload">
 
