@@ -8,7 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 타이포그래피 위계 (PROJECT & AWARD 동일하게 크게) */
+    /* 1. 타이포그래피 위계 */
     #project-section .major h2,
     #award-section .major h2 {
         font-size: 2.5rem !important; 
@@ -82,22 +82,17 @@
         font-size: 0.9rem !important;
     }
 
-    /* 5. 푸터 회색 바탕 제거 및 흰색 배경 통일 */
-    #footer {
-        background-color: #ffffff !important;
-        background: none !important;
-        border-top: 1px solid #eeeeee !important;
-        padding: 2rem 0 !important;
-        margin: 0 !important;
-        display: block !important;
-    }
-
-    #copyright {
-        background-color: #ffffff !important;
-        color: #999 !important;
-        padding: 2rem 0 !important;
-        font-size: 0.7rem !important;
-        text-align: center;
+    /* 5. [중요] 하단 레이아웃 박멸 해결: Wrapper 밖으로 배경을 확장시키는 테크닉 */
+    #footer-final-wrap {
+        background: #ffffff !important;
+        margin-top: 5rem !important;
+        border-top: 1px solid #eeeeee;
+        width: 100vw !important; /* 브라우저 전체 너비 */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
 
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
@@ -184,9 +179,8 @@
       </section>
     </div>
 
-<div id="footer-final-wrap" style="background: #ffffff !important; width: 100% !important; margin: 0 !important; padding: 0 !important; position: relative; z-index: 10;">
-        
-        <footer id="footer" style="background: #ffffff !important; padding: 4rem 2rem 2rem 2rem !important; margin: 0 auto !important; max-width: 1000px; border-top: 1px solid #eeeeee; display: flex; justify-content: center;">
+    <div id="footer-final-wrap">
+        <footer id="footer" style="background: transparent !important; padding: 4rem 2rem 2rem 2rem !important; margin: 0 auto !important; max-width: 1000px; display: flex; justify-content: center; border: none !important;">
             <div style="width: 100%; display: flex; text-align: left;">
                 <div style="flex: 1; font-weight: 800; color: #212931;">
                     <p style="margin-bottom: 2rem;">ADDRESS</p>
@@ -199,14 +193,12 @@
             </div>
         </footer>
 
-        <div id="copyright" style="background: #ffffff !important; color: #bbb !important; text-align: center; padding: 4rem 0; font-size: 0.75rem; border: none !important;">
+        <div id="copyright" style="background: transparent !important; color: #bbb !important; text-align: center; padding: 4rem 0; font-size: 0.75rem; border: none !important;">
             &copy; SONGYI DESIGN
         </div>
     </div>
 
-  </div>
-
-  <script src="assets/js/jquery.min.js"></script>
+  </div> <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
   <script src="assets/js/jquery.scrolly.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
