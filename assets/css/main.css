@@ -4409,6 +4409,31 @@ input, select, textarea {
         letter-spacing: 0.15rem;
         margin: 0 !important;
     }
+
+		@media screen and (min-width: 981px) {
+    /* 제목 영역 스타일 */
+    #project-section .project-grid article header.major {
+        min-height: auto !important; /* 강제 줄바꿈을 했으므로 높이 고정은 풀어도 됩니다 */
+        margin-bottom: 2rem !important;
+        display: block !important;
+        text-align: center !important;
+    }
+
+    #project-section .project-grid article h2 {
+        font-size: 2.2rem !important; /* 글자가 두 줄이라 크기를 살짝 줄이는 게 세련돼 보입니다 */
+        line-height: 1.1 !important; /* 줄 간격을 좁혀서 두 단어가 한 덩어리로 보이게 함 */
+        letter-spacing: 0.2rem !important;
+        margin: 0 !important;
+        text-transform: uppercase;
+        display: block !important;
+    }
+
+    /* 본문 설명글 시작 위치 맞추기 */
+    #project-section .project-grid article p {
+        margin-top: 1rem !important;
+        min-height: 4.5rem !important; /* 설명글 줄수도 맞추기 위해 유지 */
+    }
+}
 </style>
 		
 
