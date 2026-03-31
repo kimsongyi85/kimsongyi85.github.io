@@ -3189,7 +3189,7 @@ input, select, textarea {
 		}
 
 	.pagination a, .pagination span {
-		border-color: #eeeeee;
+		border-color: #000000;
 	}
 
 	.pagination a {
