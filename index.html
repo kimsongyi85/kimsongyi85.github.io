@@ -8,13 +8,15 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 타이포그래피 위계 (PROJECT는 크게, 카테고리는 단정하게) */
-    #project-section .major h2 {
+    /* 1. 타이포그래피 위계 (PROJECT & AWARD 동일하게) */
+    #project-section .major h2,
+    #award-section .major h2 {
         font-size: 2.5rem !important; 
         letter-spacing: 0.3rem !important; 
         font-weight: 900 !important;
         margin-bottom: 4rem !important;
         border: none !important;
+        text-transform: uppercase;
     }
 
     #project-section .project-grid article h2 {
@@ -32,7 +34,7 @@
         margin-bottom: 2.5rem !important;
     }
 
-    /* 2. 프로젝트 섹션 3단 고정 레이아웃 복구 */
+    /* 2. 프로젝트 섹션 3단 고정 */
     @media screen and (min-width: 981px) {
       #project-section .project-grid {
         display: flex !important;
@@ -47,7 +49,6 @@
 
       #project-section .project-grid article {
         flex: 1 !important;
-        width: 33.33% !important;
         padding: 4rem 2rem !important;
         border-left: 1px solid #e5e5e5 !important;
         text-align: center !important;
@@ -59,43 +60,43 @@
       }
     }
 
-    /* 3. 날짜 및 회색 잔선 완전 제거 */
+    /* 3. 잔선 제거 */
     #project-section .project-grid article header.major:after,
-    #project-section .project-grid article header.major:before {
+    #project-section .project-grid article header.major:before,
+    #award-section .major:after,
+    #award-section .major:before {
         display: none !important;
         content: none !important;
     }
 
-    /* 4. '바로가기' 버튼 디자인 (직각 검정) */
-    #project-section .project-grid article .button {
-        display: inline-block !important;
-        border: 1px solid #212931 !important;
-        padding: 0 1.5rem !important;
-        height: 3rem !important;
-        line-height: 3rem !important;
-        color: #212931 !important;
-        background: transparent !important;
-        border-radius: 0 !important;
-        font-size: 0.8rem !important;
-    }
-
-    #project-section .project-grid article .button:hover {
-        background-color: #212931 !important;
-        color: #ffffff !important;
-    }
-
-    /* 5. AWARD 섹션 가로폭 조절 */
+    /* 4. AWARD 테이블 디자인 */
     #award-section table {
         width: 100% !important;
         max-width: 1000px !important;
-        margin: 2rem auto !important;
+        margin: 0 auto 5rem auto !important;
+        border-collapse: collapse !important;
+    }
+    #award-section table td {
+        padding: 1.5rem !important;
+        border-bottom: 1px solid #eeeeee !important;
+        font-size: 0.9rem !important;
     }
 
-    /* 6. 푸터 정리 및 중복 제거 */
+    /* 5. [중요] 푸터 회색 바탕 제거 및 투명화 */
     #footer {
-        padding: 4rem 0 !important;
+        background-color: transparent !important; /* 회색 바탕 제거 */
+        background: none !important;
         border-top: 1px solid #eeeeee !important;
-        text-align: center !important;
+        padding: 2rem 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    #copyright {
+        background-color: transparent !important;
+        color: #999 !important;
+        padding: 2rem 0 !important;
+        font-size: 0.7rem !important;
     }
 
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
@@ -107,89 +108,4 @@
     <div id="intro">
       <h1>Brand Designer</h1>
       <p>with strong experience in Brand Content Design</p>
-      <p style="font-size: 0.8em; opacity: 0.8;">I am a brand designer specialized in digital design, product storytelling,<br />and visual brand communication.</p>
-      <ul class="actions">
-       <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-      </ul>
-    </div>
-
-    <header id="header">
-      <a href="index.html" class="logo">SONGYI</a>
-    </header>
-
-    <nav id="nav">
-      <ul class="links">
-       <li class="active"><a href="index.html">HOME</a></li>
-       <li><a href="#about">About</a></li>
-       <li><a href="#project-section">Project</a></li>
-       <li><a href="#award-section">Award</a></li>
-      </ul>
-    </nav>
-
-    <div id="main">
-      <article id="about" class="post featured">
-        <header class="major">
-          <h2>KIM SONG YI</h2>
-          <div style="text-align: left; display: inline-block; margin-top: 2rem;">
-           <p><strong>Name:</strong> Kim Song Yi<br />
-           <strong>E-mail:</strong> kimsongyi85@gmail.com<br />
-           <strong>Call:</strong> 010-9994-0335<br />
-           <strong>Place:</strong> Incheon, KOREA</p>
-          </div>
-        </header>
-        <a href="#" class="image main"><img src="images/500.jpg" alt="" /></a>
-        <ul class="actions special">
-         <li><a href="#" class="button large">portfolio</a></li>
-        </ul>
-      </article>
-
-      <section id="project-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
-         <h2>PROJECT</h2>
-        </header>
-        <div class="project-grid">
-          <article>
-           <header class="major"><h2>Branding</h2></header>
-           <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
-           <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
-          </article>
-          <article>
-           <header class="major"><h2>Web Mobile</h2></header>
-           <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
-           <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
-          </article>
-          <article>
-           <header class="major"><h2>Brand Campaign</h2></header>
-           <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
-           <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="award-section">
-        <header class="major"><h2>AWARD</h2></header>
-        <div class="table-wrapper">
-         <table>
-          <tbody>
-           <tr><td>공모전 1등 수상 내역</td></tr>
-           <tr><td>디자인 어워드 본상 수상</td></tr>
-           <tr><td>브랜드 컨텐츠 부문 우수상</td></tr>
-          </tbody>
-         </table>
-        </div>
-      </section>
-    </div>
-
-    <footer id="footer"></footer>
-    <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
-  </div>
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
- </body>
-</html>
+      <p style="font-size: 0.8
