@@ -69,12 +69,12 @@
 
     /* 5. 푸터 완전 해결 버전 */
     
+
 #footer {
-    /* 배경 남색으로 꽉 채우기 */
+    /* 1. 배경색: 기존 템플릿의 짙은 남색 유지 */
     background: #212931 !important;
-    color: #ffffff !important;
     
-    /* 부모 박스 무시하고 화면 끝까지 확장하는 마법 */
+    /* 2. 레이아웃: 화면 꽉 채우기 유지 */
     width: 100vw !important;
     position: relative;
     left: 50%;
@@ -82,25 +82,33 @@
     margin-left: -50vw !important;
     margin-right: -50vw !important;
     
-    /* 중앙 정렬 */
+    /* 3. 정렬: 중앙 정렬 유지 */
     display: flex !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     
-    padding: 4rem 0 !important;
+    padding: 5rem 0 !important; /* 상하 여백을 살짝 늘려 더 여유롭게 조정 */
     border: none !important;
     box-sizing: border-box;
 }
 
 #footer p, #footer .copyright li {
-    color: #999999 !important; /* 글씨 흰색 */
-    font-size: 0.75rem;
-    letter-spacing: 0.2rem;
+    /* 4. 폰트: 상단 자기소개와 같은 흘림체(Serif Italic) 적용 */
+    font-family: "Source Sans Pro", "Georgia", serif !important; 
+    font-style: italic !important;
+    
+    /* 5. 색상 및 크기: 은은한 밝은 회색으로 감성적인 느낌 */
+    color: rgba(255, 255, 255, 0.4) !important; 
+    font-size: 0.85rem !important; 
+    
+    /* 6. 디테일: 자간과 여백 조정 */
+    letter-spacing: 0.1rem !important; 
     margin: 0 !important;
     border: none !important;
     padding: 0 !important;
-}
+    text-transform: none !important; /* 대문자 강제 변환 해제 (흘림체는 소문자가 섞여야 예뻐요) */
+} 
 
 /* 가로 스크롤 방지 (필수) */
 body { overflow-x: hidden; }
