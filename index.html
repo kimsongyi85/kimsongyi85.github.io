@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <style>
-    /* 1. 프로젝트 섹션 3단 고정 레이아웃 */
+
+
+<style>
+    /* 1. PC 버전: 프로젝트 섹션 3단 고정 및 디자인 보정 */
     @media screen and (min-width: 981px) {
       #project-section .project-grid {
         display: flex !important;
@@ -25,47 +27,42 @@
         flex: 1 !important;
         width: 33.33% !important;
         padding: 4rem 2rem !important;
+        border-left: 1px solid #e5e5e5 !important; /* [파란 표시] 단락 구분 세로선 */
         text-align: center !important;
         box-sizing: border-box !important;
-        background: transparent !important;
-        /* [파란 표시] 단락 사이 구분 세로선 */
-        border-left: 1px solid #e5e5e5 !important;
       }
 
       #project-section .project-grid article:first-child {
-        border-left: none !important; /* 맨 왼쪽은 선 제거 */
+        border-left: none !important; /* 첫 번째는 왼쪽 선 제거 */
       }
     }
 
-    /* 2. [빨간 표시] 날짜 양옆의 불필요한 회색 잔선 제거 */
+    /* 2. [빨간 표시] 날짜 양옆의 불필요한 회색 잔선 완벽 제거 */
     #project-section .project-grid article header.major:after,
     #project-section .project-grid article header.major:before {
         display: none !important;
     }
 
-    /* 3. [파란 표시] '바로가기' 버튼 디자인 (검정 테두리 직각 버튼) */
+    /* 3. [파란 표시] '바로가기' 테두리 직각 버튼 디자인 */
     #project-section .project-grid article .button {
         display: inline-block !important;
-        border: 1px solid #212931 !important;
-        padding: 0 1.8rem !important;
-        height: 3.2rem !important;
-        line-height: 3.2rem !important;
-        color: #212931 !important;
+        border: 1px solid #212931 !important; /* 검정 테두리 */
+        padding: 0 1.5rem !important;
+        height: 3rem !important;
+        line-height: 3rem !important;
+        color: #212931 !important; /* 글자 검정 */
         background: transparent !important;
-        border-radius: 0 !important;
-        font-size: 0.85rem !important;
-        font-weight: 600 !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease;
+        border-radius: 0 !important; /* 직각 */
+        font-size: 0.8rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
-    /* 버튼 마우스 호버 효과 */
     #project-section .project-grid article .button:hover {
         background-color: #212931 !important;
         color: #ffffff !important;
     }
 
-    /* 4. 기타 레이아웃 보정 */
+    /* 4. [파란 표시] AWARD 섹션: 가로로 길게 쭉 나오도록 수정 */
     #award-section {
         padding: 5rem 0 !important;
         text-align: center !important;
@@ -73,12 +70,49 @@
     }
     #award-section table {
         margin: 2rem auto !important;
-        width: auto !important;
-        min-width: 350px !important;
+        width: 100% !important; /* 가로폭 꽉 채우기 */
+        max-width: 1000px !important; /* 너무 퍼지지 않게 최대폭 제한 */
+        text-align: left !important; /* 텍스트는 왼쪽 정렬 (필요시 center로 변경) */
     }
-    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
-    
-    /* 모바일 대응 */
+    #award-section table td {
+        padding: 1rem !important;
+        border-bottom: 1px solid #eeeeee !important;
+    }
+
+    /* 5. [파란 표시] FOOTER 섹션: 왼쪽 레이아웃에 맞춰 2단 구성으로 수정 */
+    @media screen and (min-width: 981px) {
+        #footer {
+            display: flex !important;
+            justify-content: flex-start !important; /* 왼쪽 정렬 */
+            padding: 4rem 2rem !important;
+            width: 100% !important;
+            border-top: 1px solid #eeeeee !important;
+        }
+        #footer .split.contact {
+            display: flex !important;
+            width: 50% !important; /* 푸터의 왼쪽 절반만 사용 */
+            margin-right: auto !important;
+        }
+        #footer .split.contact section {
+            flex: 1 !important;
+            padding: 0 1rem !important;
+            border-left: 1px solid #e5e5e5 !important;
+        }
+        #footer .split.contact section:first-child {
+            border-left: none !important; /* 첫 번째는 선 제거 */
+        }
+        #footer .split.contact section h3 {
+            font-size: 0.9rem !important;
+            letter-spacing: 0.1rem !important;
+            margin-bottom: 1rem !important;
+        }
+        #footer .split.contact section p {
+            font-size: 0.8rem !important;
+            line-height: 1.6 !important;
+        }
+    }
+
+    /* 6. 모바일 대응 (전체 1단) */
     @media screen and (max-width: 980px) {
       #project-section .project-grid { display: block !important; }
       #project-section .project-grid article { 
@@ -86,8 +120,16 @@
         border-left: none !important;
         border-bottom: 1px solid #eeeeee !important;
       }
+      #footer .split.contact { display: block !important; width: 100% !important; }
+      #footer .split.contact section { border-left: none !important; padding: 1rem 0 !important; }
     }
-  </style>
+    
+    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+</style>
+
+
+
+  
  </head>
  <body class="is-preload">
   <div id="wrapper" class="fade-in">
