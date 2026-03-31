@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
+
+   // 현재 주소에서 id 값 가져오기 (예: roast)
+const urlParams = new URLSearchParams(window.location.search);
+const projectId = urlParams.get('id');
+
+// 데이터에서 해당 정보 찾아 화면에 뿌려주기
+const data = PROJECT_DATA[projectId];
+
+if (data) {
+    document.getElementById('project-title').innerText = data.title;
+    document.getElementById('project-concept').innerText = data.concept;
+    // ... 이미지들도 자동으로 생성!
+}
+
+   
     /* 상세페이지 전용 스타일 */
     .project-header {
       text-align: center;
