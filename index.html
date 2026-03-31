@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-
-<style>
+  <style>
     /* 1. 타이포그래피 & 공통 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
     
@@ -41,33 +40,34 @@
       }
     }
 
-/* 5. 푸터 완전 해결 버전 */
-#footer {
-    background: #ffffff !important;
-    width: 100vw !important; /* 브라우저 너비 전체 사용 */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    padding: 6rem 0 !important;
-    border-top: 1px solid #eeeeee !important;
-    text-align: center !important;
-    display: block !important;
-    clear: both; /* 주변 요소 간섭 방지 */
-}
+    /* 5. 푸터 완전 해결 버전 */
+    #footer {
+        background: #ffffff !important;
+        width: 100vw !important; 
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+        padding: 6rem 0 !important;
+        border-top: 1px solid #eeeeee !important;
+        text-align: center !important;
+        display: block !important;
+        clear: both;
+        box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 추가 */
+    }
 
-#footer p {
-    color: #bbb !important;
-    font-size: 0.75rem;
-    letter-spacing: 0.2rem;
-    margin: 0 !important;
-    width: 100%;
-}
-</style>
+    #footer p {
+        color: #bbb !important;
+        font-size: 0.75rem;
+        letter-spacing: 0.2rem;
+        margin: 0 !important;
+        width: 100%;
+    }
 
-
-  
+    /* 가로 스크롤 방지 */
+    body { overflow-x: hidden; }
+  </style>
  </head>
  <body class="is-preload">
   <div id="wrapper" class="fade-in">
@@ -134,8 +134,7 @@
         </div>
       </section>
 
-
-     <section id="award-section">
+      <section id="award-section">
         <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
           <h2>AWARD</h2>
         </header>
@@ -148,13 +147,10 @@
             </tbody>
           </table>
         </div>
-</section> 
-
+      </section> 
     </div> <footer id="footer">
         <p>&copy; 2026 SONGYI DESIGN</p>
     </footer>
-
-  </div>
 
   </div> <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -163,5 +159,5 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-</body>
+ </body>
 </html>
