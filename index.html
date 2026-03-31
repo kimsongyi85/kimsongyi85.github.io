@@ -7,79 +7,80 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    /* 1. PC 버전: 프로젝트 3단 고정 및 컬러 활성화 */
+    /* [메인 페이지 전용 레이아웃 고정 스타일] */
+    
+    /* 1. 프로젝트 3단 가로 배치 (PC 전용) */
     @media screen and (min-width: 981px) {
-      #project .posts {
+      #project-section .project-grid {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
         align-items: stretch !important;
-        gap: 0 !important;
         width: 100% !important;
+        border-top: 2px solid #eeeeee !important;
         margin: 2rem 0 !important;
-        border-top: 1px solid #eeeeee !important;
       }
 
-      #project .posts article {
+      #project-section .project-grid article {
         flex: 1 !important;
         width: 33.33% !important;
         padding: 4rem 2rem !important;
         border-left: 1px solid #eeeeee !important;
-        margin: 0 !important;
         text-align: center !important;
         box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
-        background: transparent !important; /* 배경을 투명하게 해서 템플릿 색상 투영 */
+        background: transparent !important;
       }
 
-      #project .posts article:first-child { border-left: none !important; }
+      #project-section .project-grid article:first-child {
+        border-left: none !important;
+      }
 
-      /* 제목과 텍스트가 구겨지지 않게 보호 */
-      #project .posts article h2 {
-        color: #212931 !important; /* 템플릿 기본 진한색 */
+      /* 텍스트 구겨짐(한 글자씩 떨어짐) 방지 */
+      #project-section .project-grid article h2 {
         font-size: 1.3rem !important;
         white-space: nowrap !important;
+        margin-bottom: 1.5rem !important;
       }
 
-      #project .posts article p {
+      #project-section .project-grid article p {
         font-size: 0.9rem !important;
         line-height: 1.8 !important;
         word-break: keep-all !important;
         margin-bottom: 2rem !important;
+        min-height: 4.5em;
       }
     }
 
-    /* 2. 버튼 컬러 활성화 (파란색 계열 복구) */
-    #project .posts article .button {
-      border-color: #18bfef !important; /* 포인트 컬러 강제 부여 */
-      color: #18bfef !important;
+    /* 2. 하단 밀림 방지 및 어워드 정렬 */
+    #award-section {
+      clear: both !important;
+      padding: 5rem 0 !important;
+      text-align: center !important;
+      border-top: 1px solid #eeeeee !important;
     }
 
-    #project .posts article .button:hover {
-      background-color: rgba(24, 191, 239, 0.1) !important;
-      color: #18bfef !important;
+    #award-section table {
+      margin: 2rem auto !important;
+      width: auto !important;
+      min-width: 350px !important;
     }
 
-    /* 3. 어워드 및 하단 레이아웃 */
-    #award { padding: 5rem 0; text-align: center; clear: both; }
-    #award table { margin: 0 auto; width: auto; min-width: 300px; }
-
-    /* 모바일 대응 */
+    /* 3. 모바일 대응 (1단으로 전환) */
     @media screen and (max-width: 980px) {
-      #project .posts { display: block !important; }
-      #project .posts article { 
+      #project-section .project-grid { display: block !important; }
+      #project-section .project-grid article { 
         width: 100% !important; 
-        border-left: none !important; 
-        border-bottom: 1px solid #eeeeee !important; 
+        border-left: none !important;
+        border-bottom: 1px solid #eeeeee !important;
       }
     }
   </style>
  </head>
  <body class="is-preload">
+
   <div id="wrapper" class="fade-in">
+
     <div id="intro">
       <h1>Brand Designer</h1>
       <p>with strong experience in Brand Content Design</p>
@@ -95,14 +96,15 @@
 
     <nav id="nav">
       <ul class="links">
-       <li class="active"><a href="#main">HOME</a></li>
+       <li class="active"><a href="index.html">HOME</a></li>
        <li><a href="#about">About</a></li>
-       <li><a href="#project">Project</a></li>
-       <li><a href="#award">Award</a></li>
+       <li><a href="#project-section">Project</a></li>
+       <li><a href="#award-section">Award</a></li>
       </ul>
     </nav>
 
     <div id="main">
+
       <article id="about" class="post featured">
         <header class="major">
          <span class="date">April 25, 2026</span>
@@ -120,11 +122,11 @@
         </ul>
       </article>
 
-      <section id="project">
-        <header class="major" style="text-align: center; border-bottom: none; margin-bottom: 3rem;">
+      <section id="project-section">
+        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
          <h2 style="font-size: 2rem;">PROJECT</h2>
         </header>
-        <div class="posts">
+        <div class="project-grid">
           <article>
            <header class="major"><span class="date">April 24, 2026</span><h2>Branding</h2></header>
            <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
@@ -143,18 +145,19 @@
         </div>
       </section>
 
-      <section id="award">
+      <section id="award-section">
         <header class="major"><h2 style="font-size: 2rem;">AWARD</h2></header>
         <div class="table-wrapper">
          <table>
           <tbody>
-           <tr><td>공모전 1등</td></tr>
-           <tr><td>공모전 2등</td></tr>
-           <tr><td>공모전 3등</td></tr>
+           <tr><td>공모전 1등 수상 내역</td></tr>
+           <tr><td>디자인 어워드 본상 수상</td></tr>
+           <tr><td>브랜드 컨텐츠 부문 우수상</td></tr>
           </tbody>
          </table>
         </div>
       </section>
+
     </div>
 
     <footer id="footer">
@@ -164,6 +167,7 @@
       </section>
     </footer>
     <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
+
   </div>
 
   <script src="assets/js/jquery.min.js"></script>
