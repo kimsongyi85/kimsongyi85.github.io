@@ -8,7 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 타이포그래피 위계 (PROJECT & AWARD 동일하게) */
+    /* 1. 타이포그래피 위계 (PROJECT & AWARD) */
     #project-section .major h2,
     #award-section .major h2 {
         font-size: 2.5rem !important; 
@@ -19,87 +19,71 @@
         text-transform: uppercase;
     }
 
-    #project-section .project-grid article h2 {
-        font-size: 1.2rem !important; 
-        letter-spacing: 0.15rem !important;
-        font-weight: 700 !important;
-        color: #212931 !important;
-        margin-top: 1rem !important;
-    }
-
-    #project-section .project-grid article p {
-        font-size: 0.85rem !important;
-        color: #666 !important;
-        line-height: 1.8 !important;
-        margin-bottom: 2.5rem !important;
-    }
-
-    /* 2. 프로젝트 섹션 3단 고정 */
+    /* 2. 프로젝트 섹션 레이아웃 및 잔선 완전 제거 */
     @media screen and (min-width: 981px) {
       #project-section .project-grid {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
-        align-items: stretch !important;
         width: 100% !important;
         margin: 2rem 0 !important;
         border-top: none !important;
       }
-
       #project-section .project-grid article {
         flex: 1 !important;
         padding: 4rem 2rem !important;
         border-left: 1px solid #e5e5e5 !important;
         text-align: center !important;
-        box-sizing: border-box !important;
       }
-
-      #project-section .project-grid article:first-child {
-        border-left: none !important;
-      }
+      #project-section .project-grid article:first-child { border-left: none !important; }
     }
 
-    /* 3. 잔선 제거 */
-    #project-section .project-grid article header.major:after,
-    #project-section .project-grid article header.major:before,
-    #award-section .major:after,
-    #award-section .major:before {
+    /* [체크!] 날짜 양옆 회색 잔선 박멸 */
+    #project-section article header.major:before,
+    #project-section article header.major:after {
         display: none !important;
         content: none !important;
     }
 
-    /* 4. AWARD 테이블 디자인 */
-    #award-section table {
+    /* 3. AWARD 섹션 (길게 쭉 늘리기) */
+    #award-section .table-wrapper {
         width: 100% !important;
-        max-width: 1000px !important;
-        margin: 0 auto 5rem auto !important;
-        border-collapse: collapse !important;
+        max-width: 1200px !important; /* 더 넓게 확장 */
+        margin: 0 auto !important;
     }
     #award-section table td {
-        padding: 1.5rem !important;
+        padding: 2rem !important; /* 여백을 키워 시원하게 */
         border-bottom: 1px solid #eeeeee !important;
-        font-size: 0.9rem !important;
+        text-align: center !important;
     }
 
-    /* 5. [중요] 푸터 회색 바탕 제거 및 투명화 */
-    #footer {
-        background-color: transparent !important; /* 회색 바탕 제거 */
-        background: none !important;
-        border-top: 1px solid #eeeeee !important;
-        padding: 2rem 0 !important;
-        margin: 0 !important;
-        display: block !important;
+    /* 4. 푸터 2단 구성 (왼쪽 정보 / 오른쪽 상세내용) */
+    .footer-custom {
+        display: flex;
+        justify-content: center;
+        padding: 5rem 2rem;
+        background: #ffffff;
+        border-top: 1px solid #eeeeee;
     }
+    .footer-container {
+        display: flex;
+        width: 100%;
+        max-width: 1000px;
+        text-align: left;
+    }
+    .footer-left { width: 30%; font-weight: 800; color: #212931; letter-spacing: 0.1rem; }
+    .footer-right { width: 70%; color: #666; line-height: 2.5; }
+    .footer-row { display: flex; margin-bottom: 2rem; }
 
     #copyright {
-        background-color: transparent !important;
+        background: #ffffff !important;
         color: #999 !important;
-        padding: 2rem 0 !important;
-        font-size: 0.7rem !important;
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 0.8rem;
+        border-top: 1px solid #f8f8f8;
     }
-
-    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
   </style>
  </head>
  <body class="is-preload">
@@ -114,9 +98,7 @@
       </ul>
     </div>
 
-    <header id="header">
-      <a href="index.html" class="logo">SONGYI</a>
-    </header>
+    <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
 
     <nav id="nav">
       <ul class="links">
@@ -145,7 +127,7 @@
       </article>
 
       <section id="project-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
+        <header class="major" style="text-align: center; padding-top: 4rem;">
          <h2>PROJECT</h2>
         </header>
         <div class="project-grid">
@@ -168,7 +150,7 @@
       </section>
 
       <section id="award-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
+        <header class="major" style="text-align: center; padding-top: 4rem;">
           <h2>AWARD</h2>
         </header>
         <div class="table-wrapper">
@@ -183,16 +165,23 @@
       </section>
     </div>
 
-<footer id="footer" style="padding: 0 !important; margin: 0 !important; background: #ffffff !important; border-top: 1px solid #eeeeee;">
-    </footer>
-
-    <div id="copyright" style="background: #ffffff !important; color: #999 !important; text-align: center; padding: 4rem 0; font-size: 0.8rem; margin: 0 !important;">
-        &copy; SONGYI DESIGN
+    <div class="footer-custom">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div>ADDRESS</div>
+                <div style="margin-top: 6rem;">EMAIL</div>
+            </div>
+            <div class="footer-right">
+                <div>Incheon, South Korea</div>
+                <div style="margin-top: 6rem;"><a href="mailto:kimsongyi85@gmail.com">kimsongyi85@gmail.com</a></div>
+            </div>
+        </div>
     </div>
 
+    <div id="copyright">
+        &copy; SONGYI DESIGN
+    </div>
   </div>
-
-  
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
