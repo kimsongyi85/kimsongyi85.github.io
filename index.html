@@ -60,7 +60,7 @@
       }
     }
 
-    /* 3. 잔선 및 날짜 요소 제거 */
+    /* 3. 잔선 제거 */
     #project-section .project-grid article header.major:after,
     #project-section .project-grid article header.major:before,
     #award-section .major:after,
@@ -69,7 +69,7 @@
         content: none !important;
     }
 
-    /* 4. AWARD 테이블 디자인 */
+    /* 4. AWARD 테이블 */
     #award-section table {
         width: 100% !important;
         max-width: 1000px !important;
@@ -82,17 +82,18 @@
         font-size: 0.9rem !important;
     }
 
-    /* 5. [중요] 하단 레이아웃 박멸 해결: Wrapper 밖으로 배경을 확장시키는 테크닉 */
+    /* 5. [중요] 푸터 배경 확장 */
     #footer-final-wrap {
         background: #ffffff !important;
         margin-top: 5rem !important;
         border-top: 1px solid #eeeeee;
-        width: 100vw !important; /* 브라우저 전체 너비 */
+        width: 100vw !important; 
         position: relative;
         left: 50%;
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
+        z-index: 10;
     }
 
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
@@ -177,17 +178,14 @@
          </table>
         </div>
       </section>
-    </div>
-
-<div id="footer-final-fix" style="background: #ffffff !important; width: 100vw !important; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; border-top: 1px solid #eeeeee; z-index: 999;">
-        
+    </div> <div id="footer-final-wrap">
         <footer id="footer" style="background: transparent !important; padding: 5rem 2rem 2rem 2rem !important; margin: 0 auto !important; max-width: 1000px; display: flex; justify-content: center; border: none !important;">
             <div style="width: 100%; display: flex; text-align: left;">
-                <div style="flex: 1; font-weight: 800; color: #212931; letter-spacing: 1px;">
+                <div style="flex: 1; font-weight: 800; color: #212931; letter-spacing: 0.1rem;">
                     <p style="margin-bottom: 2rem;">ADDRESS</p>
                     <p>EMAIL</p>
                 </div>
-                <div style="flex: 2; color: #666; font-size: 0.9rem;">
+                <div style="flex: 2; color: #666;">
                     <p style="margin-bottom: 2rem;">Incheon, South Korea</p>
                     <p><a href="mailto:kimsongyi85@gmail.com" style="border: none; color: #666;">kimsongyi85@gmail.com</a></p>
                 </div>
