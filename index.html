@@ -7,70 +7,47 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    /* [핵심] 프로젝트 섹션 깨짐 방지 스타일 */
-    #project .posts {
-      display: grid !important;
-      grid-template-columns: repeat(3, 1fr) !important;
-      gap: 0 !important;
-      text-align: center; /* 모든 텍스트 중앙 정렬 */
-    }
+    /* [통합] 프로젝트 섹션 3단 강제 고정 및 깨짐 방지 */
+    @media screen and (min-width: 981px) {
+      #project .posts {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        gap: 0 !important;
+      }
 
-    #project article {
-      padding: 2.5rem 1.5rem !important; /* 위아래 간격 충분히, 좌우 여백 */
-      border-left: solid 1px #eeeeee; /* 회색 구분선 */
-      margin: 0 !important;
-      width: auto !important;
-      box-sizing: border-box; /* 패딩 포함 크기 계산 */
-    }
+      #project .posts article {
+        flex: 1 !important;
+        width: 33.33% !important;
+        border-left: 1px solid #eeeeee !important;
+        padding: 3rem 1.5rem !important;
+        margin: 0 !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+      }
 
-    #project article:first-child {
-      border-left: none;
-    }
+      #project .posts article:first-child {
+        border-left: none !important;
+      }
 
-    /* 날짜 스타일 */
-    #project article header.major span.date {
-      font-size: 0.8rem;
-      letter-spacing: 0.1rem;
-      color: #999;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
+      /* 글자 뭉침 방지 및 가독성 */
+      #project .posts article p {
+        font-size: 0.9rem !important;
+        line-height: 1.8 !important;
+        color: #666 !important;
+        margin-bottom: 2rem !important;
+        word-break: keep-all !important; /* 한글 단어 단위 줄바꿈 */
+        min-height: 4.5em; /* 높이 균형 맞춤 */
+      }
 
-    /* 프로젝트 제목 스타일 */
-    #project article h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.1rem;
-      margin: 0 0 1.5rem 0;
-      line-height: 1.4;
-    }
-
-    /* [스크린샷 해결 포인트] 프로젝트 설명글 스타일 */
-    #project article p {
-      font-size: 0.9rem;
-      line-height: 1.8; /* 줄 간격 시원하게 */
-      color: #666;
-      margin-bottom: 2rem;
-      text-align: center;
-      
-      /* 글씨가 세로로 다닥다닥 붙는 현상 해결 */
-      word-break: keep-all; /* 한글 단어 단위 줄 바꿈 (베리 중요) */
-      width: 100%;
-      display: inline-block;
-    }
-
-    /* 이미지 스타일 */
-    #project article .image.fit {
-      margin: 0 auto 1.5rem auto;
-      max-width: 90%;
-      display: block;
-    }
-
-    /* 버튼 중앙 정렬 */
-    #project article .actions.special {
-      text-align: center;
-      justify-content: center;
-      display: flex;
+      #project .posts article h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
     }
 
     /* 어워드 섹션 중앙 정렬 */
@@ -80,65 +57,17 @@
       margin-top: 5rem;
     }
 
-    /* 모바일 대응 (화면 작아지면 1단으로) */
+    /* 모바일 대응 */
     @media screen and (max-width: 980px) {
-      #project .posts {
-        grid-template-columns: 1fr !important;
-      }
-      #project article {
-        border-left: none;
-        border-bottom: 1px solid #eeeeee;
+      #project .posts { display: block !important; }
+      #project .posts article { 
+        border-left: none !important; 
+        border-bottom: 1px solid #eeeeee !important; 
+        width: 100% !important;
         padding: 3rem 1rem !important;
       }
     }
   </style>
-  <style>
-  /* [해결책] 프로젝트 섹션을 3단으로 강제 정의 */
-  @media screen and (min-width: 981px) {
-    #project.posts {
-      display: flex !important;
-      flex-wrap: nowrap !important; /* 한 줄에 다 들어오게 고정 */
-      justify-content: space-between !important;
-      align-items: stretch !important;
-      gap: 0 !important;
-    }
-
-    #project.posts article {
-      flex: 1 !important; /* 3개가 똑같은 너비를 가짐 */
-      width: 33.33% !important;
-      border-left: 1px solid #eeeeee !important;
-      padding: 3rem 1.5rem !important;
-      margin: 0 !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: space-between !important;
-    }
-
-    #project.posts article:first-child {
-      border-left: none !important;
-    }
-
-    /* 글자가 세로로 뭉치는 현상 방지 */
-    #project.posts article p {
-      word-break: keep-all !important; /* 단어 단위 줄바꿈 */
-      line-height: 1.6 !important;
-      margin-bottom: 2rem !important;
-      min-height: 4.8em; /* 설명글 높이 통일 */
-    }
-  }
-
-  /* 모바일에서는 깔끔하게 1단으로 변경 */
-  @media screen and (max-width: 980px) {
-    #project.posts { display: block !important; }
-    #project.posts article { 
-      border-left: none !important; 
-      border-bottom: 1px solid #eeeeee !important; 
-      width: 100% !important;
-    }
-  }
-</style>
-  
  </head>
  <body class="is-preload">
 
@@ -151,11 +80,11 @@
       <ul class="actions">
        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
       </ul>
-     </div>
+    </div>
 
     <header id="header">
       <a href="index.html" class="logo">SONGYI</a>
-     </header>
+    </header>
 
     <nav id="nav">
       <ul class="links">
@@ -164,7 +93,7 @@
        <li><a href="#project">Project</a></li>
        <li><a href="#award">Award</a></li>
       </ul>
-     </nav>
+    </nav>
 
     <div id="main">
 
@@ -183,7 +112,7 @@
         <ul class="actions special">
          <li><a href="#" class="button large">portfolio</a></li>
         </ul>
-       </article>
+      </article>
 
       <section id="project">
         <header class="major" style="text-align: center; border-bottom: none; margin-bottom: 3rem;">
@@ -224,11 +153,45 @@
            </ul>
           </article>
         </div>
-       </section>
+      </section>
 
       <section id="award">
         <header class="major">
          <h2 style="font-size: 2rem;">AWARD</h2>
         </header>
         <div class="table-wrapper">
-         <table style="text-align: center; margin:
+         <table style="text-align: center; margin: 0 auto; width: auto; min-width: 300px;">
+          <tbody>
+           <tr><td>공모전 1등</td></tr>
+           <tr><td>공모전 2등</td></tr>
+           <tr><td>공모전 3등</td></tr>
+          </tbody>
+         </table>
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="footer">
+      <section class="split contact">
+       <section><h3>Address</h3><p>Incheon, South Korea</p></section>
+       <section><h3>Email</h3><p><a href="#">kimsongyi85@gmail.com</a></p></section>
+      </section>
+    </footer>
+
+    <div id="copyright">
+      <ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul>
+    </div>
+
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+ </body>
+</html>
