@@ -7,88 +7,89 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-<style>
-    /* ...기존에 있던 코드들... */
+  <style>
+    /* 1. 프로젝트 섹션 3단 고정 레이아웃 */
+    @media screen and (min-width: 981px) {
+      #project-section .project-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        margin: 2rem 0 !important;
+        border-top: none !important;
+      }
 
-    /* 여기에 새로 드린 코드를 붙여넣으세요! */
+      #project-section .project-grid article {
+        flex: 1 !important;
+        width: 33.33% !important;
+        padding: 4rem 2rem !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        background: transparent !important;
+        /* [파란 표시] 단락 사이 구분 세로선 */
+        border-left: 1px solid #e5e5e5 !important;
+      }
+
+      #project-section .project-grid article:first-child {
+        border-left: none !important; /* 맨 왼쪽은 선 제거 */
+      }
+    }
+
+    /* 2. [빨간 표시] 날짜 양옆의 불필요한 회색 잔선 제거 */
     #project-section .project-grid article header.major:after,
     #project-section .project-grid article header.major:before {
         display: none !important;
     }
-    
-    @media screen and (min-width: 981px) {
-        #project-section .project-grid article {
-            border-left: 1px solid #e5e5e5 !important;
-            padding: 4rem 2rem !important;
-        }
-        #project-section .project-grid article:first-child {
-            border-left: none !important;
-        }
-    }
 
+    /* 3. [파란 표시] '바로가기' 버튼 디자인 (검정 테두리 직각 버튼) */
     #project-section .project-grid article .button {
         display: inline-block !important;
         border: 1px solid #212931 !important;
-        padding: 0 1.5rem !important;
-        height: 3rem !important;
-        line-height: 3rem !important;
+        padding: 0 1.8rem !important;
+        height: 3.2rem !important;
+        line-height: 3.2rem !important;
         color: #212931 !important;
         background: transparent !important;
         border-radius: 0 !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease;
     }
 
- /* --- 프로젝트 섹션 디자인 최종 보정 --- */
-
-/* 1. [빨간 표시] 날짜 양옆의 불필요한 회색 잔선들 완벽 제거 */
-#project-section .project-grid article header.major:after,
-#project-section .project-grid article header.major:before {
-    display: none !important;
-}
-
-/* 2. [파란 표시] 단락 사이를 구분 짓는 깔끔한 세로선 추가 (PC 버전) */
-@media screen and (min-width: 981px) {
-    #project-section .project-grid article {
-        border-left: 1px solid #e5e5e5 !important; /* 은은한 회색 세로선 */
-        padding: 4rem 2rem !important;
+    /* 버튼 마우스 호버 효과 */
+    #project-section .project-grid article .button:hover {
+        background-color: #212931 !important;
+        color: #ffffff !important;
     }
-    #project-section .project-grid article:first-child {
-        border-left: none !important; /* 맨 왼쪽 첫 번째는 선이 없어야 깔끔해요 */
+
+    /* 4. 기타 레이아웃 보정 */
+    #award-section {
+        padding: 5rem 0 !important;
+        text-align: center !important;
+        border-top: none !important;
     }
-}
-
-/* 3. [파란 표시] '바로가기' 텍스트를 감싸는 직각 테두리 버튼 */
-#project-section .project-grid article .button {
-    display: inline-block !important;
-    border: 1px solid #212931 !important; /* 검정색 테두리 */
-    padding: 0 1.8rem !important;
-    height: 3.2rem !important;
-    line-height: 3.2rem !important;
-    color: #212931 !important; /* 글자색 검정 */
-    background: transparent !important; /* 배경은 투명하게 */
-    border-radius: 0 !important; /* 둥글지 않은 시크한 직각 */
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    transition: all 0.3s ease; /* 마우스 올렸을 때 부드러운 변화 */
-}
-
-/* 버튼 마우스 호버 효과: 검정 배경에 흰 글씨로 반전 */
-#project-section .project-grid article .button:hover {
-    background-color: #212931 !important;
-    color: #ffffff !important;
-}
-
- 
-</style>
-
-
-
-
-  
-  
+    #award-section table {
+        margin: 2rem auto !important;
+        width: auto !important;
+        min-width: 350px !important;
+    }
+    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+    
+    /* 모바일 대응 */
+    @media screen and (max-width: 980px) {
+      #project-section .project-grid { display: block !important; }
+      #project-section .project-grid article { 
+        width: 100% !important; 
+        border-left: none !important;
+        border-bottom: 1px solid #eeeeee !important;
+      }
+    }
+  </style>
  </head>
  <body class="is-preload">
-
   <div id="wrapper" class="fade-in">
 
     <div id="intro">
@@ -114,7 +115,6 @@
     </nav>
 
     <div id="main">
-
       <article id="about" class="post featured">
         <header class="major">
          <span class="date">April 25, 2026</span>
@@ -167,7 +167,6 @@
          </table>
         </div>
       </section>
-
     </div>
 
     <footer id="footer">
@@ -177,7 +176,6 @@
       </section>
     </footer>
     <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
-
   </div>
 
   <script src="assets/js/jquery.min.js"></script>
