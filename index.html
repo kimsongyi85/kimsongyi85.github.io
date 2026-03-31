@@ -8,7 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 타이포그래피 위계 (글자 크기 대비) */
+    /* 1. 타이포그래피 위계 (PROJECT는 크게, 카테고리는 단정하게) */
     #project-section .major h2 {
         font-size: 2.5rem !important; 
         letter-spacing: 0.3rem !important; 
@@ -18,7 +18,7 @@
     }
 
     #project-section .project-grid article h2 {
-        font-size: 1.2rem !important; /* 프로젝트 제목은 살짝 작게 */
+        font-size: 1.2rem !important; 
         letter-spacing: 0.15rem !important;
         font-weight: 700 !important;
         color: #212931 !important;
@@ -32,7 +32,7 @@
         margin-bottom: 2.5rem !important;
     }
 
-    /* 2. 프로젝트 섹션 3단 고정 레이아웃 */
+    /* 2. 프로젝트 섹션 3단 고정 레이아웃 복구 */
     @media screen and (min-width: 981px) {
       #project-section .project-grid {
         display: flex !important;
@@ -59,7 +59,7 @@
       }
     }
 
-    /* 3. 날짜 및 잔선 제거 */
+    /* 3. 날짜 및 회색 잔선 완전 제거 */
     #project-section .project-grid article header.major:after,
     #project-section .project-grid article header.major:before {
         display: none !important;
@@ -91,7 +91,7 @@
         margin: 2rem auto !important;
     }
 
-    /* 6. 푸터 정리 */
+    /* 6. 푸터 정리 및 중복 제거 */
     #footer {
         padding: 4rem 0 !important;
         border-top: 1px solid #eeeeee !important;
@@ -163,3 +163,33 @@
            <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
            <ul class="actions special"><li><a href="#" class="button">바로가기</a></li></ul>
           </article>
+        </div>
+      </section>
+
+      <section id="award-section">
+        <header class="major"><h2>AWARD</h2></header>
+        <div class="table-wrapper">
+         <table>
+          <tbody>
+           <tr><td>공모전 1등 수상 내역</td></tr>
+           <tr><td>디자인 어워드 본상 수상</td></tr>
+           <tr><td>브랜드 컨텐츠 부문 우수상</td></tr>
+          </tbody>
+         </table>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer"></footer>
+    <div id="copyright"><ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul></div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+ </body>
+</html>
