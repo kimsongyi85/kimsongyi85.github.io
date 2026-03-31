@@ -1,197 +1,72 @@
-<!DOCTYPE HTML>
-<html>
- <head>
-  <title>SONGYI DESIGN</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style>
-    /* [통합] 프로젝트 섹션 3단 강제 고정 및 깨짐 방지 */
-    @media screen and (min-width: 981px) {
-      #project .posts {
+/* 1. 프로젝트 섹션 3단 강제 고정 */
+@media screen and (min-width: 981px) {
+    #project .posts {
         display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
         justify-content: space-between !important;
         align-items: stretch !important;
         gap: 0 !important;
-      }
+        width: 100% !important;
+        margin: 2rem 0 !important;
+    }
 
-      #project .posts article {
+    #project .posts article {
         flex: 1 !important;
-        width: 33.33% !important;
+        width: 33.33% !important; /* 정확히 3등분 */
+        padding: 4rem 2rem !important; /* 여백 충분히 */
         border-left: 1px solid #eeeeee !important;
-        padding: 3rem 1.5rem !important;
         margin: 0 !important;
         text-align: center !important;
+        box-sizing: border-box !important;
         display: flex !important;
         flex-direction: column !important;
-        justify-content: space-between !important;
-        box-sizing: border-box !important;
-      }
+    }
 
-      #project .posts article:first-child {
+    #project .posts article:first-child {
         border-left: none !important;
-      }
-
-      /* 글자 뭉침 방지 및 가독성 */
-      #project .posts article p {
-        font-size: 0.9rem !important;
-        line-height: 1.8 !important;
-        color: #666 !important;
-        margin-bottom: 2rem !important;
-        word-break: keep-all !important; /* 한글 단어 단위 줄바꿈 */
-        min-height: 4.5em; /* 높이 균형 맞춤 */
-      }
-
-      #project .posts article h2 {
-        font-size: 1.2rem !important;
-        margin-bottom: 1.5rem !important;
-      }
     }
 
-    /* 어워드 섹션 중앙 정렬 */
-    #award header.major {
-      text-align: center;
-      border-bottom: none;
-      margin-top: 5rem;
-    }
-
-    /* 모바일 대응 */
-    @media screen and (max-width: 980px) {
-      #project .posts { display: block !important; }
-      #project .posts article { 
-        border-left: none !important; 
-        border-bottom: 1px solid #eeeeee !important; 
+    /* 2. 텍스트 깨짐(한 글자씩 떨어짐) 방지 */
+    #project .posts article p {
         width: 100% !important;
-        padding: 3rem 1rem !important;
-      }
+        max-width: 100% !important;
+        font-size: 0.95rem !important;
+        line-height: 1.8 !important;
+        word-break: keep-all !important; /* 단어 단위로 줄바꿈 */
+        white-space: normal !important; /* 자동 줄바꿈 허용 */
+        margin: 0 auto 2rem auto !important;
+        display: block !important;
     }
-  </style>
- </head>
- <body class="is-preload">
+    
+    #project .posts article h2 {
+        white-space: nowrap !important; /* 제목은 한 줄 고정 */
+        font-size: 1.3rem !important;
+    }
+}
 
-  <div id="wrapper" class="fade-in">
+/* 3. 어워드 섹션 위치 및 디자인 교정 */
+#award {
+    clear: both !important;
+    padding-top: 5rem !important;
+    text-align: center !important;
+}
 
-    <div id="intro">
-      <h1>Brand Designer</h1>
-      <p>with strong experience in Brand Content Design</p>
-      <p style="font-size: 0.8em; opacity: 0.8;">I am a brand designer specialized in digital design, product storytelling,<br />and visual brand communication.</p>
-      <ul class="actions">
-       <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-      </ul>
-    </div>
+#award table {
+    margin: 2rem auto !important;
+    width: 100% !important;
+    max-width: 600px !important;
+}
 
-    <header id="header">
-      <a href="index.html" class="logo">SONGYI</a>
-    </header>
-
-    <nav id="nav">
-      <ul class="links">
-       <li class="active"><a href="#main">HOME</a></li>
-       <li><a href="#about">About</a></li>
-       <li><a href="#project">Project</a></li>
-       <li><a href="#award">Award</a></li>
-      </ul>
-    </nav>
-
-    <div id="main">
-
-      <article id="about" class="post featured">
-        <header class="major">
-         <span class="date">April 25, 2026</span>
-         <h2>AND THIS IS A<br />MASSIVE HEADLINE</h2>
-         <div style="text-align: left; display: inline-block; margin-top: 2rem;">
-          <p><strong>Name:</strong> Kim Song Yi<br />
-          <strong>E-mail:</strong> kimsongyi85@gmail.com<br />
-          <strong>Call:</strong> 010-9994-0335<br />
-          <strong>Place:</strong> Incheon, KOREA</p>
-         </div>
-        </header>
-        <a href="#" class="image main"><img src="images/500.jpg" alt="" /></a>
-        <ul class="actions special">
-         <li><a href="#" class="button large">portfolio</a></li>
-        </ul>
-      </article>
-
-      <section id="project">
-        <header class="major" style="text-align: center; border-bottom: none; margin-bottom: 3rem;">
-         <h2 style="font-size: 2rem;">PROJECT</h2>
-        </header>
-        
-        <div class="posts">
-          <article>
-           <header class="major">
-            <span class="date">April 24, 2026</span>
-            <h2>Branding</h2>
-           </header>
-           <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
-           <ul class="actions special">
-            <li><a href="branding.html" class="button">바로가기</a></li>
-           </ul>
-          </article>
-          
-          <article>
-           <header class="major">
-            <span class="date">April 22, 2026</span>
-            <h2>Web Mobile</h2>
-           </header>
-           <p>사용자 경험 중심의 반응형 웹 및 앱 인터페이스 디자인</p>
-           <ul class="actions special">
-            <li><a href="#" class="button">바로가기</a></li>
-           </ul>
-          </article>
-          
-          <article>
-           <header class="major">
-            <span class="date">April 18, 2026</span>
-            <h2>Brand Campaign</h2>
-           </header>
-           <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 커뮤니케이션</p>
-           <ul class="actions special">
-            <li><a href="#" class="button">바로가기</a></li>
-           </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="award">
-        <header class="major">
-         <h2 style="font-size: 2rem;">AWARD</h2>
-        </header>
-        <div class="table-wrapper">
-         <table style="text-align: center; margin: 0 auto; width: auto; min-width: 300px;">
-          <tbody>
-           <tr><td>공모전 1등</td></tr>
-           <tr><td>공모전 2등</td></tr>
-           <tr><td>공모전 3등</td></tr>
-          </tbody>
-         </table>
-        </div>
-      </section>
-
-    </div>
-
-    <footer id="footer">
-      <section class="split contact">
-       <section><h3>Address</h3><p>Incheon, South Korea</p></section>
-       <section><h3>Email</h3><p><a href="#">kimsongyi85@gmail.com</a></p></section>
-      </section>
-    </footer>
-
-    <div id="copyright">
-      <ul><li>&copy; SONGYI DESIGN</li><li>Design: HTML5 UP</li></ul>
-    </div>
-
-  </div>
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
- </body>
-</html>
+/* 4. 모바일 레이아웃 (980px 이하) */
+@media screen and (max-width: 980px) {
+    #project .posts {
+        display: block !important;
+    }
+    #project .posts article {
+        width: 100% !important;
+        border-left: none !important;
+        border-bottom: 1px solid #eeeeee !important;
+        padding: 3rem 1.5rem !important;
+    }
+}
