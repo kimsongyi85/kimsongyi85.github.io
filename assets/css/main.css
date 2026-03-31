@@ -4728,7 +4728,85 @@ input, select, textarea {
 
 /* ---디자인 정밀 보정 끝 --- */
 
+<style>
+    /* 1. 기본 레이아웃 안정화 */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden; /* 가로 스크롤 절대 방지 */
+    }
 
+    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+
+    /* 2. 타이포그래피 (모바일 가변 크기 적용) */
+    #project-section .major h2,
+    #award-section .major h2 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important; /* 화면 크기에 따라 폰트 조절 */
+        letter-spacing: 0.2rem !important; 
+        font-weight: 900 !important;
+        margin-bottom: 2rem !important;
+        border: none !important;
+        text-transform: uppercase;
+    }
+
+    /* 3. 프로젝트 그리드 (모바일 대응 핵심) */
+    #project-section .project-grid {
+        display: flex !important;
+        flex-direction: column !important; /* 기본은 세로 배치 (모바일 우선) */
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    #project-section .project-grid article {
+        padding: 3rem 1.5rem !important;
+        border-bottom: 1px solid #e5e5e5 !important; /* 모바일은 가로선 */
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    /* PC 화면 (981px 이상)에서만 3단 가로 배치 */
+    @media screen and (min-width: 981px) {
+        #project-section .project-grid {
+            flex-direction: row !important;
+            justify-content: space-between !important;
+        }
+        #project-section .project-grid article {
+            flex: 1 !important;
+            border-bottom: none !important;
+            border-left: 1px solid #e5e5e5 !important;
+        }
+        #project-section .project-grid article:first-child {
+            border-left: none !important;
+        }
+    }
+
+    /* 4. AWARD 테이블 모바일 최적화 */
+    #award-section table {
+        width: 100% !important;
+        margin: 0 auto 3rem auto !important;
+    }
+    #award-section table td {
+        padding: 1rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* 5. 푸터 (가장 안전한 방식) */
+    #footer {
+        background: #ffffff !important;
+        width: 100% !important;
+        padding: 4rem 0 !important;
+        margin: 0 !important;
+        border-top: 1px solid #eeeeee !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
+    #footer p {
+        color: #bbb !important;
+        font-size: 0.7rem;
+        letter-spacing: 0.15rem;
+        margin: 0 !important;
+    }
+</style>
 		
 
 	}
