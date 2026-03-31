@@ -6,80 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
 <style>
-    /* 1. PC 버전: 프로젝트 3단 고정 및 디자인 정밀 수정 */
-    @media screen and (min-width: 981px) {
-      #project-section .project-grid {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        align-items: stretch !important;
-        width: 100% !important;
-        /* 프로젝트 상단 회색선 제거 */
-        border-top: none !important; 
-        margin: 2rem 0 !important;
-      }
+    /* ...기존에 있던 코드들... */
 
-      #project-section .project-grid article {
-        flex: 1 !important;
-        width: 33.33% !important;
-        padding: 4rem 2rem !important;
-        /* 세로 구분선 제거 */
-        border-left: none !important; 
-        text-align: center !important;
-        box-sizing: border-box !important;
-      }
-
-      /* 날짜(April 24, 2026) 위아래 회색선 제거 */
-      #project-section .project-grid article header.major:after,
-      #project-section .project-grid article header.major:before {
+    /* 여기에 새로 드린 코드를 붙여넣으세요! */
+    #project-section .project-grid article header.major:after,
+    #project-section .project-grid article header.major:before {
         display: none !important;
-      }
-
-      #project-section .project-grid article h2 {
-        font-size: 1.3rem !important;
-        white-space: nowrap !important;
-        margin-bottom: 1.5rem !important;
-        color: #212931 !important; /* 제목 검정색 */
-      }
-
-      #project-section .project-grid article p {
-        font-size: 0.9rem !important;
-        line-height: 1.8 !important;
-        word-break: keep-all !important;
-        margin-bottom: 2rem !important;
-        color: #666 !important;
-      }
+    }
+    
+    @media screen and (min-width: 981px) {
+        #project-section .project-grid article {
+            border-left: 1px solid #e5e5e5 !important;
+            padding: 4rem 2rem !important;
+        }
+        #project-section .project-grid article:first-child {
+            border-left: none !important;
+        }
     }
 
-    /* 2. '바로가기' 버튼 글씨색 검정으로 고정 */
     #project-section .project-grid article .button {
-      color: #212931 !important; /* 파란색 대신 검정색 */
-      border-color: #212931 !important; /* 테두리도 검정색 */
-      box-shadow: none !important;
-      font-weight: bold !important;
-      text-decoration: none !important;
-    }
-
-    #project-section .project-grid article .button:hover {
-      background-color: #212931 !important; /* 마우스 올리면 검정 배경 */
-      color: #ffffff !important; /* 글씨는 흰색으로 반전 */
-    }
-
-    /* 3. 어워드 섹션 및 기타 잔선 제거 */
-    #award-section {
-      clear: both !important;
-      padding: 5rem 0 !important;
-      text-align: center !important;
-      border-top: none !important; /* 어워드 위쪽 선 제거 */
-    }
-
-    /* 메인 섹션들 사이의 기본 구분선 제거 */
-    header.major {
-      border-bottom: none !important;
+        display: inline-block !important;
+        border: 1px solid #212931 !important;
+        padding: 0 1.5rem !important;
+        height: 3rem !important;
+        line-height: 3rem !important;
+        color: #212931 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
     }
 </style>
+
+
+
+
+
+
+
+  
   
  </head>
  <body class="is-preload">
