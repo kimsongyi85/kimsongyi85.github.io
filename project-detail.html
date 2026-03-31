@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-<html>
- <head>
+<head>
   <title>Project Detail - SONGYI DESIGN</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -8,35 +6,52 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   
   <style>
-    /* 상세페이지 전용 추가 스타일 */
-    #main > .project-header { text-align: center; padding: 4rem 0; border-bottom: 1px solid #eee; }
-    .project-info-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin: 4rem 0; text-align: left; }
-    .info-label { font-weight: 700; text-transform: uppercase; color: #333; display: block; margin-bottom: 0.5rem; }
-    .project-content img { width: 100%; margin-bottom: 2rem; display: block; }
+    /* 1. 상세페이지 기본 레이아웃 */
+    #main > .project-header { 
+        text-align: center; 
+        padding: 4rem 0; 
+        border-bottom: 1px solid #eee; 
+    }
+    
+    /* [핵심] 서브 타이틀 중앙 정렬 확실히 하기 */
+    .project-header p {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100%;
+        display: block;
+    }
+
+    .project-info-grid { 
+        display: grid; 
+        grid-template-columns: 1fr 2fr; 
+        gap: 3rem; 
+        margin: 4rem 0; 
+        text-align: left; 
+    }
+
+    .info-label { 
+        font-weight: 700; 
+        text-transform: uppercase; 
+        color: #333; 
+        display: block; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .project-content img { 
+        width: 100%; 
+        margin-bottom: 2rem; 
+        display: block; 
+        min-height: 200px; 
+        background: #f9f9f9; 
+    }
+
     .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
     .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
-    
-    /* 스크린샷처럼 이미지가 안 뜰 때를 대비한 최소 높이 */
-    .project-content img { min-height: 200px; background: #f9f9f9; }
 
-    @media screen and (max-width: 736px) { .project-info-grid { grid-template-columns: 1fr; } }
-  </style>
-
-  /* 상세페이지 헤더의 모든 요소 중앙 정렬 */
-.project-header {
-    text-align: center;
-    padding: 4rem 0;
-    border-bottom: 1px solid #eee;
-}
-
-.project-header p {
-    text-align: center; /* 서브 타이틀 중앙 정렬 */
-    margin: 0 auto;
-    width: 100%;
-}
-
-  
- </head>
+    @media screen and (max-width: 736px) { 
+        .project-info-grid { grid-template-columns: 1fr; } 
+    }
+  </style> </head>
  <body class="is-preload">
 
   <div id="wrapper">
