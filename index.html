@@ -79,21 +79,20 @@
             margin-bottom: 1.2rem !important; 
         }
 
-/* 5. 모바일 통합 대응 내 h2 최종 수정 */
 #project-section .project-grid article header.major h2 {
-    font-size: 1.8rem !important; /* 글씨를 다시 조금 키워야 자리가 좁아져서 잘 꺾입니다 */
+    font-size: 1.8rem !important; /* 1. 폰트를 조금 키워서 자리를 꽉 차게 만듭니다 */
     line-height: 1.2 !important;
     letter-spacing: 0.1rem !important; 
     
-    /* 핵심: 너비를 제한해서 강제로 두 줄 유도 */
-    display: inline-block !important; /* 너비 조절을 위해 block 계열로 설정 */
-    max-width: 180px !important; /* 180px이 넘어가면 다음 줄로 꺾으라는 신호 */
-    word-break: break-all !important; 
+    /* 2. 핵심 수정: 단어가 중간에 잘리지 않도록 설정 */
+    word-break: keep-all !important; /* 단어 단위로 줄바꿈 (아이폰 필수) */
+    overflow-wrap: break-word !important; 
     white-space: normal !important; 
     
-    margin: 0 auto !important; /* 중앙 정렬 유지 */
+    display: block !important;
+    max-width: 100% !important; /* 너비 제한 해제 */
+    margin: 0 !important;
     text-align: center !important;
-    min-height: 4rem; 
 }
         #project-section .project-grid article .actions.special .button {
             display: inline-block !important;
