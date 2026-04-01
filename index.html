@@ -57,10 +57,6 @@
         text-transform: none !important;
     }
 
-
-
-
-   
     /* 5. 모바일 통합 대응 (980px 이하) */
     @media screen and (max-width: 980px) {
         #intro { padding: 4rem 2rem !important; min-height: auto !important; }
@@ -79,21 +75,21 @@
             margin-bottom: 1.2rem !important; 
         }
 
-#project-section .project-grid article header.major h2 {
-    font-size: 1.8rem !important; /* 1. 폰트를 조금 키워서 자리를 꽉 차게 만듭니다 */
-    line-height: 1.2 !important;
-    letter-spacing: 0.1rem !important; 
-    
-    /* 2. 핵심 수정: 단어가 중간에 잘리지 않도록 설정 */
-    word-break: keep-all !important; /* 단어 단위로 줄바꿈 (아이폰 필수) */
-    overflow-wrap: break-word !important; 
-    white-space: normal !important; 
-    
-    display: block !important;
-    max-width: 100% !important; /* 너비 제한 해제 */
-    margin: 0 !important;
-    text-align: center !important;
-}
+        #project-section .project-grid article header.major h2 {
+            font-size: 1.8rem !important; /* 폰트를 키워야 모바일폭에서 자연스럽게 꺾입니다 */
+            line-height: 1.2 !important;
+            letter-spacing: 0.1rem !important; 
+            
+            /* 핵심: 단어 보존형 줄바꿈 설정 */
+            word-break: keep-all !important; 
+            white-space: normal !important; 
+            overflow-wrap: break-word !important;
+            
+            display: block !important;
+            margin: 0 !important;
+            text-align: center !important;
+        }
+
         #project-section .project-grid article .actions.special .button {
             display: inline-block !important;
             width: 100% !important;
@@ -125,24 +121,21 @@
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
         
-/* 타이틀과 이미지 간격 축소 반영 */
-#project-section .project-grid article header.major { 
-    min-height: auto !important;
-    display: flex !important; 
-    flex-direction: column !important;
-    align-items: center !important; 
-    justify-content: center !important;
-    /* 1. 이 부분을 줄여야 이미지와 더 밀착됩니다 */
-    margin-bottom: 0.4rem !important; 
-}
+        #project-section .project-grid article header.major { 
+            min-height: auto !important;
+            display: flex !important; 
+            flex-direction: column !important;
+            align-items: center !important; 
+            justify-content: center !important;
+            margin-bottom: 0.4rem !important; 
+        }
 
-#project-section .project-grid article header.major h2 {
-    /* 2. 이 부분을 줄여야 글자 바로 아래 여백이 사라집니다 */
-    margin-bottom: 0.4rem !important;
-    line-height: 1.1 !important;
-}
+        #project-section .project-grid article header.major h2 {
+            margin-bottom: 0.4rem !important;
+            line-height: 1.1 !important;
+            word-break: keep-all !important;
+        }
 
-        /* 버튼 가로 100% 채우기 반영 */
         #project-section .project-grid article .actions.special {
             width: 100% !important;
             margin: 1.5rem 0 0 0 !important;
@@ -244,45 +237,44 @@
           <h2>PROJECT</h2>
         </header>
 
-<div class="project-grid">
-    <article>
-        <header class="major">
-            <p class="sub-title">Brand & Digital Designer</p>
-            <h2>BRANDING<br />DESIGN</h2>
-        </header>
-        <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
-        <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
-        <ul class="actions special">
-            <li><a href="branding.html" class="button">바로가기</a></li>
-        </ul>
-    </article>
+        <div class="project-grid">
+            <article>
+                <header class="major">
+                    <p class="sub-title">Brand & Digital Designer</p>
+                    <h2>BRANDING<br /> DESIGN</h2>
+                </header>
+                <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
+                <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
+                <ul class="actions special">
+                    <li><a href="branding.html" class="button">바로가기</a></li>
+                </ul>
+            </article>
 
-    <article>
-        <header class="major">
-            <p class="sub-title">Brand & Digital Designer</p>
-            <h2>WEB<br />MOBILE</h2>
-        </header>
-        <span class="image fit"><img src="images/web.jpg" alt="" /></span>
-        <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
-        <ul class="actions special">
-            <li><a href="webdesign.html" class="button">바로가기</a></li>
-        </ul>
-    </article>
+            <article>
+                <header class="major">
+                    <p class="sub-title">Brand & Digital Designer</p>
+                    <h2>WEB<br /> MOBILE</h2>
+                </header>
+                <span class="image fit"><img src="images/web.jpg" alt="" /></span>
+                <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
+                <ul class="actions special">
+                    <li><a href="webdesign.html" class="button">바로가기</a></li>
+                </ul>
+            </article>
 
-    <article>
-        <header class="major">
-            <p class="sub-title">Brand & Digital Designer</p>
-            <h2>BRAND<br />CAMPAIGN</h2>
-        </header>
-        <span class="image fit"><img src="images/campaign.jpg" alt="" /></span>
-        <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
-        <ul class="actions special">
-            <li><a href="campaign.html" class="button">바로가기</a></li>
-        </ul>
-    </article>
-</div>
-
-      
+            <article>
+                <header class="major">
+                    <p class="sub-title">Brand & Digital Designer</p>
+                    <h2>BRAND<br /> CAMPAIGN</h2>
+                </header>
+                <span class="image fit"><img src="images/campaign.jpg" alt="" /></span>
+                <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
+                <ul class="actions special">
+                    <li><a href="campaign.html" class="button">바로가기</a></li>
+                </ul>
+            </article>
+        </div>
+      </section>
 
       <section id="award-section">
         <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
