@@ -57,53 +57,70 @@
         text-transform: none !important;
     }
 
-    /* 5. 모바일 통합 대응 (980px 이하) */
-    @media screen and (max-width: 980px) {
-        #intro { padding: 4rem 2rem !important; min-height: auto !important; }
-        #intro h1 { font-size: 2.5rem !important; margin-top: 0 !important; line-height: 1.2 !important; }
-        
-        .about-container { display: block; text-align: center; padding: 2rem 1rem; }
-        .about-image { margin-bottom: 2.5rem; max-width: 100%; }
-        .about-info h2, .about-info p.sub-title { text-align: center !important; }
-        .info-list { display: inline-block; text-align: left; }
-        .about-info .actions { justify-content: center !important; }
-
-        #project-section .project-grid article header.major {
-            min-height: auto !important;
-            height: auto !important;
-            padding: 0 !important;
-            margin-bottom: 1.2rem !important; 
-        }
-
-        #project-section .project-grid article header.major h2 {
-            font-size: 1.8rem !important; /* 폰트를 키워야 모바일폭에서 자연스럽게 꺾입니다 */
-            line-height: 1.2 !important;
-            letter-spacing: 0.1rem !important; 
-            
-            /* 핵심: 단어 보존형 줄바꿈 설정 */
-            word-break: keep-all !important; 
-            white-space: normal !important; 
-            overflow-wrap: break-word !important;
-            
-            display: block !important;
-            margin: 0 !important;
-            text-align: center !important;
-        }
-
-        #project-section .project-grid article .actions.special .button {
-            display: inline-block !important;
-            width: 100% !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 1px solid #000000 !important;
-            height: 3.5rem !important;
-            line-height: 3.5rem !important;
-            text-align: center !important;
-            border-radius: 0 !important;
-            font-weight: 700 !important;
-        }
+  /* 5. 모바일 통합 대응 (980px 이하) */
+@media screen and (max-width: 980px) {
+    /* 히어로 영역: 상단 여백 대폭 확보 */
+    #intro { 
+        padding: 8rem 2rem 5rem 2rem !important; 
+        min-height: auto !important; 
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
+    /* 히어로 타이틀: 메뉴와 겹치지 않게 거리 조절 */
+    #intro h1 { 
+        margin-top: 2.5rem !important; 
+        font-size: 2.2rem !important; 
+        line-height: 1.2 !important; 
+    }
+    
+    /* ABOUT 섹션: 모바일 중앙 정렬 */
+    .about-container { display: block; text-align: center; padding: 2rem 1rem; }
+    .about-image { margin-bottom: 2.5rem; max-width: 100%; }
+    .about-info h2, .about-info p.sub-title { text-align: center !important; }
+    .info-list { display: inline-block; text-align: left; }
+    .about-info .actions { justify-content: center !important; }
+
+    /* 프로젝트 섹션 레이아웃 정리 */
+    #project-section .project-grid article header.major {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin-bottom: 1.2rem !important; 
+    }
+
+    /* 프로젝트 타이틀: 한 줄 정렬 최적화 */
+    #project-section .project-grid article header.major h2 {
+        font-size: 1.8rem !important; 
+        line-height: 1.2 !important;
+        letter-spacing: 0.1rem !important; 
+        
+        /* 단어 보존 (한 줄 유지에 유리) */
+        word-break: keep-all !important; 
+        white-space: normal !important; 
+        overflow-wrap: break-word !important;
+        
+        display: block !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    /* 모바일 버튼 스타일 */
+    #project-section .project-grid article .actions.special .button {
+        display: inline-block !important;
+        width: 100% !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #000000 !important;
+        height: 3.5rem !important;
+        line-height: 3.5rem !important;
+        text-align: center !important;
+        border-radius: 0 !important;
+        font-weight: 700 !important;
+    }
+}
     /* 6. PC 전용 프로젝트 스타일 (981px 이상) */
     @media screen and (min-width: 981px) {
         #project-section .project-grid { 
