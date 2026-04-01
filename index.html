@@ -21,10 +21,9 @@
         text-transform: uppercase;
     }
 
-    /* 2. 어워드 섹션 (가장 안정적인 버전) */
+    /* 2. 어워드 섹션 (PC/모바일 공통 - 깨짐 방지 버전) */
     #award-section .table-wrapper {
         width: 100% !important;
-        overflow-x: auto;
     }
 
     #award-section table tbody tr td {
@@ -32,7 +31,10 @@
         font-size: 0.95rem !important;
         color: #212931 !important;   
         letter-spacing: 0.01rem !important; 
-        padding: 1.5rem 2rem !important; /* PC/모바일 공통 여백 */
+        
+        /* PC에서도 왼쪽 벽에서 떨어지도록 여백을 4rem으로 넉넉히 줍니다 */
+        padding: 1.5rem 4rem !important; 
+        
         border-bottom: 1px solid #eee !important; 
         text-align: left;
     }
@@ -60,9 +62,9 @@
     .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
     .info-list .value { color: #666; font-size: 0.95rem; }
 
-    /* 5. 모바일 통합 대응 (980px 이하) - 송이님이 만족하신 버전 */
+    /* 5. 모바일 통합 대응 (980px 이하) - 송이님이 만족하신 설정 */
     @media screen and (max-width: 980px) {
-        /* 히어로 영역: 상단 여백 확보 */
+        /* 히어로 영역: 상단 여백 */
         #intro { 
             padding: 8rem 2rem 5rem 2rem !important; 
             min-height: auto !important; 
@@ -70,7 +72,7 @@
         }
         #intro h1 { margin-top: 2.5rem !important; font-size: 2.2rem !important; }
         
-        /* ABOUT & 프로젝트 모바일 최적화 */
+        /* ABOUT & 프로젝트 모바일 */
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
         .info-list { display: inline-block; text-align: left; }
@@ -81,11 +83,11 @@
             text-align: center !important;
         }
 
-        /* 어워드 모바일 여백 */
-        #award-section table tbody tr td { padding: 1.5rem 1.2rem !important; }
+        /* 어워드 모바일 여백 (모바일은 화면이 좁으니 여백을 살짝 줄임) */
+        #award-section table tbody tr td { padding: 1.5rem 1.5rem !important; }
     }
 
-    /* 6. 공통 효과 & 푸터 */
+    /* 6. 기타 공통 설정 */
     .button:hover { background-color: #212931 !important; color: #ffffff !important; }
     #footer { background: #212931 !important; padding: 5rem 0 !important; text-align: center; }
     #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; }
@@ -110,7 +112,6 @@
     </div>
 
     <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
-
     <nav id="nav">
       <ul class="links">
         <li class="active"><a href="index.html">HOME</a></li>
