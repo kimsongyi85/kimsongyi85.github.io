@@ -46,17 +46,7 @@
     }
     .info-list .value { color: #666; font-size: 0.95rem; }
     
-    /* 4. 프로젝트 스타일 (공통 및 PC 전용) */
-    .project-grid article header.major .sub-title {
-        display: block !important;
-        font-size: 0.85rem !important;
-        color: #999 !important;
-        letter-spacing: 0.05rem !important;
-        font-family: serif !important;
-        font-style: italic !important;
-        text-transform: none !important;
-    }
-
+    /* 4. 프로젝트 스타일 (PC 전용) */
     @media screen and (min-width: 981px) {
         #project-section .project-grid { 
             display: flex !important; 
@@ -72,106 +62,64 @@
             margin: 0 !important;
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
-        
-        #project-section .project-grid article header.major { 
-            min-height: auto !important;
-            display: flex !important; 
-            flex-direction: column !important;
-            align-items: center !important; 
-            justify-content: center !important;
-            margin-bottom: 0.4rem !important; 
-        }
-        
-        #project-section .project-grid article header.major h2 {
-            margin-bottom: 0.4rem !important;
-            line-height: 1.1 !important;
-        }
-
-        #project-section .project-grid article .actions.special {
-            width: 100% !important;
-            margin: 1.5rem 0 0 0 !important;
-        }
-        #project-section .project-grid article .actions.special li {
-            width: 100% !important;
-            padding: 0 !important;
-        }
-        #project-section .project-grid article .actions.special .button {
-            width: 100% !important;
-            text-align: center !important;
-            padding: 0 !important;
-            height: 3.5rem !important;
-            line-height: 3.5rem !important;
-        }
+        #project-section .project-grid article header.major { margin-bottom: 0.4rem !important; }
     }
     
-    /* 5. 어워드 섹션 스타일 (송이님 요청 반영) */
+    /* 5. 어워드 섹션 - 기본 (PC) */
     #award-section .table-wrapper {
         width: 100% !important;
-        padding: 0 2rem !important;
+        padding: 0 !important;
+    }
+    #award-section table {
+        width: 100% !important;
+        margin: 0 !important;
+        border-collapse: collapse !important;
     }
     #award-section table tbody tr td {
-        font-weight: 700 !important; /* Semi-Bold */
+        font-weight: 700 !important; 
         font-size: 0.95rem !important;
         color: #212931 !important;   
-        letter-spacing: 0.01rem !important; 
-        padding: 1.5rem 3rem !important; /* 좌측 여백 확보 */
+        padding: 1.5rem 3rem !important; 
         border-bottom: 1px solid #eee !important; 
         text-align: left;
     }
-    #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
     /* 6. 모바일 통합 대응 (980px 이하) */
     @media screen and (max-width: 980px) {
-        #intro { padding: 8rem 2rem 5rem 2rem !important; min-height: auto !important; text-align: center !important; }
-        #intro h1 { font-size: 2.2rem !important; margin-top: 2.5rem !important; line-height: 1.2 !important; }
+        /* 인트로 */
+        #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
+        #intro h1 { font-size: 2.2rem !important; margin-top: 2.5rem !important; }
         
+        /* 어바웃 */
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
-        .about-info h2, .about-info p.sub-title { text-align: center !important; }
         .info-list { display: inline-block; text-align: left; }
-        .about-info .actions { justify-content: center !important; }
         
+        /* 프로젝트 모바일 */
         #project-section .project-grid { display: block !important; }
-        #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; }
-        #project-section .project-grid article header.major h2 {
-            font-size: 2rem !important;
-            line-height: 1.1 !important;
-            word-break: keep-all !important;
-            text-align: center !important;
+        #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 3rem 1.5rem !important; }
+        
+        /* 어워드 모바일 (100% 꽉 차게) */
+        #award-section { padding: 0 !important; }
+        #award-section .table-wrapper { padding: 0 !important; margin: 0 !important; width: 100% !important; }
+        #award-section table { width: 100% !important; border-radius: 0 !important; }
+        #award-section table tbody tr td { 
+            padding: 1.5rem 1.5rem !important; /* 선은 끝까지, 글자만 좌측 여백 */
+            border-left: none !important;
+            border-right: none !important;
         }
-
-        #project-section .project-grid article .actions.special .button {
-            display: inline-block !important;
-            width: 100% !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 1px solid #000000 !important;
-        }
-
-        #award-section table tbody tr td { padding: 1.5rem 1rem !important; }
     }
     
-    /* 7. 공통 버튼 호버 & 푸터 스타일 */
-    .button:hover, #project-section .project-grid article .actions.special .button:hover {
-        background-color: #212931 !important;
-        color: #ffffff !important;
-        border-color: #212931 !important;
-    }
-    
+    /* 7. 푸터 스타일 */
     #footer {
         background: #212931 !important;
         width: 100vw !important;
         position: relative;
         left: 50%; right: 50%;
         margin-left: -50vw !important; margin-right: -50vw !important;
-        display: flex !important;
-        flex-direction: column;
-        align-items: center; justify-content: center;
         padding: 5rem 0 !important;
-        border: none !important;
     }
-    #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; font-size: 0.9rem; }
-    
+    #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; }
     body { overflow-x: hidden; }
   </style>
  </head>
@@ -192,9 +140,7 @@
       </ul>
     </div>
     
-    <header id="header">
-      <a href="index.html" class="logo">SONGYI</a>
-    </header>
+    <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
     
     <nav id="nav">
       <ul class="links">
@@ -233,42 +179,33 @@
         <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
           <h2>PROJECT</h2>
         </header>
-    
         <div class="project-grid">
             <article>
                 <header class="major">
-                    <p class="sub-title">Brand & Digital Designer</p>
-                    <h2>BRANDING<br />DESIGN</h2>
+                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
+                    <h2>BRANDING DESIGN</h2>
                 </header>
                 <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
                 <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
-                <ul class="actions special">
-                    <li><a href="branding.html" class="button">바로가기</a></li>
-                </ul>
+                <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
             </article>
-    
             <article>
                 <header class="major">
-                    <p class="sub-title">Brand & Digital Designer</p>
-                    <h2>WEB<br />MOBILE</h2>
+                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
+                    <h2>WEB MOBILE</h2>
                 </header>
                 <span class="image fit"><img src="images/web.jpg" alt="" /></span>
                 <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
-                <ul class="actions special">
-                    <li><a href="webdesign.html" class="button">바로가기</a></li>
-                </ul>
+                <ul class="actions special"><li><a href="webdesign.html" class="button">바로가기</a></li></ul>
             </article>
-    
             <article>
                 <header class="major">
-                    <p class="sub-title">Brand & Digital Designer</p>
-                    <h2>BRAND<br />CAMPAIGN</h2>
+                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
+                    <h2>BRAND CAMPAIGN</h2>
                 </header>
                 <span class="image fit"><img src="images/campaign.jpg" alt="" /></span>
                 <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
-                <ul class="actions special">
-                    <li><a href="campaign.html" class="button">바로가기</a></li>
-                </ul>
+                <ul class="actions special"><li><a href="campaign.html" class="button">바로가기</a></li></ul>
             </article>
         </div>
       </section>
@@ -289,12 +226,8 @@
       </section> 
     </div> 
     
-    <footer id="footer">
-        <p>&copy; 2026 Songyi Design. All rights reserved.</p>
-    </footer>
-    
+    <footer id="footer"><p>&copy; 2026 Songyi Design. All rights reserved.</p></footer>
   </div> 
-    
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
   <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -302,6 +235,5 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-    
  </body>
 </html>
