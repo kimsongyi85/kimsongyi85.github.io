@@ -10,7 +10,7 @@
   <style>
     /* 1. 기본 타이포그래피 & 공통 설정 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
-    #main { border: none !important; } /* [핵심] 어워드 밑 흰색 라인 제거 */
+    #main { border: none !important; }
     
     #project-section .major h2,
     #award-section .major h2 {
@@ -59,7 +59,7 @@
         #project-section .project-grid article header.major { margin-bottom: 0.4rem !important; min-height: 120px !important; display: flex; flex-direction: column; justify-content: center; }
     }
     
-    /* 5. 어워드 섹션 (PC/모바일 공통 100% 선) */
+    /* 5. 어워드 섹션 */
     #award-section { border-bottom: none !important; }
     #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
     #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
@@ -73,7 +73,7 @@
     }
     #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
-    /* 6. 모바일 통합 대응 (980px 이하) - 버튼 디자인 통일 */
+    /* 6. 모바일 통합 대응 (980px 이하) - 타이틀 2줄 강제 정렬 보강 */
     @media screen and (max-width: 980px) {
         #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
@@ -82,10 +82,25 @@
         #project-section .project-grid { display: block !important; }
         #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
         
-        /* 모바일 타이틀 2줄 대응 */
-        #project-section .project-grid article header.major h2 { font-size: 2.2rem !important; line-height: 1.1 !important; word-break: keep-all !important; }
+        /* [수정] 모바일 프로젝트 타이틀 가독성 강화 */
+        #project-section .project-grid article header.major h2 { 
+            font-size: 1.8rem !important; /* 모바일에서 너무 크지 않게 조절 */
+            line-height: 1.2 !important; 
+            letter-spacing: 0.1rem !important;
+            word-break: keep-all !important; 
+            text-align: center !important;
+            display: block !important;
+            width: 100% !important;
+        }
+        
+        /* <br> 태그가 모바일에서 확실히 작동하도록 설정 */
+        #project-section .project-grid article header.major h2 br {
+            display: block !important;
+            content: "" !important;
+            margin-top: 0.2rem !important;
+        }
 
-        /* [핵심] 모바일 '바로가기' 버튼을 Portfolio 버튼과 동일한 테두리 스타일로 */
+        /* 모바일 바로가기 버튼 */
         #project-section .project-grid article .actions.special { margin-top: 2rem !important; }
         #project-section .project-grid article .actions.special .button {
             display: block !important;
@@ -94,12 +109,10 @@
             line-height: 3.5rem !important;
             background-color: transparent !important;
             color: #212931 !important;
-            box-shadow: inset 0 0 0 1px #212931 !important; /* 포트폴리오 버튼과 동일한 테두리 기법 */
-            border: none !important;
+            box-shadow: inset 0 0 0 1px #212931 !important;
             font-weight: 700 !important;
             text-align: center !important;
             border-radius: 0 !important;
-            text-transform: uppercase;
         }
 
         #award-section table tbody tr td { padding: 1.5rem 1.5rem !important; }
