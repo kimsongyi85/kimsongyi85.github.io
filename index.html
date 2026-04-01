@@ -57,12 +57,24 @@
         text-transform: none !important;
     }
 
-    /* 5. 모바일 통합 대응 (980px 이하) */
-    @media screen and (max-width: 980px) {
-        /* 히어로 섹션 상단 공백 축소 */
-        #intro { padding: 3.8rem 2rem !important; min-height: auto !important; }
-        #intro h1 { font-size: 2.5rem !important; margin-top: 0 !important; line-height: 1.2 !important; }
-        #intro p { margin-bottom: 1.5rem !important; }
+/* [수정] 모바일 히어로 섹션 공백 조절 */
+        #intro {
+            /* 첫 번째 숫자(7rem)를 키울수록 상단 공백이 길어집니다 */
+            padding: 7rem 2rem 4rem 2rem !important; 
+            
+            /* auto 대신 높이를 어느 정도 확보해주면 훨씬 시원해 보입니다 */
+            min-height: 60vh !important; 
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important; /* 내용물을 세로 중앙 배치 */
+        }
+
+        #intro h1 {
+            font-size: 2.5rem !important;
+            margin-top: 0 !important;
+            line-height: 1.2 !important;
+            margin-bottom: 1rem !important;
+        }
 
         /* About 섹션 레이아웃 */
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
