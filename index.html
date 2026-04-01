@@ -44,7 +44,7 @@
     .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
     .info-list .value { color: #666; font-size: 0.95rem; }
     
-    /* 4. 프로젝트 스타일 (PC 전용 3단 배열 & 버튼 폭 수정) */
+    /* 4. 프로젝트 스타일 (PC 3단 배열 & 버튼 폭 100% 강제 적용) */
     @media screen and (min-width: 981px) {
         #project-section .project-grid { display: flex !important; align-items: stretch !important; justify-content: space-between !important; }
         #project-section .project-grid article {
@@ -56,14 +56,22 @@
             margin: 0 !important;
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
-        #project-section .project-grid article header.major { margin-bottom: 0.4rem !important; min-height: 120px !important; display: flex; flex-direction: column; justify-content: center; }
         
-        /* [수정] PC에서 버튼을 이미지 가로길이와 동일하게 100%로 설정 */
-        #project-section .project-grid article .actions.special { width: 100% !important; margin: 2rem 0 0 0 !important; }
-        #project-section .project-grid article .actions.special li { width: 100% !important; padding: 0 !important; }
+        /* [핵심] PC에서 버튼을 가로로 길게 (이미지 폭과 동일) */
+        #project-section .project-grid article .actions.special { 
+            display: table !important; /* 버튼 리스트를 테이블 구조로 강제 */
+            width: 100% !important; 
+            margin: 2rem 0 0 0 !important; 
+            padding: 0 !important;
+        }
+        #project-section .project-grid article .actions.special li { 
+            display: table-cell !important; 
+            width: 100% !important; 
+            padding: 0 !important; 
+        }
         #project-section .project-grid article .actions.special .button {
-            width: 100% !important;
             display: block !important;
+            width: 100% !important;
             text-align: center !important;
             box-shadow: inset 0 0 0 1px #212931 !important;
             border: none !important;
@@ -75,12 +83,9 @@
     #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
     #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
     #award-section table tbody tr td {
-        font-weight: 700 !important; 
-        font-size: 0.95rem !important;
-        color: #212931 !important;   
-        padding: 1.5rem 3rem !important; 
-        border-bottom: 1px solid #eee !important; 
-        text-align: left;
+        font-weight: 700 !important; font-size: 0.95rem !important;
+        color: #212931 !important; padding: 1.5rem 3rem !important; 
+        border-bottom: 1px solid #eee !important; text-align: left;
     }
     #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
@@ -88,21 +93,19 @@
     @media screen and (max-width: 980px) {
         #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
-        .about-image { margin-bottom: 2.5rem; max-width: 100%; }
         #project-section .project-grid { display: block !important; }
         #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
         
         /* 모바일 타이틀 가독성 강화 */
         #project-section .project-grid article header.major h2 { 
             font-size: 1.8rem !important; line-height: 1.2 !important; 
-            letter-spacing: 0.1rem !important; word-break: keep-all !important; 
-            text-align: center !important; display: block !important;
+            word-break: keep-all !important; display: block !important;
         }
         #project-section .project-grid article header.major h2 br { display: block !important; content: "" !important; margin-top: 0.2rem !important; }
 
-        /* 모바일 바로가기 버튼 */
-        #project-section .project-grid article .actions.special { margin-top: 2rem !important; width: 100% !important; }
-        #project-section .project-grid article .actions.special li { width: 100% !important; padding: 0 !important; }
+        /* 모바일 버튼 */
+        #project-section .project-grid article .actions.special { display: block !important; width: 100% !important; margin-top: 2rem !important; }
+        #project-section .project-grid article .actions.special li { display: block !important; width: 100% !important; padding: 0 !important; }
         #project-section .project-grid article .actions.special .button {
             display: block !important; width: 100% !important; height: 3.5rem !important;
             line-height: 3.5rem !important; background-color: transparent !important;
@@ -114,13 +117,10 @@
     
     /* 7. 푸터 스타일 */
     #footer {
-        background: #212931 !important;
-        width: 100vw !important;
-        position: relative;
-        left: 50%; right: 50%;
+        background: #212931 !important; width: 100vw !important;
+        position: relative; left: 50%; right: 50%;
         margin-left: -50vw !important; margin-right: -50vw !important;
-        padding: 5rem 0 !important;
-        border-top: none !important;
+        padding: 5rem 0 !important; border-top: none !important;
     }
     #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; }
     body { overflow-x: hidden; }
