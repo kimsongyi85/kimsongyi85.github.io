@@ -58,13 +58,46 @@
         text-transform: none !important;
     }
 
-/* 4. 모바일 통합 대응 (980px 이하) */
+/* 5. 모바일 통합 대응 (980px 이하) */
     @media screen and (max-width: 980px) {
+        /* [유지] About 섹션 레이아웃 */
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
         .about-info h2, .about-info p.sub-title { text-align: center !important; }
         .info-list { display: inline-block; text-align: left; }
         .about-info .actions { justify-content: center !important; }
+        
+        /* [수정] 프로젝트 헤더 영역 (이미지와의 간격) */
+        #project-section .project-grid article header.major {
+            min-height: auto !important;
+            height: auto !important;
+            padding: 0 !important;
+            margin-bottom: 1.2rem !important; /* 이미지와의 간격 */
+        }
+
+        /* [수정] 프로젝트 메인 제목 (두 줄 강제 줄바꿈) */
+        #project-section .project-grid article header.major h2 {
+            font-size: 2.0rem !important;      /* 글자를 키워 공간을 부족하게 만듦 */
+            line-height: 1.1 !important;      /* 두 줄 사이 간격을 좁게 */
+            letter-spacing: 0.1rem !important; 
+            word-break: keep-all !important;   /* 단어 단위로 예쁘게 끊기 */
+            white-space: normal !important;    /* 줄바꿈 허용 */
+            margin: 0 !important;
+            display: block !important;
+            text-align: center !important;
+        }
+
+        /* [수정] 서브타이틀 위치 및 간격 */
+        .project-grid article header.major .sub-title {
+            margin-bottom: 0.2rem !important;
+            display: block !important;
+        }
+
+        /* 모바일 버튼 설정 */
+        #project-section .project-grid article .actions.special .button { width: 100%; }
+    }
+
+     
         
         /* 프로젝트 헤더 영역: 이미지와의 간격 최소화 */
         #project-section .project-grid article header.major {
