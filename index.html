@@ -117,19 +117,22 @@
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
         
-        /* 타이틀과 이미지 간격 축소 반영 */
-        #project-section .project-grid article header.major { 
-            min-height: auto !important;
-            display: flex !important; 
-            flex-direction: column !important;
-            align-items: center !important; 
-            justify-content: center !important;
-            margin-bottom: 1rem !important; 
-        }
-        #project-section .project-grid article header.major h2 {
-            margin-bottom: 1rem !important;
-            line-height: 1.1 !important;
-        }
+/* 타이틀과 이미지 간격 축소 반영 */
+#project-section .project-grid article header.major { 
+    min-height: auto !important;
+    display: flex !important; 
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    /* 1. 이 부분을 줄여야 이미지와 더 밀착됩니다 */
+    margin-bottom: 0.3rem !important; 
+}
+
+#project-section .project-grid article header.major h2 {
+    /* 2. 이 부분을 줄여야 글자 바로 아래 여백이 사라집니다 */
+    margin-bottom: 0.3rem !important;
+    line-height: 1.1 !important;
+}
 
         /* 버튼 가로 100% 채우기 반영 */
         #project-section .project-grid article .actions.special {
