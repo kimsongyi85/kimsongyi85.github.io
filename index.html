@@ -8,6 +8,51 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
+
+   /* About 섹션 정보 박스 커스텀 */
+.info-container {
+    display: flex;
+    justify-content: center; /* 전체를 중앙으로 */
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+.info-list {
+    text-align: left; /* 내부 글자는 왼쪽 정렬 */
+    display: inline-block;
+    line-height: 2.2; /* 줄 간격을 시원하게 */
+}
+
+.info-list p {
+    margin: 0 !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.05rem;
+}
+
+.info-list strong {
+    display: inline-block;
+    width: 80px; /* 항목 이름의 너비를 고정해서 시작점을 맞춤 */
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 736px) {
+    .info-container {
+        margin-top: 2rem;
+    }
+    .info-list strong {
+        width: 70px;
+        font-size: 0.75rem;
+    }
+    .info-list p {
+        font-size: 0.85rem;
+    }
+}
+
+   
     /* 1. 타이포그래피 & 공통 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
     
@@ -134,21 +179,25 @@
 
     <div id="main">
 
-      <article id="about" class="post featured">
-        <header class="major">
-          <h2>KIM SONG YI</h2>
-          <div style="text-align: center; display: inline-block; margin-top: 2rem;">
-           <p><strong>Name:</strong> Kim Song Yi<br />
-           <strong>E-mail:</strong> songyi.studio@gmail.com<br />
-           <strong>Call:</strong> 010-9994-0335<br />
-           <strong>Place:</strong> Incheon, KOREA</p>
-          </div>
-        </header>
-        <a href="#" class="image main"><img src="images/profile.jpg" alt="" /></a>
-        <ul class="actions special">
-         <li><a href="#" class="button large">portfolio</a></li>
-        </ul>
-      </article>
+<article id="about" class="post featured">
+  <header class="major">
+    <h2>KIM SONG YI</h2>
+    
+    <div class="info-container">
+      <div class="info-list">
+        <p><strong>Name</strong> Kim Song Yi</p>
+        <p><strong>E-mail</strong> songyi.studio@gmail.com</p>
+        <p><strong>Call</strong> 010-9994-0335</p>
+        <p><strong>Place</strong> Incheon, KOREA</p>
+      </div>
+    </div>
+    
+  </header>
+  <a href="#" class="image main"><img src="images/profile.jpg" alt="" /></a>
+  <ul class="actions special">
+    <li><a href="#" class="button large">Full Portfolio</a></li>
+  </ul>
+</article>
 
       <section id="project-section">
         <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
