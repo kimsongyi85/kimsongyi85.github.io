@@ -21,25 +21,46 @@
         text-transform: uppercase;
     }
 
-    /* 2. 어워드 섹션 (PC & 공통) */
-    #award-section .table-wrapper {
-        width: 100% !important;
-        max-width: 1000px !important;
-        margin: 0 auto !important;
-        padding: 0 2rem !important;
-    }
+/* 2. 어워드 섹션 (PC & 공통) */
+#award-section .table-wrapper {
+    width: 100% !important;
+    max-width: 800px !important; /* PC에서 표의 최대 폭을 줄여서 중앙에 모읍니다 (1000 -> 800) */
+    margin: 0 auto !important;    /* 중앙 정렬 */
+    padding: 0 4rem !important;   /* PC에서 좌우 바깥 여백을 더 크게 확보 (2rem -> 4rem) */
+}
 
-    #award-section table tbody tr td {
-        font-weight: 700 !important; 
-        font-size: 0.95rem !important;
-        color: #212931 !important;   
-        letter-spacing: 0.01rem !important; 
-        padding: 1.5rem 2rem !important; /* PC용 넓은 좌우 여백 */
-        border-bottom: 1px solid #eee !important; 
-        text-align: left;
-    }
+#award-section table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
 
-    #award-section table tbody tr:last-child td { border-bottom: none !important; }
+#award-section table tbody tr td {
+    font-weight: 700 !important; 
+    font-size: 0.95rem !important;
+    color: #212931 !important;   
+    letter-spacing: 0.01rem !important; 
+    
+    /* 텍스트 자체의 좌측 여백을 넉넉히 줍니다 */
+    padding: 1.8rem 2.5rem !important; 
+    
+    border-bottom: 1px solid #eee !important; 
+    text-align: left;
+}
+
+#award-section table tbody tr:last-child td { 
+    border-bottom: none !important; 
+}
+
+/* 모바일 전용 미세 조정 (화면이 작을 땐 여백을 줄여 글씨 공간 확보) */
+@media screen and (max-width: 736px) {
+    #award-section .table-wrapper { 
+        padding: 0 1.5rem !important; 
+        max-width: 100% !important;
+    }
+    #award-section table tbody tr td { 
+        padding: 1.5rem 1rem !important; 
+    }
+}
 
     /* 3. ABOUT 섹션 - PC 레이아웃 */
     @media screen and (min-width: 981px) {
