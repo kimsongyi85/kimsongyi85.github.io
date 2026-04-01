@@ -58,7 +58,7 @@
         text-transform: none !important;
     }
 
-    /* 5. 모바일 통합 대응 (980px 이하) */
+/* 4. 모바일 통합 대응 (980px 이하) */
     @media screen and (max-width: 980px) {
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
@@ -66,26 +66,40 @@
         .info-list { display: inline-block; text-align: left; }
         .about-info .actions { justify-content: center !important; }
         
-        /* 모바일 프로젝트 제목: 두 줄 정렬 및 짤림 방지 */
+        /* 프로젝트 헤더 영역: 이미지와의 간격 최소화 */
+        #project-section .project-grid article header.major {
+            min-height: auto !important;
+            height: auto !important;
+            padding: 0 !important;
+            margin-bottom: 1rem !important; /* 👈 이미지와 타이틀 사이 간격 (조절 가능) */
+        }
+
+        /* 프로젝트 제목: 폰트 크기 조절 및 여백 제거 */
         #project-section .project-grid article header.major h2 {
-            font-size: 1.8rem !important;
+            font-size: 1.6rem !important;      /* 👈 글자가 잘리지 않게 크기 최적화 */
             line-height: 1.2 !important;
             white-space: normal !important;
             word-wrap: break-word !important;
-            letter-spacing: 0.2rem !important;
+            letter-spacing: 0.1rem !important; /* 자간을 살짝 줄여 가독성 확보 */
+            margin: 0 !important;              /* 아래쪽 여백 제거 */
             display: block !important;
-            margin: 0 auto 1.5rem auto !important;
             width: 100% !important;
             text-align: center !important;
         }
 
-        #project-section .project-grid article header.major {
-            min-height: auto !important;
-            height: auto !important;
-            padding: 0.5rem 0 !important;
+        /* 서브타이틀(Brand & Digital...)과 메인타이틀 간격 */
+        .project-grid article header.major .sub-title {
+            margin-bottom: 0.2rem !important;  /* 타이틀 바로 위에 붙도록 설정 */
+        }
+
+        /* 모바일 프로젝트 버튼 꽉 차게 */
+        #project-section .project-grid article .actions.special {
+            margin-top: 1.5rem !important;
         }
         #project-section .project-grid article .actions.special .button { width: 100%; }
     }
+
+   
 
     /* 6. 버튼 & 기타 스타일 */
     .button, #project-section .project-grid article .actions.special .button {
