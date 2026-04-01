@@ -123,6 +123,24 @@
     #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; font-size: 0.9rem; }
 
     body { overflow-x: hidden; }
+
+  
+   /* 프로젝트 그리드 내 서브타이틀 스타일 */
+#project-section .project-grid article header.major .sub-title {
+    display: block !important;
+    font-size: 0.9rem !important;      /* 폰트 크기 유지 */
+    color: #999 !important;            /* 연한 회색 */
+    margin-bottom: 0.8rem !important;  /* h2와의 간격 */
+    text-transform: none !important;   /* 대문자 강제 변환 해제 */
+    font-style: italic !important;     /* 이탤릭체 유지 */
+}
+
+/* 서브타이틀이 위로 가면서 h2의 여백이 너무 크다면 조정 */
+#project-section .project-grid article header.major h2 {
+    margin-top: 0 !important;
+    line-height: 1.2 !important;
+}
+   
   </style>
  </head>
  <body class="is-preload">
@@ -181,15 +199,17 @@
         </header>
 
         <div class="project-grid">
-            <article>
-                <header class="major"><h2>BRANDING<br />DESIGN</h2></header>
-             <p class="sub-title">Brand & Digital Designer</p>
-                <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
-                <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
-                <ul class="actions special">
-                    <li><a href="branding.html" class="button">바로가기</a></li>
-                </ul>
-            </article>
+     <article>
+    <header class="major">
+        <p class="sub-title" style="margin-bottom: 0.5rem; letter-spacing: 0.05rem; color: #999; font-family: serif; font-style: italic;">Brand & Digital Designer</p>
+        <h2>BRANDING<br />DESIGN</h2>
+    </header>
+    <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
+    <p>브랜드 아이덴티티 수립 및 패키지 시스템 디자인 프로젝트</p>
+    <ul class="actions special">
+        <li><a href="branding.html" class="button">바로가기</a></li>
+    </ul>
+</article>
 
             <article>
                 <header class="major"><h2>WEB<br />MOBILE</h2></header>
