@@ -10,6 +10,7 @@
   <style>
     /* 1. 기본 타이포그래피 & 공통 설정 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+    #main { border: none !important; } /* [핵심] 어워드 밑 흰색 라인 제거 */
     
     #project-section .major h2,
     #award-section .major h2 {
@@ -40,19 +41,12 @@
     /* 3. 정보 리스트 스타일 */
     .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
     .info-list li { display: flex; margin-bottom: 1.2rem; align-items: center; border-bottom: none !important; padding: 0 !important; }
-    .info-list .label { 
-        width: 100px; font-weight: 700; color: #212931; 
-        font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase;
-    }
+    .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
     .info-list .value { color: #666; font-size: 0.95rem; }
     
-    /* 4. 프로젝트 스타일 (PC 전용) */
+    /* 4. 프로젝트 스타일 (PC 3단 배열) */
     @media screen and (min-width: 981px) {
-        #project-section .project-grid { 
-            display: flex !important; 
-            align-items: stretch !important; 
-            justify-content: space-between !important;
-        }
+        #project-section .project-grid { display: flex !important; align-items: stretch !important; justify-content: space-between !important; }
         #project-section .project-grid article {
             flex: 1 !important; 
             display: flex !important; 
@@ -62,19 +56,13 @@
             margin: 0 !important;
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
-        #project-section .project-grid article header.major { margin-bottom: 0.4rem !important; }
+        #project-section .project-grid article header.major { margin-bottom: 0.4rem !important; min-height: 120px !important; display: flex; flex-direction: column; justify-content: center; }
     }
     
-    /* 5. 어워드 섹션 - 기본 (PC) */
-    #award-section .table-wrapper {
-        width: 100% !important;
-        padding: 0 !important;
-    }
-    #award-section table {
-        width: 100% !important;
-        margin: 0 !important;
-        border-collapse: collapse !important;
-    }
+    /* 5. 어워드 섹션 (PC/모바일 공통 100% 선) */
+    #award-section { border-bottom: none !important; }
+    #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
+    #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
     #award-section table tbody tr td {
         font-weight: 700 !important; 
         font-size: 0.95rem !important;
@@ -83,31 +71,38 @@
         border-bottom: 1px solid #eee !important; 
         text-align: left;
     }
+    #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
-    /* 6. 모바일 통합 대응 (980px 이하) */
+    /* 6. 모바일 통합 대응 (980px 이하) - 버튼 디자인 통일 */
     @media screen and (max-width: 980px) {
-        /* 인트로 */
         #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
-        #intro h1 { font-size: 2.2rem !important; margin-top: 2.5rem !important; }
-        
-        /* 어바웃 */
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
-        .info-list { display: inline-block; text-align: left; }
         
-        /* 프로젝트 모바일 */
         #project-section .project-grid { display: block !important; }
-        #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 3rem 1.5rem !important; }
+        #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
         
-        /* 어워드 모바일 (100% 꽉 차게) */
-        #award-section { padding: 0 !important; }
-        #award-section .table-wrapper { padding: 0 !important; margin: 0 !important; width: 100% !important; }
-        #award-section table { width: 100% !important; border-radius: 0 !important; }
-        #award-section table tbody tr td { 
-            padding: 1.5rem 1.5rem !important; /* 선은 끝까지, 글자만 좌측 여백 */
-            border-left: none !important;
-            border-right: none !important;
+        /* 모바일 타이틀 2줄 대응 */
+        #project-section .project-grid article header.major h2 { font-size: 2.2rem !important; line-height: 1.1 !important; word-break: keep-all !important; }
+
+        /* [핵심] 모바일 '바로가기' 버튼을 Portfolio 버튼과 동일한 테두리 스타일로 */
+        #project-section .project-grid article .actions.special { margin-top: 2rem !important; }
+        #project-section .project-grid article .actions.special .button {
+            display: block !important;
+            width: 100% !important;
+            height: 3.5rem !important;
+            line-height: 3.5rem !important;
+            background-color: transparent !important;
+            color: #212931 !important;
+            box-shadow: inset 0 0 0 1px #212931 !important; /* 포트폴리오 버튼과 동일한 테두리 기법 */
+            border: none !important;
+            font-weight: 700 !important;
+            text-align: center !important;
+            border-radius: 0 !important;
+            text-transform: uppercase;
         }
+
+        #award-section table tbody tr td { padding: 1.5rem 1.5rem !important; }
     }
     
     /* 7. 푸터 스타일 */
@@ -118,6 +113,7 @@
         left: 50%; right: 50%;
         margin-left: -50vw !important; margin-right: -50vw !important;
         padding: 5rem 0 !important;
+        border-top: none !important;
     }
     #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; }
     body { overflow-x: hidden; }
@@ -125,7 +121,6 @@
  </head>
  <body class="is-preload">
   <div id="wrapper" class="fade-in">
-    
     <div id="intro">
       <h1>Brand Designer</h1>
       <p>with strong experience in Brand Content Design</p>
@@ -135,13 +130,10 @@
           creating a lasting impact through the harmony of space and record.
       </p>
       <div style="height: 3rem;"></div>
-      <ul class="actions">
-       <li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li>
-      </ul>
+      <ul class="actions"><li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li></ul>
     </div>
     
     <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
-    
     <nav id="nav">
       <ul class="links">
        <li class="active"><a href="index.html">HOME</a></li>
@@ -154,55 +146,37 @@
     <div id="main">
       <article id="about" class="post featured">
         <div class="about-container">
-            <div class="about-image">
-                <span class="image main" style="margin:0;"><img src="images/profile.jpg" alt="SONGYI Profile" /></span>
-            </div>
+            <div class="about-image"><span class="image main" style="margin:0;"><img src="images/profile.jpg" alt="SONGYI Profile" /></span></div>
             <div class="about-info">
-                <header class="major">
-                    <h2>KIM SONG YI</h2>
-                    <p class="sub-title">Brand & Digital Designer</p>
-                </header>
+                <header class="major"><h2>KIM SONG YI</h2><p class="sub-title">Brand & Digital Designer</p></header>
                 <ul class="info-list">
                     <li><span class="label">Name</span><span class="value">Kim Song Yi</span></li>
                     <li><span class="label">E-mail</span><span class="value">songyi.studio@gmail.com</span></li>
                     <li><span class="label">Call</span><span class="value">010-9994-0335</span></li>
                     <li><span class="label">Place</span><span class="value">Incheon, KOREA</span></li>
                 </ul>
-                <ul class="actions">
-                    <li><a href="#" class="button large">Portfolio</a></li>
-                </ul>
+                <ul class="actions"><li><a href="#" class="button large">Portfolio</a></li></ul>
             </div>
         </div>
       </article>
     
       <section id="project-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
-          <h2>PROJECT</h2>
-        </header>
+        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>PROJECT</h2></header>
         <div class="project-grid">
             <article>
-                <header class="major">
-                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
-                    <h2>BRANDING DESIGN</h2>
-                </header>
+                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p><h2>BRANDING<br />DESIGN</h2></header>
                 <span class="image fit"><img src="images/brand.jpg" alt="" /></span>
                 <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
                 <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
             </article>
             <article>
-                <header class="major">
-                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
-                    <h2>WEB MOBILE</h2>
-                </header>
+                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p><h2>WEB<br />MOBILE</h2></header>
                 <span class="image fit"><img src="images/web.jpg" alt="" /></span>
                 <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
                 <ul class="actions special"><li><a href="webdesign.html" class="button">바로가기</a></li></ul>
             </article>
             <article>
-                <header class="major">
-                    <p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p>
-                    <h2>BRAND CAMPAIGN</h2>
-                </header>
+                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Brand & Digital Designer</p><h2>BRAND<br />CAMPAIGN</h2></header>
                 <span class="image fit"><img src="images/campaign.jpg" alt="" /></span>
                 <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
                 <ul class="actions special"><li><a href="campaign.html" class="button">바로가기</a></li></ul>
@@ -211,9 +185,7 @@
       </section>
 
       <section id="award-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
-          <h2>AWARD</h2>
-        </header>
+        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>AWARD</h2></header>
         <div class="table-wrapper">
           <table>
             <tbody>
