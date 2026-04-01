@@ -77,6 +77,30 @@
         #project-section .project-grid article .actions.special .button { width: 100%; }
     }
 
+   @media screen and (max-width: 980px) {
+    /* 프로젝트 제목 짤림 방지 및 정렬 */
+    #project-section .project-grid article header.major h2 {
+        font-size: 2rem !important;      /* 폰트 크기를 모바일에 맞춰 축소 */
+        line-height: 1.2 !important;     /* 줄 간격 좁히기 */
+        white-space: normal !important;  /* 줄바꿈 허용 */
+        word-wrap: break-word !important; /* 긴 단어도 강제로 줄바꿈 */
+        overflow-wrap: break-word !important;
+        letter-spacing: 0.1rem !important; /* 자간 살짝 조절 */
+        display: block !important;
+        margin: 0 auto 1.5rem auto !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 제목 영역의 고정 높이 해제 */
+    #project-section .project-grid article header.major {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 0.5rem 0 !important;
+    }
+}
+   
+
     /* 5. 버튼 스타일 통일 (모바일 가시성 해결) */
     .button, 
     #project-section .project-grid article .actions.special .button {
