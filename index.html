@@ -79,18 +79,22 @@
             margin-bottom: 1.2rem !important; 
         }
 
-/* 모바일 프로젝트 타이틀 강제 두 줄 정렬 */
-        #project-section .project-grid article header.major h2 {
-            font-size: 1.5rem !important; /* 사이즈를 1.5로 낮춰야 두 줄 공간이 확보됩니다 */
-            line-height: 1.2 !important;
-            letter-spacing: 0.1rem !important; 
-            word-break: break-all !important; /* 단어가 길면 강제로 쪼개서 다음 줄로 */
-            white-space: normal !important; 
-            margin: 0 !important;
-            display: block !important;
-            text-align: center !important;
-            min-height: 3.6rem; /* 두 줄 높이를 미리 확보해서 덜컹거림 방지 */
-        }
+/* 5. 모바일 통합 대응 내 h2 최종 수정 */
+#project-section .project-grid article header.major h2 {
+    font-size: 1.8rem !important; /* 글씨를 다시 조금 키워야 자리가 좁아져서 잘 꺾입니다 */
+    line-height: 1.2 !important;
+    letter-spacing: 0.1rem !important; 
+    
+    /* 핵심: 너비를 제한해서 강제로 두 줄 유도 */
+    display: inline-block !important; /* 너비 조절을 위해 block 계열로 설정 */
+    max-width: 180px !important; /* 180px이 넘어가면 다음 줄로 꺾으라는 신호 */
+    word-break: break-all !important; 
+    white-space: normal !important; 
+    
+    margin: 0 auto !important; /* 중앙 정렬 유지 */
+    text-align: center !important;
+    min-height: 4rem; 
+}
         #project-section .project-grid article .actions.special .button {
             display: inline-block !important;
             width: 100% !important;
