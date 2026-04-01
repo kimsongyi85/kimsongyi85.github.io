@@ -8,7 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 기본 타이포그래피 & 공백 설정 */
+    /* 1. 기본 타이포그래피 & 공통 설정 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
     
     #project-section .major h2,
@@ -68,7 +68,6 @@
         .info-list { display: inline-block; text-align: left; }
         .about-info .actions { justify-content: center !important; }
 
-        /* 모바일 프로젝트 헤더 정렬 */
         #project-section .project-grid article header.major {
             min-height: auto !important;
             height: auto !important;
@@ -101,7 +100,7 @@
         }
     }
 
-    /* 6. PC 전용 프로젝트 스타일 (981px 이상) - 가로 3단 유지 핵심 */
+    /* 6. PC 전용 프로젝트 스타일 (981px 이상) */
     @media screen and (min-width: 981px) {
         #project-section .project-grid { 
             display: flex !important; 
@@ -118,37 +117,36 @@
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
         
+        /* 타이틀과 이미지 간격 축소 반영 */
         #project-section .project-grid article header.major { 
-            min-height: 5rem !important;
+            min-height: auto !important;
             display: flex !important; 
             flex-direction: column !important;
             align-items: center !important; 
             justify-content: center !important;
-            margin-bottom: 1.3rem !important; 
+            margin-bottom: 1rem !important; 
+        }
+        #project-section .project-grid article header.major h2 {
+            margin-bottom: 1rem !important;
+            line-height: 1.1 !important;
         }
 
-
-        /* 버튼을 부모 너비(이미지 너비)에 100% 맞춤 */
+        /* 버튼 가로 100% 채우기 반영 */
         #project-section .project-grid article .actions.special {
             width: 100% !important;
-            margin: 0 !important;
+            margin: 1.5rem 0 0 0 !important;
         }
-
         #project-section .project-grid article .actions.special li {
             width: 100% !important;
             padding: 0 !important;
         }
-
         #project-section .project-grid article .actions.special .button {
             width: 100% !important;
             text-align: center !important;
             padding: 0 !important;
-            /* 버튼 두께감을 주려면 height를 살짝 조절해도 좋습니다 */
             height: 3.5rem !important;
             line-height: 3.5rem !important;
         }
-    }
-     
     }
 
     /* 7. 공통 버튼 호버 & 푸터 스타일 */
@@ -185,9 +183,8 @@
           본질을 남기는 사유, 여백의 기록.<br>
           We pursue the beauty of essence by distilling complexity into its purest form,<br>
           creating a lasting impact through the harmony of space and record.
-        </p>
-     <div style="height: 3rem;"></div>
-     
+      </p>
+      <div style="height: 3rem;"></div>
       <ul class="actions">
        <li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li>
       </ul>
@@ -263,7 +260,7 @@
 
             <article>
                 <header class="major">
-                    <p class="sub-title">Brand & Digital Designer</p>
+                    <p style="margin-bottom:0.3rem !important;" class="sub-title">Brand & Digital Designer</p>
                     <h2>BRAND<br />CAMPAIGN</h2>
                 </header>
                 <span class="image fit"><img src="images/campaign.jpg" alt="" /></span>
