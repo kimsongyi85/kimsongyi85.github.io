@@ -79,20 +79,18 @@
             margin-bottom: 1.2rem !important; 
         }
 
-#project-section .project-grid article header.major h2 {
-    font-size: 1.6rem !important; /* 1. 크기를 조금 더 줄여서 확실하게 공간 확보 */
-    line-height: 1.2 !important;
-    letter-spacing: 0.1rem !important; 
-    
-    /* 2. 핵심 수정: 단어 중간이라도 칸이 모자라면 다음 줄로 넘기기 */
-    word-break: break-all !important; 
-    white-space: normal !important; 
-    
-    margin: 0 !important;
-    display: block !important;
-    text-align: center !important;
-}
-
+/* 모바일 프로젝트 타이틀 강제 두 줄 정렬 */
+        #project-section .project-grid article header.major h2 {
+            font-size: 1.5rem !important; /* 사이즈를 1.5로 낮춰야 두 줄 공간이 확보됩니다 */
+            line-height: 1.2 !important;
+            letter-spacing: 0.1rem !important; 
+            word-break: break-all !important; /* 단어가 길면 강제로 쪼개서 다음 줄로 */
+            white-space: normal !important; 
+            margin: 0 !important;
+            display: block !important;
+            text-align: center !important;
+            min-height: 3.6rem; /* 두 줄 높이를 미리 확보해서 덜컹거림 방지 */
+        }
         #project-section .project-grid article .actions.special .button {
             display: inline-block !important;
             width: 100% !important;
