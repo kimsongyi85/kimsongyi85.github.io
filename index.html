@@ -110,13 +110,28 @@
         #project-section .project-grid article:first-child { border-left: none !important; }
     }
 
+/* 7. 이미지 & 푸터 스타일 */
     #footer {
-        background: #212931 !important; width: 100vw !important; position: relative;
-        left: 50%; right: 50%; margin-left: -50vw !important; margin-right: -50vw !important;
-        display: flex !important; flex-direction: column; align-items: center;
-        justify-content: center; padding: 5rem 0 !important;
+        background: #212931 !important; /* 남색 배경 유지 */
+        width: 100vw !important;        /* 화면 너비 꽉 채우기 */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5rem 0 !important;
+        border: none !important;       /* 👈 흰색 선을 없애는 핵심 코드 */
     }
-    #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; font-size: 0.9rem; }
+
+    #footer p { 
+        color: rgba(255, 255, 255, 0.4) !important; 
+        font-style: italic; 
+        font-size: 0.9rem; 
+    }
     body { overflow-x: hidden; }
   </style>
  </head>
