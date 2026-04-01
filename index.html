@@ -8,7 +8,7 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* 1. 기본 타이포그래피 & 공통 설정 */
+    /* 1. 기본 타이포그래피 & 공백 설정 */
     header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
     
     #project-section .major h2,
@@ -61,14 +61,14 @@
     @media screen and (max-width: 980px) {
         #intro { padding: 4rem 2rem !important; min-height: auto !important; }
         #intro h1 { font-size: 2.5rem !important; margin-top: 0 !important; line-height: 1.2 !important; }
-        #intro p { margin-bottom: 1.5rem !important; }
-
+        
         .about-container { display: block; text-align: center; padding: 2rem 1rem; }
         .about-image { margin-bottom: 2.5rem; max-width: 100%; }
         .about-info h2, .about-info p.sub-title { text-align: center !important; }
         .info-list { display: inline-block; text-align: left; }
         .about-info .actions { justify-content: center !important; }
 
+        /* 모바일 프로젝트 헤더 정렬 */
         #project-section .project-grid article header.major {
             min-height: auto !important;
             height: auto !important;
@@ -87,8 +87,6 @@
             text-align: center !important;
         }
 
-        .project-grid article header.major .sub-title { margin-bottom: 0.3rem !important; }
-
         #project-section .project-grid article .actions.special .button {
             display: inline-block !important;
             width: 100% !important;
@@ -97,40 +95,36 @@
             border: 1px solid #000000 !important;
             height: 3.5rem !important;
             line-height: 3.5rem !important;
-            padding: 0 !important;
             text-align: center !important;
             border-radius: 0 !important;
             font-weight: 700 !important;
         }
     }
 
-    /* 6. PC 전용 프로젝트 스타일 (981px 이상) */
+    /* 6. PC 전용 프로젝트 스타일 (981px 이상) - 가로 3단 유지 핵심 */
     @media screen and (min-width: 981px) {
-        #project-section .project-grid { display: flex !important; align-items: stretch !important; }
+        #project-section .project-grid { 
+            display: flex !important; 
+            align-items: stretch !important; 
+            justify-content: space-between !important;
+        }
         #project-section .project-grid article {
-            flex: 1 !important; display: flex !important; flex-direction: column !important;
-            padding: 3.5rem 2.5rem !important; border-left: 1px solid #e5e5e5 !important;
+            flex: 1 !important; 
+            display: flex !important; 
+            flex-direction: column !important;
+            padding: 3.5rem 2.5rem !important; 
+            border-left: 1px solid #e5e5e5 !important;
+            margin: 0 !important;
         }
         #project-section .project-grid article:first-child { border-left: none !important; }
         
         #project-section .project-grid article header.major { 
-            min-height: 4.5rem !important;
+            min-height: 5rem !important;
             display: flex !important; 
             flex-direction: column !important;
             align-items: center !important; 
             justify-content: center !important;
-            margin-bottom: 1.2rem !important; 
-        }
-
-        .project-grid article header.major .sub-title {
-            margin-bottom: 1.2rem !important; 
-            font-size: 0.9rem !important;
-            color: rgba(0,0,0,0.5) !important;
-        }
-
-        #project-section .project-grid article p { 
-            min-height: auto !important;
-            margin-bottom: 1.5rem !important;
+            margin-bottom: 1.5rem !important; 
         }
     }
 
