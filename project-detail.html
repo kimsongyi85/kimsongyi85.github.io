@@ -1,172 +1,138 @@
+<!DOCTYPE HTML>
+<html>
 <head>
-  <title>Project Detail - SONGYI DESIGN</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  
-  <style>
-    /* 1. 상세페이지 기본 레이아웃 */
-    #main > .project-header { 
-        text-align: center; 
-        padding: 4rem 0; 
-        border-bottom: 1px solid #eee; 
-    }
+    <title>Project Detail - SONGYI DESIGN</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
-    /* [핵심] 서브 타이틀 중앙 정렬 확실히 하기 */
-    .project-header p {
-        text-align: center !important;
-        margin: 0 auto !important;
-        width: 100%;
-        display: block;
-    }
+    <style>
+        /* 1. 상세페이지 기본 레이아웃 */
+        #main > .project-header { 
+            text-align: center; 
+            padding: 4rem 0; 
+            border-bottom: 1px solid #eee; 
+        }
+        
+        .project-header p {
+            text-align: center !important;
+            margin: 0 auto !important;
+            width: 100%;
+            display: block;
+        }
 
-    .project-info-grid { 
-        display: grid; 
-        grid-template-columns: 1fr 2fr; 
-        gap: 3rem; 
-        margin: 4rem 0; 
-        text-align: left; 
-    }
+        .project-info-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 2fr; 
+            gap: 3rem; 
+            margin: 4rem 0; 
+            text-align: left; 
+        }
 
-    .info-label { 
-        font-weight: 700; 
-        text-transform: uppercase; 
-        color: #333; 
-        display: block; 
-        margin-bottom: 0.5rem; 
-    }
+        .info-label { 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            color: #333; 
+            display: block; 
+            margin-bottom: 0.5rem; 
+        }
 
-    .project-content img { 
-        width: 100%; 
-        margin-bottom: 2rem; 
-        display: block; 
-        min-height: 200px; 
-        background: #f9f9f9; 
-    }
+        .project-content img { 
+            width: 100%; 
+            margin-bottom: 2rem; 
+            display: block; 
+            min-height: 200px; 
+            background: #f9f9f9; 
+        }
 
-    .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
-    .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
+        .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
+        .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
-    @media screen and (max-width: 736px) { 
-        .project-info-grid { grid-template-columns: 1fr; } 
-    }
-  </style> </head>
- <body class="is-preload">
+        @media screen and (max-width: 736px) { 
+            .project-info-grid { grid-template-columns: 1fr; } 
+        }
+    </style> 
+</head>
+<body class="is-preload">
 
-  <div id="wrapper">
+    <div id="wrapper">
+        <header id="header">
+            <a href="index.html" class="logo">SONGYI</a>
+        </header>
 
-    <header id="header">
-      <a href="index.html" class="logo">SONGYI</a>
-    </header>
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">HOME</a></li>
+                <li class="active"><a href="javascript:history.back();">Branding</a></li>
+                <li><a href="index.html#webdesign">WEB/MOBILE</a></li>
+                <li><a href="index.html#campaign">CAMPAIGN</a></li>
+            </ul>
+        </nav>
 
-    <nav id="nav">
-      <ul class="links">
-       <li><a href="index.html">HOME</a></li>
-       <li class="active"><a href="javascript:history.back();">Branding</a></li>
-       <li><a href="index.html#webdesign">WEB/MOBILE</a></li>
-       <li><a href="index.html#campaign">CAMPAIGN</a></li>
-      </ul>
-    </nav>
+        <div id="main">
+            <section class="project-header">
+                <span id="project-date" class="date">Design Project / 2026</span>
+                <h1 id="project-title" style="font-size: 3rem; margin: 1rem 0;">Loading...</h1>
+                <p id="project-sub">Sub-title Loading...</p>
+            </section>
 
-    <div id="main">
-      
-      <section class="project-header">
-        <span id="project-date" class="date">Design Project / 2026</span>
-        <h1 id="project-title" style="font-size: 3rem; margin: 1rem 0;">ROAST ARCHIVE</h1>
-        <p id="project-sub">Specialty Coffee Brand Identity Design</p>
-      </section>
+            <section class="project-info-grid">
+                <div>
+                    <div style="margin-bottom: 2rem;">
+                        <span class="info-label">Role</span>
+                        <p id="project-role">-</p>
+                    </div>
+                    <div>
+                        <span class="info-label">Colors</span>
+                        <div id="project-colors" class="color-palette"></div>
+                    </div>
+                </div>
+                <div>
+                    <span class="info-label">Concept</span>
+                    <p id="project-concept" style="font-size: 1.1rem; line-height: 1.8;">
+                        데이터를 불러오는 중입니다...
+                    </p>
+                </div>
+            </section>
 
-      <section class="project-info-grid">
-        <div>
-          <div style="margin-bottom: 2rem;">
-            <span class="info-label">Role</span>
-            <p id="project-role">Brand Identity, Package Design, Art Direction</p>
-          </div>
-          <div>
-            <span class="info-label">Colors</span>
-            <div id="project-colors" class="color-palette">
-              </div>
-          </div>
+            <section id="project-images" class="project-content"></section>
+
+            <footer style="display: flex; justify-content: space-between; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid #eee;">
+                <a href="#" class="button small">← Previous</a>
+                <a href="javascript:history.back();" class="button small">LIST</a>
+                <a href="#" class="button small">Next →</a>
+            </footer>
         </div>
-        <div>
-          <span class="info-label">Concept</span>
-          <p id="project-concept" style="font-size: 1.1rem; line-height: 1.8;">
-            데이터를 불러오는 중입니다... (자바스크립트가 실행되면 바뀝니다)
-          </p>
+
+        <div id="copyright">
+            <ul><li>&copy; SONGYI DESIGN</li></ul>
         </div>
-      </section>
-
-      <section id="project-images" class="project-content">
-        </section>
-
-      <footer style="display: flex; justify-content: space-between; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid #eee;">
-        <a href="#" class="button small">← Previous</a>
-        <a href="javascript:history.back();" class="button small">LIST</a>
-        <a href="#" class="button small">Next →</a>
-      </footer>
-
     </div>
 
-    <div id="copyright">
-      <ul><li>&copy; SONGYI DESIGN</li></ul>
-    </div>
-
-  </div>
-
-  <script>
-    const PROJECT_DATA = {
-      "roast": {
-        title: "ROAST ARCHIVE",
-        date: "Design Project / 2026",
-        sub: "Specialty Coffee Brand Identity",
-        role: "Brand Identity, Package Design",
-        concept: "'기록'이라는 키워드를 중심으로 스페셜티 커피의 본질을 시각화했습니다. 그리드 시스템과 타이포그래피 중심의 미니멀한 디자인을 적용했습니다.",
-        colors: ["#1a1a1a", "#d4a373", "#fefae0"],
-        images: ["images/b_roast01.webp", "images/b_roast02.webp", "images/b_roast03.webp", "images/b_roast04.webp", "images/b_roast05.webp", "images/b_roast06.webp"
-                , "images/b_roast07.webp", "images/b_roast08.webp", "images/b_roast09.webp", "images/b_roast10.webp", "images/b_roast11.webp", "images/b_roast12.webp"
-                , "images/b_roast13.webp", "images/b_roast14.webp", "images/b_roast15.webp", "images/b_roast16.webp", "images/b_roast17.webp", "images/b_roast18.webp"] 
-      }
-      // ... 다른 데이터들 추가 ...
-    };
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const projectId = urlParams.get('id') || 'roast'; // 기본값 roast
-    const data = PROJECT_DATA[projectId];
-
-    if (data) {
-      document.getElementById('project-title').innerText = data.title;
-      document.getElementById('project-date').innerText = data.date;
-      document.getElementById('project-sub').innerText = data.sub;
-      document.getElementById('project-role').innerText = data.role;
-      document.getElementById('project-concept').innerText = data.concept;
-
-      const colorBox = document.getElementById('project-colors');
-      data.colors.forEach(color => {
-        const div = document.createElement('div');
-        div.className = 'color-circle';
-        div.style.backgroundColor = color;
-        colorBox.appendChild(div);
-      });
-
-      const imageBox = document.getElementById('project-images');
-      data.images.forEach(imgSrc => {
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.alt = "Project Image";
-        imageBox.appendChild(img);
-      });
-    }
-  </script>
-
-   
-
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
- </body>
-</html>
+    <script>
+        const PROJECT_DATA = {
+            "roast": {
+                title: "ROAST ARCHIVE",
+                date: "Design Project / 2026",
+                sub: "Specialty Coffee Brand Identity",
+                role: "Brand Identity, Package Design",
+                concept: "'기록'이라는 키워드를 중심으로 스페셜티 커피의 본질을 시각화했습니다. 그리드 시스템과 타이포그래피 중심의 미니멀한 디자인을 적용했습니다.",
+                colors: ["#1a1a1a", "#d4a373", "#fefae0"],
+                images: ["images/b_roast01.webp", "images/b_roast02.webp"] // 예시 이미지 2개만 유지
+            },
+            "mayfield": {
+                title: "MAYFIELD: THE VOID",
+                date: "Design Project / 2026",
+                sub: "Hotel Rebranding Project",
+                role: "Brand Identity, Amenity Design",
+                concept: "'비움'의 가치를 담은 초미니멀리즘 디자인입니다.",
+                colors: ["#333333", "#eeeeee"],
+                images: ["images/m_b_mayfiled01.webp"]
+            },
+            "onair": {
+                title: "ON AIR WINE LAB",
+                date: "Design Project / 2026",
+                sub: "Wine & Life Branding",
+                role: "Visual Identity, Digital Design",
+                concept: "와인이 선사하는 특별한 순간을 기록하는 아
