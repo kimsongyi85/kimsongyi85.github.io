@@ -49,7 +49,7 @@
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
-        /* 하단 푸터 버튼 스타일 통일성 */
+        /* 하단 푸터 버튼 스타일 - 모바일 최적화 블랙 버전 */
         .project-footer {
             display: flex;
             justify-content: center; 
@@ -69,40 +69,43 @@
             font-weight: 700;
             font-size: 0.8rem;
             padding: 0 5px;
-            border: 2px solid #222 !important; 
-            color: #222 !important;            
-            background: transparent !important;
+            /* 테두리와 글자색을 진한 검정으로 고정 */
+            border: 2px solid #000000 !important; 
+            color: #000000 !important;            
+            background-color: transparent !important;
             transition: all 0.3s ease;
             display: inline-block;
-            white-space: nowrap; /* 글자 줄바꿈 방지 */
+            white-space: nowrap; 
+            -webkit-appearance: none; /* 모바일 브라우저 기본 회색 스타일 방지 */
+            border-radius: 0;         /* 모바일 둥근 모서리 방지 */
         }
 
         .project-footer .button.small:hover {
-            background-color: #222 !important;
-            color: #fff !important;
+            background-color: #000000 !important;
+            color: #ffffff !important;
         }
 
-        /* 비활성화 버튼 - 투명도만 조절하여 통일감 유지 */
+        /* 비활성화 버튼 - 회색이 아닌 '투명한 검정'으로 톤 유지 */
         .project-footer .button.disabled {
-            opacity: 0.2;           
+            border-color: rgba(0, 0, 0, 0.15) !important; 
+            color: rgba(0, 0, 0, 0.15) !important;
             cursor: default;
             pointer-events: none;
         }
 
-        /* 모바일 대응 - 3열 유지 및 폰트 최적화 */
+        /* 모바일 대응 - 레이아웃 및 가독성 최적화 */
         @media screen and (max-width: 736px) {
             .project-info-grid { grid-template-columns: 1fr; } 
             
             .project-footer {
-                gap: 6px; /* 간격을 조금 더 좁힘 */
+                gap: 6px; 
             }
             
             .project-footer .button.small {
-                font-size: 0.6rem;  /* 모바일 가독성을 위한 축소 */
-                letter-spacing: -0.02rem; /* 자간 압축 */
-                height: 40px;
-                line-height: 36px;
-                padding: 0 2px;
+                font-size: 0.65rem;  
+                letter-spacing: -0.02rem;
+                height: 42px;
+                line-height: 38px;
             }
         }
     </style> 
@@ -152,9 +155,10 @@
             <section id="project-images" class="project-content"></section>
 
             <footer class="project-footer">
-            <a href="#" id="prev-btn" class="button small">← PREV</a> <a href="javascript:history.back();" class="button small">LIST</a>
-            <a href="#" id="next-btn" class="button small">NEXT →</a>
-           </footer>
+                <a href="#" id="prev-btn" class="button small">← PREV</a> 
+                <a href="javascript:history.back();" class="button small">LIST</a>
+                <a href="#" id="next-btn" class="button small">NEXT →</a>
+            </footer>
         </div>
 
         <div id="copyright">
