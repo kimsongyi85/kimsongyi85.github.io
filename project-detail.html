@@ -49,28 +49,32 @@
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
-        /* 하단 푸터 버튼 스타일 - 송이님이 좋아하신 디자인 */
+        /* 하단 푸터 버튼 스타일 - 송이님의 통일성 강조 버전 */
         .project-footer {
             display: flex;
             justify-content: center; 
-            gap: 20px; 
+            gap: 15px; 
             margin-top: 5rem;
-            padding-top: 3rem;
+            padding: 3rem 10px 0 10px;
             border-top: 1px solid #eee;
         }
 
         .project-footer .button.small {
-            min-width: 180px; 
-            height: 50px;
-            line-height: 46px;
+            flex: 1;                
+            max-width: 180px;       
+            height: 48px;
+            line-height: 44px;      
             text-align: center;
-            letter-spacing: 0.1rem;
+            letter-spacing: 0.05rem;
             font-weight: 700;
-            padding: 0 20px;
+            font-size: 0.8rem;
+            padding: 0 5px;
             border: 2px solid #222 !important; 
-            color: #222 !important;
+            color: #222 !important;            
             background: transparent !important;
             transition: all 0.3s ease;
+            display: inline-block;
+            white-space: nowrap; /* 글자 줄바꿈 방지 */
         }
 
         .project-footer .button.small:hover {
@@ -78,17 +82,28 @@
             color: #fff !important;
         }
 
-        /* 비활성화된 버튼 스타일 (클릭 안 되게) */
+        /* 비활성화 버튼 - 투명도만 조절하여 통일감 유지 */
         .project-footer .button.disabled {
-            opacity: 0.3;
+            opacity: 0.2;           
             cursor: default;
             pointer-events: none;
         }
 
-        @media screen and (max-width: 736px) { 
+        /* 모바일 대응 - 3열 유지 및 폰트 최적화 */
+        @media screen and (max-width: 736px) {
             .project-info-grid { grid-template-columns: 1fr; } 
-            .project-footer { flex-direction: column; align-items: center; }
-            .project-footer .button.small { width: 100%; }
+            
+            .project-footer {
+                gap: 6px; /* 간격을 조금 더 좁힘 */
+            }
+            
+            .project-footer .button.small {
+                font-size: 0.6rem;  /* 모바일 가독성을 위한 축소 */
+                letter-spacing: -0.02rem; /* 자간 압축 */
+                height: 40px;
+                line-height: 36px;
+                padding: 0 2px;
+            }
         }
     </style> 
 </head>
@@ -228,26 +243,23 @@
 
                 document.title = data.title + " - SONGYI DESIGN";
                 
-                // 버튼 3개 항상 유지 로직
                 const currentNum = parseInt(projectId.replace('work', ''));
                 const totalProjects = Object.keys(PROJECT_DATA).length;
                 const prevBtn = document.getElementById('prev-btn');
                 const nextBtn = document.getElementById('next-btn');
 
-                // 이전 버튼 설정
                 if (currentNum > 1) {
                     prevBtn.href = `project-detail.html?id=work${String(currentNum - 1).padStart(2, '0')}`;
                     prevBtn.classList.remove('disabled');
                 } else {
-                    prevBtn.classList.add('disabled'); // 첫 페이지면 흐리게만 만듦
+                    prevBtn.classList.add('disabled');
                 }
 
-                // 다음 버튼 설정
                 if (currentNum < totalProjects) {
                     nextBtn.href = `project-detail.html?id=work${String(currentNum + 1).padStart(2, '0')}`;
                     nextBtn.classList.remove('disabled');
                 } else {
-                    nextBtn.classList.add('disabled'); // 마지막 페이지면 흐리게만 만듦
+                    nextBtn.classList.add('disabled');
                 }
 
                 setTimeout(() => {
