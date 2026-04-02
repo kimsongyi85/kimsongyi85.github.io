@@ -23,15 +23,12 @@
         }
 
         .project-info-grid { 
-            display: flex; 
-            justify-content: space-between;
+            display: grid; 
+            grid-template-columns: 1fr 2fr;
             gap: 3rem; 
             margin: 4rem 0; 
             text-align: left; 
         }
-
-        .project-info-grid > div:first-child { flex: 1; }
-        .project-info-grid > div:last-child { flex: 2; }
 
         .info-label { 
             font-weight: 700; 
@@ -52,18 +49,18 @@
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
-        /* 하단 푸터 버튼 스타일 수정 */
+        /* 하단 푸터 버튼 스타일 - 송이님이 좋아하신 디자인 */
         .project-footer {
             display: flex;
-            justify-content: center; /* 버튼들을 가운데로 모음 */
-            gap: 20px;               /* 버튼 사이 간격 */
+            justify-content: center; 
+            gap: 20px; 
             margin-top: 5rem;
             padding-top: 3rem;
             border-top: 1px solid #eee;
         }
 
         .project-footer .button.small {
-            min-width: 180px;        /* 모든 버튼의 최소 길이를 똑같이 통일 */
+            min-width: 180px; 
             height: 50px;
             line-height: 46px;
             text-align: center;
@@ -81,8 +78,15 @@
             color: #fff !important;
         }
 
+        /* 비활성화된 버튼 스타일 (클릭 안 되게) */
+        .project-footer .button.disabled {
+            opacity: 0.3;
+            cursor: default;
+            pointer-events: none;
+        }
+
         @media screen and (max-width: 736px) { 
-            .project-info-grid { flex-direction: column; } 
+            .project-info-grid { grid-template-columns: 1fr; } 
             .project-footer { flex-direction: column; align-items: center; }
             .project-footer .button.small { width: 100%; }
         }
@@ -133,9 +137,9 @@
             <section id="project-images" class="project-content"></section>
 
             <footer class="project-footer">
-                <a href="#" class="button small">← PREVIOUS</a>
-                <a href="javascript:history.back();" class="button small">BACK TO LIST</a>
-                <a href="#" class="button small">NEXT →</a>
+                <a href="#" id="prev-btn" class="button small">← PREVIOUS</a>
+                <a href="javascript:history.back();" class="button small">LIST</a>
+                <a href="#" id="next-btn" class="button small">NEXT →</a>
             </footer>
         </div>
 
@@ -190,7 +194,6 @@
                 colors: ["#a2d2ff", "#ffffff", "#e0e0e0"],
                 images: ["images/m_b_nuvola01.webp"]
             }
-            // work05, work06 생략 (필요시 동일 구조로 추가)
         };
 
         window.addEventListener('load', function() {
@@ -225,29 +228,31 @@
 
                 document.title = data.title + " - SONGYI DESIGN";
                 
-                // 이전/다음 버튼 링크 설정 로직 추가
+                // 버튼 3개 항상 유지 로직
                 const currentNum = parseInt(projectId.replace('work', ''));
-                const prevBtn = document.querySelector('.project-footer .button:first-child');
-                const nextBtn = document.querySelector('.project-footer .button:last-child');
+                const totalProjects = Object.keys(PROJECT_DATA).length;
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
 
+                // 이전 버튼 설정
                 if (currentNum > 1) {
                     prevBtn.href = `project-detail.html?id=work${String(currentNum - 1).padStart(2, '0')}`;
+                    prevBtn.classList.remove('disabled');
                 } else {
-                    prevBtn.style.visibility = 'hidden'; 
+                    prevBtn.classList.add('disabled'); // 첫 페이지면 흐리게만 만듦
                 }
 
-                if (currentNum < Object.keys(PROJECT_DATA).length) {
+                // 다음 버튼 설정
+                if (currentNum < totalProjects) {
                     nextBtn.href = `project-detail.html?id=work${String(currentNum + 1).padStart(2, '0')}`;
+                    nextBtn.classList.remove('disabled');
                 } else {
-                    nextBtn.style.visibility = 'hidden';
+                    nextBtn.classList.add('disabled'); // 마지막 페이지면 흐리게만 만듦
                 }
 
                 setTimeout(() => {
                     document.body.classList.remove('is-preload');
                 }, 100);
-            } else {
-                document.getElementById('project-title').innerText = "Project Not Found";
-                document.body.classList.remove('is-preload');
             }
         });
     </script>
