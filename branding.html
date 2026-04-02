@@ -133,6 +133,12 @@
             gap: 12px !important;
         }
 
+        /* [핵심] 자바스크립트가 생성하는 말줄임표를 강제로 숨김 */
+        .pagination .extra, 
+        .pagination span:not(.button):not(.page) { 
+            display: none !important; 
+        }
+
         .pagination a, .pagination span {
             display: inline-block !important;
             height: 44px !important;
@@ -173,6 +179,7 @@
         <a href="#" class="next">Next</a>
     </div>
 </footer>
+            
         </div> </div> <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
