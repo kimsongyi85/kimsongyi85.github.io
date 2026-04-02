@@ -23,12 +23,15 @@
         }
 
         .project-info-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 2fr; 
+            display: flex; 
+            justify-content: space-between;
             gap: 3rem; 
             margin: 4rem 0; 
             text-align: left; 
         }
+
+        .project-info-grid > div:first-child { flex: 1; }
+        .project-info-grid > div:last-child { flex: 2; }
 
         .info-label { 
             font-weight: 700; 
@@ -49,8 +52,39 @@
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
+        /* 하단 푸터 버튼 스타일 수정 */
+        .project-footer {
+            display: flex;
+            justify-content: center; /* 버튼들을 가운데로 모음 */
+            gap: 20px;               /* 버튼 사이 간격 */
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+
+        .project-footer .button.small {
+            min-width: 180px;        /* 모든 버튼의 최소 길이를 똑같이 통일 */
+            height: 50px;
+            line-height: 46px;
+            text-align: center;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            padding: 0 20px;
+            border: 2px solid #222 !important; 
+            color: #222 !important;
+            background: transparent !important;
+            transition: all 0.3s ease;
+        }
+
+        .project-footer .button.small:hover {
+            background-color: #222 !important;
+            color: #fff !important;
+        }
+
         @media screen and (max-width: 736px) { 
-            .project-info-grid { grid-template-columns: 1fr; } 
+            .project-info-grid { flex-direction: column; } 
+            .project-footer { flex-direction: column; align-items: center; }
+            .project-footer .button.small { width: 100%; }
         }
     </style> 
 </head>
@@ -98,10 +132,10 @@
 
             <section id="project-images" class="project-content"></section>
 
-            <footer style="display: flex; justify-content: space-between; margin-top: 5rem; padding-top: 3rem; border-top: 1px solid #eee;">
-                <a href="#" class="button small" style="min-width: 120px;">← Previous</a>
-                <a href="javascript:history.back();" class="button small" style="min-width: 120px;">LIST</a>
-                <a href="#" class="button small" style="min-width: 120px;">Next →</a>
+            <footer class="project-footer">
+                <a href="#" class="button small">← PREVIOUS</a>
+                <a href="javascript:history.back();" class="button small">BACK TO LIST</a>
+                <a href="#" class="button small">NEXT →</a>
             </footer>
         </div>
 
@@ -155,25 +189,8 @@
                 concept: "'구름'의 부드러움을 모티브로 한 향수 브랜드입니다. 몽환적이고 감성적인 비주얼로 향기의 촉각적 경험을 제안합니다.",
                 colors: ["#a2d2ff", "#ffffff", "#e0e0e0"],
                 images: ["images/m_b_nuvola01.webp"]
-            },
-            "work05": {
-                title: "PROJECT TITLE 05",
-                date: "Design Project / 2026",
-                sub: "Coming Soon",
-                role: "Brand Design",
-                concept: "프로젝트 준비 중입니다.",
-                colors: ["#eeeeee", "#cccccc"],
-                images: []
-            },
-            "work06": {
-                title: "PROJECT TITLE 06",
-                date: "Design Project / 2026",
-                sub: "Coming Soon",
-                role: "Brand Design",
-                concept: "프로젝트 준비 중입니다.",
-                colors: ["#eeeeee", "#cccccc"],
-                images: []
             }
+            // work05, work06 생략 (필요시 동일 구조로 추가)
         };
 
         window.addEventListener('load', function() {
@@ -208,7 +225,23 @@
 
                 document.title = data.title + " - SONGYI DESIGN";
                 
-                // 로딩 화면 제거
+                // 이전/다음 버튼 링크 설정 로직 추가
+                const currentNum = parseInt(projectId.replace('work', ''));
+                const prevBtn = document.querySelector('.project-footer .button:first-child');
+                const nextBtn = document.querySelector('.project-footer .button:last-child');
+
+                if (currentNum > 1) {
+                    prevBtn.href = `project-detail.html?id=work${String(currentNum - 1).padStart(2, '0')}`;
+                } else {
+                    prevBtn.style.visibility = 'hidden'; 
+                }
+
+                if (currentNum < Object.keys(PROJECT_DATA).length) {
+                    nextBtn.href = `project-detail.html?id=work${String(currentNum + 1).padStart(2, '0')}`;
+                } else {
+                    nextBtn.style.visibility = 'hidden';
+                }
+
                 setTimeout(() => {
                     document.body.classList.remove('is-preload');
                 }, 100);
