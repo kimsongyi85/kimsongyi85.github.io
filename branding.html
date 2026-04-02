@@ -128,53 +128,50 @@
 
 <footer style="margin-top: 5rem; text-align: center;">
     <style>
-        /* [전체 공통] PC와 모바일 디자인을 완전히 통일 */
+        /* [전체 공통] 모든 버튼의 디자인을 숫자 1의 슬림한 느낌으로 통일 */
         .custom-pagination {
             display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
             gap: 10px !important;
-            font-family: inherit;
         }
 
         .custom-pagination .button, 
         .custom-pagination .page {
-            /* 테두리: 2px로 두께감 강화 */
-            border: 2px solid #000 !important; 
-            /* 폰트: 아주 두껍게 (700 -> 800) */
-            font-weight: 800 !important; 
-            height: 42px !important; /* 테두리 포함 높이 조절 */
+            /* 테두리 두께를 다시 1px로 슬림하게 */
+            border: 1px solid #000 !important; 
+            /* 폰트 두께도 숫자 1과 어울리는 적당한 굵기(500~600) */
+            font-weight: 600 !important; 
+            height: 40px !important;
             line-height: 38px !important; 
             display: inline-block !important;
             text-align: center !important;
-            font-size: 0.9rem !important;
+            font-size: 0.85rem !important;
             text-decoration: none !important;
             box-sizing: border-box !important;
             border-radius: 0 !important;
-            transition: none !important;
         }
 
-        /* Prev, Next 버튼 스타일 (PC/모바일 공통) */
+        /* [PC & 모바일 공통] Prev, Next 버튼: 흰색 배경 + 검정 테두리 */
         .custom-pagination .button {
             background-color: #fff !important; 
             color: #000 !important;
-            padding: 0 20px !important;
+            padding: 0 18px !important;
             cursor: default;
         }
 
-        /* 숫자 1 버튼 스타일 (PC/모바일 공통: 회색 배경 + 검정 테두리) */
+        /* [PC & 모바일 공통] 숫자 1 버튼: 회색 배경 + 검정 테두리 */
         .custom-pagination .page.active {
-            background-color: #eee !important; /* 요청하신 회색 배경 */
+            background-color: #eee !important; /* PC/모바일 모두 회색 배경 */
             color: #000 !important;
-            width: 42px !important;
+            width: 40px !important;
             padding: 0 !important;
-            border: 2px solid #000 !important; /* 숫자 버튼 테두리 두께 재강조 */
+            border: 1px solid #000 !important; /* 테두리 1px 통일 */
         }
 
-        /* 모바일 대응 (간격 미세 조정) */
+        /* 모바일에서만 패딩 미세 조정 */
         @media screen and (max-width: 736px) {
-            .custom-pagination { gap: 6px !important; }
-            .custom-pagination .button { padding: 0 15px !important; }
+            .custom-pagination .button { padding: 0 12px !important; }
         }
     </style>
 
@@ -186,7 +183,6 @@
         <span class="button">Next</span>
     </div>
 </footer>
-
     </div>
 
 
