@@ -127,39 +127,69 @@
 </section>
 
 <footer style="margin-top: 5rem; text-align: center;">
-    <div class="pagination" style="display: inline-flex; align-items: center; gap: 0.5rem; justify-content: center;">
-        
-        <span class="button small" style="
-            border: 1px solid #000 !important; 
-            color: #ccc !important; 
-            cursor: default; 
-            height: 2.5rem; 
-            line-height: 2.5rem; 
-            padding: 0 1.5rem; 
-            display: inline-block; 
-            vertical-align: middle;">Prev</span>
+    <style>
+        /* 공통 스타일: 높이 및 정렬 초기화 */
+        .custom-pagination {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            vertical-align: middle;
+        }
+        .custom-pagination .button, 
+        .custom-pagination .page {
+            height: 40px !important;
+            line-height: 38px !important; /* 테두리 제외 내부 정렬 */
+            padding: 0 20px !important;
+            margin: 0 !important;
+            border: 1px solid #000 !important;
+            border-radius: 0; /* 미니멀한 직각 디자인 */
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            box-sizing: border-box;
+            vertical-align: middle;
+        }
+        .custom-pagination .page {
+            width: 40px !important;
+            padding: 0 !important;
+            text-align: center;
+        }
 
-        <a href="#" class="page active" style="
-            height: 2.5rem; 
-            line-height: 2.5rem; 
-            width: 2.5rem; 
-            padding: 0; 
-            display: inline-block; 
-            vertical-align: middle; 
-            background-color: #000 !important; 
-            border: 1px solid #000 !important; 
-            color: #fff !important;">1</a>
+        /* [PC 버전 전용 스타일] */
+        @media screen and (min-width: 737px) {
+            .custom-pagination .button {
+                background-color: #fff !important; /* 흰색 배경 */
+                color: #000 !important; /* 검정 글씨 */
+            }
+            .custom-pagination .page.active {
+                background-color: #000 !important;
+                color: #fff !important;
+            }
+        }
 
-        <span class="button small" style="
-            border: 1px solid #000 !important; 
-            color: #ccc !important; 
-            cursor: default; 
-            height: 2.5rem; 
-            line-height: 2.5rem; 
-            padding: 0 1.5rem; 
-            display: inline-block; 
-            vertical-align: middle;">Next</span>
-            
+        /* [모바일 버전 전용 스타일] */
+        @media screen and (max-width: 736px) {
+            .custom-pagination .button {
+                background-color: transparent !important;
+                color: #000 !important; /* 글씨 검정색 */
+                border: 1px solid #000 !important;
+            }
+            .custom-pagination .page.active {
+                background-color: #eee !important; /* 회색 배경 */
+                color: #000 !important; /* 숫자 검정색 */
+                border: 1px solid #000 !important;
+            }
+        }
+    </style>
+
+    <div class="custom-pagination">
+        <span class="button">Prev</span>
+
+        <a href="#" class="page active">1</a>
+
+        <span class="button">Next</span>
     </div>
 </footer>
 
