@@ -46,6 +46,13 @@
             background: #f9f9f9; 
         }
 
+        /* [추가] 세로가 긴 이미지를 위한 스타일 */
+        .project-content img.long-image {
+            height: auto !important;
+            max-height: none !important;
+            object-fit: contain;
+        }
+
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
@@ -188,10 +195,10 @@
                 concept: "메이필드 호텔의 가치를 새롭게 정의한 리브랜딩 프로젝트입니다 기하학적 도형을 활용하여 미니멀한 어메니티와 룸카드를 디자인했습니다",
                 colors: ["#333333", "#eeeeee", "#ffffff"],
                 images: [
-                    "images/m_b_mayfield00.webp", // 앱 디자인 3개 합친 이미지
-                    "images/m_b_mayfield01.webp"  // 기존 썸네일 무드컷
+                    "images/m_b_mayfield00_long.webp", // 파일명에 long이 들어가면 길게 보입니다.
+                    "images/m_b_mayfield01.webp"
                 ]
-            }, // 이 쉼표가 아주 중요합니다!
+            },
             "work03": {
                 title: "ON AIR WINE LAB",
                 date: "Design Project / 2026",
@@ -212,12 +219,10 @@
             }
         };
 
-        // 페이지가 로드되면 데이터를 매칭하는 함수
         function loadProjectDetail() {
             const urlParams = new URLSearchParams(window.location.search);
             let projectId = urlParams.get('id');
             
-            // ID가 없으면 첫번째 프로젝트로 설정
             if (!projectId || !PROJECT_DATA[projectId]) {
                 projectId = 'work01';
             }
@@ -225,14 +230,12 @@
             const data = PROJECT_DATA[projectId];
 
             if (data) {
-                // 상단 텍스트 및 정보 채우기
                 document.getElementById('project-title').innerText = data.title;
                 document.getElementById('project-date').innerText = data.date;
                 document.getElementById('project-sub').innerText = data.sub;
                 document.getElementById('project-role').innerText = data.role;
                 document.getElementById('project-concept').innerText = data.concept;
 
-                // 컬러 서클 생성
                 const colorBox = document.getElementById('project-colors');
                 colorBox.innerHTML = '';
                 data.colors.forEach(color => {
@@ -242,19 +245,24 @@
                     colorBox.appendChild(div);
                 });
 
-                // 이미지 리스트 생성
+                // [수정된 이미지 생성 로직]
                 const imageBox = document.getElementById('project-images');
                 imageBox.innerHTML = '';
                 data.images.forEach(imgSrc => {
                     const img = document.createElement('img');
                     img.src = imgSrc;
                     img.alt = data.title;
+                    
+                    // 파일명에 'long'이 있으면 클래스 추가
+                    if (imgSrc.toLowerCase().includes('long')) {
+                        img.classList.add('long-image');
+                    }
+                    
                     imageBox.appendChild(img);
                 });
 
                 document.title = data.title + " - SONGYI DESIGN";
                 
-                // 이전/다음 버튼 설정
                 const currentNum = parseInt(projectId.replace('work', ''));
                 const totalProjects = Object.keys(PROJECT_DATA).length;
                 const prevBtn = document.getElementById('prev-btn');
@@ -265,7 +273,6 @@
                     prevBtn.classList.remove('disabled');
                 } else {
                     prevBtn.classList.add('disabled');
-                    prevBtn.removeAttribute('href');
                 }
 
                 if (currentNum < totalProjects) {
@@ -273,15 +280,12 @@
                     nextBtn.classList.remove('disabled');
                 } else {
                     nextBtn.classList.add('disabled');
-                    nextBtn.removeAttribute('href');
                 }
 
-                // 로딩 클래스 제거 (컨텐츠 표시)
                 document.body.classList.remove('is-preload');
             }
         }
 
-        // 스크립트 실행
         document.addEventListener('DOMContentLoaded', loadProjectDetail);
     </script>
 </body>
