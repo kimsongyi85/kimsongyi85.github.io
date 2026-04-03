@@ -85,15 +85,20 @@
             color: #ffffff !important;
         }
 
-        /* 비활성화 버튼 - 회색이 아닌 '투명한 검정'으로 톤 유지 */
-        .project-footer .button.disabled {
-          border-color: #d1d1d1 !important; /* 연한 회색 테두리 */
-           color: #d1d1d1 !important;        /* 테두리와 동일한 회색 글자 */
-           cursor: default;
-           pointer-events: none;
-           background-color: transparent !important; /* 배경은 투명하게 유지 */
-           
-        }
+/* 비활성화 버튼 - 검정색을 유지하여 미니멀한 대칭 맞추기 */
+.project-footer .button.disabled {
+    border-color: #000000 !important; /* 회색 대신 진한 검정 유지 */
+    color: #000000 !important;        /* 글자도 검정 유지 */
+    cursor: default;                 /* 마우스 올려도 손가락 모양 안 나옴 */
+    pointer-events: none;            /* 클릭 기능 완전히 차단 */
+    opacity: 1 !important;           /* 흐려지지 않게 선명도 유지 */
+}
+
+/* 비활성 버튼에는 마우스를 올려도 검정 배경색(Hover)이 차지 않게 설정 */
+.project-footer .button.disabled:hover {
+    background-color: transparent !important;
+    color: #000000 !important;
+}
 
         /* 모바일 대응 - 레이아웃 및 가독성 최적화 */
         @media screen and (max-width: 736px) {
