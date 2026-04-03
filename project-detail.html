@@ -49,7 +49,7 @@
         .color-palette { display: flex; gap: 1rem; margin-top: 1rem; }
         .color-circle { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #eee; }
 
-        /* 하단 푸터 버튼 스타일 - 1px 슬림 블랙 버전 */
+        /* 하단 푸터 버튼 스타일 */
         .project-footer {
             display: flex;
             justify-content: center; 
@@ -166,4 +166,123 @@
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
-    <script src="
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        const PROJECT_DATA = {
+            "work01": {
+                title: "ROAST ARCHIVE",
+                date: "Design Project / 2026",
+                sub: "Specialty Coffee Brand Identity",
+                role: "Brand Identity, Package Design",
+                concept: "스페셜티 커피 브랜드의 로고 및 패키지 시스템을 구축했습니다 원두의 산미와 바디감을 직관적인 그래픽 레이아웃으로 표현했습니다",
+                colors: ["#1a1a1a", "#d4a373", "#fefae0"],
+                images: ["images/b_roast01.webp", "images/b_roast02.webp"]
+            },
+            "work02": {
+                title: "MAYFIELD: THE VOID",
+                date: "Design Project / 2026",
+                sub: "Hotel Rebranding Project",
+                role: "Brand Identity, Amenity Design",
+                concept: "메이필드 호텔의 가치를 새롭게 정의한 리브랜딩 프로젝트입니다 기하학적 도형을 활용하여 미니멀한 어메니티와 룸카드를 디자인했습니다",
+                colors: ["#333333", "#eeeeee", "#ffffff"],
+                images: [
+                    "images/m_b_mayfield00.webp", // 앱 디자인 3개 합친 이미지
+                    "images/m_b_mayfield01.webp"  // 기존 썸네일 무드컷
+                ]
+            }, // 이 쉼표가 아주 중요합니다!
+            "work03": {
+                title: "ON AIR WINE LAB",
+                date: "Design Project / 2026",
+                sub: "Wine & Life Branding",
+                role: "Visual Identity, Digital Design",
+                concept: "와인 라벨링과 브랜드의 전문성을 담은 디지털 페이지를 제작했습니다 와인이 선사하는 특별한 순간을 기록하는 아카이브 컨셉을 적용했습니다",
+                colors: ["#5c1a1a", "#f4f4f4", "#222222"],
+                images: ["images/m_b_onair01.webp"]
+            },
+            "work04": {
+                title: "NUVOLA PERFUME",
+                date: "Design Project / 2026",
+                sub: "Fragrance Brand Branding",
+                role: "Brand Concept, Package Design",
+                concept: "구름의 부드러움을 모티브로 진행한 향수 브랜드 브랜딩입니다 몽환적이고 감성적인 비주얼을 통해 브랜드의 촉각적 경험을 강조했습니다",
+                colors: ["#a2d2ff", "#ffffff", "#e0e0e0"],
+                images: ["images/m_b_nuvola01.webp"]
+            }
+        };
+
+        // 페이지가 로드되면 데이터를 매칭하는 함수
+        function loadProjectDetail() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let projectId = urlParams.get('id');
+            
+            // ID가 없으면 첫번째 프로젝트로 설정
+            if (!projectId || !PROJECT_DATA[projectId]) {
+                projectId = 'work01';
+            }
+
+            const data = PROJECT_DATA[projectId];
+
+            if (data) {
+                // 상단 텍스트 및 정보 채우기
+                document.getElementById('project-title').innerText = data.title;
+                document.getElementById('project-date').innerText = data.date;
+                document.getElementById('project-sub').innerText = data.sub;
+                document.getElementById('project-role').innerText = data.role;
+                document.getElementById('project-concept').innerText = data.concept;
+
+                // 컬러 서클 생성
+                const colorBox = document.getElementById('project-colors');
+                colorBox.innerHTML = '';
+                data.colors.forEach(color => {
+                    const div = document.createElement('div');
+                    div.className = 'color-circle';
+                    div.style.backgroundColor = color;
+                    colorBox.appendChild(div);
+                });
+
+                // 이미지 리스트 생성
+                const imageBox = document.getElementById('project-images');
+                imageBox.innerHTML = '';
+                data.images.forEach(imgSrc => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = data.title;
+                    imageBox.appendChild(img);
+                });
+
+                document.title = data.title + " - SONGYI DESIGN";
+                
+                // 이전/다음 버튼 설정
+                const currentNum = parseInt(projectId.replace('work', ''));
+                const totalProjects = Object.keys(PROJECT_DATA).length;
+                const prevBtn = document.getElementById('prev-btn');
+                const nextBtn = document.getElementById('next-btn');
+
+                if (currentNum > 1) {
+                    prevBtn.href = `project-detail.html?id=work${String(currentNum - 1).padStart(2, '0')}`;
+                    prevBtn.classList.remove('disabled');
+                } else {
+                    prevBtn.classList.add('disabled');
+                    prevBtn.removeAttribute('href');
+                }
+
+                if (currentNum < totalProjects) {
+                    nextBtn.href = `project-detail.html?id=work${String(currentNum + 1).padStart(2, '0')}`;
+                    nextBtn.classList.remove('disabled');
+                } else {
+                    nextBtn.classList.add('disabled');
+                    nextBtn.removeAttribute('href');
+                }
+
+                // 로딩 클래스 제거 (컨텐츠 표시)
+                document.body.classList.remove('is-preload');
+            }
+        }
+
+        // 스크립트 실행
+        document.addEventListener('DOMContentLoaded', loadProjectDetail);
+    </script>
+</body>
+</html>
