@@ -92,3 +92,147 @@
         #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
         #award-section table tbody tr td {
             font-weight: 700 !important; font-size: 0.95rem !important;
+            color: #212931 !important; padding: 1.5rem 3rem !important; 
+            border-bottom: 1px solid #eee !important; text-align: left;
+        }
+        #award-section table tbody tr:last-child td { border-bottom: none !important; }
+
+        /* 7. 모바일 대응 */
+        @media screen and (max-width: 980px) {
+            #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
+            .about-container { display: block; text-align: center; padding: 2rem 1rem; }
+            #project-section .project-grid { display: block !important; }
+            #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
+            #project-section .project-grid article header.major h2 { font-size: 1.8rem !important; line-height: 1.2 !important; word-break: keep-all !important; }
+            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; }
+            #footer { padding: 1.2rem 0 !important; min-height: 0 !important; height: auto !important; }
+            #footer p { margin: 0 !important; font-size: 0.7rem !important; }
+        }
+        
+        /* 8. 푸터 스타일 */
+        #footer {
+            background: #212931 !important; width: 100vw !important;
+            position: relative; left: 50%; right: 50%;
+            margin-left: -50vw !important; margin-right: -50vw !important;
+            padding: 5rem 0 !important; border-top: none !important;
+        }
+        #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; text-align: center; }
+        body { overflow-x: hidden; }
+        .button:hover { background-color: #212931 !important; color: #fff !important; }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper" class="fade-in">
+        <div id="intro">
+            <h1>Brand Designer</h1>
+            <p>with strong experience in Brand Content Design</p>
+            <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.8; max-width: 600px; margin: 0 auto;">
+                <span style="display: block; margin-bottom: 1.5rem;">본질을 남기는 사유, 여백의 기록.</span>
+                <span style="display: block;">
+                    We pursue the beauty of essence by distilling complexity into its purest form,<br>
+                    creating a lasting impact through the harmony of space and record.
+                </span>
+            </p>
+            <div style="height: 3rem;"></div>
+            <ul class="actions"><li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li></ul>
+        </div>
+        
+        <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="index.html">HOME</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project-section">Project</a></li>
+                <li><a href="#award-section">Award</a></li>
+            </ul>
+        </nav>
+        
+        <div id="main">
+            <article id="about" class="post featured">
+                <div class="about-container">
+                    <div class="about-image">
+                        <span class="image main" style="margin:0;"><img src="images/profile.webp" alt="SONGYI Profile" /></span>
+                    </div>
+                    <div class="about-info">
+                        <header class="major">
+                            <h2>KIM SONG YI</h2>
+                            <p class="sub-title">Brand & Digital Designer</p>
+                        </header>
+                        <ul class="info-list">
+                            <li><span class="label">Name</span><span class="value">Kim Song Yi</span></li>
+                            <li><span class="label">E-mail</span><span class="value">songyi.studio@gmail.com</span></li>
+                            <li><span class="label">Call</span><span class="value">010-9994-0335</span></li>
+                            <li><span class="label">Place</span><span class="value">Incheon, KOREA</span></li>
+                        </ul>
+
+                        <p style="margin-top: 2rem; line-height: 1.6;">
+                            <span style="font-size: 0.85rem; color: #888; letter-spacing: -0.01rem;">디지털 경험과 캠페인 디자인에 강점이 있는 디자이너</span><br>
+                            <a href="ksydesign.dothome.co.kr" target="_blank" class="archive-link" 
+                               style="font-size: 0.75rem; color: #bbb; text-decoration: none; border-bottom: 1px solid #eee; padding-bottom: 2px; transition: all 0.3s;">
+                                Digital & Campaign Design Archive →
+                            </a>
+                        </p>
+
+                        <ul class="actions" style="margin-top: 2.5rem;">
+                            <li>
+                                <a href="#" class="button large" 
+                                   style="box-shadow: inset 0 0 0 1px #ddd !important; color: #666 !important; font-weight: 400; letter-spacing: 0.1rem; font-size: 0.7rem; background-color: transparent !important;">
+                                    VIEW BRANDING PDF
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <section id="project-section">
+                <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>PROJECT</h2></header>
+                <div class="project-grid">
+                    <article>
+                        <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Identity & Package System</p><h2>BRANDING<br />DESIGN</h2></header>
+                        <span class="image fit"><img src="images/brand.webp" alt="" /></span>
+                        <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
+                        <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
+                    </article>
+                    <article>
+                        <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">User Experience & Interface</p><h2>WEB<br />MOBILE</h2></header>
+                        <span class="image fit"><img src="images/web.webp" alt="" /></span>
+                        <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
+                        <ul class="actions special"><li><a href="webdesign.html" class="button">바로가기</a></li></ul>
+                    </article>
+                    <article>
+                        <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Creative Strategy & Content</p><h2>BRAND<br />CAMPAIGN</h2></header>
+                        <span class="image fit"><img src="images/campaign.webp" alt="" /></span>
+                        <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
+                        <ul class="actions special"><li><a href="campaign.html" class="button">바로가기</a></li></ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="award-section">
+                <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>AWARD</h2></header>
+                <div class="table-wrapper">
+                    <table>
+                        <tbody>
+                            <tr><td>2021 동상 해군 디자인 공모전 포스터</td></tr>
+                            <tr><td>2022 맑은바다상 해양오염 콘텐츠 디자인 포스터</td></tr>
+                            <tr><td>2023 장려상 주택 건설현장 안전 포스터 </td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </div> 
+        
+        <footer id="footer">
+            <p>&copy; 2026 Songyi Design. All rights reserved.</p>
+        </footer>
+    </div> 
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
