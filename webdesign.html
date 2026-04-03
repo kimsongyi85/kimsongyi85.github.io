@@ -7,59 +7,58 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* 프로젝트 그리드 스타일 */
+        /* 프로젝트 그리드: 1단 구성으로 시원하게 */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr; 
+            gap: 8rem; /* 이미지 사이의 충분한 여백 */
+            margin-top: 4rem;
         }
 
         .project-item {
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 2rem;
-            position: relative;
+            text-align: center; /* 텍스트 중앙 정렬로 안정감 부여 */
+            padding-bottom: 4rem;
+            border-bottom: 1px solid #f4f4f4;
         }
 
-        /* [수정] 이미지 컨테이너 및 호버 효과 */
+        /* 이미지 컨테이너: 마우스 오버 효과 */
         .image-container {
             position: relative;
             display: block;
             overflow: hidden;
-            background: #000; /* 호버 시 배경색 */
-            margin-bottom: 1.5rem;
+            background: #000;
+            margin-bottom: 2.5rem;
         }
 
         .project-item img {
             width: 100%;
-            height: 350px;
+            height: auto;
+            max-height: 700px; /* 너무 길어지지 않게 조절 */
             object-fit: cover;
-            filter: grayscale(20%);
-            transition: all 0.4s ease;
             display: block;
+            filter: grayscale(10%);
+            transition: all 0.5s ease;
         }
 
-        /* 마우스 오버 시 문구 나타나기 */
+        /* 호버 시 VIEW ARCHIVE 문구 */
         .hover-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: #fff;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 700;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.3rem;
             opacity: 0;
             transition: all 0.4s ease;
             z-index: 2;
             text-transform: uppercase;
-            white-space: nowrap;
         }
 
         .image-container:hover img {
-            filter: grayscale(0%) opacity(0.4); /* 흐려지게 */
-            transform: scale(1.05); /* 살짝 확대 */
+            filter: grayscale(0%) opacity(0.5);
+            transform: scale(1.02);
         }
 
         .image-container:hover .hover-text {
@@ -67,36 +66,32 @@
         }
 
         .project-category {
-            font-size: 0.75rem;
-            letter-spacing: 0.1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
             color: #bbb;
             text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .project-title {
-            font-size: 1.4rem;
-            margin: 0.4rem 0 0.8rem 0;
+            font-size: 1.8rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            color: #222;
         }
 
         .project-desc {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: #777;
-            margin-bottom: 1.5rem;
-        }
-
-        /* 버튼 스타일 수정 */
-        .button.small {
-            font-size: 0.7rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            padding: 0 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto; /* 설명글 중앙 정렬 */
         }
 
         @media screen and (max-width: 736px) {
-            .project-grid { grid-template-columns: 1fr; }
-            .project-item img { height: 250px; }
+            .project-grid { gap: 4rem; }
+            .project-title { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -119,49 +114,4 @@
         <div id="main">
             <header class="major">
                 <h2>Web / Mobile</h2>
-                <p>사용자 중심의 인터페이스와 브랜드 정체성이 조화를 이루는 디지털 솔루션입니다. 프로젝트의 전체 과정은 아카이브 링크를 통해 확인하실 수 있습니다.</p>
-            </header>
-
-            <section class="project-grid">
-                <article class="project-item">
-                    <span class="project-category">App Design / UI UX</span>
-                    <h3 class="project-title">Project Title 01</h3>
-                    <a href="http://ksydesign.dothome.co.kr" target="_blank" class="image-container">
-                        <img src="images/m_w_work01.webp" alt="Work 01" />
-                        <span class="hover-text">VIEW ARCHIVE →</span>
-                    </a>
-                    <p class="project-desc">디지털 환경에서의 브랜드 경험을 확장하기 위한 앱 UI/UX 디자인입니다. 직관적인 네비게이션과 감성적인 인터랙션을 고려했습니다.</p>
-                    <ul class="actions">
-                        <li><a href="http://ksydesign.dothome.co.kr" target="_blank" class="button small">Archive Link</a></li>
-                    </ul>
-                </article>
-
-                <article class="project-item">
-                    <span class="project-category">E-Commerce / Web</span>
-                    <h3 class="project-title">Project Title 02</h3>
-                    <a href="http://ksydesign.dothome.co.kr" target="_blank" class="image-container">
-                        <img src="images/m_w_work02.webp" alt="Work 02" />
-                        <span class="hover-text">VIEW ARCHIVE →</span>
-                    </a>
-                    <p class="project-desc">브랜드의 미니멀한 감성을 웹으로 구현한 이커머스 솔루션입니다. 린넨 질감의 여백을 활용한 레이아웃이 특징입니다.</p>
-                    <ul class="actions">
-                        <li><a href="http://ksydesign.dothome.co.kr" target="_blank" class="button small">Archive Link</a></li>
-                    </ul>
-                </article>
-
-                </section>
-
-            <footer style="margin-top: 5rem; text-align: center;">
-                <div class="pagination">
-                    <a href="#" class="previous">Prev</a>
-                    <a href="#" class="page active">1</a>
-                    <a href="#" class="next">Next</a>
-                </div>
-            </footer>
-        </div>
-    </div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-</html>
+                <p>디
