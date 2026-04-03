@@ -7,21 +7,20 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* 프로젝트 그리드: 1단 구성으로 시원하게 */
+        /* 프로젝트 그리드: 1단 구성 */
         .project-grid {
             display: grid;
             grid-template-columns: 1fr; 
-            gap: 8rem; /* 이미지 사이의 충분한 여백 */
+            gap: 7rem; 
             margin-top: 4rem;
         }
 
         .project-item {
-            text-align: center; /* 텍스트 중앙 정렬로 안정감 부여 */
-            padding-bottom: 4rem;
+            text-align: center;
+            padding-bottom: 5rem;
             border-bottom: 1px solid #f4f4f4;
         }
 
-        /* 이미지 컨테이너: 마우스 오버 효과 */
         .image-container {
             position: relative;
             display: block;
@@ -33,14 +32,13 @@
         .project-item img {
             width: 100%;
             height: auto;
-            max-height: 700px; /* 너무 길어지지 않게 조절 */
+            max-height: 750px;
             object-fit: cover;
             display: block;
             filter: grayscale(10%);
             transition: all 0.5s ease;
         }
 
-        /* 호버 시 VIEW ARCHIVE 문구 */
         .hover-text {
             position: absolute;
             top: 50%;
@@ -77,21 +75,24 @@
         .project-title {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: #222;
         }
 
+        /* [핵심 수정] 설명 문구를 두 줄로 예쁘게 정렬 */
         .project-desc {
             font-size: 1rem;
             line-height: 1.8;
             color: #666;
-            max-width: 700px;
-            margin: 0 auto; /* 설명글 중앙 정렬 */
+            max-width: 550px; /* 폭을 좁혀서 자연스럽게 두 줄이 되도록 유도 */
+            margin: 0 auto;
+            word-break: keep-all; /* 단어가 잘리지 않게 설정 */
         }
 
         @media screen and (max-width: 736px) {
             .project-grid { gap: 4rem; }
             .project-title { font-size: 1.4rem; }
+            .project-desc { max-width: 100%; } /* 모바일에서는 가득 차게 */
         }
     </style>
 </head>
@@ -128,8 +129,8 @@
                     </a>
 
                     <p class="project-desc">
-                        브랜드의 감각적인 무드를 웹 페이지에 그대로 녹여낸 프로젝트입니다. 
-                        이미지를 클릭하시면 상세 기획안과 결과물을 아카이브 사이트에서 확인하실 수 있습니다.
+                        브랜드의 감각적인 무드를 웹 페이지에 그대로 녹여낸 프로젝트입니다.<br />
+                        이미지를 클릭하시면 상세 기획안과 결과물을 아카이브에서 확인하실 수 있습니다.
                     </p>
                 </article>
 
@@ -143,8 +144,8 @@
                     </a>
 
                     <p class="project-desc">
-                        모바일 환경에 최적화된 사용자 경험을 설계하였습니다. 
-                        미니멀한 레이아웃 속에서 브랜드의 정체성을 강조한 디자인입니다.
+                        사용자 중심의 인터페이스를 설계하여 브랜드 경험을 확장하였습니다.<br />
+                        이미지를 클릭하시면 더 많은 아카이브 기록을 확인하실 수 있습니다.
                     </p>
                 </article>
             </section>
