@@ -1,246 +1,94 @@
 <!DOCTYPE HTML>
 <html>
- <head>
-  <title>SONGYI DESIGN</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<head>
+    <title>SONGYI DESIGN</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
-  <style>
-    /* 1. 기본 타이포그래피 & 공통 설정 */
-    header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
-    #main { border: none !important; } 
-    
-    #project-section .major h2,
-    #award-section .major h2 {
-        font-size: 2.5rem !important; 
-        letter-spacing: 0.3rem !important; 
-        font-weight: 900 !important;
-        margin-bottom: 4rem !important;
-        border: none !important;
-        text-transform: uppercase;
-    }
-    
-    /* 2. ABOUT 섹션 - PC 2단 레이아웃 */
-    @media screen and (min-width: 981px) {
-        .about-container {
-            display: flex !important;
-            align-items: center !important;
-            gap: 5rem !important;
-            padding: 4rem 2rem !important;
-            text-align: left !important;
-        }
-        .about-image { flex: 1 !important; max-width: 35% !important; }
-        .about-info { flex: 1.5 !important; }
-        .about-info h2 { text-align: left !important; margin-bottom: 1.5rem !important; border: none !important; }
-        .about-info p.sub-title { text-align: left !important; margin-top: -1.5rem !important; color: #999; }
-        .about-info .actions { justify-content: flex-start !important; }
-    }
-    
-    /* 3. 정보 리스트 스타일 */
-    .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
-    .info-list li { display: flex; margin-bottom: 1.2rem; align-items: center; border-bottom: none !important; padding: 0 !important; }
-    .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
-    .info-list .value { color: #666; font-size: 0.95rem; }
-    
-    /* 4. 프로젝트 스타일 (PC 공백 최적화) */
-    @media screen and (min-width: 981px) {
-        #project-section .project-grid { display: flex !important; align-items: stretch !important; justify-content: space-between !important; }
-        #project-section .project-grid article {
-            flex: 1 !important; 
-            display: flex !important; 
-            flex-direction: column !important;
-            padding: 3.5rem 2.5rem !important; 
-            border-left: 1px solid #e5e5e5 !important;
-            margin: 0 !important;
-        }
-        #project-section .project-grid article:first-child { border-left: none !important; }
+    <style>
+        /* 1. 기본 타이포그래피 & 공통 설정 */
+        header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+        #main { border: none !important; } 
         
-        #project-section .project-grid article header.major { 
-            margin-bottom: 0 !important; 
-            min-height: 80px !important; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-        }
-        
-        #project-section .project-grid article .image.fit {
-            margin-top: -1rem !important;
-        }
-
-        #project-section .project-grid article .actions.special { 
-            display: table !important; 
-            width: 100% !important; 
-            margin: 2rem 0 0 0 !important; 
-            padding: 0 !important;
-        }
-        #project-section .project-grid article .actions.special li { 
-            display: table-cell !important; 
-            width: 100% !important; 
-            padding: 0 !important; 
-        }
-        #project-section .project-grid article .actions.special .button {
-            display: block !important;
-            width: 100% !important;
-            text-align: center !important;
-            box-shadow: inset 0 0 0 1px #212931 !important;
+        #project-section .major h2,
+        #award-section .major h2 {
+            font-size: 2.5rem !important; 
+            letter-spacing: 0.3rem !important; 
+            font-weight: 900 !important;
+            margin-bottom: 4rem !important;
             border: none !important;
+            text-transform: uppercase;
         }
-    }
-    
-    /* 5. 어워드 섹션 */
-    #award-section { border-bottom: none !important; }
-    #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
-    #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
-    #award-section table tbody tr td {
-        font-weight: 700 !important; font-size: 0.95rem !important;
-        color: #212931 !important; padding: 1.5rem 3rem !important; 
-        border-bottom: 1px solid #eee !important; text-align: left;
-    }
-    #award-section table tbody tr:last-child td { border-bottom: none !important; }
-
-
-    /* 6. 모바일 통합 대응 (980px 이하) */
-    @media screen and (max-width: 980px) {
-        #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
-        .about-container { display: block; text-align: center; padding: 2rem 1rem; }
-        #project-section .project-grid { display: block !important; }
-        #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
         
-        #project-section .project-grid article header.major h2 { 
-            font-size: 1.8rem !important; line-height: 1.2 !important; 
-            word-break: keep-all !important; display: block !important;
+        /* 2. ABOUT 섹션 - PC 2단 레이아웃 */
+        @media screen and (min-width: 981px) {
+            .about-container {
+                display: flex !important;
+                align-items: center !important;
+                gap: 5rem !important;
+                padding: 4rem 2rem !important;
+                text-align: left !important;
+            }
+            .about-image { flex: 1 !important; max-width: 35% !important; }
+            .about-info { flex: 1.5 !important; }
+            .about-info h2 { text-align: left !important; margin-bottom: 1.5rem !important; border: none !important; }
+            .about-info p.sub-title { text-align: left !important; margin-top: -1.5rem !important; color: #999; }
+            .about-info .actions { justify-content: flex-start !important; }
         }
-        #project-section .project-grid article header.major h2 br { display: block !important; content: "" !important; margin-top: 0.2rem !important; }
+        
+        /* 3. 정보 리스트 스타일 */
+        .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
+        .info-list li { display: flex; margin-bottom: 1.2rem; align-items: center; border-bottom: none !important; padding: 0 !important; }
+        .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
+        .info-list .value { color: #666; font-size: 0.95rem; }
 
-        /* 모바일 버튼 테두리 2px 강화 */
-        #project-section .project-grid article .actions.special { display: block !important; width: 100% !important; margin-top: 2rem !important; }
-        #project-section .project-grid article .actions.special li { width: 100% !important; padding: 0 !important; }
-        #project-section .project-grid article .actions.special .button {
-            display: block !important; width: 100% !important; height: 3.5rem !important;
-            line-height: 3.5rem !important; background-color: transparent !important;
-            color: #212931 !important; box-shadow: inset 0 0 0 2px #212931 !important;
-            font-weight: 700 !important; text-align: center !important; border-radius: 0 !important;
+        /* 4. 아카이브 링크 호버 효과 */
+        .archive-link:hover { 
+            color: #212931 !important; 
+            border-bottom-color: #212931 !important; 
         }
-        #award-section table tbody tr td { padding: 1.5rem 1.5rem !important; }
-
-        /* [핵심 수정] 모바일 푸터 높이 강제 초슬림화 */
-        #footer { 
-            padding: 1.2rem 0 !important; 
-            min-height: 0 !important; 
-            height: auto !important;
+        
+        /* 5. 프로젝트 스타일 (PC 공백 최적화) */
+        @media screen and (min-width: 981px) {
+            #project-section .project-grid { display: flex !important; align-items: stretch !important; justify-content: space-between !important; }
+            #project-section .project-grid article {
+                flex: 1 !important; 
+                display: flex !important; 
+                flex-direction: column !important;
+                padding: 3.5rem 2.5rem !important; 
+                border-left: 1px solid #e5e5e5 !important;
+                margin: 0 !important;
+            }
+            #project-section .project-grid article:first-child { border-left: none !important; }
+            #project-section .project-grid article header.major { 
+                margin-bottom: 0 !important; 
+                min-height: 80px !important; 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+            }
+            #project-section .project-grid article .image.fit { margin-top: -1rem !important; }
+            #project-section .project-grid article .actions.special { 
+                display: table !important; 
+                width: 100% !important; 
+                margin: 2rem 0 0 0 !important; 
+                padding: 0 !important;
+            }
+            #project-section .project-grid article .actions.special li { display: table-cell !important; width: 100% !important; padding: 0 !important; }
+            #project-section .project-grid article .actions.special .button {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+                box-shadow: inset 0 0 0 1px #212931 !important;
+                border: none !important;
+            }
         }
-        #footer p { 
-            margin: 0 !important; 
-            line-height: 1.2 !important;
-            font-size: 0.7rem !important; 
-        }
-    }
-    
-    /* 7. 푸터 스타일 (기본/PC) */
-    #footer {
-        background: #212931 !important; width: 100vw !important;
-        position: relative; left: 50%; right: 50%;
-        margin-left: -50vw !important; margin-right: -50vw !important;
-        padding: 5rem 0 !important; border-top: none !important;
-    }
-    #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; margin-bottom: 0 !important; }
-    body { overflow-x: hidden; }
-    .button:hover { background-color: #212931 !important; color: #fff !important; }
-  </style>
- </head>
- <body class="is-preload">
-  <div id="wrapper" class="fade-in">
-    <div id="intro">
-      <h1>Brand Designer</h1>
-      <p>with strong experience in Brand Content Design</p>
-      <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.8; max-width: 600px; margin: 0 auto;">
-          <span style="display: block; margin-bottom: 1.5rem;">본질을 남기는 사유, 여백의 기록.</span>
-          <span style="display: block;">
-              We pursue the beauty of essence by distilling complexity into its purest form,<br>
-              creating a lasting impact through the harmony of space and record.
-          </span>
-      </p>
-      <div style="height: 3rem;"></div>
-      <ul class="actions"><li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li></ul>
-    </div>
-    
-    <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
-    <nav id="nav">
-      <ul class="links">
-       <li class="active"><a href="index.html">HOME</a></li>
-       <li><a href="#about">About</a></li>
-       <li><a href="#project-section">Project</a></li>
-       <li><a href="#award-section">Award</a></li>
-      </ul>
-    </nav>
-    
-    <div id="main">
-      <article id="about" class="post featured">
-        <div class="about-container">
-            <div class="about-image"><span class="image main" style="margin:0;"><img src="images/profile.webp" alt="SONGYI Profile" /></span></div>
-            <div class="about-info">
-                <header class="major"><h2>KIM SONG YI</h2><p class="sub-title">Brand & Digital Designer</p></header>
-                <ul class="info-list">
-                    <li><span class="label">Name</span><span class="value">Kim Song Yi</span></li>
-                    <li><span class="label">E-mail</span><span class="value">songyi.studio@gmail.com</span></li>
-                    <li><span class="label">Call</span><span class="value">010-9994-0335</span></li>
-                    <li><span class="label">Place</span><span class="value">Incheon, KOREA</span></li>
-                </ul>
-                <ul class="actions"><li><a href="#" class="button large" style="box-shadow: inset 0 0 0 2px #212931 !important;">Portfolio</a></li></ul>
-            </div>
-        </div>
-      </article>
-    
-      <section id="project-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>PROJECT</h2></header>
-        <div class="project-grid">
-            <article>
-                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Identity & Package System</p><h2>BRANDING<br />DESIGN</h2></header>
-                <span class="image fit"><img src="images/brand.webp" alt="" /></span>
-                <p>브랜드 아이덴티티 구축 및 패키지 시스템 디자인</p>
-                <ul class="actions special"><li><a href="branding.html" class="button">바로가기</a></li></ul>
-            </article>
-            <article>
-                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">User Experience & Interface</p><h2>WEB<br />MOBILE</h2></header>
-                <span class="image fit"><img src="images/web.webp" alt="" /></span>
-                <p>사용자 경험을 고려한 반응형 웹 및 앱 디자인</p>
-                <ul class="actions special"><li><a href="webdesign.html" class="button">바로가기</a></li></ul>
-            </article>
-            <article>
-                <header class="major"><p class="sub-title" style="font-style: italic; color:#999;">Creative Strategy & Content</p><h2>BRAND<br />CAMPAIGN</h2></header>
-                <span class="image fit"><img src="images/campaign.webp" alt="" /></span>
-                <p>디지털 콘텐츠 전략 수립 및 비주얼 브랜딩 강화</p>
-                <ul class="actions special"><li><a href="campaign.html" class="button">바로가기</a></li></ul>
-            </article>
-        </div>
-      </section>
-
-      <section id="award-section">
-        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;"><h2>AWARD</h2></header>
-        <div class="table-wrapper">
-          <table>
-            <tbody>
-              <tr><td>2021 동상 해군 디자인 공모전 포스터</td></tr>
-              <tr><td>2022 맑은바다상 해양오염 콘텐츠 디자인 포스터</td></tr>
-              <tr><td>2023 장려상 주택 건설현장 안전 포스터 </td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section> 
-    </div> 
-    
-    <footer id="footer">
-        <p>&copy; 2026 Songyi Design. All rights reserved.</p>
-    </footer>
-  </div> 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
- </body>
-</html>
+        
+        /* 6. 어워드 섹션 */
+        #award-section { border-bottom: none !important; }
+        #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
+        #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
+        #award-section table tbody tr td {
+            font-weight: 700 !important; font-size: 0.95rem !important;
