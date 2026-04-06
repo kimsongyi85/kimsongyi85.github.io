@@ -106,9 +106,12 @@
     }
   </style>
 
-<div id="filter-include"></div>
-<script>fetch('filter-menu.html').then(r => r.text()).then(d => document.getElementById('filter-include').innerHTML = d);</script>
-
+<div class="container">
+  <div class="row" style="margin-bottom: 40px;">
+    <div id="filter-include"></div>
+    <script>fetch('filter-menu.html').then(r => r.text()).then(d => { document.getElementById('filter-include').innerHTML = d; });</script>
+  </div>
+</div>
 	
 	 <!--End menu-->
         <p> </p>
