@@ -62,7 +62,6 @@
 <div id="filter-include"></div>
 
 
-
 	  
 	 <!--End menu-->
      <p> </p>
@@ -999,17 +998,19 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
   
-  <script src="js/main.js"></script>
-    <script>
+<script>
     fetch('filter-menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('filter-include').innerHTML = data;
             
-            // 현재 페이지에 맞는 버튼에 노란색 불 켜기 (선택 사항)
+            // 현재 페이지가 portfolio.html(전체)라면 All 버튼을 노란색으로 변경
             if(window.location.pathname.includes('portfolio.html')) {
-                document.getElementById('btn-all').classList.add('active');
+                const allBtn = document.getElementById('link-all');
+                allBtn.classList.remove('btn-white', 'btn-outline-white');
+                allBtn.classList.add('btn-primary');
             }
+            // 만약 Award 페이지라면 link-award의 클래스를 바꿔주는 식의 로직을 추가하면 됩니다.
         });
 </script>
 	  
