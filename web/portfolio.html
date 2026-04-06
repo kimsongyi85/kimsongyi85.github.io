@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="KO">
-<head>
+  <head>
     <title>::KIM SONG YI DESIGN PROJECT::</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,506 +8,1030 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
+    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        /* 버튼 스타일 유지 */
-        .btn-row-wrapper {
-            display: block;
-            text-align: left !important;
-            margin-bottom: 20px;
-        }
-        .btn-custom-mobile {
-            display: inline-block !important;
-            width: auto !important;
-            min-width: 100px !important;
-            margin-right: 10px !important;
-            margin-bottom: 10px !important;
-            padding: 12px 25px !important;
-            line-height: 1.5 !important;
-            text-align: center !important;
-        }
-
-        @media (max-width: 767.98px) {
-            .btn-row-wrapper {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: flex-start !important;
-                gap: 8px !important;
-                padding: 0 !important;
-            }
-            .btn-custom-mobile {
-                flex: 0 0 calc(50% - 8px) !important;
-                margin: 0 !important;
-                padding: 15px 5px !important;
-                font-size: 13px !important;
-                min-height: 50px !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-        }
-    </style>
-</head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">KIM SONG YI</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> 
+	      </button>
+     <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+              <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="award.html" class="nav-link"><span>Award</span></a></li>
+	          <li class="nav-item"><a href="skill.html" class="nav-link"><span>Skill& Tools</span></a></li>
+	          <li class="nav-item"><a href="portfolio.html" class="nav-link"><span>Projects</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!--visual--
+    <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>MY <span>PROJECT</span></h2>
+						<p>다양한 포트폴리오를 소개합니다.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+-->
     
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">KIM SONG YI</a>
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> 
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
-                    <li class="nav-item"><a href="award.html" class="nav-link"><span>Award</span></a></li>
-                    <li class="nav-item"><a href="skill.html" class="nav-link"><span>Skill& Tools</span></a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link"><span>Projects</span></a></li>
-                </ul>
+   <section class="ftco-section" id="blog-section">
+<div class="text text-left w-100"> <style>
+    /* 1. PC 버전: 좌측 정렬 및 버튼 모양 복구 */
+    .btn-row-wrapper {
+      display: block;
+      text-align: left !important; /* 좌측 정렬 강제 */
+      margin-bottom: 20px;
+    }
+    .btn-custom-mobile {
+      display: inline-block !important;
+      width: auto !important;
+      min-width: 100px !important;
+      margin-right: 10px !important; /* 버튼 사이 우측 여백 */
+      margin-bottom: 10px !important;
+      padding: 12px 25px !important;
+      line-height: 1.5 !important;
+      text-align: center !important;
+    }
+    /* 2. 모바일 전용 (767px 이하) */
+    @media (max-width: 767.98px) {
+      .btn-row-wrapper {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important; /* 모바일도 좌측부터 채움 */
+        gap: 8px !important;
+        padding: 0 !important;
+      }
+      .btn-custom-mobile {
+        /* 모바일 2개씩 정렬 유지 */
+        flex: 0 0 calc(50% - 8px) !important;
+        margin: 0 !important;
+        padding: 15px 5px !important;
+        font-size: 13px !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+  </style>
+  <div class="btn-row-wrapper">
+    <a href="portfolio.html" class="btn btn-primary btn-custom-mobile">All</a>
+    <a href="pf_award.html" class="btn btn-white btn-outline-white btn-custom-mobile">Award</a>
+    <a href="pf_webdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Web/App Design</a>
+    <a href="pf_event.html" class="btn btn-white btn-outline-white btn-custom-mobile">Event/Banner</a>
+    <a href="pf_visualdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Visual Design</a>
+  </div>
+</div>
+	 <!--End menu-->
+     <p> </p>
+     <!-- table -->
+    <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2021</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인 </a></h3>
+               <p>제4회 해군 디자인 공모전 동상 작품으로 해군의 기술력을 표현해보았다.</p>
             </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2023</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details44.html"> 주택건설현장 안전 포스터 디자인</a></h3>
+                <p>제4회 해양오염예방 콘텐츠 디자인 맑은바다상 작품으로 주택건설현장에서의 안전고리를 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details43.html" class="block-20" style="background-image: url('assets/img/portfolio/bluecarbone.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2022</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details43.html">해양오염 포스터 디자인</a></h3>
+                <p>해양오염콘텐츠 디자인 입선(맑은바다상)작으로 블루카본을 주제로 제작하였다.</p>
+              </div>
+            </div>
+          </div>
+         <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details1.html" class="block-20" style="background-image: url('assets/img/portfolio/anoori_pc.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details1.html">LG Anoori </a></h3>
+                <p>가정이라는 편안하고 안락한 분위기를 담아 보육서비스 사업을 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details2.html" class="block-20" style="background-image: url('assets/img/portfolio/pet01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details2.html">Petbang</a></h3>
+                <p>반려동물의 사랑스러움이 느껴지는 컨셉으로 그린을 주컬러로 UI를 제작하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details5.html" class="block-20" style="background-image: url('assets/img/portfolio/sung01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2013</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details5.html">성균관 대학교</a></h3>
+                <p>블루,그린,오렌지의 3색을 사용하여 깔끔한 컨텐츠 구성의 서브를 완성시켰다.</p>
+              </div>
+            </div>
+          </div>
+            
+         <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details6.html" class="block-20" style="background-image: url('assets/img/portfolio/coco01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2020</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details6.html">COCO 하이브리드앱</a></h3>
+                <p>젊은 연령대의 고객층을 고려하여 활기차고 밝은 느낌으로 제작하였다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details7.html" class="block-20" style="background-image: url('assets/img/portfolio/wifi1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details7.html">KT wifi ZONE</a></h3>
+                <p>그레이 블랙톤의 고급스럽고 차분화된 비쥬얼이미지를 표현하고 포인트컬러로 레드를 사용하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details11.html" class="block-20" style="background-image: url('assets/img/portfolio/beauty.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2013</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details11.html">뷰티뿔 모바일웹</a></h3>
+                <p>잡지사의 모바일웹 디자인으로 남색과 회색컬러,얇은폰트로 선명한 느낌을 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+   <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details40.html " class="block-20" style="background-image: url('assets/img/portfolio/m_hwahae.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2022</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details40.html ">화해 모바일앱 </a></h3>
+                <p>제안시안으로 화해앱의 불편한점을 체크해서 검색과 정보를 빠르게 이용할 수 있는 UI로 제작해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details14.html" class="block-20" style="background-image: url('assets/img/portfolio/hotspot0.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details14.html">KT 평창올림픽 사이트</a></h3>
+                <p>선수들의 열정이 돋보이는 스포츠 중 쇼트트랙을 주제로 생명감과 스피드는 컨텐츠 컬러로만 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details15.html" class="block-20" style="background-image: url('assets/img/portfolio/suwon1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2013</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details15.html">수원과학대학교</a></h3>
+                <p>무게감과 고급스러움을 주는 다크네이비컬러를 사용하고 왼쪽에는 슬라이드메뉴로 제작하여 문이 열리는듯한 표현을 해보았다.</p>
+              </div>
+            </div>
+          </div>
+         <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details18.html" class="block-20" style="background-image: url('assets/img/portfolio/smartf3.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details18.html">스마트팜</a></h3>
+                <p>농작물의 관리를 쉽게 관리할 수 있는 사이트로 톤 다운시킨 차분화된 블루컬러를 사용하여 안정감있게 표현하였다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details19.html" class="block-20" style="background-image: url('assets/img/portfolio/samho_main.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2011</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details19.html">삼호환경기술</a></h3>
+                <p>깨끗한 환경을 물려주고 싶은 마음에 어린아이의 해맑은 모습을 비쥬얼로 담고 자연과도 함께할수 있는 컬러로 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details41.html " class="block-20" style="background-image: url('assets/img/portfolio/wifi4.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2022</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details41.html ">KT Wifi Zone 모바일웹</a></h3>
+                <p>그레이 블랙톤의 차분하면서 고급스러운 느낌과 레드컬러로 포인트를 주었다.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details21.html" class="block-20" style="background-image: url('assets/img/portfolio/con01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details21.html">마이투자</a></h3>
+                <p>로고색을 기준으로 투자유치의 열정적이고 도전적인 느낌을 담았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details38.html " class="block-20" style="background-image: url('assets/img/portfolio/hotspot001.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details38.html ">KT 핫스팟 모바일앱</a></h3>
+                <p>평창동계올림픽의 염원을 담은 이미지와 KT의 레드컬러를 포인트로 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details37.html" class="block-20" style="background-image: url('assets/img/portfolio/edu2_01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2012</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details37.html">열려라 즐거운 화학세상 홈페이지</a></h3>
+                <p>시원한 느낌의 컨셉으로 화학에 대한 호기심을 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details51.html" class="block-20" style="background-image: url('assets/img/portfolio/edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2012</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details51.html">열려라 즐거운 화학세상 홈페이지2 </a></h3>
+                <p>미래화학산업의 주인공인 어린이의 호기심을 일으키는 화학기호들을 캐릭터와 함께 재미있게 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details29.html" class="block-20" style="background-image: url('assets/img/portfolio/kh_01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2013</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details29.html">금호람세스 어드민 홈페이지 제작</a></h3>
+                <p>직원용 관리자 페이지로 블랙과 레드를 사용하여 깔끔하게 표현하였다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details45.html" class="block-20" style="background-image: url('assets/img/portfolio/m_zigzag.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2023</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="#">지그재그 반응형웹디자인</a></h3>
+                <p>제안시안으로 비쥬얼 위주로 UI를 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details32.html" class="block-20" style="background-image: url('assets/img/portfolio/edu3_01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2011</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details32.html">화학탐구프런티어페스티벌 홈페이지 </a></h3>
+                <p>분자구조를 컬러별로 그래픽화시키고 연령층을 고려하여 너무 어리지 않은 디자인으로 제작해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details33.html" class="block-20" style="background-image: url('assets/img/portfolio/2011webzine.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2011~2012</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details33.html">메트로9호선 웹진제작</a></h3>
+                <p>매달 진행했던 웹진으로 계절별 특성에 맞는 비쥬얼을 메인에 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details34.html" class="block-20" style="background-image: url('assets/img/portfolio/webfit.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2016</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details34.html">웹핏 홈페이지 디자인</a></h3>
+                <p>웹템플릿 사이트로 불필요한 요소를 배제하고 심플하게 내용을 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details3.html" class="block-20" style="background-image: url('assets/img/portfolio/pickme.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details3.html">LG 비즈테크 픽미 이벤트 디자인 </a></h3>
+                <p>당시 유행하던 픽미 노래와 춤을 컨셉에 녹여 화려하게 디자인해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details26.html" class="block-20" style="background-image: url('assets/img/portfolio/9lcd.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details26.html">IC banq HMI SMART 이벤트 디자인</a></h3>
+                <p>원색의 컬러를 테크니컬한 느낌으로 강렬하고 집중되게 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details27.html" class="block-20" style="background-image: url('assets/img/portfolio/money0.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details27.html">뉴드림아이티 블로그팝업 디자인</a></h3>
+                <p>편안하고 따뜻한 느낌의 컬러를 사용하여 친근감있는 컨셉으로 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+     <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details28.html" class="block-20" style="background-image: url('assets/img/portfolio/samplekit.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details28.html">IC banq 샘플키트 이벤트 디자인</a></h3>
+                <p>주제가 여름과 가을컨셉이여서 여름디자인은 블루, 가을디자인은 레드로 계절의 분위기를 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details31.html" class="block-20" style="background-image: url('assets/img/portfolio/banner01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details31.html">LG 컨피테크 여름 더위 이벤트 페이지</a></h3>
+                <p>더위를 물리치고 시원함을 느낄수있는 디자인으로 깨끗하고 재미있는 디자인이 포인트이다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details35.html" class="block-20" style="background-image: url('assets/img/portfolio/pie.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details35.html">IC banq 가을침구 배너 디자인</a></h3>
+                <p>가을분위기가 나는 브라운과 낙엽을 배치하여 가을침구 이벤트를 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+             <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details36.html" class="block-20" style="background-image: url('assets/img/portfolio/pie0.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details36.html">IC banq 라떼판다 배너디자인</a></h3>
+                <p>1주년을 축하하는 의미의 생일초와 파티 컨셉으로 배너디자인을 완성하였다.</p>
+              </div>
+            </div>
+          </div>
+                  <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details46.html" class="block-20" style="background-image: url('assets/img/portfolio/edu0.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details46.html">LG 비즈테크 생활용품 기획전 디자인</a></h3>
+                <p>다양한 청소용품들을 맑고 깨끗한 하늘과 물방울들의 디자인요소를 넣어 디자인하였다.</p>
+              </div>
+            </div>
+          </div>
+   
+           <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry blog-entry justify-content-end">
+              <a href="portfolio-details47.html" class="block-20" style="background-image: url('assets/img/portfolio/c_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details47.html">LG 비즈테크 코렐 기획전 디자인</a></h3>
+                <p>세계적인 식기브랜드인 코렐의 제품들을 여러개 배치함으로써 코렐 브랜드 자체를 소개하는데 중점을 두었다.</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
-
-    <section class="ftco-section" id="blog-section">
-        <div class="container">
-            <div class="btn-row-wrapper">
-                <a href="portfolio.html" class="btn btn-primary btn-custom-mobile">All</a>
-                <a href="pf_award.html" class="btn btn-white btn-outline-white btn-custom-mobile">Award</a>
-                <a href="pf_webdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Web/App Design</a>
-                <a href="pf_event.html" class="btn btn-white btn-outline-white btn-custom-mobile">Event/Banner</a>
-                <a href="pf_visualdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Visual Design</a>
+       <div class="row d-flex">
+              <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details48.html" class="block-20" style="background-image: url('assets/img/portfolio/g_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
+                </div>
+                <h3 class="heading"><a href="portfolio-details48.html">LG 컨피테크 weller 디자인</a></h3>
+                <p>작게 휴대하여 들고 다닐 수 있는 가스 인두기로 배경에 반도체 느낌의 일러스트와 제품에는 사람 캐릭터를 두어 재미를 표현하였다.</p>
+              </div>
             </div>
-
-            <div class="row d-flex">
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2021</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인</a></h3>
-                            <p>제4회 해군 디자인 공모전 동상 작품으로 해군의 기술력을 표현해보았다.</p>
-                        </div>
-                    </div>
+              </div>
+            <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details49.html" class="block-20" style="background-image: url('assets/img/portfolio/h_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2023</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details44.html">주택건설현장 안전 포스터</a></h3>
-                            <p>주택건설현장에서의 안전고리를 표현해본 작품입니다.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details49.html">LG 컨피테크 활력홍삼 디자인</a></h3>
+                <p>강렬한 레드컬러를 배경으로 홍삼이 주는 건강함,활력을 이미지에 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+     
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-en">
+              <a href="portfolio-details50.html" class="block-20" style="background-image: url('assets/img/portfolio/7_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details43.html" class="block-20" style="background-image: url('assets/img/portfolio/bluecarbone.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2022</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details43.html">해양오염 포스터 디자인</a></h3>
-                            <p>블루카본을 주제로 제작한 해양오염 콘텐츠 입선작입니다.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details50.html">IC banq LCD 디자인</a></h3>
+                <p>스마트 터치 LCD의 장점을 체크,그래픽으로 표현해서
+                  한눈에 들어올 수 있게 디자인하였다.
+                </p>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-en">
+              <a href="portfolio-details52.html" class="block-20" style="background-image: url('assets/img/portfolio/smart_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details1.html" class="block-20" style="background-image: url('assets/img/portfolio/anoori_pc.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details1.html">LG Anoori</a></h3>
-                            <p>가정의 편안함을 담은 보육서비스 사업 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details52.html">IC banq 스마트 RC 디자인 </a></h3>
+                <p>RC카의 속도감을 표현하기 위해서 계기판,도로 일러스트를 넣어 이미지를 완성시켰다.
+                </p>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-en">
+              <a href="portfolio-details53.html" class="block-20" style="background-image: url('assets/img/portfolio/holl_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details2.html" class="block-20" style="background-image: url('assets/img/portfolio/pet01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details2.html">Petbang</a></h3>
-                            <p>반려동물의 사랑스러움이 느껴지는 그린 컬러 UI.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details53.html">IC banq LCD 할로윈 디자인</a></h3>
+                <p>할로윈데이의 호박 이미지를 선명하게 강조하기 위해 배경은 네이버,퍼플 컬러로 표현하였다.
+                </p>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-en">
+              <a href="portfolio-details54.html" class="block-20" style="background-image: url('assets/img/portfolio/night_edu.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details5.html" class="block-20" style="background-image: url('assets/img/portfolio/sung01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2013</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details5.html">성균관 대학교</a></h3>
-                            <p>깔끔한 콘텐츠 구성의 서브 페이지 완성.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details54.html">IC banq LCD 쾌적한 숙면 디자인</a></h3>
+                <p>숙면을 표현하기 위한 달밤 이미지들의 요소와 컬러는 선명함을 더욱 강조해준다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-en">
+              <a href="portfolio-details55.html" class="block-20" style="background-image: url('assets/img/portfolio/new_school.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details6.html" class="block-20" style="background-image: url('assets/img/portfolio/coco01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2020</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details6.html">COCO 하이브리드앱</a></h3>
-                            <p>젊은 층을 위한 활기차고 밝은 디자인.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details55.html">IC banq LCD 신학기 디자인</a></h3>
+                <p>신학기에 사용할 다양한 신제품들을 재미있는 일러스트와 타이포그래피,컬러감으로 표현하였다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details25.html" class="block-20" style="background-image: url('assets/img/portfolio/skin01.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details7.html" class="block-20" style="background-image: url('assets/img/portfolio/wifi1.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details7.html">KT wifi ZONE</a></h3>
-                            <p>고급스러운 블랙/그레이톤과 레드 포인트.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details25.html">스킨테라피 숨 </a></h3>
+                <p>깨끗한 느낌의 물방울,여성의 옆모습을 담아 여성스럽고 우아한 느낌의 스킨테라피 숨을 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details8.html" class="block-20" style="background-image: url('assets/img/portfolio/newdream1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details11.html" class="block-20" style="background-image: url('assets/img/portfolio/beauty.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2013</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details11.html">뷰티뿔 모바일웹</a></h3>
-                            <p>잡지사 특유의 선명하고 세련된 느낌 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details8.html">뉴드림국제거래소 전단지</a></h3>
+                <p>가상화폐의 장점을 잘 살릴 수 있는 내용을 그래픽화 시켜서 눈에 띄게 작업하였고 주 연령층을 고려해서 신뢰감있는 다크블루를 사용하였다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details9.html" class="block-20" style="background-image: url('assets/img/portfolio/coc.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details40.html" class="block-20" style="background-image: url('assets/img/portfolio/m_hwahae.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2022</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details40.html">화해 모바일앱</a></h3>
-                            <p>사용자 경험 개선을 위한 UI 제안 시안.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details9.html">LG 스티커 C.O.C 디자인</a></h3>
+                <p>퍼즐모양이 맞춰져 완성되는 컨셉으로 직관적인 아이콘화로 의미를 담아보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details39.html" class="block-20" style="background-image: url('assets/img/portfolio/landscape.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2021</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details14.html" class="block-20" style="background-image: url('assets/img/portfolio/hotspot0.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details14.html">KT 평창올림픽</a></h3>
-                            <p>스포츠의 생동감과 스피드를 담은 디자인.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details39.html">한국조경50주년로고</a></h3>
+                <p>한국조경 50주년의 큰 의미를 축하할 수 있는 '기념비'를 컨셉으로 제작하였다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details10.html" class="block-20" style="background-image: url('assets/img/portfolio/sales02.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">June</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details15.html" class="block-20" style="background-image: url('assets/img/portfolio/suwon1.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2013</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details15.html">수원과학대학교</a></h3>
-                            <p>다크네이비 컬러로 무게감 있는 비주얼 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details10.html">LG 스티커 C.O.C 스티커2</a></h3>
+                <p>가장 큰 장점이라 생각되는 빠른견적을 가운데에 배치하였고 직관적으로 이해하기 쉽게 아이콘화시켰다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details12.html" class="block-20" style="background-image: url('assets/img/portfolio/7stoc.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details18.html" class="block-20" style="background-image: url('assets/img/portfolio/smartf3.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details18.html">스마트팜</a></h3>
-                            <p>농작물 관리를 위한 안정적인 블루톤 디자인.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details12.html">LG 세븐스톡 스티커 디자인</a></h3>
+                <p>로고컬러인 오렌지,레드색을 사용하여 강렬한 메세지를 주듯 스티커를 제작해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details13.html" class="block-20" style="background-image: url('assets/img/portfolio/otobot.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details19.html" class="block-20" style="background-image: url('assets/img/portfolio/samho_main.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2011</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details19.html">삼호환경기술</a></h3>
-                            <p>자연과 함께하는 깨끗한 환경을 비주얼로 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details13.html">IC banq 오또봇 현수막 디자인</a></h3>
+                <p>박람회의 현수막으로도 제작될 예정이여서 멀리서도 눈에 띄면서 호기심을 줄 수 있는 귀엽고 유쾌한 디자인으로 제작해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details16.html" class="block-20" style="background-image: url('assets/img/portfolio/skin.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details41.html" class="block-20" style="background-image: url('assets/img/portfolio/wifi4.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2022</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details41.html">KT Wifi Zone 모바일</a></h3>
-                            <p>차분한 그레이톤과 강렬한 레드 포인트 디자인.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details16.html">스킨테라피 숨 로고디자인</a></h3>
+                <p>피부관리샵의 부드럽고 편안한 느낌과 여성스러움을 로고에 녹여 표현해보았다.</p>
+              </div>
+            </div>
+          </div>
+            
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details17.html" class="block-20" style="background-image: url('assets/img/portfolio/micro1.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details21.html" class="block-20" style="background-image: url('assets/img/portfolio/con01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details21.html">마이투자</a></h3>
-                            <p>투자유치의 열정적인 느낌을 로고색으로 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details17.html">마이크로비트 전단지</a></h3>
+                <p>코딩용 초소형 컴퓨터의 장점을 그래픽화시켜 정리하였고 안정감있는 컬러의 배치로 편안한 인상을 준다.</p>
+              </div>
+            </div>
+            </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details20.html" class="block-20" style="background-image: url('assets/img/portfolio/guro.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details38.html" class="block-20" style="background-image: url('assets/img/portfolio/hotspot001.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details38.html">KT 핫스팟 모바일앱</a></h3>
-                            <p>평창올림픽의 염원을 담은 KT 레드 UI.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details20.html">구로유통 전단지 디자인</a></h3>
+                <p>많은 정보가 들어가 있는 전단지 내용을 체계적으로 정리해서 정보를 건네주는데 촛점을 두었다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry justify-content-end">
+              <a href="portfolio-details22.html" class="block-20" style="background-image: url('assets/img/portfolio/ezwell.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2019</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details37.html" class="block-20" style="background-image: url('assets/img/portfolio/edu2_01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2012</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details37.html">즐거운 화학세상</a></h3>
-                            <p>화학에 대한 호기심을 시원한 컨셉으로 표현.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details22.html">이지웰 리플렛 디자인</a></h3>
+                <p>접었을 때 윗부분 사선의 다양한 컬러들이 보여지는 흥미로운 디자인이다. </p>
+              </div>
+            </div>
+          </div>
+         <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details30.html" class="block-20" style="background-image: url('assets/img/portfolio/maker.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details51.html" class="block-20" style="background-image: url('assets/img/portfolio/edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2012</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details51.html">즐거운 화학세상 2</a></h3>
-                            <p>캐릭터와 화학기호를 이용한 재미있는 디자인.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details30.html">IC banq 나도 메이커 전단지 제작</a></h3>
+                <p>귀엽고 알록달록한 컬러감을 주어 호기심을 유발시키며 재미있는 느낌을 담아서 표현해보았다.</p>
+              </div>
+            </div>
+            </div>
+         <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details24.html" class="block-20" style="background-image: url('assets/img/portfolio/stic.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details29.html" class="block-20" style="background-image: url('assets/img/portfolio/kh_01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2013</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details29.html">금호람세스 어드민</a></h3>
-                            <p>블랙과 레드를 사용한 깔끔한 관리자 페이지.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details24.html">LG 컨피테크 스티커 Digi-key 디자인</a></h3>
+                <p>스티커 디자인으로 붙였을때 깔끔하면서 선명하게 보일수 있도록 제작해보았다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details56.html" class="block-20" style="background-image: url('assets/img/portfolio/grinif0.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details45.html" class="block-20" style="background-image: url('assets/img/portfolio/m_zigzag.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2023</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details45.html">지그재그 반응형</a></h3>
-                            <p>비주얼 위주의 세련된 UI 제안 시안.</p>
-                        </div>
-                    </div>
+                <h3 class="heading"><a href="portfolio-details56.html">그리니프 배너디자인</a></h3>
+                <p>자연을 닮은 화장품의 컨셉을 여자 일러스트와 나뭇잎을 이용해서 감성적으로 표현하였다.</p>
+              </div>
+            </div>
+          </div>
+           <div class="col-md-4 d-flex ftco-animate">
+          	<div class="blog-entry">
+              <a href="portfolio-details57.html" class="block-20" style="background-image: url('assets/img/portfolio/kcala.jpg');">
+              </a>
+              <div class="text mt-3 float-right d-block">
+              	<div class="d-flex align-items-center mb-3 meta">
+	                <p class="mb-0">
+	                	<span class="mr-2">2018</span>
+	                </p>
                 </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details32.html" class="block-20" style="background-image: url('assets/img/portfolio/edu3_01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2011</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details32.html">화학탐구 페스티벌</a></h3>
-                            <p>분자 구조를 그래픽화한 맞춤형 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details33.html" class="block-20" style="background-image: url('assets/img/portfolio/2011webzine.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2011</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details33.html">메트로9호선 웹진</a></h3>
-                            <p>계절별 특성을 담은 월간 웹진 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details34.html" class="block-20" style="background-image: url('assets/img/portfolio/webfit.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2016</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details34.html">웹핏 홈페이지</a></h3>
-                            <p>불필요한 요소를 배제한 심플한 템플릿.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details3.html" class="block-20" style="background-image: url('assets/img/portfolio/pickme.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details3.html">LG 비즈테크 픽미</a></h3>
-                            <p>유행하는 컨셉을 화려하게 녹여낸 이벤트 페이지.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details26.html" class="block-20" style="background-image: url('assets/img/portfolio/9lcd.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details26.html">IC banq HMI</a></h3>
-                            <p>강렬한 원색 컬러의 테크니컬 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details27.html" class="block-20" style="background-image: url('assets/img/portfolio/money0.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details27.html">뉴드림아이티 블로그</a></h3>
-                            <p>따뜻한 컬러의 친근감 있는 팝업 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details28.html" class="block-20" style="background-image: url('assets/img/portfolio/samplekit.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details28.html">IC banq 샘플키트</a></h3>
-                            <p>여름(블루)과 가을(레드)의 계절 분위기 표현.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details31.html" class="block-20" style="background-image: url('assets/img/portfolio/banner01.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details31.html">LG 여름 더위 이벤트</a></h3>
-                            <p>시원하고 깨끗한 느낌의 재미있는 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details35.html" class="block-20" style="background-image: url('assets/img/portfolio/pie.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details35.html">가을침구 배너</a></h3>
-                            <p>브라운과 낙엽을 활용한 가을 분위기 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details36.html" class="block-20" style="background-image: url('assets/img/portfolio/pie0.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details36.html">라떼판다 배너</a></h3>
-                            <p>파티 컨셉의 1주년 축하 배너 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details46.html" class="block-20" style="background-image: url('assets/img/portfolio/edu0.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details46.html">LG 생활용품 기획전</a></h3>
-                            <p>물방울 요소를 활용한 깨끗한 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details47.html" class="block-20" style="background-image: url('assets/img/portfolio/c_edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details47.html">LG 코렐 기획전</a></h3>
-                            <p>브랜드 자체의 매력을 소개하는 배치 구성.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details48.html" class="block-20" style="background-image: url('assets/img/portfolio/g_edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details48.html">LG Weller 디자인</a></h3>
-                            <p>일러스트를 활용한 재미있는 가스 인두기 페이지.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details49.html" class="block-20" style="background-image: url('assets/img/portfolio/h_edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details49.html">활력홍삼 디자인</a></h3>
-                            <p>강렬한 레드로 건강함과 활력을 표현.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details50.html" class="block-20" style="background-image: url('assets/img/portfolio/7_edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details50.html">IC banq LCD 디자인</a></h3>
-                            <p>한눈에 들어오는 스마트 터치 그래픽 디자인.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end">
-                        <a href="portfolio-details52.html" class="block-20" style="background-image: url('assets/img/portfolio/smart_edu.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span class="mr-2">2018</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details52.html">IC banq 스마트 RC</a></h3>
-                            <p>도로 일러스트로 RC카의 속도감을 표현.</p>
-                        </div>
-                    </div>
-                </div>
-            </div> </div> </section>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
+                <h3 class="heading"><a href="portfolio-details57.html">한국반려동물사랑연합 명함디자인</a></h3>
+                <p>마음의 온기를 전해줄 수 있는 하트 이미지를 라인으로 만들어보았다.  </p>
+              </div>
+            </div>
+          </div>
+          </div>
+         </div>
+        </div>
+        </div>
+       </div>
+        </div>
+    </section>
+    
+ <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About</h2>
+              <p>A happy Designer :)</p>
+             
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="award.html">Award</a></li>
+				<li><a href="skill.html">Skill&Tool</a></li>
+				 <li><a href="portfolio.html">Projects</a></li>
+              </ul>
+		    </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li><a href="pf_webdesign.html">Web/Mobile Design</a></li>
+                <li><a href="pf_event.html">Event/popup Design</a></li>
+                <li><a href="pf_visualdesign.html">visual Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href=" "><span class="icon icon-map-marker"></span><span class="text">Incheon, Korea</span></a></li>
+	                <li><a href="  "><span class="icon icon-phone"></span><span class="text">010-3994-9336</span></a></li>
+	                <li><a href=" "><span class="icon icon-envelope"></span><span class="text">kimsongyi85@gmail.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script>  All rights for by   <i class="icon-heart color-danger" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">KIMSONGYI.</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
 </html>
