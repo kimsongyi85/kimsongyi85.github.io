@@ -22,21 +22,9 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-
-
-
-
-	  <style>
-  /* 버튼들을 감싸는 영역: 좁은 박스를 벗어나 전체 너비 사용 */
-  .custom-filter-container {
-    width: 100% !important;
-    text-align: center !important;
-    margin: 40px 0 60px 0 !important; /* 위아래 여백 충분히 확보 */
-  }
-
-  /* 버튼 기본 디자인 */
-  .btn-filter {
+<style>
+  /* 기존 디자인과 충돌하지 않도록 새로운 이름을 씁니다 */
+  .my-design-btn {
     display: inline-block !important;
     padding: 10px 22px !important;
     margin: 5px !important;
@@ -46,43 +34,16 @@
     color: #fff !important;
     font-size: 14px !important;
     text-decoration: none !important;
-    white-space: nowrap !important; /* 글자 줄바꿈 방지 */
-    transition: 0.3s !important;
-  }
-
-  /* 활성화(All) 및 마우스 오버 시 노란색 포인트 */
-  .btn-filter.active, .btn-filter:hover {
-    background: #ffbd39 !important;
-    border-color: #ffbd39 !important;
-    color: #000 !important;
-    font-weight: 600 !important;
-  }
-</style>
-
-<style>
-  /* 버튼 스타일 강제 적용 */
-  .ftco-section .btn-filter {
-    display: inline-block !important;
-    padding: 10px 22px !important;
-    margin: 5px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 30px !important;
-    background: transparent !important;
-    color: #fff !important;
-    font-size: 14px !important;
-    text-decoration: none !important;
     white-space: nowrap !important;
     transition: 0.3s !important;
-    cursor: pointer !important;
   }
 
-  /* 선택된 버튼(All) 및 마우스 오버 */
-  .ftco-section .btn-filter.active, 
-  .ftco-section .btn-filter:hover {
+  /* 활성화 버튼(All) 노란색 포인트 */
+  .my-design-btn.active, .my-design-btn:hover {
     background: #ffbd39 !important;
     border-color: #ffbd39 !important;
     color: #000 !important;
-    font-weight: 600 !important;
+    font-weight: bold !important;
   }
 </style>
 	  
@@ -121,35 +82,40 @@
 		</section>
 -->
     
-   <section class="ftco-section" id="blog-section">
-<div class="col-md-12 ftco-animate text-center">
-    <div class="custom-filter-nav" style="margin-bottom: 50px;">
-        <a href="portfolio.html" class="btn-filter active">All</a>
-        <a href="pf_award.html" class="btn-filter">Award</a>
-        <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
-        <a href="pf_event.html" class="btn-filter">Event/Banner</a>
-        <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
-    </div>
-</div>
-	 <!--End menu-->
-     <p> </p>
-     <!-- table -->
-    <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-              	<div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">2021</span>
-	                </p>
+<section class="ftco-section" id="blog-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center ftco-animate">
+                <div style="margin: 30px 0; display: block; width: 100%;">
+                    <a href="portfolio.html" class="my-design-btn active">All</a>
+                    <a href="pf_award.html" class="my-design-btn">Award</a>
+                    <a href="pf_webdesign.html" class="my-design-btn">Web/App Design</a>
+                    <a href="pf_event.html" class="my-design-btn">Event/Banner</a>
+                    <a href="pf_visualdesign.html" class="my-design-btn">Visual Design</a>
                 </div>
-                <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인 </a></h3>
-               <p>제4회 해군 디자인 공모전 동상 작품으로 해군의 기술력을 표현해보았다.</p>
             </div>
+        </div>
+        
+        <div class="row d-flex">
+            
+            <div class="col-md-4 d-flex ftco-animate">
+                <div class="blog-entry justify-content-end" style="width: 100%;">
+                    <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');"></a>
+                    <div class="text mt-3 float-right d-block">
+                        <div class="d-flex align-items-center mb-3 meta">
+                            <p class="mb-0"><span class="mr-2">2021</span></p>
+                        </div>
+                        <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인</a></h3>
+                        <p>제4회 해군 디자인 공모전 동상 작품으로 해군의 기술력을 표현해보았다.</p>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            </div> </div>
+
+
+
+		
           <div class="col-md-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
               <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');">
