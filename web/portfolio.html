@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* 필터 버튼 모바일/PC 통합 스타일 */
+        /* 버튼 영역 스타일 최적화 */
         .filter-nav {
             display: flex;
             flex-wrap: wrap;
@@ -19,36 +19,37 @@
             gap: 10px;
             margin-bottom: 50px;
         }
-        .btn-custom {
+        .btn-filter {
             display: inline-block;
-            padding: 12px 20px;
+            padding: 12px 25px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
             background: transparent;
             color: #fff !important;
-            font-size: 14px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: 0.3s;
             text-decoration: none !important;
         }
-        .btn-custom.active, .btn-custom:hover {
+        .btn-filter.active, .btn-filter:hover {
             background: #ffbd39 !important;
             color: #000 !important;
             border-color: #ffbd39 !important;
         }
 
-        /* 모바일에서 버튼 2개씩 배치 */
-        @media (max-width: 768px) {
-            .btn-custom {
-                flex: 1 1 calc(45% - 10px);
-                padding: 15px 5px;
-                font-size: 12px;
-                text-align: center;
-            }
-        }
-
-        /* 상단 여백 확보 (메뉴 가림 방지) */
+        /* 섹션 상단 여백 (메뉴 가림 방지) */
         #blog-section {
-            padding-top: 120px;
+            padding-top: 150px;
+        }
+        
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .btn-filter {
+                flex: 1 1 calc(45% - 10px);
+                padding: 10px 5px;
+                font-size: 11px;
+            }
         }
     </style>
 </head>
@@ -78,11 +79,11 @@
             <div class="row mb-5">
                 <div class="col-md-12">
                     <div class="filter-nav">
-                        <a href="portfolio.html" class="btn-custom active">All</a>
-                        <a href="pf_award.html" class="btn-custom">Award</a>
-                        <a href="pf_webdesign.html" class="btn-custom">Web/App Design</a>
-                        <a href="pf_event.html" class="btn-custom">Event/Banner</a>
-                        <a href="pf_visualdesign.html" class="btn-custom">Visual Design</a>
+                        <a href="portfolio.html" class="btn-filter active">All</a>
+                        <a href="pf_award.html" class="btn-filter">Award</a>
+                        <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
+                        <a href="pf_event.html" class="btn-filter">Event/Banner</a>
+                        <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
                     </div>
                 </div>
             </div>
@@ -113,4 +114,37 @@
 
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end" style="width: 100%;">
+                        <a href="portfolio-details43.html" class="block-20" style="background-image: url('assets/img/portfolio/bluecarbone.jpg');"></a>
+                        <div class="text mt-3">
+                            <div class="meta mb-2"><span>2022</span></div>
+                            <h3 class="heading"><a href="portfolio-details43.html">해양오염 포스터 디자인</a></h3>
+                            <p>블루카본을 주제로 한 입선작</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 d-flex ftco-animate">
+                    <div class="blog-entry justify-content-end" style="width: 100%;">
                         <a href="portfolio-details1.html" class="block-20" style="background-image: url('assets/img/portfolio/anoori_pc.jpg');"></a>
+                        <div class="text mt-3">
+                            <div class="meta mb-2"><span>2019</span></div>
+                            <h3 class="heading"><a href="portfolio-details1.html">LG Anoori</a></h3>
+                            <p>편안하고 안락한 보육서비스 디자인</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div> </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section">
+        <div class="container text-center">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | KIM SONG YI</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
