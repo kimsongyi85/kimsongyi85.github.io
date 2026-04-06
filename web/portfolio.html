@@ -46,18 +46,10 @@
     
 <div class="container" style="margin-top: 115px !important; margin-bottom: 10px !important;">
     <div id="filter-include"></div>
-    
     <script>
-        // 중복 실행 방지 및 캐시 방지 호출
-        const filterTarget = document.getElementById('filter-include');
-        filterTarget.innerHTML = ''; 
-
-        fetch('filter-menu.html?v=' + new Date().getTime()) // 매번 새 파일처럼 불러오기
+        fetch('filter-menu.html?v=' + new Date().getTime()) // 강제 새로고침용
             .then(r => r.text())
-            .then(d => {
-                filterTarget.innerHTML = d;
-            })
-            .catch(e => console.log("메뉴 로드 실패:", e));
+            .then(d => { document.getElementById('filter-include').innerHTML = d; });
     </script>
 </div>
 
