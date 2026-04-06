@@ -44,20 +44,26 @@
 	    </div>
 	  </nav>
     
+<div class="container" style="margin-top: 115px !important; margin-bottom: 10px !important;">
+    <div id="filter-include"></div>
+    
     <script>
-        // 기존의 모든 fetch 스크립트를 삭제하고 이것 딱 하나만 남기세요.
-        // 중복 방지를 위해 내용을 비우고 새로 넣는 방식입니다.
-        fetch('filter-menu.html?v=reset_1')
-            .then(r => r.text())
-            .then(d => {
-                const target = document.getElementById('filter-include');
-                if (target) {
-                    target.innerHTML = d; 
-                }
-            });
+        // 1. 중복 방지를 위해 기존 내용을 비웁니다.
+        const filterContainer = document.getElementById('filter-include');
+        filterContainer.innerHTML = '';
+
+        // 2. 가장 안정적인 초기 방식으로 호출하되, 캐시 방지(?v=fresh)를 추가합니다.
+        fetch('filter-menu.html?v=fresh_start')
+            .then(response => {
+                if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
+                return response.text();
+            })
+            .then(data => {
+                filterContainer.innerHTML = data;
+            })
+            .catch(error => console.log('에러 발생:', error));
     </script>
 </div>
-
    <!--menu-->
 
 <div class="text text-left w-100"> <style>
