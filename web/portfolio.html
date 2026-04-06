@@ -46,15 +46,16 @@
     
 <div class="container" style="margin-top: 118px !important; margin-bottom: -10px !important;">
     <div id="filter-include"></div>
+
     <script>
-        // 여기에만 ?v=숫자를 붙여서 딱 하나만 둡니다!
-        fetch('filter-menu.html?v=1.7') 
-            .then(r => r.text())
-            .then(d => { document.getElementById('filter-include').innerHTML = d; });
+        // 이전에 있던 다른 fetch 스크립트들은 다 지우고 이것만 남기세요!
+        fetch('filter-menu.html?v=2.0') 
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('filter-include').innerHTML = data;
+            });
     </script>
 </div>
-	
-	  
 
    <!--menu-->
 
