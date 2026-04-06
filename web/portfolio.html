@@ -23,48 +23,46 @@
     <link rel="stylesheet" href="css/style.css">
 
 <style>
-  /* 부모 박스 제약 해제 및 중앙 정렬 */
-  .filter-wrap {
+  /* 버튼을 감싸는 전체 영역 설정 */
+  .filter-container {
     width: 100% !important;
     text-align: center !important;
-    margin-bottom: 40px !important;
+    margin-bottom: 60px !important; /* 이미지와의 간격 확보 */
+    display: block !important;
+    clear: both !important;
   }
 
-  /* 버튼 기본 스타일 */
+  /* 버튼 개별 스타일 */
   .btn-filter {
     display: inline-block !important;
+    padding: 10px 20px !important;
+    margin: 5px 3px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 30px !important;
     background: transparent !important;
     color: #fff !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    padding: 12px 22px !important;
-    border-radius: 30px !important;
-    margin: 5px !important;
-    font-size: 14px !important;
-    transition: all 0.3s ease !important;
+    font-size: 13px !important;
     text-decoration: none !important;
     white-space: nowrap !important; /* 글자 줄바꿈 방지 */
+    transition: 0.3s !important;
   }
 
-  /* 마우스 오버 시 */
-  .btn-filter:hover {
-    border-color: #ffbd39 !important;
-    color: #ffbd39 !important;
-  }
-
-  /* 활성화된 버튼 (All) */
-  .btn-filter.active {
+  /* 활성화 및 마우스 오버 */
+  .btn-filter.active, .btn-filter:hover {
     background: #ffbd39 !important;
     border-color: #ffbd39 !important;
     color: #000 !important;
-    font-weight: 700 !important;
+    font-weight: bold !important;
   }
 
-  /* 모바일 대응: 버튼이 너무 많으면 자연스럽게 줄바꿈 */
-  @media (max-width: 767.98px) {
+  /* 모바일에서 버튼이 너무 크면 이미지 영역을 가리므로 크기 조정 */
+  @media (max-width: 768px) {
     .btn-filter {
-      padding: 8px 16px !important;
-      font-size: 13px !important;
+      padding: 7px 12px !important;
+      font-size: 12px !important;
+      margin: 3px 2px !important;
     }
+    .filter-container { margin-bottom: 30px !important; }
   }
 </style>
       
