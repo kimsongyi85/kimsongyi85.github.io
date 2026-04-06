@@ -56,15 +56,14 @@
 			</div>
 		</section>
 -->
-    
-   <section class="ftco-section" id="blog-section">
-      <div class="container">
-    <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-     <div class="text">
-    <p><a href="portfolio.html" class="btn btn-primary py-3 px-4">All</a> &nbsp;<a href="pf_award.html" class="btn btn-white btn-outline-white py-3 px-4">Award</a>&nbsp;<a href="pf_webdesign.html" class="btn btn-white btn-outline-white py-3 px-4">Web/App Design</a>&nbsp;<a href="pf_event.html" class="btn btn-white btn-outline-white py-3 px-4">Event/Banner</a>&nbsp;<a href="pf_visualdesign.html" class="btn btn-white btn-outline-white py-3 px-4">Visual Design</a>
-   </p>
-   </div>
-   </div>
+
+
+	  
+<div id="filter-include"></div>
+
+
+
+	  
 	 <!--End menu-->
      <p> </p>
      <!-- table -->
@@ -1001,6 +1000,18 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
-    
+    <script>
+    fetch('filter-menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('filter-include').innerHTML = data;
+            
+            // 현재 페이지에 맞는 버튼에 노란색 불 켜기 (선택 사항)
+            if(window.location.pathname.includes('portfolio.html')) {
+                document.getElementById('btn-all').classList.add('active');
+            }
+        });
+</script>
+	  
   </body>
 </html>
