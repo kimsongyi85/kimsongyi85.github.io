@@ -59,7 +59,32 @@
   }
 </style>
 
+<style>
+  /* 버튼 스타일 강제 적용 */
+  .ftco-section .btn-filter {
+    display: inline-block !important;
+    padding: 10px 22px !important;
+    margin: 5px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 30px !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: 0.3s !important;
+    cursor: pointer !important;
+  }
 
+  /* 선택된 버튼(All) 및 마우스 오버 */
+  .ftco-section .btn-filter.active, 
+  .ftco-section .btn-filter:hover {
+    background: #ffbd39 !important;
+    border-color: #ffbd39 !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+  }
+</style>
 	  
       
   </head>
@@ -97,15 +122,13 @@
 -->
     
    <section class="ftco-section" id="blog-section">
-<div class="col-md-12 ftco-animate">
-    <div class="text-center" style="width: 100%; display: block; margin-bottom: 40px;">
-        <div class="filter-nav">
-            <a href="portfolio.html" class="btn-filter active">All</a>
-            <a href="pf_award.html" class="btn-filter">Award</a>
-            <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
-            <a href="pf_event.html" class="btn-filter">Event/Banner</a>
-            <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
-        </div>
+<div class="col-md-12 ftco-animate text-center">
+    <div class="custom-filter-nav" style="margin-bottom: 50px;">
+        <a href="portfolio.html" class="btn-filter active">All</a>
+        <a href="pf_award.html" class="btn-filter">Award</a>
+        <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
+        <a href="pf_event.html" class="btn-filter">Event/Banner</a>
+        <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
     </div>
 </div>
 	 <!--End menu-->
