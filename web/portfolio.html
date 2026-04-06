@@ -48,22 +48,21 @@
     <div id="filter-include"></div>
     
     <script>
-        // 1. 중복 방지를 위해 기존 내용을 비웁니다.
-        const filterContainer = document.getElementById('filter-include');
-        filterContainer.innerHTML = '';
+        // 중복 실행 방지 및 캐시 방지 호출
+        const filterTarget = document.getElementById('filter-include');
+        filterTarget.innerHTML = ''; 
 
-        // 2. 가장 안정적인 초기 방식으로 호출하되, 캐시 방지(?v=fresh)를 추가합니다.
-        fetch('filter-menu.html?v=fresh_start')
-            .then(response => {
-                if (!response.ok) throw new Error('파일을 찾을 수 없습니다.');
-                return response.text();
+        fetch('filter-menu.html?v=' + new Date().getTime()) // 매번 새 파일처럼 불러오기
+            .then(r => r.text())
+            .then(d => {
+                filterTarget.innerHTML = d;
             })
-            .then(data => {
-                filterContainer.innerHTML = data;
-            })
-            .catch(error => console.log('에러 발생:', error));
+            .catch(e => console.log("메뉴 로드 실패:", e));
     </script>
 </div>
+
+
+	  
    <!--menu-->
 
 <div class="text text-left w-100"> <style>
