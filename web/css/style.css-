@@ -9655,6 +9655,12 @@ textarea.form-control {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg); }
 
+#ftco-loader .path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  -webkit-animation: loader-dash 1.5s ease-in-out infinite;
+  animation: loader-dash 1.5s ease-in-out infinite;
+  stroke-linecap: round; }
 
 @-webkit-keyframes loader-rotate {
   100% {
@@ -9687,51 +9693,3 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
-
-
-/* 모바일 햄버거 버튼 강제 고정 꼼수 */
-@media (max-width: 991.98px) {
-    .ftco_navbar .container {
-        position: relative !important; /* 기준점을 컨테이너로 설정 */
-        display: block !important;    /* 레이아웃 방해 요소 제거 */
-    }
-
-    .navbar-toggler {
-        position: absolute !important; /* 위치를 내 맘대로 조정 */
-        right: 15px !important;        /* 오른쪽 끝에서 15px */
-        top: 15px !important;          /* 위에서 15px (메뉴바 높이에 맞춰 조절 가능) */
-        margin: 0 !important;
-        z-index: 1000 !important;      /* 다른 요소보다 무조건 위로 */
-    }
-}
-
-/* 모든 페이지 공통: 모바일 햄버거 버튼 정렬 */
-@media (max-width: 991.98px) {
-    .navbar-toggler {
-        display: flex !important;
-        align-items: center !important;
-        margin-right: 0 !important;
-        padding-right: 0 !important;
-        color: #fff !important; /* 글씨 색상 확인 */
-        text-transform: uppercase;
-        font-size: 16px; /* MENU 글자 크기 */
-        letter-spacing: 1px;
-    }
-
-    .navbar-toggler .oi-menu {
-        margin-right: 8px; /* 아이콘과 MENU 글자 사이 간격 */
-    }
-}
-/* 어바웃 섹션 이미지 높이 고정 (스크롤 오류 방지) */
-.ftco-about .img {
-    min-height: 500px !important; /* 이미지의 원래 높이 근처로 숫자를 조절해 보세요 */
-    height: 100% !important;
-}
-
-/* 모바일에서는 조금 더 작게 조절 */
-@media (max-width: 767.98px) {
-    .ftco-about .img {
-        min-height: 300px !important;
-        margin-bottom: 30px; /* 글씨와 너무 붙지 않게 여백 */
-    }
-}
