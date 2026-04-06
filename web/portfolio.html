@@ -18,129 +18,64 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* 필터 버튼 영역 스타일 */
+    /* 필터 버튼 영역 최적화 */
     .filter-wrapper {
-      padding: 40px 0 20px 0;
+      padding: 30px 10px;
       text-align: center;
     }
-
     .filter-button-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
     }
-
     .btn-filter {
       display: inline-block;
-      padding: 10px 25px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 12px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
       border-radius: 30px;
       background: transparent;
       color: #fff !important;
       font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
+      font-weight: 500;
       transition: all 0.3s ease;
       text-decoration: none !important;
     }
-
-    .btn-filter:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: #fff;
-    }
-
     .btn-filter.active {
       background: #ffbd39 !important;
       color: #000 !important;
       border-color: #ffbd39 !important;
     }
 
-    @media (max-width: 768px) {
-      .btn-filter {
-        padding: 8px 15px;
-        font-size: 11px;
-      }
+    /* 이미지 및 텍스트 스타일 보정 */
+    .blog-entry {
+      width: 100%;
+      margin-bottom: 30px;
     }
-  </style>
-</head>
+    .block-20 {
+      display: block;
+      width: 100%;
+      height: 250px; /* 이미지 높이 고정 */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 10px;
+    }
+    .heading a {
+      color: #fff;
+      font-size: 18px;
+    }
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">KIM SONG YI</a>
-      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> 
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
-          <li class="nav-item"><a href="award.html" class="nav-link"><span>Award</span></a></li>
-          <li class="nav-item"><a href="skill.html" class="nav-link"><span>Skill& Tools</span></a></li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link"><span>Projects</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <section class="ftco-section" id="blog-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-12 filter-wrapper">
-          <div class="filter-button-container">
-            <a href="portfolio.html" class="btn-filter active">All</a>
-            <a href="pf_award.html" class="btn-filter">Award</a>
-            <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
-            <a href="pf_event.html" class="btn-filter">Event/Banner</a>
-            <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row d-flex">
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry justify-content-end">
-            <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');"></a>
-            <div class="text mt-3 float-right d-block">
-              <div class="d-flex align-items-center mb-3 meta">
-                <p class="mb-0"><span class="mr-2">2021</span></p>
-              </div>
-              <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인</a></h3>
-              <p>제4회 해군 디자인 공모전 동상 작품으로 해군의 기술력을 표현해보았다.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry justify-content-end">
-            <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');"></a>
-            <div class="text mt-3 float-right d-block">
-              <div class="d-flex align-items-center mb-3 meta">
-                <p class="mb-0"><span class="mr-2">2023</span></p>
-              </div>
-              <h3 class="heading"><a href="portfolio-details44.html">주택건설현장 안전 포스터 디자인</a></h3>
-              <p>제4회 해양오염예방 콘텐츠 디자인 맑은바다상 작품으로 주택건설현장에서의 안전고리를 표현해보았다.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 d-flex ftco-animate">
-          <div class="blog-entry">
-            <a href="portfolio-details43.html" class="block-20" style="background-image: url('assets/img/portfolio/bluecarbone.jpg');"></a>
-            <div class="text mt-3 float-right d-block">
-              <div class="d-flex align-items-center mb-3 meta">
-                <p class="mb-0"><span class="mr-2">2022</span></p>
-              </div>
-              <h3 class="heading"><a href="portfolio-details43.html">해양오염 포스터 디자인</a></h3>
-              <p>해양오염콘텐츠 디자인 입선(맑은바다상)작으로 블루카본을 주제로 제작하였다.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-  </section>
-
-  </body>
-</html>
+    /* 모바일 환경 최적화 (핵심) */
+    @media (max-width: 768px) {
+      .filter-button-container {
+        gap: 6px;
+      }
+      .btn-filter {
+        flex: 1 1 calc(48% - 10px); /* 모바일에서 버튼 2개씩 꽉 차게 */
+        padding: 15px 5px;
+        font-size: 12px;
+        text-align: center;
+      }
+      .block-20 {
+        height: 2
