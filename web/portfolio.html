@@ -8,57 +8,38 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* 버튼 영역 스타일 최적화 */
-        .filter-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 50px;
+        /* 버튼 및 상단 여백 최적화 */
+        #blog-section { padding-top: 150px; }
+        .filter-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 50px; }
+        .btn-custom {
+            display: inline-block; padding: 12px 25px; border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px; background: transparent; color: #fff !important; font-size: 13px;
+            transition: 0.3s; text-decoration: none !important;
         }
-        .btn-filter {
-            display: inline-block;
-            padding: 12px 25px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            background: transparent;
-            color: #fff !important;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            text-decoration: none !important;
+        .btn-custom.active, .btn-custom:hover {
+            background: #ffbd39 !important; color: #000 !important; border-color: #ffbd39 !important;
         }
-        .btn-filter.active, .btn-filter:hover {
-            background: #ffbd39 !important;
-            color: #000 !important;
-            border-color: #ffbd39 !important;
-        }
-
-        /* 섹션 상단 여백 (메뉴 가림 방지) */
-        #blog-section {
-            padding-top: 150px;
-        }
-        
-        /* 모바일 대응 */
         @media (max-width: 768px) {
-            .btn-filter {
-                flex: 1 1 calc(45% - 10px);
-                padding: 10px 5px;
-                font-size: 11px;
-            }
+            .btn-custom { flex: 1 1 calc(45% - 10px); padding: 12px 5px; font-size: 11px; text-align: center; }
         }
     </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    
+	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">KIM SONG YI</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav">
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav">
                 <span class="oi oi-menu"></span> 
             </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
@@ -75,76 +56,9 @@
 
     <section class="ftco-section" id="blog-section">
         <div class="container">
-            
             <div class="row mb-5">
                 <div class="col-md-12">
                     <div class="filter-nav">
-                        <a href="portfolio.html" class="btn-filter active">All</a>
-                        <a href="pf_award.html" class="btn-filter">Award</a>
-                        <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
-                        <a href="pf_event.html" class="btn-filter">Event/Banner</a>
-                        <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row d-flex">
-                
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end" style="width: 100%;">
-                        <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');"></a>
-                        <div class="text mt-3">
-                            <div class="meta mb-2"><span>2021</span></div>
-                            <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인</a></h3>
-                            <p>제4회 해군 디자인 공모전 동상 작품</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end" style="width: 100%;">
-                        <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');"></a>
-                        <div class="text mt-3">
-                            <div class="meta mb-2"><span>2023</span></div>
-                            <h3 class="heading"><a href="portfolio-details44.html">주택건설현장 안전 포스터</a></h3>
-                            <p>해양오염예방 콘텐츠 디자인 맑은바다상</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end" style="width: 100%;">
-                        <a href="portfolio-details43.html" class="block-20" style="background-image: url('assets/img/portfolio/bluecarbone.jpg');"></a>
-                        <div class="text mt-3">
-                            <div class="meta mb-2"><span>2022</span></div>
-                            <h3 class="heading"><a href="portfolio-details43.html">해양오염 포스터 디자인</a></h3>
-                            <p>블루카본을 주제로 한 입선작</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 d-flex ftco-animate">
-                    <div class="blog-entry justify-content-end" style="width: 100%;">
-                        <a href="portfolio-details1.html" class="block-20" style="background-image: url('assets/img/portfolio/anoori_pc.jpg');"></a>
-                        <div class="text mt-3">
-                            <div class="meta mb-2"><span>2019</span></div>
-                            <h3 class="heading"><a href="portfolio-details1.html">LG Anoori</a></h3>
-                            <p>편안하고 안락한 보육서비스 디자인</p>
-                        </div>
-                    </div>
-                </div>
-
-                </div> </div>
-    </section>
-
-    <footer class="ftco-footer ftco-section">
-        <div class="container text-center">
-            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | KIM SONG YI</p>
-        </div>
-    </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+                        <a href="portfolio.html" class="btn-custom active">All</a>
+                        <a href="pf_award.html" class="btn-custom">Award</a>
+                        <a href
