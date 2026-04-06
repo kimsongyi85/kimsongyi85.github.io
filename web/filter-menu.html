@@ -1,26 +1,59 @@
-<div class="col-md-12 text-center" style="margin-bottom: 40px;">
-    <a href="portfolio.html" class="my-design-btn" id="btn-all">All</a>
-    <a href="pf_award.html" class="my-design-btn" id="btn-award">Award</a>
-    <a href="pf_webdesign.html" class="my-design-btn" id="btn-web">Web/App Design</a>
-    <a href="pf_event.html" class="my-design-btn" id="btn-event">Event/Banner</a>
-    <a href="pf_visualdesign.html" class="my-design-btn" id="btn-visual">Visual Design</a>
-</div>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text text-left w-100">
+          <style>
+            /* 1. PC 버전: 좌측 정렬 및 버튼 모양 복구 */
+            .btn-row-wrapper {
+              display: block;
+              text-align: left !important;
+              margin-bottom: 20px;
+            }
+            .btn-custom-mobile {
+              display: inline-block !important;
+              width: auto !important;
+              min-width: 100px !important;
+              margin-right: 10px !important;
+              margin-bottom: 10px !important;
+              padding: 12px 25px !important;
+              line-height: 1.5 !important;
+              text-align: center !important;
+              border-radius: 30px !important; /* 동그랗게 추가 */
+            }
 
-<style>
-  .my-design-btn {
-    display: inline-block !important;
-    padding: 10px 22px !important;
-    margin: 5px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 30px !important;
-    color: #fff !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-    transition: 0.3s;
-  }
-  .my-design-btn:hover, .my-design-btn.active {
-    background: #ffbd39 !important;
-    color: #000 !important;
-    border-color: #ffbd39 !important;
-  }
-</style>
+            /* 2. 모바일 전용 (767px 이하) */
+            @media (max-width: 767.98px) {
+              .btn-row-wrapper {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: flex-start !important;
+                gap: 8px !important;
+                padding: 0 !important;
+              }
+              .btn-custom-mobile {
+                flex: 0 0 calc(50% - 8px) !important;
+                margin: 0 !important;
+                padding: 15px 5px !important;
+                font-size: 13px !important;
+                min-height: 50px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+              }
+            }
+          </style>
+
+          <div class="btn-row-wrapper">
+            <a href="portfolio.html" class="btn btn-primary btn-custom-mobile">All</a>
+            <a href="pf_award.html" class="btn btn-white btn-outline-white btn-custom-mobile">Award</a>
+            <a href="pf_webdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Web/App Design</a>
+            <a href="pf_event.html" class="btn btn-white btn-outline-white btn-custom-mobile">Event/Banner</a>
+            <a href="pf_visualdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Visual Design</a>
+          </div>
+        </div>
+      </div>
+    </div> <div class="row d-flex">
+       </div>
+  </div>
+</section>
