@@ -65,38 +65,50 @@
 
 <div class="text text-center w-100">
   <style>
-    /* 1. PC 버전 스타일 (기본값) */
+    /* 1. PC 및 기본 설정: 글자 길이에 맞춰서 예쁘게 */
     .btn-row-wrapper {
-      display: block;
+      display: block; /* PC에선 가로로 흐르게 */
       margin-bottom: 20px;
     }
     .btn-custom-mobile {
-      display: inline-block;
-      margin: 5px; /* PC에서 버튼 사이 간격 */
+      display: inline-block !important;
+      width: auto !important; /* PC에선 크기 강제 고정 해제 */
+      margin: 5px !important;
+      padding: 12px 30px !important; /* PC 버튼의 넉넉한 좌우 여백 */
+      transition: .3s;
     }
 
-    /* 2. 모바일 화면 (768px 미만)에서만 작동하는 설정 */
+    /* 2. 모바일 전용 (767px 이하) */
     @media (max-width: 767.98px) {
       .btn-row-wrapper {
         display: flex !important;
         flex-wrap: wrap !important;
         justify-content: center !important;
-        gap: 8px !important;
-        padding: 0 10px !important;
+        gap: 10px !important;
+        padding: 0 15px !important;
       }
       .btn-custom-mobile {
-        /* 모바일에서만 2개씩 짝지어지도록 강제 설정 */
-        flex: 0 0 calc(50% - 8px) !important; 
-        margin: 0 !important;
-        padding: 12px 5px !important;
-        font-size: 13px !important;
+        /* 모바일에서만 2개씩 짝지음 */
+        flex: 0 0 calc(50% - 10px) !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        min-height: 50px !important;
+        padding: 15px 5px !important; /* 좌우 여백 줄임 */
+        margin: 0 !important;
+        min-height: 54px !important;
+        font-size: 14px !important;
       }
     }
   </style>
+
+  <div class="btn-row-wrapper">
+    <a href="portfolio.html" class="btn btn-white btn-outline-white btn-custom-mobile">All</a>
+    <a href="pf_award.html" class="btn btn-white btn-outline-white btn-custom-mobile">Award</a>
+    <a href="pf_webdesign.html" class="btn btn-primary btn-custom-mobile">Web/App Design</a>
+    <a href="pf_event.html" class="btn btn-white btn-outline-white btn-custom-mobile">Event/Banner</a>
+    <a href="pf_visualdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Visual Design</a>
+  </div>
+</div>
 
   <div class="btn-row-wrapper">
     <a href="portfolio.html" class="btn btn-white btn-outline-white btn-custom-mobile">All</a>
