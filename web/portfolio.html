@@ -6,18 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
+
     <link rel="stylesheet" href="css/aos.css">
+
     <link rel="stylesheet" href="css/ionicons.min.css">
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+      <style>
+  /* 필터 버튼 영역 간격 조절 */
+  .filter-button-container {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  /* 버튼 기본 스타일: 테두리만 있는 형태 */
+  .btn-filter {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    background: transparent;
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+  }
+
+  /* 마우스 호버 효과 */
+  .btn-filter:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* 현재 활성화된 버튼: 노란색 배경에 검정 글자 */
+  .btn-filter.active {
+    background: #ffbd39 !important; /* 기존 템플릿의 포인트 컬러 */
+    color: #000 !important;
+    border-color: #ffbd39 !important;
+  }
+
+  @media (max-width: 768px) {
+    .btn-filter {
+      padding: 8px 15px;
+      font-size: 11px;
+    }
+  }
+</style>
+      
+
+
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -38,6 +86,7 @@
 	      </div>
 	    </div>
 	  </nav>
+
     <!--visual--
     <section class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
 			<div class="container">
@@ -52,53 +101,17 @@
 -->
     
    <section class="ftco-section" id="blog-section">
-<div class="text text-left w-100"> <style>
-    /* 1. PC 버전: 좌측 정렬 및 버튼 모양 복구 */
-    .btn-row-wrapper {
-      display: block;
-      text-align: left !important; /* 좌측 정렬 강제 */
-      margin-bottom: 20px;
-    }
-    .btn-custom-mobile {
-      display: inline-block !important;
-      width: auto !important;
-      min-width: 100px !important;
-      margin-right: 10px !important; /* 버튼 사이 우측 여백 */
-      margin-bottom: 10px !important;
-      padding: 12px 25px !important;
-      line-height: 1.5 !important;
-      text-align: center !important;
-    }
-    /* 2. 모바일 전용 (767px 이하) */
-    @media (max-width: 767.98px) {
-      .btn-row-wrapper {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: flex-start !important; /* 모바일도 좌측부터 채움 */
-        gap: 8px !important;
-        padding: 0 !important;
-      }
-      .btn-custom-mobile {
-        /* 모바일 2개씩 정렬 유지 */
-        flex: 0 0 calc(50% - 8px) !important;
-        margin: 0 !important;
-        padding: 15px 5px !important;
-        font-size: 13px !important;
-        min-height: 50px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-    }
-  </style>
-  <div class="btn-row-wrapper">
-    <a href="portfolio.html" class="btn btn-primary btn-custom-mobile">All</a>
-    <a href="pf_award.html" class="btn btn-white btn-outline-white btn-custom-mobile">Award</a>
-    <a href="pf_webdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Web/App Design</a>
-    <a href="pf_event.html" class="btn btn-white btn-outline-white btn-custom-mobile">Event/Banner</a>
-    <a href="pf_visualdesign.html" class="btn btn-white btn-outline-white btn-custom-mobile">Visual Design</a>
+  
+       <div class="text">
+  <div class="filter-button-container">
+    <a href="portfolio.html" class="btn-filter active">All</a>
+    <a href="pf_award.html" class="btn-filter">Award</a>
+    <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
+    <a href="pf_event.html" class="btn-filter">Event/Banner</a>
+    <a href="pf_visualdesign.html" class="btn-filter">Visual Design</a>
   </div>
 </div>
+       
 	 <!--End menu-->
      <p> </p>
      <!-- table -->
@@ -330,7 +343,7 @@
 	                	<span class="mr-2">2022</span>
 	                </p>
                 </div>
-                <h3 class="heading"><a href="portfolio-details41.html ">KT Wifi Zone 모바일웹</a></h3>
+                <h3 class="heading"><a href="pportfolio-details41.html ">KT Wifi Zone 모바일웹</a></h3>
                 <p>그레이 블랙톤의 차분하면서 고급스러운 느낌과 레드컬러로 포인트를 주었다.</p>
               </div>
             </div>
@@ -1009,6 +1022,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
+
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
   Copyright &copy;<script>document.write(new Date().getFullYear());</script>  All rights for by   <i class="icon-heart color-danger" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank">KIMSONGYI.</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
@@ -1018,6 +1032,8 @@
     </footer>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
