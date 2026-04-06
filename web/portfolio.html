@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* 1. PC/모바일 통합 버튼 스타일 */
-        .portfolio-filter-nav {
+        /* 필터 버튼 모바일/PC 통합 스타일 */
+        .filter-nav {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
-        .filter-btn {
+        .btn-custom {
             display: inline-block;
             padding: 12px 20px;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -30,15 +30,15 @@
             transition: 0.3s;
             text-decoration: none !important;
         }
-        .filter-btn.active, .filter-btn:hover {
+        .btn-custom.active, .btn-custom:hover {
             background: #ffbd39 !important;
             color: #000 !important;
             border-color: #ffbd39 !important;
         }
 
-        /* 2. 모바일 전용 버튼 레이아웃 (반응형) */
+        /* 모바일에서 버튼 2개씩 배치 */
         @media (max-width: 768px) {
-            .filter-btn {
+            .btn-custom {
                 flex: 1 1 calc(45% - 10px);
                 padding: 15px 5px;
                 font-size: 12px;
@@ -46,14 +46,14 @@
             }
         }
 
-        /* 3. 섹션 상단 여백 (메뉴 겹침 방지) */
+        /* 상단 여백 확보 (메뉴 가림 방지) */
         #blog-section {
             padding-top: 120px;
         }
     </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
+    
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">KIM SONG YI</a>
@@ -76,13 +76,13 @@
         <div class="container">
             
             <div class="row mb-5">
-                <div class="col-md-12 text-center">
-                    <div class="portfolio-filter-nav">
-                        <a href="portfolio.html" class="filter-btn active">All</a>
-                        <a href="pf_award.html" class="filter-btn">Award</a>
-                        <a href="pf_webdesign.html" class="filter-btn">Web/App Design</a>
-                        <a href="pf_event.html" class="filter-btn">Event/Banner</a>
-                        <a href="pf_visualdesign.html" class="filter-btn">Visual Design</a>
+                <div class="col-md-12">
+                    <div class="filter-nav">
+                        <a href="portfolio.html" class="btn-custom active">All</a>
+                        <a href="pf_award.html" class="btn-custom">Award</a>
+                        <a href="pf_webdesign.html" class="btn-custom">Web/App Design</a>
+                        <a href="pf_event.html" class="btn-custom">Event/Banner</a>
+                        <a href="pf_visualdesign.html" class="btn-custom">Visual Design</a>
                     </div>
                 </div>
             </div>
@@ -92,8 +92,8 @@
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end" style="width: 100%;">
                         <a href="portfolio-details42.html" class="block-20" style="background-image: url('assets/img/portfolio/navy.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span>2021</span></p></div>
+                        <div class="text mt-3">
+                            <div class="meta mb-2"><span>2021</span></div>
                             <h3 class="heading"><a href="portfolio-details42.html">해군 포스터 디자인</a></h3>
                             <p>제4회 해군 디자인 공모전 동상 작품</p>
                         </div>
@@ -103,8 +103,8 @@
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end" style="width: 100%;">
                         <a href="portfolio-details44.html" class="block-20" style="background-image: url('assets/img/portfolio/homebuilding.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span>2023</span></p></div>
+                        <div class="text mt-3">
+                            <div class="meta mb-2"><span>2023</span></div>
                             <h3 class="heading"><a href="portfolio-details44.html">주택건설현장 안전 포스터</a></h3>
                             <p>해양오염예방 콘텐츠 디자인 맑은바다상</p>
                         </div>
@@ -114,7 +114,3 @@
                 <div class="col-md-4 d-flex ftco-animate">
                     <div class="blog-entry justify-content-end" style="width: 100%;">
                         <a href="portfolio-details1.html" class="block-20" style="background-image: url('assets/img/portfolio/anoori_pc.jpg');"></a>
-                        <div class="text mt-3 float-right d-block">
-                            <div class="d-flex align-items-center mb-3 meta"><p class="mb-0"><span>2019</span></p></div>
-                            <h3 class="heading"><a href="portfolio-details1.html">LG Anoori</a></h3>
-                            <p>편
