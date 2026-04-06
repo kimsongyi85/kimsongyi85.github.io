@@ -1,86 +1,85 @@
 <!DOCTYPE html>
 <html lang="KO">
 <head>
-  <title>::KIM SONG YI DESIGN PROJECT::</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/ionicons.min.css">
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* 필터 버튼 커스텀 스타일 (모바일 스타일 유지) */
-    .filter-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-    }
-    .pf-filter-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 30px;
-      background: transparent;
-      color: #fff !important;
-      font-size: 14px;
-      transition: 0.3s;
-      text-decoration: none !important;
-    }
-    .pf-filter-btn.active, .pf-filter-btn:hover {
-      background: #ffbd39 !important;
-      color: #000 !important;
-      border-color: #ffbd39 !important;
-    }
-
-    /* 모바일 최적화 */
-    @media (max-width: 768px) {
-      .pf-filter-btn {
-        flex: 1 1 calc(48% - 10px);
-        padding: 15px 5px;
-        font-size: 12px;
-        text-align: center;
-      }
-    }
+    <title>::KIM SONG YI DESIGN PROJECT::</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    /* PC 상단 여백 확보 */
-    .ftco-section {
-      padding-top: 100px;
-    }
-  </style>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* 1. PC/모바일 통합 버튼 디자인 */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+        .btn-filter {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            background: transparent;
+            color: #fff !important;
+            font-size: 14px;
+            transition: 0.3s;
+            text-decoration: none !important;
+        }
+        .btn-filter.active, .btn-filter:hover {
+            background: #ffbd39 !important;
+            color: #000 !important;
+            border-color: #ffbd39 !important;
+        }
+
+        /* 2. 모바일 전용 버튼 레이아웃 */
+        @media (max-width: 768px) {
+            .btn-filter {
+                flex: 1 1 calc(45% - 10px);
+                padding: 15px 5px;
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+
+        /* 3. 섹션 상단 여백 (PC 메뉴 겹침 방지) */
+        #blog-section {
+            padding-top: 120px;
+        }
+    </style>
 </head>
-
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">KIM SONG YI</a>
-      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav">
-        <span class="oi oi-menu"></span> 
-      </button>
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
-          <li class="nav-item"><a href="award.html" class="nav-link"><span>Award</span></a></li>
-          <li class="nav-item"><a href="skill.html" class="nav-link"><span>Skill& Tools</span></a></li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link"><span>Projects</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">KIM SONG YI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav">
+                <span class="oi oi-menu"></span> 
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
+                    <li class="nav-item"><a href="award.html" class="nav-link"><span>Award</span></a></li>
+                    <li class="nav-item"><a href="skill.html" class="nav-link"><span>Skill& Tools</span></a></li>
+                    <li class="nav-item"><a href="portfolio.html" class="nav-link"><span>Projects</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <section class="ftco-section" id="blog-section">
-    <div class="container">
-      
-      <div
+    <section class="ftco-section" id="blog-section">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="filter-container">
+                        <a href="portfolio.html" class="btn-filter active">All</a>
+                        <a href="pf_award.html" class="btn-filter">Award</a>
+                        <a href="pf_webdesign.html" class="btn-filter">Web/App Design</a>
+                        <a href="pf_event.html" class="btn-filter">Event/Banner</a>
+                        <a href="pf
