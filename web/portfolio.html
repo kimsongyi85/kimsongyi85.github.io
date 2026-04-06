@@ -44,14 +44,24 @@
 	    </div>
 	  </nav>
     
-<div class="container" style="margin-top: 115px !important; margin-bottom: 10px !important;">
+
+
+
+	  <div class="container" style="margin-top: 115px !important; margin-bottom: 5px !important;">
     <div id="filter-include"></div>
+
     <script>
-        fetch('filter-menu.html?v=' + new Date().getTime()) // 강제 새로고침용
+        // 중복 방지를 위해 v=999 숫자를 바꿔서 확실히 새로 불러옵니다.
+        fetch('filter-menu.html?v=999')
             .then(r => r.text())
-            .then(d => { document.getElementById('filter-include').innerHTML = d; });
+            .then(d => {
+                document.getElementById('filter-include').innerHTML = d;
+            });
     </script>
 </div>
+
+
+	  
 
 
 	  
