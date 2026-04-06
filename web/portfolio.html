@@ -22,6 +22,39 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+
+	  <style>
+  /* 기존에 속 썩이던 버튼 영역을 통째로 숨깁니다 */
+  .heading-section .one-forth, 
+  .heading-section h2, 
+  .heading-section span {
+    display: none !important;
+  }
+
+  /* 우리가 새로 만든 버튼 스타일 (이건 보여야 함) */
+  .my-design-btn {
+    display: inline-block !important;
+    padding: 10px 22px !important;
+    margin: 5px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 30px !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: 0.3s !important;
+  }
+  .my-design-btn.active, .my-design-btn:hover {
+    background: #ffbd39 !important;
+    border-color: #ffbd39 !important;
+    color: #000 !important;
+    font-weight: bold !important;
+  }
+</style>
+
+
+	  
 <style>
   /* 기존 디자인과 충돌하지 않도록 새로운 이름을 씁니다 */
   .my-design-btn {
@@ -82,20 +115,22 @@
 		</section>
 -->
     
-<section class="ftco-section" id="blog-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center ftco-animate">
-                <div style="margin: 30px 0; display: block; width: 100%;">
-                    <a href="portfolio.html" class="my-design-btn active">All</a>
-                    <a href="pf_award.html" class="my-design-btn">Award</a>
-                    <a href="pf_webdesign.html" class="my-design-btn">Web/App Design</a>
-                    <a href="pf_event.html" class="my-design-btn">Event/Banner</a>
-                    <a href="pf_visualdesign.html" class="my-design-btn">Visual Design</a>
-                </div>
-            </div>
-        </div>
-        
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-12 text-center">
+        <a href="portfolio.html" class="my-design-btn active">All</a>
+        <a href="pf_award.html" class="my-design-btn">Award</a>
+        <a href="pf_webdesign.html" class="my-design-btn">Web/App Design</a>
+        <a href="pf_event.html" class="my-design-btn">Event/Banner</a>
+        <a href="pf_visualdesign.html" class="my-design-btn">Visual Design</a>
+      </div>
+    </div>
+
+    <div class="row d-flex">
+       </div>
+  </div>
+</section>
 
 
 
