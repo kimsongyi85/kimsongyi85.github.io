@@ -9737,20 +9737,22 @@ textarea.form-control {
 }
 
 .slider-item .img {
-    background-position: center center;
+    /* 1. 다시 크게 나오게 설정 (비는 곳 없이 꽉 채움) */
+    background-size: cover !important;
+    
+    /* 2. 이미지가 잘릴 때 항상 '정중앙'을 기준으로 잘리게 함 (중요) */
+    background-position: center center !important;
+    
+    /* 3. 반복 방지 */
     background-repeat: no-repeat;
     
-    /* 가로폭에 맞추되, 세로가 잘리는 게 싫다면 cover 대신 80~90%도 시도해보세요 */
-    background-size: cover; 
-    
-    /* .hero에서 550px을 줬으므로 여기도 맞춰주는 게 좋습니다 */
-    height: 550px; 
+    /* 4. 높이를 고정하여 플랫폼마다 크기가 변하는 걸 방지 */
+    height: 650px !important; 
 }
 
+/* 전체 컨테이너 높이도 동일하게 맞춰줍니다 */
 .hero, .home-slider, .slider-item {
-    /* 모든 관련 컨테이너의 높이를 통일시켜야 이미지가 튀어나가지 않습니다 */
-    height: 550px !important;
+    height: 650px !important;
 }
-
 
 
