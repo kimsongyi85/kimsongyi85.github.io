@@ -9752,6 +9752,19 @@ textarea.form-control {
 }
 
 
+@media (max-width: 767.98px) {
+    /* 슬라이더가 담긴 바구니 자체의 높이를 강제로 고정! */
+    .home-slider, 
+    .owl-carousel.home-slider {
+        height: 550px !important; 
+        max-height: 550px !important;
+        overflow: hidden !important;
+    }
 
+    .owl-carousel.home-slider .slider-item {
+        height: 550px !important; 
+        max-height: 550px !important;
+    }
+}
 
 
