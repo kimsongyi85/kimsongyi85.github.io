@@ -8451,8 +8451,8 @@ h1, h2, h3, h4, h5,
 }
 @media (max-width: 1199.98px) {
     .owl-carousel.home-slider .slider-item {
-        /* 여기도 center top으로 변경! */
-        background-position: center top !important; 
+        /* !important를 삭제하고 그냥 top으로만 적어보세요 */
+        background-position: center top; 
     } 
 }
       .owl-carousel.home-slider .slider-item .overlay {
