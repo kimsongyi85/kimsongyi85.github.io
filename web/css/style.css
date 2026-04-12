@@ -9742,7 +9742,7 @@ textarea.form-control {
     /* 50%를 0%나 20%로 낮출수록 이미지가 위로 올라갑니다. */
     background-position: center top !important;
     background-repeat: no-repeat !important;
-    
+
     /* 1. cover를 유지해서 크게 나오게 하되, */
     background-size: cover !important; 
     
