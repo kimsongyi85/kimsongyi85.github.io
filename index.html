@@ -119,6 +119,25 @@
         #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; text-align: center; }
         body { overflow-x: hidden; }
         .button:hover { background-color: #212931 !important; color: #fff !important; }
+
+        /* 인트로 영문 텍스트 줄바꿈 방지 및 최적화 */
+#intro p {
+    word-break: keep-all; /* 단어 단위로 줄바꿈 */
+    overflow-wrap: break-word;
+    /* 맥에서 글자가 두꺼워져 밀리는 것을 대비해 좌우 여백을 살짝 조정 */
+    padding: 0 1rem; 
+}
+
+/* 텍스트 박스 너비를 조금 더 여유 있게 조정 (from이 떨어지는 현상 방지) */
+#intro p[style*="max-width: 600px"] {
+    max-width: 650px !important; 
+}
+
+/* 브랜드명 통일 (Songyi Design) */
+.logo {
+    text-transform: none !important; /* 대문자 강제 변환 해제 */
+}
+        
     </style>
 </head>
 <body class="is-preload">
