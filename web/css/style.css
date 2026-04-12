@@ -9751,15 +9751,15 @@ textarea.form-control {
 @media screen and (max-width: 767px) {
     /* 1. 모든 슬라이드 이미지(bg_2, bg_3 등)의 높이를 하나로 통일 */
     .owl-carousel.home-slider .slider-item {
-        height: 450px !important; /* 이 숫자를 주면 모든 이미지가 똑같은 크기로 고정됩니다 */
-        min-height: 450px !important;
+        height: 400px !important; /* 이 숫자를 주면 모든 이미지가 똑같은 크기로 고정됩니다 */
+        min-height: 400px !important;
         background-position: center 10% !important; 
     }
 
     /* 2. 글자 위치가 너무 내려가지 않게 고정 */
     .slider-text {
         padding-top: 0 !important;
-        margin-top: 10px !important; 
+        margin-top: 30px !important; 
     }
 }
 
