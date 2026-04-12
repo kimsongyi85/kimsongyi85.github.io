@@ -9738,7 +9738,7 @@ textarea.form-control {
 
 .slider-item .img {
     /* 1. 다시 크게 나오게 설정 (비는 곳 없이 꽉 채움) */
-    background-size: cover !important;
+    background-size: 85% auto !important
     
     /* 2. 이미지가 잘릴 때 항상 '정중앙'을 기준으로 잘리게 함 (중요) */
     background-position: center center !important;
