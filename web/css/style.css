@@ -9734,13 +9734,15 @@ textarea.form-control {
     }
 }
 
-@media screen and (max-width: 767px) {
-    .owl-carousel.home-slider .slider-item {
-        background-position: center top !important; /* 위로 바짝 올리기 */
-        height: 500px !important;                  /* 높이도 모바일에 맞게 줄이기 */
-    }
-}
-
-
+@media (max-width: 1199.98px) {           /* 1번: 모바일 시작 */
+  .table-responsive-xl {                  /* 2번: 테이블 설정 시작 */
+    display: block;
+    ... 
+  }                                       /* 3번: 테이블 설정 끝 */
+  
+  .table-responsive-xl > .table-bordered { /* 4번: 보더 설정 시작 */
+    border: 0; 
+  }                                       /* 5번: 보더 설정 끝 */
+}                                         /* 6번: 모바일 전체 끝! */
 
     
