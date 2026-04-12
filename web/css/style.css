@@ -9726,30 +9726,32 @@ textarea.form-control {
     height: 100% !important;
 }
 
-/* 모바일에서는 조금 더 작게 조절 */
+/* 767px 이하 모바일 설정 */
 @media (max-width: 767.98px) {
+    /* 1. 메인 슬라이더 이미지 크기 조절 */
+    .owl-carousel.home-slider .slider-item {
+        height: 550px !important;     /* 300에서 550으로 키웠어요! */
+        min-height: 550px !important;
+    }
+
+    .owl-carousel.home-slider .slider-item .img {
+        background-size: cover !important;     /* contain보다 cover가 꽉 차서 예뻐요 */
+        background-position: center center !important;
+    }
+
+    /* 2. 슬라이더 안의 글자 위치 */
+    .slider-text {
+        margin-top: 80px !important;  /* 글자가 너무 위면 이 숫자를 더 키우세요 */
+    }
+
+    /* 3. 기타 소개 이미지 (기존에 있던 것) */
     .ftco-about .img {
         min-height: 300px !important;
-        margin-bottom: 30px; /* 글씨와 너무 붙지 않게 여백 */
+        margin-bottom: 30px;
     }
 }
 
-@media (max-width: 1199.98px) {           /* 1번: 모바일 시작 */
-  .table-responsive-xl {                  /* 2번: 테이블 설정 시작 */
-    display: block;
-    ... 
-  }                                       /* 3번: 테이블 설정 끝 */
-  
-  .table-responsive-xl > .table-bordered { /* 4번: 보더 설정 시작 */
-    border: 0; 
-  }                                       /* 5번: 보더 설정 끝 */
-}                                         /* 6번: 모바일 전체 끝! */
 
 
 
-@media (max-width: 767.98px) {
-    .owl-carousel.home-slider .slider-item .img {
-        background-size: contain !important; /* 이미지가 박스보다 크면 잘리지 않게 안으로 쏙 넣기 */
-        height: 300px !important; /* 모바일에서만 높이를 강제로 낮추기 */
-    }
-}
+
