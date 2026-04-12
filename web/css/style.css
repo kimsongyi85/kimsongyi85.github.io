@@ -9738,14 +9738,3 @@ textarea.form-control {
 
 
 
-
-.slider-item .img {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% auto !important; 
-    height: 550px !important;
-}
-
-.hero, .home-slider, .slider-item {
-    height: 550px !important;
-}
