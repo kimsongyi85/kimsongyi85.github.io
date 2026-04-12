@@ -9757,4 +9757,18 @@ textarea.form-control {
     max-height: 550px !important; 
 }
 
+/* 화면 너비가 768px 이하일 때 (보통 모바일/태블릿 범위) */
+@media (max-width: 768px) {
+    .slider-item .img {
+        /* 이미지의 가로 중앙은 유지하되, 세로 위치를 상단(top)으로 고정 */
+        background-position: center top !important;
+        
+        /* 모바일에서는 화면이 좁으므로 높이를 살짝 줄여주는 것이 더 세련돼 보일 수 있습니다 */
+        /* height: 450px !important; */
+        
+        /* 이미지가 너무 작아 보인다면 가로 폭을 100%보다 조금 더 키울 수도 있습니다 */
+        /* background-size: cover !important; */
+    }
+}
+
 
