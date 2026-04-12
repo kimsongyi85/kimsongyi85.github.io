@@ -9737,4 +9737,18 @@ textarea.form-control {
 }
 
 
+.slider-item .img {
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    
+    /* 1. cover를 유지해서 크게 나오게 하되, */
+    background-size: cover !important; 
+    
+    /* 2. 높이를 550px에서 50px만 줄여보세요. 이게 '조금 줄어드는' 핵심입니다. */
+    height: 500px !important; 
+}
 
+.hero, .home-slider, .slider-item {
+    /* 여기 높이도 위와 똑같이 맞춰주세요. */
+    height: 500px !important;
+}
