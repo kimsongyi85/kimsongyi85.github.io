@@ -9736,14 +9736,20 @@ textarea.form-control {
     }
 }
 
-/* 배경이미지 */
 .slider-item .img {
-    background-position: center center;
-    background-repeat: no-repeat;
+    /* cover 대신 100%를 쓰되, 세로가 너무 커지지 않게 auto를 줍니다. */
     background-size: 100% auto !important; 
-    height: 550px !important;
+    
+    /* 만약 100%도 너무 커 보인다면 85% 정도로 줄여보세요. 
+       남는 공간은 배경색이 채우게 되어 미니멀한 느낌을 줍니다. */
+    /* background-size: 85% auto !important; */
+
+    background-position: center center !important;
+    background-repeat: no-repeat;
 }
 
-.hero, .home-slider, .slider-item {
+.hero, .home-slider, .slider-item, .slider-item .img {
+    /* 550px 이상으로는 절대 커지지 마! 라고 명령하는 겁니다. */
     height: 550px !important;
+    max-height: 550px !important; 
 }
