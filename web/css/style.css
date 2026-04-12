@@ -8444,7 +8444,7 @@ h1, h2, h3, h4, h5,
     background-size: cover;
     background-repeat: no-repeat;
     /* center center를 center top으로 변경! */
-    background-position: center top; 
+    background-position: center 5% !important;
     height: 550px;
     position: relative;
     z-index: 0; 
