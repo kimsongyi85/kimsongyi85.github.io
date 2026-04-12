@@ -8441,9 +8441,9 @@ h1, h2, h3, h4, h5,
     height: 750px;
     z-index: 0; }
 .owl-carousel.home-slider .slider-item {
-    background-size: cover;
+   background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; /* top에서 다시 center center로 */
+    background-position: center center; /* 다시 중앙으로 */
     height: 750px; /* 원래 높이로 */
     position: relative;
     z-index: 0; 
@@ -9748,25 +9748,3 @@ textarea.form-control {
 
 
 
-@media screen and (max-width: 767px) {
-    .owl-carousel.home-slider .slider-item {
-        /* 1. 박스 높이를 과감하게 키웁니다. 이미지가 잘린다면 박스가 너무 작다는 뜻입니다. */
-        height: 550px !important; 
-        min-height: 550px !important;
-        
-        /* 2. 이미지가 잘리지 않게 비율을 맞춥니다. */
-        background-size: cover !important; 
-        background-position: center top !important; /* 위쪽을 기준으로 정렬하여 아래가 잘려도 중요 부위는 보이게 함 */
-    }
-
-    .slider-text {
-        /* 3. 글씨 위치를 더 아래로 내립니다. */
-        padding-top: 0 !important;
-        margin-top: 180px !important; /* 숫자를 더 키울수록 글자가 아래로 내려옵니다. */
-    }
-    
-    /* 4. 혹시나 박스 밖으로 나가는 이미지를 강제로 보여주게 설정 */
-    .owl-carousel.home-slider {
-        height: auto !important;
-    }
-}
