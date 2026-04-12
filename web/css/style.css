@@ -9736,39 +9736,34 @@ textarea.form-control {
     }
 }
 
+/* 1. 기본 설정 (PC 및 전체 공통) */
 .slider-item .img {
-    /* 1. 다시 크게 나오게 설정 (비는 곳 없이 꽉 채움) */
-    background-size: 85% auto !important
-    
-    /* 2. 이미지가 잘릴 때 항상 '정중앙'을 기준으로 잘리게 함 (중요) */
-    background-position: center center !important;
-    
-    /* 3. 반복 방지 */
+    background-position: center center;
     background-repeat: no-repeat;
-    
-    /* 4. 높이를 고정하여 플랫폼마다 크기가 변하는 걸 방지 */
-    height: 650px !important; 
-}
-
-
-.hero, .home-slider, .slider-item, .slider-item .img {
-    /* 550px 이상으로는 절대 커지지 마! 라고 명령하는 겁니다. */
+    background-size: 100% auto !important; /* 우리가 찾은 '적당한 중간' 크기 */
     height: 550px !important;
-    max-height: 550px !important; 
 }
 
-/* 화면 너비가 768px 이하일 때 (보통 모바일/태블릿 범위) */
+.hero, .home-slider, .slider-item {
+    height: 550px !important;
+}
+
+/* 2. 모바일 전용 설정 (추가하는 부분) */
 @media (max-width: 768px) {
     .slider-item .img {
-        /* 이미지의 가로 중앙은 유지하되, 세로 위치를 상단(top)으로 고정 */
-        background-position: center top !important;
+        /* 이미지를 위로 끌어올리기 위해 0% (맨 위) 설정 */
+        background-position: center 0% !important;
         
-        /* 모바일에서는 화면이 좁으므로 높이를 살짝 줄여주는 것이 더 세련돼 보일 수 있습니다 */
-        /* height: 450px !important; */
+        /* 모바일에서는 가로 폭에 맞추면 이미지가 너무 작아 보일 수 있으므로 
+           다시 꽉 채우는 cover로 변경하여 위쪽을 강조합니다. */
+        background-size: cover !important;
         
-        /* 이미지가 너무 작아 보인다면 가로 폭을 100%보다 조금 더 키울 수도 있습니다 */
-        /* background-size: cover !important; */
+        /* 모바일 화면에 맞게 높이를 살짝 조절 (필요시) */
+        height: 500px !important;
+    }
+    
+    .hero, .home-slider, .slider-item {
+        height: 500px !important;
     }
 }
-
 
