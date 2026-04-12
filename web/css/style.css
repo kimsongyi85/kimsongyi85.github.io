@@ -9747,4 +9747,9 @@ textarea.form-control {
 
 
 
-
+@media (max-width: 767.98px) {
+    .owl-carousel.home-slider .slider-item .img {
+        background-size: contain !important; /* 이미지가 박스보다 크면 잘리지 않게 안으로 쏙 넣기 */
+        height: 300px !important; /* 모바일에서만 높이를 강제로 낮추기 */
+    }
+}
