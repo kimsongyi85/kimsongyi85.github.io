@@ -9738,7 +9738,9 @@ textarea.form-control {
 
 
 .slider-item .img {
-    background-position: center center !important;
+     /* 첫 번째 값은 가로(중앙), 두 번째 값은 세로 위치입니다. */
+    /* 50%를 0%나 20%로 낮출수록 이미지가 위로 올라갑니다. */
+    background-position: center 20% !important; 
     background-repeat: no-repeat !important;
     
     /* 1. cover를 유지해서 크게 나오게 하되, */
@@ -9752,3 +9754,7 @@ textarea.form-control {
     /* 여기 높이도 위와 똑같이 맞춰주세요. */
     height: 500px !important;
 }
+
+
+
+    
