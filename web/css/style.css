@@ -9750,9 +9750,11 @@ textarea.form-control {
     height: 650px !important; 
 }
 
-/* 전체 컨테이너 높이도 동일하게 맞춰줍니다 */
-.hero, .home-slider, .slider-item {
-    height: 650px !important;
+
+.hero, .home-slider, .slider-item, .slider-item .img {
+    /* 550px 이상으로는 절대 커지지 마! 라고 명령하는 겁니다. */
+    height: 550px !important;
+    max-height: 550px !important; 
 }
 
 
