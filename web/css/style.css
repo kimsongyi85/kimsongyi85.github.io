@@ -8443,17 +8443,10 @@ h1, h2, h3, h4, h5,
 .owl-carousel.home-slider .slider-item {
     background-size: cover;
     background-repeat: no-repeat;
-    /* center center를 center top으로 변경! */
-    background-position: center 5% !important;
-    height: 550px;
+    background-position: center center; /* top에서 다시 center center로 */
+    height: 750px; /* 원래 높이로 */
     position: relative;
     z-index: 0; 
-}
-@media (max-width: 1199.98px) {
-    .owl-carousel.home-slider .slider-item {
-        /* !important를 삭제하고 그냥 top으로만 적어보세요 */
-        background-position: center top; 
-    } 
 }
       .owl-carousel.home-slider .slider-item .overlay {
         position: absolute;
