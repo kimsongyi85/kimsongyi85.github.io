@@ -9736,34 +9736,14 @@ textarea.form-control {
     }
 }
 
-/* 1. 기본 설정 (PC 및 전체 공통) */
+/* 배경이미지 */
 .slider-item .img {
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% auto !important; /* 우리가 찾은 '적당한 중간' 크기 */
+    background-size: 100% auto !important; 
     height: 550px !important;
 }
 
 .hero, .home-slider, .slider-item {
     height: 550px !important;
 }
-
-/* 2. 모바일 전용 설정 (추가하는 부분) */
-@media (max-width: 768px) {
-    .slider-item .img {
-        /* 이미지를 위로 끌어올리기 위해 0% (맨 위) 설정 */
-        background-position: center 0% !important;
-        
-        /* 모바일에서는 가로 폭에 맞추면 이미지가 너무 작아 보일 수 있으므로 
-           다시 꽉 채우는 cover로 변경하여 위쪽을 강조합니다. */
-        background-size: cover !important;
-        
-        /* 모바일 화면에 맞게 높이를 살짝 조절 (필요시) */
-        height: 500px !important;
-    }
-    
-    .hero, .home-slider, .slider-item {
-        height: 500px !important;
-    }
-}
-
