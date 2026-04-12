@@ -9737,24 +9737,6 @@ textarea.form-control {
 }
 
 
-.slider-item .img {
-     /* 첫 번째 값은 가로(중앙), 두 번째 값은 세로 위치입니다. */
-    /* 50%를 0%나 20%로 낮출수록 이미지가 위로 올라갑니다. */
-   background-position: center 0px !important;
-    background-repeat: no-repeat !important;
-
-    /* 1. cover를 유지해서 크게 나오게 하되, */
-    background-size: cover !important; 
-    
-    /* 2. 높이를 550px에서 50px만 줄여보세요. 이게 '조금 줄어드는' 핵심입니다. */
-    height: 500px !important; 
-}
-
-.hero, .home-slider, .slider-item {
-    /* 여기 높이도 위와 똑같이 맞춰주세요. */
-    height: 500px !important;
-}
-
 
 
     
