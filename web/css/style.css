@@ -9750,18 +9750,20 @@ textarea.form-control {
 
 @media screen and (max-width: 767px) {
     .owl-carousel.home-slider .slider-item {
-        /* 1. 이미지 높이를 더 줄여서 잘림 현상을 방지합니다 (450 -> 380) */
-        height: 380px !important; 
-        min-height: 380px !important;
+        /* 1. 상자의 높이를 이미지 비율에 맞춰서 더 늘려줍니다 (380 -> 480) */
+        /* 밑부분이 잘린다면 상자가 너무 작다는 뜻이니 이 숫자를 키워야 합니다. */
+        height: 480px !important; 
+        min-height: 480px !important;
         
-        /* 2. 이미지가 잘리지 않게 위치를 정중앙으로 다시 맞춥니다 */
-        background-position: center center !important; 
-        background-size: contain !important; /* 이미지 전체가 다 보이게 하려면 cover 대신 contain을 써보세요 */
+        /* 2. 이미지를 꽉 채우지 말고 상자 안에 '안전하게' 맞춥니다 */
+        background-size: contain !important; /* cover 대신 contain을 쓰면 잘림이 사라집니다 */
+        background-position: center top !important; /* 위쪽을 기준으로 정렬 */
+        background-color: #ffffff; /* 이미지 여백에 생길 배경색 (브랜드 컬러에 맞게 수정) */
     }
 
     .slider-text {
+        /* 3. 글씨가 이미지 위를 가리지 않도록 더 과감하게 내립니다 */
         padding-top: 0 !important;
-        /* 3. 글씨를 더 내리기 위해 여백을 확 늘립니다 (30 -> 80) */
-        margin-top: 80px !important; 
+        margin-top: 150px !important; /* 숫자를 더 크게 해서 글자를 영역 하단으로 보냅니다 */
     }
 }
