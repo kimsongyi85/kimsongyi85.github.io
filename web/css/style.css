@@ -9734,6 +9734,12 @@ textarea.form-control {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .owl-carousel.home-slider .slider-item {
+        background-position: center top !important; /* 위로 바짝 올리기 */
+        height: 500px !important;                  /* 높이도 모바일에 맞게 줄이기 */
+    }
+}
 
 
 
