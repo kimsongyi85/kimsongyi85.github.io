@@ -9745,17 +9745,20 @@ textarea.form-control {
   }                                       /* 5번: 보더 설정 끝 */
 }                                         /* 6번: 모바일 전체 끝! */
 
+
+
+
 @media screen and (max-width: 767px) {
-    /* 기존 코드에 .slider-item 자체도 추가 */
-    .owl-carousel.home-slider .slider-item,
-    .owl-carousel.home-slider .slider-item .img {
+    /* 1. 모든 슬라이드 이미지(bg_2, bg_3 등)의 높이를 하나로 통일 */
+    .owl-carousel.home-slider .slider-item {
+        height: 500px !important; /* 이 숫자를 주면 모든 이미지가 똑같은 크기로 고정됩니다 */
+        min-height: 500px !important;
         background-position: center top !important;
     }
 
+    /* 2. 글자 위치가 너무 내려가지 않게 고정 */
     .slider-text {
         padding-top: 0 !important;
-        /* -20px로 부족하면 -50px 정도로 더 과감하게 올려보세요 */
-        margin-top: -50px !important; 
+        margin-top: -30px !important;
     }
 }
-
