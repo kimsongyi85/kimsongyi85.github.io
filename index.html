@@ -29,21 +29,40 @@
             text-transform: uppercase;
         }
         
-        /* 2. ABOUT 섹션 - PC 2단 레이아웃 */
-        @media screen and (min-width: 981px) {
-            .about-container {
-                display: flex !important;
-                align-items: center !important;
-                gap: 5rem !important;
-                padding: 4rem 2rem !important;
-                text-align: left !important;
-            }
-            .about-image { flex: 1 !important; max-width: 35% !important; }
-            .about-info { flex: 1.5 !important; }
-            .about-info h2 { text-align: left !important; margin-bottom: 1.5rem !important; border: none !important; }
-            .about-info p.sub-title { text-align: left !important; margin-top: -1.5rem !important; color: #999; }
-            .about-info .actions { justify-content: flex-start !important; }
-        }
+/* 2. ABOUT 섹션 - PC 2단 레이아웃 (정렬 수정본) */
+@media screen and (min-width: 981px) {
+    .about-container {
+        display: flex !important;
+        align-items: flex-start !important; /* 중앙 정렬에서 상단 정렬로 변경 */
+        gap: 5rem !important;
+        padding: 4rem 2rem !important;
+        text-align: left !important;
+    }
+    .about-image { 
+        flex: 1 !important; 
+        max-width: 35% !important; 
+    }
+    .about-image .image.main {
+        margin: 0 !important; /* 이미지 자체 상단 여백 제거 */
+    }
+    .about-info { 
+        flex: 1.5 !important; 
+        padding-top: 0 !important; /* 텍스트 시작 지점의 여백 제거 */
+    }
+    .about-info header.major {
+        margin-top: -0.5rem !important; /* 폰트 고유의 상단 여백만큼 살짝 위로 보정 */
+        margin-bottom: 1.5rem !important;
+    }
+    .about-info p.sub-title { 
+        text-align: left !important; 
+        color: #999; 
+        margin: 0 !important;
+    }
+    .about-info .actions { 
+        justify-content: flex-start !important; 
+        margin-top: 2rem !important;
+    }
+}
         
         /* 3. 정보 리스트 스타일 */
         .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
