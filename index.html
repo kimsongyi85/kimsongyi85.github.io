@@ -1,18 +1,24 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>SONGYI DESIGN</title>
+    <title>Songyi Design</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
     <style>
-        /* 1. 기본 타이포그래피 & 공통 설정 (폰트 초기화) */
+        /* 1. 기본 타이포그래피 & 공통 설정 */
         header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
         #main { border: none !important; } 
-        body, input, select, textarea, p, span, a { font-family: sans-serif !important; } /* 명조체 제거, 기본 고딕체 강제 */
         
+        /* 맥/아이폰 폰트 렌더링 최적화 (글자 굵기 차이 최소화) */
+        body { 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
         #project-section .major h2,
         #award-section .major h2 {
             font-size: 2.5rem !important; 
@@ -22,73 +28,47 @@
             border: none !important;
             text-transform: uppercase;
         }
-
-        /* 2. ABOUT 섹션 - 사진 위 'PROFILE' 타이틀 배치 */
-        @media screen and (min-width: 981px) {
-            .about-container {
-                display: flex !important;
-                align-items: flex-start !important;
-                gap: 5rem !important;
-                padding: 4rem 2rem !important;
-                text-align: left !important;
-            }
-            .about-image { 
-                flex: 1 !important; 
-                max-width: 38% !important; 
-                position: relative; /* PROFILE 글씨 배치를 위한 기준 */
-            }
-            
-            /* [수정] 사진 위 PROFILE 타이틀 (메인 디자인) */
-            .about-image::before {
-                content: 'PROFILE'; /* 김송이 대신 PROFILE */
-                position: absolute;
-                top: -3.5rem; /* 사진 위쪽으로 배치 */
-                left: 0;
-                font-size: 2.5rem;
-                font-weight: 900;
-                letter-spacing: 0.3rem;
-                color: #212931;
-                font-family: sans-serif !important; /* 원본 고딕체 */
-            }
-
-            .about-image img {
-                width: 100%;
-                height: 600px !important; 
-                object-fit: cover !important; 
-                object-position: center;
-            }
-
-            .about-info { flex: 1.5 !important; }
-            /* [수정] 원본의 깔끔하고 깜찍한 폰트로 복구 */
-            .about-info h2 { display: none; } /* PROFILE이 위에 있으므로 중복 제거 */
-            .about-info p.sub-title { 
-                text-align: left !important; 
-                color: #666; 
-                font-weight: 700;
-                font-size: 1rem; /* 너무 크지 않게 깜찍한 크기 */
-                margin-bottom: 2rem !important; 
-                font-family: sans-serif !important; /* 필기체 영구 삭제 */
-            }
-            .about-info .actions { justify-content: flex-start !important; }
-        }
         
-        /* 3. 정보 리스트 스타일 (원본의 쫀쫀한 고딕체로 복구) */
+/* 2. ABOUT 섹션 - PC 2단 레이아웃 (정렬 수정본) */
+@media screen and (min-width: 981px) {
+    .about-container {
+        display: flex !important;
+        align-items: flex-start !important; /* 중앙 정렬에서 상단 정렬로 변경 */
+        gap: 5rem !important;
+        padding: 4rem 2rem !important;
+        text-align: left !important;
+    }
+    .about-image { 
+        flex: 1 !important; 
+        max-width: 35% !important; 
+    }
+    .about-image .image.main {
+        margin: 0 !important; /* 이미지 자체 상단 여백 제거 */
+    }
+    .about-info { 
+        flex: 1.5 !important; 
+        padding-top: 0 !important; /* 텍스트 시작 지점의 여백 제거 */
+    }
+    .about-info header.major {
+        margin-top: -0.5rem !important; /* 폰트 고유의 상단 여백만큼 살짝 위로 보정 */
+        margin-bottom: 1.5rem !important;
+    }
+    .about-info p.sub-title { 
+        text-align: left !important; 
+        color: #999; 
+        margin: 0 !important;
+    }
+    .about-info .actions { 
+        justify-content: flex-start !important; 
+        margin-top: 2rem !important;
+    }
+}
+        
+        /* 3. 정보 리스트 스타일 */
         .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
-        .info-list li { display: flex; margin-bottom: 1rem; align-items: center; border-bottom: none !important; padding: 0 !important; background: transparent !important; }
-        .info-list .label { 
-            width: 100px; 
-            font-weight: 700; 
-            color: #212931; 
-            font-size: 0.75rem; /* 작은 크기 */
-            letter-spacing: 0.1rem; 
-            text-transform: uppercase;
-            font-family: sans-serif !important;
-        }
-        .info-list .value { 
-            color: #666; 
-            font-size: 0.9rem; /* 작은 크기 */
-            font-family: sans-serif !important;
-        }
+        .info-list li { display: flex; margin-bottom: 1.2rem; align-items: center; border-bottom: none !important; padding: 0 !important; }
+        .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
+        .info-list .value { color: #666; font-size: 0.95rem; }
 
         /* 4. 아카이브 링크 호버 효과 */
         .archive-link:hover { 
@@ -96,7 +76,7 @@
             border-bottom-color: #212931 !important; 
         }
  
-        /* 5. 프로젝트 스타일 (원본 그대로) */
+        /* 5. 프로젝트 스타일 (PC 공백 최적화) */
         @media screen and (min-width: 981px) {
             #project-section .project-grid { display: flex !important; align-items: stretch !important; justify-content: space-between !important; }
             #project-section .project-grid article {
@@ -129,11 +109,10 @@
                 text-align: center !important;
                 box-shadow: inset 0 0 0 1px #212931 !important;
                 border: none !important;
-                font-family: sans-serif !important;
             }
         }
         
-        /* 6. 어워드 섹션 (원본 유지) */
+        /* 6. 어워드 섹션 */
         #award-section { border-bottom: none !important; }
         #award-section .table-wrapper { width: 100% !important; padding: 0 !important; border: none !important; }
         #award-section table { width: 100% !important; border-collapse: collapse !important; border: none !important; }
@@ -141,32 +120,17 @@
             font-weight: 700 !important; font-size: 0.95rem !important;
             color: #212931 !important; padding: 1.5rem 3rem !important; 
             border-bottom: 1px solid #eee !important; text-align: left;
-            font-family: sans-serif !important;
         }
         #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
         /* 7. 모바일 대응 */
         @media screen and (max-width: 980px) {
             #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
-            .about-container { display: block; text-align: center; padding: 2rem 1.5rem; }
-            .about-image { max-width: 90% !important; margin: 3rem auto 2rem auto !important; position: relative; }
-            .about-image::before {
-                content: 'PROFILE';
-                position: absolute;
-                top: -3rem;
-                left: 50%;
-                transform: translateX(-50%);
-                font-size: 2rem;
-                font-weight: 900;
-                color: #212931;
-                font-family: sans-serif !important;
-            }
-            .about-image img { height: auto !important; }
-            
+            .about-container { display: block; text-align: center; padding: 2rem 1rem; }
             #project-section .project-grid { display: block !important; }
             #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
             #project-section .project-grid article header.major h2 { font-size: 1.8rem !important; line-height: 1.2 !important; word-break: keep-all !important; }
-            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; font-family: sans-serif !important; }
+            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; }
             #footer { padding: 1.2rem 0 !important; min-height: 0 !important; height: auto !important; }
             #footer p { margin: 0 !important; font-size: 0.7rem !important; }
         }
@@ -179,27 +143,65 @@
             padding: 5rem 0 !important; border-top: none !important;
         }
         #footer p { color: rgba(255, 255, 255, 0.4) !important; font-style: italic; text-align: center; }
-        body { overflow-x: hidden; }
         .button:hover { background-color: #212931 !important; color: #fff !important; }
+
+        /* 9. 인트로 및 브랜드명 최적화 (통합 및 오류 수정) */
+        .logo {
+            text-transform: none !important; /* 대문자 강제 변환 해제하여 Songyi 유지 */
+        }
+
+        #intro p {
+            word-break: keep-all; 
+            overflow-wrap: break-word;
+        }
+
+        .intro-description {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.8;
+            /* 맥에서 글자가 넓어지는 것을 대비해 650px보다 넉넉한 720px 설정 */
+            max-width: 720px !important; 
+            margin: 0 auto !important;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .intro-korean {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-english {
+            display: inline-block;
+            width: 100%;
+        }
+        
     </style>
 </head>
 <body class="is-preload">
     <div id="wrapper" class="fade-in">
-        <div id="intro">
-            <h1>Brand Designer</h1>
-            <p>with strong experience in Brand Content Design</p>
-            <p style="font-size: 0.85rem; opacity: 0.7; line-height: 1.8; max-width: 600px; margin: 0 auto;">
-                <span style="display: block; margin-bottom: 1.5rem;">본질을 남기는 사유, 여백의 기록.</span>
-                <span style="display: block;">
-                    We pursue the beauty of essence by distilling complexity into its purest form,<br>
-                    creating a lasting impact through the harmony of space and record.
-                </span>
-            </p>
-            <div style="height: 3rem;"></div>
-            <ul class="actions"><li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li></ul>
-        </div>
+
+
         
-        <header id="header"><a href="index.html" class="logo">SONGYI</a></header>
+<div id="intro">
+    <h1>Brand Designer</h1>
+    <p style="margin-bottom: 2rem;">with strong experience in Brand Content Design</p>
+    
+    <p class="intro-description">
+        <span class="intro-korean">본질을 남기는 사유, 여백의 기록.</span>
+        <span class="intro-english">
+            We pursue the beauty of essence by distilling complexity into its purest form, 
+            creating a lasting impact through the harmony of space and record.
+        </span>
+    </p>
+    
+    <div style="height: 3rem;"></div>
+    <ul class="actions">
+        <li><a href="#header" class="button icon solid solo fas fa-chevron-down scrolly">Continue</a></li>
+    </ul>
+</div>
+        
+        <header id="header"><a href="index.html" class="logo">Songyi</a></header>
         <nav id="nav">
             <ul class="links">
                 <li class="active"><a href="index.html">HOME</a></li>
@@ -208,26 +210,48 @@
                 <li><a href="#award-section">Award</a></li>
             </ul>
         </nav>
-        
-        <div id="main">
-            <article id="about" class="post featured">
-                <div class="about-container">
+
+
+<div id="main">
+    <section id="profile-section">
+        <header class="major" style="text-align: center; border-bottom: none; padding-top: 4rem;">
+            <h2>PROFILE</h2>
+        </header>
+    </section>
+       <article id="about" class="post featured">
+              <div class="about-container">
                     <div class="about-image">
-                        <span class="image main" style="margin:0;"><img src="images/profile.webp" alt="SONGYI Profile" /></span>
+                        <span class="image main" style="margin:0;"><img src="images/profile.webp" alt="Songyi Profile" /></span>
                     </div>
-                    <div class="about-info">
+                   <div class="about-info">
                         <header class="major">
                             <p class="sub-title">Brand & Digital Designer</p>
                         </header>
                         <ul class="info-list">
-                            <li><span class="label">Name</span><span class="value">Kim Song Yi</span></li>
+                            <li><span class="label">Name</span><span class="value">김송이</span></li>
+                            <li><span class="label">E-mail</span><span class="value">songyi.studio@gmail.com</span></li>
+                            <li><span class="label">Call</span><span class="value">010-3994-9336</span></li>
+                        </ul>
+        
+   <div id="main">
+            <article id="about" class="post featured">
+                <div class="about-container">
+                    <div class="about-image">
+                        <span class="image main" style="margin:0;"><img src="images/profile.webp" alt="Songyi Profile" /></span>
+                    </div>
+                   <div class="about-info">
+                        <header class="major">
+                            <p class="sub-title">Brand & Digital Designer</p>
+                        </header>
+                        <ul class="info-list">
+                            <li><span class="label">Name</span><span class="value">김송이</span></li>
                             <li><span class="label">E-mail</span><span class="value">songyi.studio@gmail.com</span></li>
                             <li><span class="label">Call</span><span class="value">010-3994-9336</span></li>
                         </ul>
 
                         <p style="margin-top: 1.5rem; line-height: 1.6;">
                             <span style="font-size: 0.85rem; color: #888; letter-spacing: -0.01rem;">디지털 경험과 캠페인 디자인에 강점이 있는 디자이너</span><br>
-                            <a href="http://ksydesign.dothome.co.kr" target="_blank" class="archive-link" 
+                            <a href="./web/index.html" target="_blank" class="archive-link" 
                                style="font-size: 0.75rem; color: #bbb; text-decoration: none; border-bottom: 1px solid #eee; padding-bottom: 2px; transition: all 0.3s;">
                                 Digital & Campaign Design Archive →
                             </a>
