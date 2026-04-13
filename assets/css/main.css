@@ -2632,19 +2632,19 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		.image.main {
-			display: block;
-			margin: 4rem 0;
-			width: 100%;
-		}
+/* 이미지 테두리 및 그림자 완전 제거 */
+.image.main {
+    border: none !important;      /* 테두리 제거 */
+    box-shadow: none !important;   /* 그림자 제거 */
+    background: transparent !important; /* 배경 박스 투명화 */
+    padding: 0 !important;        /* 내부 여백 제거 */
+}
 
-			.image.main:first-child {
-				margin-top: 0;
-			}
-
-			.image.main img {
-				width: 100%;
-			}
+.image.main img {
+    border: none !important;
+    box-shadow: none !important;
+    display: block;
+}
 
 		@media screen and (max-width: 736px) {
 
