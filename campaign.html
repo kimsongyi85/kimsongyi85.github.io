@@ -70,21 +70,25 @@
             margin-bottom: 1.2rem;
             color: #222;
         }
-        /* [핵심 수정] 설명 문구를 두 줄로 예쁘게 정렬 */
-        .project-desc {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #666;
-            max-width: 550px; /* 폭을 좁혀서 자연스럽게 두 줄이 되도록 유도 */
-            margin: 0 auto;
-            word-break: keep-all; /* 단어가 잘리지 않게 설정 */
-        }
-        @media screen and (max-width: 736px) {
-            .project-grid { gap: 4rem; }
-            .project-title { font-size: 1.4rem; }
-            .project-desc { max-width: 100%; } /* 모바일에서는 가득 차게 */
-        }
-        
+/* 설명 문구 수정: 왼쪽 정렬 및 폭 확장 */
+.project-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;    /* 폭을 550px에서 800px로 넓혀서 시원하게 배치 */
+    margin: 0 auto;      /* 중앙 배치는 유지하되 안의 글은 왼쪽 정렬 */
+    text-align: left;    /* 글자 정렬을 왼쪽으로 변경 */
+    word-break: keep-all; 
+    padding: 0 1rem;     /* 양옆에 미세한 여백 추가 */
+}
+
+/* 모바일에서는 여전히 중앙 정렬이 예쁠 수 있습니다 */
+@media screen and (max-width: 736px) {
+    .project-desc { 
+        text-align: center; 
+        max-width: 100%; 
+    }
+}
     </style>
 </head>
 <body class="is-preload">
