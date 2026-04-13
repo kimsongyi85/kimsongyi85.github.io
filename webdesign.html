@@ -82,21 +82,21 @@
 /* 설명 문구 수정: 왼쪽 정렬 및 폭 확장 */
 .project-desc {
     font-size: 0.95rem;
-    line-height: 2.1;         /* 줄 간격을 살짝 조절해서 가독성 확보 */
+    line-height: 2.1;
     color: #777;
-    /* 폭을 520px로 조금 더 넓히면 단어들이 위로 올라가 정렬됩니다 */
-    max-width: 520px; 
-    margin: 2.5rem auto 0 auto; /* 수치를 줄여서 텍스트 덩어리 전체를 위로 올림 */
+    /* 폭을 580px 정도로 넓히면 '있습니다.'가 윗줄로 올라갑니다 */
+    max-width: 580px; 
+    margin: 2.5rem auto 0 auto;
     text-align: center;
-    word-break: keep-all;     /* 단어 단위로 줄바꿈하여 깔끔하게 유지 */
+    word-break: keep-all; 
     font-weight: 300;
 }
 
-/* 모바일에서는 화면에 맞춰 자연스럽게 보이도록 설정 */
+/* 모바일 정렬 유지 */
 @media screen and (max-width: 736px) {
     .project-desc {
         max-width: 90%;
-        margin-top: 1.5rem;   /* 모바일에서도 너무 쳐지지 않게 조절 */
+        margin-top: 1.5rem;
     }
 }
     </style>
