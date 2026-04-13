@@ -72,14 +72,15 @@
         }
 /* 설명 문구 수정: 왼쪽 정렬 및 폭 확장 */
 .project-desc {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #666;
-    /* 폭을 450px 정도로 확 줄이면 PC에서도 글자가 예쁘게 모입니다 */
-    max-width: 450px; 
-    margin: 3rem auto 0 auto; /* 위쪽 여백(3rem)을 줘서 사진과 간격을 띄우세요 */
+    font-size: 0.95rem;      /* 글씨 크기를 아주 살짝 줄여서 더 세련되게 */
+    line-height: 2.2;        /* 줄 간격을 더 넓혀서 전시 글 느낌 강조 */
+    color: #777;
+    max-width: 420px;        /* 이 수치가 핵심입니다. 420px 이하가 좋아요 */
+    margin: 4.5rem auto 0 auto; /* 위쪽 여백을 넉넉히 줘서 이미지와 분리 */
     text-align: center;
-    word-break: keep-all; /* 한글 단어가 잘리지 않게 함 */
+    word-break: keep-all; 
+    font-weight: 300;        /* 얇은 폰트로 감성 무드 추가 */
+    letter-spacing: -0.02em; /* 자간을 살짝 조여서 가독성 확보 */
 }
 
 /* 모바일에서는 화면을 꽉 채우도록 유지 */
