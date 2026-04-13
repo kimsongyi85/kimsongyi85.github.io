@@ -105,18 +105,42 @@
         }
         #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
-        /* 7. 모바일 대응 */
-        @media screen and (max-width: 980px) {
-            #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
-            .about-container { display: block; text-align: center; padding: 2rem 1rem; }
-            #project-section .project-grid { display: block !important; }
-            #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
-            #project-section .project-grid article header.major h2 { font-size: 1.8rem !important; line-height: 1.2 !important; word-break: keep-all !important; }
-            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; }
-            #footer { padding: 1.2rem 0 !important; min-height: 0 !important; height: auto !important; }
-            #footer p { margin: 0 !important; font-size: 0.7rem !important; }
-        }
-        
+   /* 7. 모바일 대응 */
+@media screen and (max-width: 980px) {
+    /* 인트로 섹션 조절 */
+    #intro { padding: 8rem 2rem 5rem 2rem !important; text-align: center !important; }
+    
+    /* 프로필 컨테이너 조절 */
+    .about-container { display: block; text-align: center; padding: 2rem 1rem; }
+
+    /* 큰 제목(PROJECT, AWARD) 아래 여백 줄이기 */
+    #project-section .major h2,
+    #award-section .major h2 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 프로젝트 그리드 세로 정렬 */
+    #project-section .project-grid { display: block !important; }
+    
+    /* 개별 프로젝트 카드 사이 간격 (2.5rem으로 최적화) */
+    #project-section .project-grid article { 
+        border-left: none !important; 
+        border-bottom: 1px solid #eee !important; 
+        padding: 2.5rem 1.5rem !important; 
+    }
+
+    /* 프로젝트 카드 내 제목 스타일 */
+    #project-section .project-grid article header.major h2 { 
+        font-size: 1.8rem !important; 
+        line-height: 1.2 !important; 
+        word-break: keep-all !important; 
+    }
+
+    /* 버튼 및 푸터 스타일 */
+    #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; }
+    #footer { padding: 1.2rem 0 !important; min-height: 0 !important; height: auto !important; }
+    #footer p { margin: 0 !important; font-size: 0.7rem !important; }
+}
         /* 8. 푸터 스타일 */
         #footer {
             background: #212931 !important; width: 100vw !important;
