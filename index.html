@@ -8,26 +8,36 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
     <style>
-        /* 1. 기본 타이포그래피 & 공용 설정 */
-        header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
-        #main { border: none !important; } 
-        body { 
-            overflow-x: hidden; 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+/* 1. 기본 타이포그래피 & 공용 설정 */
+header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
+#main { border: none !important; } 
 
-        #profile-section .major h2,
-        #project-section .major h2,
-        #award-section .major h2 {
-            font-size: 2.5rem !important; 
-            letter-spacing: 0.3rem !important; 
-            font-weight: 900 !important;
-            margin-bottom: 4rem !important;
-            border: none !important;
-            text-transform: uppercase;
-        }
-        
+/* PROJECT, AWARD 등 일반 섹션 타이틀 설정 */
+#project-section .major h2,
+#award-section .major h2 {
+    font-size: 2.5rem !important; 
+    letter-spacing: 0.3rem !important; 
+    font-weight: 900 !important;
+    margin-bottom: 4rem !important; /* 다른 섹션은 여백 유지 */
+    border: none !important;
+    text-transform: uppercase;
+}
+
+/* PROFILE 섹션: 라인 제거 및 간격 극단적 축소 */
+#profile-section .major {
+    margin-bottom: 0 !important; /* 아래 섹션과의 간격 제거 */
+    padding: 2rem 0 0 0 !important; /* 위쪽 여백만 남기고 아래는 0 */
+}
+
+#profile-section .major h2 {
+    border: none !important;         /* 테두리 완전 제거 */
+    border-bottom: none !important;  /* 하단 라인 제거 */
+    margin-bottom: 0.5rem !important; /* 글자 바로 밑 공백 최소화 */
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.3rem !important;
+    text-transform: uppercase;
+}
         /* 2. ABOUT 섹션 - PC 레이아웃 */
         @media screen and (min-width: 981px) {
             .about-container {
