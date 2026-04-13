@@ -8,9 +8,10 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     
     <style>
-        /* 1. 기본 타이포그래피 & 공통 설정 */
+        /* 1. 기본 타이포그래피 & 공통 설정 (폰트 초기화) */
         header.major { border-bottom: none !important; margin-bottom: 2rem !important; }
         #main { border: none !important; } 
+        body, input, select, textarea, p, span, a { font-family: sans-serif !important; } /* 명조체 제거, 기본 고딕체 강제 */
         
         #project-section .major h2,
         #award-section .major h2 {
@@ -37,9 +38,9 @@
                 position: relative; /* PROFILE 글씨 배치를 위한 기준 */
             }
             
-            /* 사진 위 PROFILE 글씨 스타일 */
+            /* [수정] 사진 위 PROFILE 타이틀 (메인 디자인) */
             .about-image::before {
-                content: 'PROFILE';
+                content: 'PROFILE'; /* 김송이 대신 PROFILE */
                 position: absolute;
                 top: -3.5rem; /* 사진 위쪽으로 배치 */
                 left: 0;
@@ -47,6 +48,7 @@
                 font-weight: 900;
                 letter-spacing: 0.3rem;
                 color: #212931;
+                font-family: sans-serif !important; /* 원본 고딕체 */
             }
 
             .about-image img {
@@ -57,24 +59,36 @@
             }
 
             .about-info { flex: 1.5 !important; }
-            /* 원본 폰트 유지를 위해 필기체 스타일 삭제 및 원본 h2/sub-title 복구 */
-            .about-info h2 { display: none; } /* 이미 사진 위에 PROFILE이 있으므로 중복 제거 */
+            /* [수정] 원본의 깔끔하고 깜찍한 폰트로 복구 */
+            .about-info h2 { display: none; } /* PROFILE이 위에 있으므로 중복 제거 */
             .about-info p.sub-title { 
                 text-align: left !important; 
-                color: #212931; 
+                color: #666; 
                 font-weight: 700;
-                font-size: 1.2rem;
+                font-size: 1rem; /* 너무 크지 않게 깜찍한 크기 */
                 margin-bottom: 2rem !important; 
-                letter-spacing: 0.05rem;
+                font-family: sans-serif !important; /* 필기체 영구 삭제 */
             }
             .about-info .actions { justify-content: flex-start !important; }
         }
         
-        /* 3. 정보 리스트 스타일 (원본 유지) */
+        /* 3. 정보 리스트 스타일 (원본의 쫀쫀한 고딕체로 복구) */
         .info-list { list-style: none; padding: 0; margin: 2.5rem 0; }
-        .info-list li { display: flex; margin-bottom: 1.2rem; align-items: center; border-bottom: none !important; padding: 0 !important; background: transparent !important; }
-        .info-list .label { width: 100px; font-weight: 700; color: #212931; font-size: 0.8rem; letter-spacing: 0.1rem; text-transform: uppercase; }
-        .info-list .value { color: #666; font-size: 0.95rem; }
+        .info-list li { display: flex; margin-bottom: 1rem; align-items: center; border-bottom: none !important; padding: 0 !important; background: transparent !important; }
+        .info-list .label { 
+            width: 100px; 
+            font-weight: 700; 
+            color: #212931; 
+            font-size: 0.75rem; /* 작은 크기 */
+            letter-spacing: 0.1rem; 
+            text-transform: uppercase;
+            font-family: sans-serif !important;
+        }
+        .info-list .value { 
+            color: #666; 
+            font-size: 0.9rem; /* 작은 크기 */
+            font-family: sans-serif !important;
+        }
 
         /* 4. 아카이브 링크 호버 효과 */
         .archive-link:hover { 
@@ -115,6 +129,7 @@
                 text-align: center !important;
                 box-shadow: inset 0 0 0 1px #212931 !important;
                 border: none !important;
+                font-family: sans-serif !important;
             }
         }
         
@@ -126,6 +141,7 @@
             font-weight: 700 !important; font-size: 0.95rem !important;
             color: #212931 !important; padding: 1.5rem 3rem !important; 
             border-bottom: 1px solid #eee !important; text-align: left;
+            font-family: sans-serif !important;
         }
         #award-section table tbody tr:last-child td { border-bottom: none !important; }
 
@@ -143,13 +159,14 @@
                 font-size: 2rem;
                 font-weight: 900;
                 color: #212931;
+                font-family: sans-serif !important;
             }
             .about-image img { height: auto !important; }
             
             #project-section .project-grid { display: block !important; }
             #project-section .project-grid article { border-left: none !important; border-bottom: 1px solid #eee !important; padding: 4rem 1.5rem !important; }
             #project-section .project-grid article header.major h2 { font-size: 1.8rem !important; line-height: 1.2 !important; word-break: keep-all !important; }
-            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; }
+            #project-section .project-grid article .actions.special .button { box-shadow: inset 0 0 0 2px #212931 !important; font-weight: 700 !important; font-family: sans-serif !important; }
             #footer { padding: 1.2rem 0 !important; min-height: 0 !important; height: auto !important; }
             #footer p { margin: 0 !important; font-size: 0.7rem !important; }
         }
@@ -200,7 +217,7 @@
                     </div>
                     <div class="about-info">
                         <header class="major">
-                            <p class="sub-title">BRAND & DIGITAL DESIGNER</p>
+                            <p class="sub-title">Brand & Digital Designer</p>
                         </header>
                         <ul class="info-list">
                             <li><span class="label">Name</span><span class="value">Kim Song Yi</span></li>
