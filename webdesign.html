@@ -79,21 +79,26 @@
             color: #222;
         }
 
-        /* [핵심 수정] 설명 문구를 두 줄로 예쁘게 정렬 */
-        .project-desc {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #666;
-            max-width: 550px; /* 폭을 좁혀서 자연스럽게 두 줄이 되도록 유도 */
-            margin: 0 auto;
-            word-break: keep-all; /* 단어가 잘리지 않게 설정 */
-        }
+/* 설명 문구 수정: 왼쪽 정렬 및 폭 확장 */
+.project-desc {
+    font-size: 0.95rem;
+    line-height: 2.1;         /* 줄 간격을 살짝 조절해서 가독성 확보 */
+    color: #777;
+    /* 폭을 520px로 조금 더 넓히면 단어들이 위로 올라가 정렬됩니다 */
+    max-width: 520px; 
+    margin: 2.5rem auto 0 auto; /* 수치를 줄여서 텍스트 덩어리 전체를 위로 올림 */
+    text-align: center;
+    word-break: keep-all;     /* 단어 단위로 줄바꿈하여 깔끔하게 유지 */
+    font-weight: 300;
+}
 
-        @media screen and (max-width: 736px) {
-            .project-grid { gap: 4rem; }
-            .project-title { font-size: 1.4rem; }
-            .project-desc { max-width: 100%; } /* 모바일에서는 가득 차게 */
-        }
+/* 모바일에서는 화면에 맞춰 자연스럽게 보이도록 설정 */
+@media screen and (max-width: 736px) {
+    .project-desc {
+        max-width: 90%;
+        margin-top: 1.5rem;   /* 모바일에서도 너무 쳐지지 않게 조절 */
+    }
+}
     </style>
 </head>
 <body class="is-preload">
