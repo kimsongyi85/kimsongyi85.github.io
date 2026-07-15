@@ -46,7 +46,7 @@
       margin-bottom: 25px !important;
     }
 
-    /* 💡 [PC 피드백 반영] 전체적으로 기존보다 조금 더 위로 올라가 밀착되도록 수정 (-120px -> -145px) */
+    /* [PC 세팅] 전체적으로 시원하게 위로 밀착되도록 상향 조정 */
     .scroll-anchor {
       display: block;
       position: relative;
@@ -54,7 +54,7 @@
       visibility: hidden;
     }
 
-    /* 💡 [PC 피드백 반영] 프로젝트 영역도 동일하게 더 위로 올려 밀착 (-120px -> -145px) */
+    /* [PC 세팅] 프로젝트 영역 동일하게 더 위로 올려 밀착 */
     #projects-section {
       top: -145px !important;
     }
@@ -103,7 +103,7 @@
         top: -90px; 
       }
 
-      /* 💡 [모바일 피드백 반영] 깃발이 너무 높이 올라가 타이틀이 가려지는 현상 방지하기 위해 조율 (-160px -> -90px) */
+      /* 모바일 프로젝트 타이틀이 잘 보일 수 있는 위치 확보 */
       #projects-section {
         top: -90px !important;
       }
@@ -574,21 +574,21 @@
             const elementPosition = targetElement.getBoundingClientRect().top;
             let offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-            // 💡 [모바일/태블릿용 개별 타겟 보정 세팅]
+            // [모바일/태블릿용 개별 타겟 보정 세팅]
             if (width <= 1024) { 
               if (targetId === '#about-section') {
                 offsetPosition += 20; 
               } else if (targetId === '#resume-section') {
                 offsetPosition -= 10; 
               } else if (targetId === '#services-section') {
-                // 💡 [모바일 수치 완화] 타이틀 'Skills'가 헤더 아래 시원하게 보일 수 있도록 아래로 조율 (-120px -> -65px)
-                offsetPosition -= 65; 
+                // 💡 [피드백 적용] Skill&Tools는 'Skills' 타이틀 글씨가 가려지도록 깊게 올려 세팅합니다. (-155px)
+                offsetPosition -= 155; 
               } else if (targetId === '#projects-section') {
-                // 💡 [모바일 수치 완화] 타이틀 'Project'가 완전히 보이도록 시원하게 조율 (-150px -> -70px)
+                // 프로젝트 섹션 타이틀 노출 상태 유지 (-70px)
                 offsetPosition -= 70; 
               }
             } else {
-              // 💡 [PC 수치 상향] PC 전체 스크롤 시 기존 기준에서 조금 더 시원하게 올라갈 수 있도록 -25px만큼 추가 상향 조정
+              // [PC 수치 세팅] 전체 스크롤 시 기존보다 조금 더 시원하게 올라가 밀착되도록 조정 (-25px 추가)
               offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 25;
             }
 
