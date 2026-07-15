@@ -1,68 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <!-- 기존 <head> 안에 있던 메타태그나 링크들은 그대로 두시고, </head> 바로 위에 아래 스타일 코드를 넣어줍니다 -->
+  <!-- 
+    [주의] 
+    실제 작업 중이신 파일의 <head> 안에 있는 다른 메타태그(meta)나 
+    CSS 링크(link), JS 스크립트(script) 파일들은 이 자리에 그대로 두셔야 합니다! 
+  -->
+
   <style>
-    /* 스크롤 이동 시 상단 가려짐 방지 코드 */
+    /* 1. 전체 화면 공통 스크롤 가려짐 방지 표준 속성 */
     html {
+      /* 상단 고정 헤더 높이만큼 여백을 강제로 확보하여 자바스크립트 간섭을 방어합니다 */
       scroll-padding-top: 100px !important;
-      scroll-behavior: smooth; /* 스크롤이 부드럽게 움직이도록 해줍니다 */
+      scroll-behavior: smooth; /* 스크롤이 부드럽게 움직이도록 처리 */
     }
-	  
-  /* 오직 모바일(767px 이하)에서만 작동하는 최소한의 코드 */
-  @media (max-width: 767px) {
-    .hero .one-third.img {
-      background-image: none !important; /* 모바일만 이미지 안 나오게 */
-    }
-    .hero .one-third.img::after {
-      display: none !important; /* 가림막 제거 */
-    }
-    .hero .one-forth {
-      padding: 40px 20px 20px 20px !important; /* 모바일 여백 줄임 */
-    }
-    .hero .slider-text {
-      height: auto !important;
-      min-height: 420px !important; /* 모바일 버튼 안 잘리게 */
-    }
-  }
 
-/* 1. PC & 태블릿용 기본 여백 (평소에는 적당하게 80px) */
-#about-section, 
-#award-section,
-#resume-section, 
-#projects-section {
-  scroll-margin-top: 80px;
-}
+    /* 2. PC & 태블릿용 섹션별 기본 여백 */
+    #about-section, 
+    #award-section,
+    #resume-section, 
+    #projects-section {
+      scroll-margin-top: 80px !important; 
+    }
 
-/* 2. 오직 모바일(767px 이하)에서만 작동하는 여백 */
-@media (max-width: 767px) {
-  #about-section, 
-  #award-section,
-  #resume-section, 
-  #projects-section {
-    /* 모바일은 햄버거 메뉴가 열리니까 넉넉하게 적용! */
-    scroll-margin-top: 100px !important; 
-  }
-}
-	/* PC용 공통 코드 뒤에도 !important를 붙여서 강제로 적용시킵니다 */
-#about-section, 
-#award-section,
-#resume-section, 
-#projects-section {
-  scroll-margin-top: 80px !important; /* !important 추가 */
-}
+    /* 3. 오직 모바일(767px 이하)에서만 작동하는 스타일 */
+    @media (max-width: 767px) {
+      /* [기존 모바일 레이아웃 최적화 코드] */
+      .hero .one-third.img {
+        background-image: none !important; /* 모바일만 우측 이미지 안 나오게 */
+      }
+      .hero .one-third.img::after {
+        display: none !important; /* 가림막 제거 */
+      }
+      .hero .one-forth {
+        padding: 40px 20px 20px 20px !important; /* 모바일 내부 여백 줄임 */
+      }
+      .hero .slider-text {
+        height: auto !important;
+        min-height: 420px !important; /* 모바일에서 하단 버튼 안 잘리게 */
+      }
 
-	/* [추가할 코드] 모바일에서 햄버거 메뉴를 눌렀을 때 타이틀이 가려지는 현상 방지 */
-#about-section, 
-#award-section,
-#resume-section, 
-#projects-section {
-  /* !important를 붙여서 자바스크립트 간섭을 이겨내고 강제로 여백을 줍니다 */
-  scroll-margin-top: 180px !important; 
-}
-	
-</style>
-  <head>
+      /* [모바일 햄버거 메뉴 가려짐 대응 코드] */
+      #about-section, 
+      #award-section,
+      #resume-section, 
+      #projects-section {
+        /* 모바일은 펼쳐진 메뉴바 높이를 감안하여 좀 더 넉넉하게 여백 확보 */
+        scroll-margin-top: 180px !important; 
+      }
+    }
+  </style>
+</head>
 	
     <title>Songyi Design</title>
     <meta charset="utf-8">
