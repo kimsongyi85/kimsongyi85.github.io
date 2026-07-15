@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,20 +19,18 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    html { scroll-behavior: smooth; }
-    .scroll-anchor { display: block; position: relative; top: -110px; visibility: hidden; }
-    
-    /* 툴 섹션 간격 조정 */
+    /* 스크롤 위치가 겹치지 않게 조절 */
+    .scroll-anchor { display: block; height: 100px; margin-top: -100px; visibility: hidden; }
     .tools-merged-container { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
     
     @media (max-width: 767px) {
-      .scroll-anchor { top: -80px; }
-      .tools-merged-container { margin-top: 30px; }
+      .scroll-anchor { height: 80px; margin-top: -80px; }
     }
   </style>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="150">
   
+  <!-- 내비게이션 -->
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html">Songyi</a>
@@ -51,11 +50,9 @@
     </div>
   </nav>
 
-  <!-- 생략 (Home, About, Award 등 기존 섹션 동일) -->
-
-  <!-- 수정된 Skill&Tools 섹션 -->
-  <span id="services-section" class="scroll-anchor"></span>
-  <section class="ftco-section" id="services-section-real">
+  <!-- [Skill&Tools 섹션] -->
+  <section class="ftco-section" id="services-section">
+    <span class="scroll-anchor"></span> <!-- 위치 기준점 -->
     <div class="container">
       <div class="row justify-content-center py-5 mt-5">
         <div class="col-md-12 heading-section text-center ftco-animate">
@@ -65,6 +62,7 @@
         </div>
       </div>
       
+      <!-- 카드 및 툴 영역 동일 -->
       <div class="row">
         <div class="col-md-3 text-center d-flex ftco-animate"><a href="portfolio.html" class="services-1"><span class="icon"><i class="flaticon-web-design"></i></span><div class="desc"><h3 class="mb-5">Web Design</h3></div></a></div>
         <div class="col-md-3 text-center d-flex ftco-animate"><a href="pf_webdesign.html" class="services-1"><span class="icon"><i class="flaticon-ux-design"></i></span><div class="desc"><h3 class="mb-5">UI/UX Design</h3></div></a></div>
@@ -83,25 +81,7 @@
     </div>
   </section>
 
-  <!-- Projects 등 나머지 부분 동일 -->
-
   <script src="js/jquery.min.js"></script>
-  <script>
-    document.querySelectorAll('.navbar-nav a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        // 💡 오프셋 값을 더 작게(음수 방향으로 크게) 조정하여 더 위로 올라가게 함
-        const offset = (targetId === '#services-section') ? 30 : 80; 
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="js/main.js"></script> <!-- 기존 메인 스크립트가 스크롤을 제어하게 둠 -->
 </body>
 </html>
