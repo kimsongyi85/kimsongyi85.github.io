@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="KO">
 <style>
-	/* 모바일 환경 설정 */
+/* 모바일 환경 설정 */
   @media (max-width: 767px) {
     /* 모바일에서 첫 번째, 두 번째 슬라이드 이미지 안 뜨게 처리 */
     .hero .one-third.img {
@@ -10,7 +10,7 @@
       top: 0; left: 0; right: 0; bottom: 0;
       height: 100% !important;
       z-index: 1 !important;
-      background-image: none !important; /* 배경 이미지 제거 */
+      background-image: none !important;
     }
     
     /* 이미지가 안 뜨므로 위에 씌우던 어두운 가림막도 함께 제거 */
@@ -18,16 +18,18 @@
       display: none !important; 
     }
     
-    /* 텍스트가 들어있는 영역 레이아웃 조정 */
+    /* [수정] 텍스트 영역의 윗 패딩을 100px -> 40px로 줄여 위쪽 공간 확보 */
     .hero .one-forth {
       position: relative !important;
       z-index: 5 !important;
       width: 100% !important;
-      padding: 100px 20px !important;
+      padding: 40px 20px 20px 20px !important; /* 상 우 하 좌 순서 */
     }
+    
+    /* [수정] 최소 높이를 550px에서 420px로 낮추어 작은 폰에서도 버튼이 안 잘리게 조정 */
     .hero .slider-text {
       height: auto !important;
-      min-height: 550px !important;
+      min-height: 420px !important;
     }
   }
 	</style>
