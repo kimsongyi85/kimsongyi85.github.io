@@ -1,1 +1,140 @@
-campaign.html
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Web & Mobile - Songyi Design</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* 프로젝트 그리드: 1단 구성 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr; 
+            gap: 7rem; 
+            margin-top: 4rem;
+        }
+        .project-item {
+            text-align: center;
+            padding-bottom: 5rem;
+            border-bottom: 1px solid #f4f4f4;
+        }
+        .image-container {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 2.5rem;
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
+            max-height: 750px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(10%);
+            transition: all 0.5s ease;
+        }
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.3rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+        .image-container:hover img {
+            filter: grayscale(0%) opacity(0.5);
+            transform: scale(1.02);
+        }
+        .image-container:hover .hover-text {
+            opacity: 1;
+        }
+        .project-category {
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
+            color: #bbb;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #222;
+        }
+/* 설명 문구 수정: 왼쪽 정렬 및 폭 확장 */
+.project-desc {
+    font-size: 0.95rem;
+    line-height: 2.1;
+    color: #777;
+    /* 폭을 580px 정도로 넓히면 '있습니다.'가 윗줄로 올라갑니다 */
+    max-width: 580px; 
+    margin: 2.5rem auto 0 auto;
+    text-align: center;
+    word-break: keep-all; 
+    font-weight: 300;
+}
+
+/* 모바일 정렬 유지 */
+@media screen and (max-width: 736px) {
+    .project-desc {
+        max-width: 90%;
+        margin-top: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body class="is-preload">
+
+    <div id="wrapper">
+
+        <header id="header">
+            <a href="index.html" class="logo">BACK TO GALLERY</a> 
+        </header>
+
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="branding.html">Branding</a></li>
+                <li><a href="webdesign.html">Web / Mobile</a></li>
+                <li class="active"><a href="campaign.html">Campaign</a></li>
+            </ul>
+        </nav>
+        <div id="main">
+            <header class="major">
+                <h2>Branad Campaign</h2>
+                <p>일관된 비주얼 보이스를 통해 대중과 깊게 공감하고 브랜드의 가치를 확산시키는 캠페인 아카이브입니다.</p>
+            </header>
+            <section class="project-grid">
+                <article class="project-item">
+                    <span class="project-category">Brand Campagin </span>
+                    <h3 class="project-title">Digital Archive Project</h3>
+                    
+                    <a href="./web/pf_event.html" target="_blank" class="image-container">
+                        <img src="images/campaign_img.webp" alt="Project" />
+                        <span class="hover-text">VIEW ARCHIVE →</span>
+                    </a>
+                    <p class="project-desc">
+                        브랜드가 가진 고유의 감각과 온도를 웹 공간에 온전히 담아내고자 했습니다.<br />
+                        이미지를 클릭하시면 상세 기획안과 결과물을 아카이브에서 확인하실 수 있습니다.
+                    </p>
+                </article>
+<div style="height: 10rem;"></div> 
+        </div> </div> <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
