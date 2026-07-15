@@ -46,7 +46,7 @@
       margin-bottom: 25px !important;
     }
 
-    /* 💡 [앵커 기본값 수정] PC 버전에서 헤더 두께에 맞춰 위로 좀 더 끌어올림 */
+    /* 💡 [앵커 기본값] */
     .scroll-anchor {
       display: block;
       position: relative;
@@ -93,7 +93,7 @@
         min-height: 500px !important; 
       }
 
-      /* 💡 [앵커 모바일값 수정] 모바일에서 가려지지 않고 컨텐츠가 높게 보이도록 위로 끌어올림 */
+      /* 💡 [앵커 모바일값] */
       .scroll-anchor {
         top: 60px; 
       }
@@ -545,7 +545,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 💡 [위치 전면 수정된 스크립트] -->
+  <!-- 💡 [위치 강제 끌어올리기 스크립트] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -558,13 +558,13 @@
 
           const performScroll = () => {
             const navbar = document.querySelector('.ftco_navbar');
-            // 모바일과 PC 상황에 따른 헤더 높이 반영
             const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 120 : 80);
             
             const elementPosition = targetElement.getBoundingClientRect().top;
             
-            // 💡 [변경] 불필요한 마진값(-120)을 없애고 정확히 상단 헤더 바로 아래 본문이 오도록 공식 수정
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            // 💡 [변경] 컨텐츠를 위로 더 당기기 위해 강제로 마이너스 보정 값(-100)을 적용했습니다.
+            // 만약 더 올리길 원하신다면 -100 숫자를 -130, -150 처럼 늘려주시면 됩니다.
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 100;
 
             window.scrollTo({
               top: offsetPosition,
@@ -575,7 +575,7 @@
           // 1. 즉시 이동
           performScroll();
 
-          // 2. 외부 간섭 방지를 위해 0.2초(200ms) 뒤 완벽 재고정
+          // 2. 외부 라이브러리 스크롤 간섭 극복을 위한 지연 고정
           setTimeout(performScroll, 200);
 
           // 모바일 햄버거 메뉴 닫기
