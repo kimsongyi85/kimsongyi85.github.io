@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html lang="KO">
 <style>
-/* 모바일 환경 설정 (767px 이하: 이미지 숨김) */
-@media (max-width: 767px) {
-  .hero .one-third.img {
-    background-image: none !important;
-  }
-  .hero .one-third.img::after {
-    display: none !important; 
-  }
-  .hero .one-forth {
-    position: relative !important;
-    z-index: 5 !important;
-    width: 100% !important;
-    padding: 40px 20px 20px 20px !important;
-  }
-  .hero .slider-text {
-    height: auto !important;
-    min-height: 420px !important;
-  }
-}
+  /* [1] 768px 이상 (태블릿 & 데스크톱 공통) */
+  @media (min-width: 768px) {
+    .hero .one-third.img {
+      width: 100% !important;
+      position: absolute !important;
+      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      /* 태블릿과 PC에서는 반드시 이미지가 보이도록 강제 지정 */
+      background-image: inherit !important; 
+    }
+    
+    .hero .one-third.img::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.4) 100%) !important;
+      z-index: 2;
+    }
 
-/* 태블릿 환경 설정 (768px ~ 991px: 이미지 보이되 글씨 영역을 좁혀서 안 겹치게 조정) */
-@media (min-width: 768px) and (max-width: 991px) {
-  /* 글씨 레이아웃 너비를 50%로 줄이고 왼쪽 여백을 줘서 우측 배경 이미지와 겹치지 않게 밀어줍니다 */
-  .hero .one-forth {
-    width: 50% !important;
-    padding-left: 30px !important;
+    .hero .one-forth {
+      position: relative !important;
+      z-index: 5 !important;
+      width: 60% !important;
+      padding-left: 50px !important;
+    }
   }
-}
+
+  /* [2] 768px ~ 991px (태블릿 전용 세부 설정) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .hero .one-forth {
+      width: 55% !important;
+      padding-left: 30px !important;
+    }
+    .hero .one-forth h1 {
+      font-size: 40px !important;
+    }
+  }
+
+  /* [3] 767px 이하 (순수 모바일 전용) */
+  @media (max-width: 767px) {
+    .hero .one-third.img {
+      width: 100% !important;
+      position: absolute !important;
+      top: 0; left: 0; right: 0; bottom: 0;
+      height: 100% !important;
+      z-index: 1 !important;
+      background-image: none !important; /* 모바일에서만 확실하게 이미지 제거 */
+    }
+    
+    .hero .one-third.img::after {
+      display: none !important; 
+    }
+    
+    .hero .one-forth {
+      position: relative !important;
+      z-index: 5 !important;
+      width: 100% !important;
+      padding: 40px 20px 20px 20px !important;
+    }
+    
+    .hero .slider-text {
+      height: auto !important;
+      min-height: 420px !important;
+    }
+  }
 </style>
   <head>
 	
