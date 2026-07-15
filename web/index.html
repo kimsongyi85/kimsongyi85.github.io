@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="KO">
-	{
-  scroll-padding-top: 100px !important;
-}
-<style>
+<html lang="ko">
+<head>
+  <!-- 기존 <head> 안에 있던 메타태그나 링크들은 그대로 두시고, </head> 바로 위에 아래 스타일 코드를 넣어줍니다 -->
+  <style>
+    /* 스크롤 이동 시 상단 가려짐 방지 코드 */
+    html {
+      scroll-padding-top: 100px !important;
+      scroll-behavior: smooth; /* 스크롤이 부드럽게 움직이도록 해줍니다 */
+    }
+	  
   /* 오직 모바일(767px 이하)에서만 작동하는 최소한의 코드 */
   @media (max-width: 767px) {
     .hero .one-third.img {
