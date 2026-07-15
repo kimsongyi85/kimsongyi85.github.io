@@ -527,6 +527,35 @@
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
-    
+    <!-- 자바스크립트 스크롤 강제 보정 스크립트 -->
+<script>
+document.querySelectorAll('.list-unstyled a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault(); // 기존 자바스크립트 동작을 강제로 멈춥니다!
+
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      // 모바일(화면 폭 767px 이하)일 때는 헤더 높이를 크게(180px), PC일 때는 적당히(80px) 잡습니다.
+      const headerOffset = window.innerWidth <= 767 ? 180 : 80;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // 계산된 정확한 위치로 강제 스크롤 이동시킵니다.
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // (옵션) 모바일에서 클릭 후 열려있던 햄버거 메뉴판을 자동으로 닫아줍니다.
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      }
+    }
+  });
+});
+</script>
   </body>
 </html>
