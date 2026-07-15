@@ -18,13 +18,23 @@
     }
   }
 
-	/* 모바일에서 햄버거 메뉴를 통해 이동 시, 상단 메뉴바에 타이틀이 가려지는 현상 방지 */
+/* 1. PC & 태블릿용 기본 여백 (평소에는 적당하게 80px) */
 #about-section, 
 #award-section,
 #resume-section, 
 #projects-section {
-  /* 상단 네비게이션바의 높이(약 70px~80px)만큼 여유 공간을 주고 스크롤이 멈추게 합니다 */
-  scroll-margin-top: 320px; 
+  scroll-margin-top: 80px;
+}
+
+/* 2. 오직 모바일(767px 이하)에서만 작동하는 여백 */
+@media (max-width: 767px) {
+  #about-section, 
+  #award-section,
+  #resume-section, 
+  #projects-section {
+    /* 모바일은 햄버거 메뉴가 열리니까 넉넉하게 320px 적용! */
+    scroll-margin-top: 320px !important; 
+  }
 }
 	
 </style>
