@@ -33,7 +33,7 @@
       display: block;
       position: relative;
       /* [조정] 너무 많이 보이지 않도록 PC 여백을 -40px로 적당히 타이트하게 조절 */
-      top: -40px; 
+      top: -10px; 
       visibility: hidden;
     }
 
@@ -55,7 +55,7 @@
 
       .scroll-anchor {
         /* [조정] 모바일에서 이전 콘텐츠가 너무 많이 노출되는 것을 방지하기 위해 -100px로 축소 */
-        top: -100px; 
+        top: -60px; 
       }
     }
   </style>
@@ -517,7 +517,7 @@
           e.preventDefault(); // 기본 내장 점프 동작 정지
 
           // [조정] 깃발 간격 조절에 맞춰서 자바스크립트 오프셋값도 PC 40 / 모바일 100으로 최적화
-          const headerOffset = window.innerWidth <= 767 ? 100 : 40;
+          const headerOffset = window.innerWidth <= 767 ? 60 : 10;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
