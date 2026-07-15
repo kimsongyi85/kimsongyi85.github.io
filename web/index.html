@@ -43,6 +43,15 @@
 #projects-section {
   scroll-margin-top: 80px !important; /* !important 추가 */
 }
+
+	/* [추가할 코드] 모바일에서 햄버거 메뉴를 눌렀을 때 타이틀이 가려지는 현상 방지 */
+#about-section, 
+#award-section,
+#resume-section, 
+#projects-section {
+  /* !important를 붙여서 자바스크립트 간섭을 이겨내고 강제로 여백을 줍니다 */
+  scroll-margin-top: 180px !important; 
+}
 	
 </style>
   <head>
