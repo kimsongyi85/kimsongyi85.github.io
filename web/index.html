@@ -63,12 +63,22 @@
         padding-top: 5em !important;
       }
       
-      /* 💡 모바일에서 상단 이미지가 잘리지 않고 정상 노출되도록 수정 */
+      /* 💡 [수정] 모바일에서 bg_2.webp 이미지 영역 숨기기 */
+      .hero .slider-item:first-child .one-third.img {
+        display: none !important;
+      }
+      
+      /* 💡 [수정] 모바일에서 bg_1.png 이미지 영역 완전히 숨기기 */
+      .ftco-about .img-about {
+        display: none !important;
+      }
+
+      /* 💡 두 번째 슬라이더(bg_3.webp) 등 기본 노출이 필요한 이미지 세팅 */
       .hero .one-third.img {
         display: block !important;
-        height: 320px !important; /* 모바일에서 이미지 세로 높이 확보 */
-        background-size: cover !important; /* 영역을 가득 채우되 비율 유지 */
-        background-position: center top !important; /* 이미지의 위쪽/가운데 기준 정렬 */
+        height: 320px !important;
+        background-size: cover !important;
+        background-position: center top !important;
       }
       .hero .one-third.img::after {
         display: block !important;
