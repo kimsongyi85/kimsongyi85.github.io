@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="KO">
+<style>
+	/* 모바일 환경 설정 */
+  @media (max-width: 767px) {
+    /* 모바일에서 첫 번째, 두 번째 슬라이드 이미지 안 뜨게 처리 */
+    .hero .one-third.img {
+      width: 100% !important;
+      position: absolute !important;
+      top: 0; left: 0; right: 0; bottom: 0;
+      height: 100% !important;
+      z-index: 1 !important;
+      background-image: none !important; /* 배경 이미지 제거 */
+    }
+    
+    /* 이미지가 안 뜨므로 위에 씌우던 어두운 가림막도 함께 제거 */
+    .hero .one-third.img::after {
+      display: none !important; 
+    }
+    
+    /* 텍스트가 들어있는 영역 레이아웃 조정 */
+    .hero .one-forth {
+      position: relative !important;
+      z-index: 5 !important;
+      width: 100% !important;
+      padding: 100px 20px !important;
+    }
+    .hero .slider-text {
+      height: auto !important;
+      min-height: 550px !important;
+    }
+  }
+	</style>
   <head>
+	
     <title>Songyi Design</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
