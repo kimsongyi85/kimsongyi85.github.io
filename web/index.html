@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="KO">
 <style>
-  /* 태블릿 및 모바일 환경 통합 설정 (최대 991px까지 적용) */
-  @media (max-width: 991px) {
-    /* 모바일과 태블릿에서 첫 번째, 두 번째 슬라이드 이미지 안 뜨게 처리 */
-    .hero .one-third.img {
-      width: 100% !important;
-      position: absolute !important;
-      top: 0; left: 0; right: 0; bottom: 0;
-      height: 100% !important;
-      z-index: 1 !important;
-      background-image: none !important;
-    }
-    
-    /* 이미지가 안 뜨므로 위에 씌우던 어두운 가림막도 함께 제거 */
-    .hero .one-third.img::after {
-      display: none !important; 
-    }
-    
-    /* 텍스트 영역의 패딩을 조절하여 위쪽 공간 확보 */
-    .hero .one-forth {
-      position: relative !important;
-      z-index: 5 !important;
-      width: 100% !important;
-      padding: 40px 20px 20px 20px !important; /* 상 우 하 좌 순서 */
-    }
-    
-    /* 최소 높이를 낮추어 태블릿과 작은 폰 모두에서 버튼이 안 잘리게 조정 */
-    .hero .slider-text {
-      height: auto !important;
-      min-height: 420px !important;
-    }
+/* 모바일 환경 설정 (767px 이하: 이미지 숨김) */
+@media (max-width: 767px) {
+  .hero .one-third.img {
+    background-image: none !important;
   }
+  .hero .one-third.img::after {
+    display: none !important; 
+  }
+  .hero .one-forth {
+    position: relative !important;
+    z-index: 5 !important;
+    width: 100% !important;
+    padding: 40px 20px 20px 20px !important;
+  }
+  .hero .slider-text {
+    height: auto !important;
+    min-height: 420px !important;
+  }
+}
+
+/* 태블릿 환경 설정 (768px ~ 991px: 이미지 보이되 글씨 영역을 좁혀서 안 겹치게 조정) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* 글씨 레이아웃 너비를 50%로 줄이고 왼쪽 여백을 줘서 우측 배경 이미지와 겹치지 않게 밀어줍니다 */
+  .hero .one-forth {
+    width: 50% !important;
+    padding-left: 30px !important;
+  }
+}
 </style>
   <head>
 	
