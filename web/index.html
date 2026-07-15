@@ -2,36 +2,27 @@
 <html lang="KO">
  <head>
 <style>
+  /* 모바일: 이미지 제거 및 검정 배경 */
   @media (max-width: 767px) {
-    /* 모바일에서는 배경 이미지를 아예 제거하고 검정색 배경으로 고정 */
     .one-third.js-fullheight {
       background-image: none !important;
       background-color: #000000 !important;
       height: auto !important;
-      padding: 100px 20px !important; /* 위아래 여백을 주어 텍스트와 버튼이 쾌적하게 보이게 함 */
+      padding: 100px 20px !important;
     }
   }
 
-	@media (min-width: 768px) and (max-width: 1024px) {
-  .one-third.js-fullheight {
-    /* 이미지를 중앙에 고정하되, 너무 확대되지 않게 합니다 */
-    background-position: center center !important;
-    background-size: cover !important;
-   
-    /* 텍스트가 잘 보이도록 배경 위에 어두운 막을 살짝 깔아줍니다 */
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg1.png') !important;
+  /* 태블릿: 이미지 유지하되 어둡게 처리 */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .one-third.js-fullheight {
+      background-position: center center !important;
+      background-size: cover !important;
+      /* 0.8로 적용해서 훨씬 또렷하게 보이게 설정 */
+      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/bg1.png') !important;
+    }
   }
-}
-
-	/* 태블릿 영역 CSS 수정 */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .one-third.js-fullheight {
-    /* 마지막 0.8 부분을 원하는 만큼 조절하세요 (최대 1.0) */
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('이미지주소') !important;
-  }
-}
-	
 </style>
+
     <title>Songyi Design</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
