@@ -46,13 +46,12 @@
       margin-bottom: 25px !important;
     }
 
-    /* 💡 [핵심 패치: 모든 섹션 안착 위치 완전 하강] 
-       모든 가짜 깃발(앵커)을 160px 만큼 대폭 아래로 밀어 내립니다. 
-       어떤 메뉴를 누르든 메뉴바 하단에 걸치지 않고 여유롭게 쑥 내려와 안착합니다. */
+    /* 💡 [앵커 기본값] 
+       가짜 깃발들이 기본적으로 메뉴바 아래로 여유롭게 내려앉도록 공간을 만듭니다. */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: 160px; 
+      top: 150px; 
       visibility: hidden;
     }
 
@@ -79,7 +78,7 @@
 
       /* 모바일 환경에서도 확실히 밀려 내려오도록 대폭 조정 */
       .scroll-anchor {
-        top: 130px; 
+        top: 120px; 
       }
 
       .heading-section h1.big {
@@ -529,7 +528,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- [강제 오버라이딩 패치] 기존 템플릿 스크롤 간섭 완벽 격파 스크립트 -->
+  <!-- 💡 [강력 강제 패치 스크립트] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -540,24 +539,31 @@
         if (targetElement) {
           e.preventDefault(); 
 
-          setTimeout(() => {
-            // 상단 고정 헤더의 실시간 높이 구하기
+          // 기존 템플릿의 스크롤 제어 이벤트를 완전히 덮어쓰기 위해 두 번의 타이밍(즉시 + 지연)으로 강제 스크롤 위치 보정
+          const performScroll = () => {
             const navbar = document.querySelector('.ftco_navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 110 : 80);
+            // 모바일과 PC 상황에 따른 완벽한 헤더 높이 구하기
+            const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 120 : 80);
             
-            // 타겟 엘리먼트의 정확한 화면상 절대 위치값 계산
+            // 타겟 엘리먼트의 정확한 화면상 위치
             const elementPosition = targetElement.getBoundingClientRect().top;
             
-            // 다른 섹션들도 모두 여유롭게 아래로 안착하도록 설정 유지
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 50;
+            // 💡 넉넉하게 120px 여유 공간(Offset)을 추가로 주어 헤더 바로 아래에 정확히 본문 타이틀이 걸리도록 강제 이동시킵니다.
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 120;
 
             window.scrollTo({
               top: offsetPosition,
               behavior: 'smooth'
             });
-          }, 120); // 템플릿 스크롤 모션이 겹치지 않게 0.12초 뒤 강제 트리거
+          };
 
-          // 모바일 햄버거 닫기
+          // 1. 즉시 한 번 이동 시도
+          performScroll();
+
+          // 2. 템플릿 라이브러리(Stellar, Waypoint 등)가 강제로 끌어올리는 간섭을 방지하기 위해 0.2초(200ms) 뒤 완벽하게 한 번 더 강제 고정
+          setTimeout(performScroll, 200);
+
+          // 모바일 햄버거 메뉴 레이어 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
           if (navbarCollapse && navbarCollapse.classList.contains('show')) {
             $('.navbar-collapse').collapse('hide');
