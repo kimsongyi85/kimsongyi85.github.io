@@ -46,17 +46,17 @@
       margin-bottom: 25px !important;
     }
 
-    /* [PC 기준선] 가장 잘 보였던 오리지널 수치 */
+    /* 💡 [PC 피드백 반영] 전체적으로 기존보다 조금 더 위로 올라가 밀착되도록 수정 (-120px -> -145px) */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: -120px; 
+      top: -145px; 
       visibility: hidden;
     }
 
-    /* [PC 기준선] 프로젝트 PC 깃발 */
+    /* 💡 [PC 피드백 반영] 프로젝트 영역도 동일하게 더 위로 올려 밀착 (-120px -> -145px) */
     #projects-section {
-      top: -120px !important;
+      top: -145px !important;
     }
 
     @media (max-width: 767px) {
@@ -103,9 +103,9 @@
         top: -90px; 
       }
 
-      /* 프로젝트 전용 모바일 깃발 수치 조율 */
+      /* 💡 [모바일 피드백 반영] 깃발이 너무 높이 올라가 타이틀이 가려지는 현상 방지하기 위해 조율 (-160px -> -90px) */
       #projects-section {
-        top: -160px !important;
+        top: -90px !important;
       }
 
       .heading-section h1.big {
@@ -581,14 +581,15 @@
               } else if (targetId === '#resume-section') {
                 offsetPosition -= 10; 
               } else if (targetId === '#services-section') {
-                // 💡 [Skill & Tools 단독 보정] 길고 무겁기 때문에 여유 있게 -120px만큼 위로 잡아당깁니다.
-                offsetPosition -= 120; 
+                // 💡 [모바일 수치 완화] 타이틀 'Skills'가 헤더 아래 시원하게 보일 수 있도록 아래로 조율 (-120px -> -65px)
+                offsetPosition -= 65; 
               } else if (targetId === '#projects-section') {
-                offsetPosition -= 150; 
+                // 💡 [모바일 수치 완화] 타이틀 'Project'가 완전히 보이도록 시원하게 조율 (-150px -> -70px)
+                offsetPosition -= 70; 
               }
             } else {
-              // [PC 원복 보장] PC 환경에서는 커스텀 스크립트 수치 개입을 전면 차단하여 기존 상태 유지
-              offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+              // 💡 [PC 수치 상향] PC 전체 스크롤 시 기존 기준에서 조금 더 시원하게 올라갈 수 있도록 -25px만큼 추가 상향 조정
+              offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 25;
             }
 
             window.scrollTo({
