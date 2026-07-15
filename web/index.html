@@ -11,10 +11,15 @@
       padding: 100px 20px !important; /* 위아래 여백을 주어 텍스트와 버튼이 쾌적하게 보이게 함 */
     }
   }
+
 	@media (min-width: 768px) and (max-width: 1024px) {
   .one-third.js-fullheight {
-    background-position: center center !important; /* 이미지를 중앙으로 딱 맞춤 */
-    background-size: cover !important; /* 이미지가 박스를 완전히 덮게 함 */
+    /* 이미지를 중앙에 고정하되, 너무 확대되지 않게 합니다 */
+    background-position: center center !important;
+    background-size: cover !important;
+   
+    /* 텍스트가 잘 보이도록 배경 위에 어두운 막을 살짝 깔아줍니다 */
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg.webp') !important;
   }
 }
 	
