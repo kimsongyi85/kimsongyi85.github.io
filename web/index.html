@@ -32,8 +32,8 @@
     .scroll-anchor {
       display: block;
       position: relative;
-      /* [조정] 너무 많이 보이지 않도록 PC 여백을 -40px로 적당히 타이트하게 조절 */
-      top: -10px; 
+      /* [조정] PC에서는 상단 헤더 두께를 고려하여 -80px로 일관되게 정렬합니다. */
+      top: -80px; 
       visibility: hidden;
     }
 
@@ -54,8 +54,8 @@
       }
 
       .scroll-anchor {
-        /* [조정] 모바일에서 이전 콘텐츠가 너무 많이 노출되는 것을 방지하기 위해 -100px로 축소 */
-        top: -60px; 
+        /* [조정] 모바일에서는 헤더가 더 두꺼워지므로 -120px로 여유 있게 올려 타이틀 가림을 방지합니다. */
+        top: -120px; 
       }
     }
   </style>
@@ -123,8 +123,8 @@
                 <h1 class="py-0" style="letter-spacing: 1px; font-weight: 700;">BRANDING</h1>
                 <h6 class="categories" style="margin-top: 25px; line-height: 1.7;">
                   <span>
-                    브랜드 가치를 <strong style="color: #ffbd39;">최적의 경험</strong>으로 구현한<br>
-                    웹 / 브랜딩 프로젝트 아카이브입니다. 
+                    Brand 가치를 <strong style="color: #ffbd39;">최적의 경험</strong>으로 구현한<br>
+                    Web / Branding 프로젝트 아카이브입니다. 
                   </span>
                 </h6>
                 <p>&nbsp;</p>
@@ -142,6 +142,7 @@
 
   <!-- [가짜 깃발] About Me -->
   <span id="about-section" class="scroll-anchor"></span>
+  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-about img ftco-section ftco-no-pb" id="about-section-real">
     <div class="container">
       <div class="row d-flex">
@@ -182,6 +183,7 @@
 
   <!-- [가짜 깃발] Award -->
   <span id="resume-section" class="scroll-anchor"></span>
+  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section ftco-no-pb" id="resume-section-real">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -222,6 +224,7 @@
 
   <!-- [가짜 깃발] Skill&Tools -->
   <span id="services-section" class="scroll-anchor"></span>
+  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section" id="services-section-real">
     <div class="container">
       <div class="row justify-content-center py-5 mt-5">
@@ -276,6 +279,7 @@
     </div>
   </section>
 
+  <!-- [조정] Tools 영역은 Skills 안에 묶여있는 구조이지만, 명확한 정렬을 위해 일반 섹션으로 둡니다. (가짜 깃발 없이 스크롤 흐름 연동) -->
   <section class="ftco-section" id="skills-section">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -352,6 +356,7 @@
 
   <!-- [가짜 깃발] Projects -->
   <span id="projects-section" class="scroll-anchor"></span>
+  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section ftco-project" id="projects-section-real">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -516,8 +521,8 @@
         if (targetElement) {
           e.preventDefault(); // 기본 내장 점프 동작 정지
 
-          // [조정] 깃발 간격 조절에 맞춰서 자바스크립트 오프셋값도 PC 40 / 모바일 100으로 최적화
-          const headerOffset = window.innerWidth <= 767 ? 60 : 10;
+          // [조정] CSS의 top 보정 수치(PC 80 / 모바일 120)와 완전히 동기화합니다.
+          const headerOffset = window.innerWidth <= 767 ? 120 : 80;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
