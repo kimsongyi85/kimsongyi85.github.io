@@ -12,20 +12,14 @@
     }
   }
 
-  /* 태블릿: 이미지 유지하되 어둡게 처리 */
-  @media (min-width: 768px) and (max-width: 1024px) {
+  /* 태블릿 및 PC: 이미지 유지 */
+  @media (min-width: 768px) {
     .one-third.js-fullheight {
       background-position: center center !important;
       background-size: cover !important;
-      /* 0.8로 적용해서 훨씬 또렷하게 보이게 설정 */
-      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/bg_1.png') !important;
+      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg1.png') !important;
     }
   }
-
-	/* 배경 이미지 전용 코드를 추가하여 프로필 사진과 분리함 */
-	.js-fullheight.my-custom-bg {
-		background-image: linear-gradient(rgba(0,0,0,0,8), rgba(0,0,0,9)), url('images/bg_1.png') !important;
-	}
 </style>
 
     <title>Songyi Design</title>
