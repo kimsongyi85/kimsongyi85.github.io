@@ -13,14 +13,18 @@
   }
 
   /* 태블릿: 이미지 유지하되 어둡게 처리 */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .one-third.js-fullheight {
-      background-position: center center !important;
-      background-size: cover !important;
-      /* 0.8로 적용해서 훨씬 또렷하게 보이게 설정 */
-      background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('../images/bg1.png') !important;
-    }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .one-third.js-fullheight {
+    background-position: center center !important;
+    background-size: cover !important;
+    /* 1. 오버레이를 0.7 정도로 조절하여 배경이 보이게 함 */
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/bg1.png') !important;
+   
+    /* 2. 이미지 자체를 60% 밝기로 보정하여 글씨 가독성을 높임 */
+    filter: brightness(0.6) !important;
   }
+}
+
 </style>
 
     <title>Songyi Design</title>
