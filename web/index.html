@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="KO">
 <style>
-/* 모바일 환경 설정 */
-  @media (max-width: 767px) {
-    /* 모바일에서 첫 번째, 두 번째 슬라이드 이미지 안 뜨게 처리 */
+  /* 태블릿 및 모바일 환경 통합 설정 (최대 991px까지 적용) */
+  @media (max-width: 991px) {
+    /* 모바일과 태블릿에서 첫 번째, 두 번째 슬라이드 이미지 안 뜨게 처리 */
     .hero .one-third.img {
       width: 100% !important;
       position: absolute !important;
@@ -18,7 +18,7 @@
       display: none !important; 
     }
     
-    /* [수정] 텍스트 영역의 윗 패딩을 100px -> 40px로 줄여 위쪽 공간 확보 */
+    /* 텍스트 영역의 패딩을 조절하여 위쪽 공간 확보 */
     .hero .one-forth {
       position: relative !important;
       z-index: 5 !important;
@@ -26,13 +26,13 @@
       padding: 40px 20px 20px 20px !important; /* 상 우 하 좌 순서 */
     }
     
-    /* [수정] 최소 높이를 550px에서 420px로 낮추어 작은 폰에서도 버튼이 안 잘리게 조정 */
+    /* 최소 높이를 낮추어 태블릿과 작은 폰 모두에서 버튼이 안 잘리게 조정 */
     .hero .slider-text {
       height: auto !important;
       min-height: 420px !important;
     }
   }
-	</style>
+</style>
   <head>
 	
     <title>Songyi Design</title>
