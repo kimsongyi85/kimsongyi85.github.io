@@ -54,9 +54,9 @@
       visibility: hidden;
     }
 
-    /* 💡 [Project 전용] 모바일과 PC에서 타이틀이 완전히 가려지는 것을 막기 위해 깃발을 대폭 끌어올림 */
+    /* 💡 [Project 전용 - 실험] PC에서 깃발 높이를 더 크게 조절 (-250px) */
     #projects-section {
-      top: -190px !important;
+      top: -250px !important;
     }
 
     @media (max-width: 767px) {
@@ -103,9 +103,9 @@
         top: -90px; 
       }
 
-      /* 💡 [Project 전용 모바일] 모바일 햄버거 메뉴 및 헤더 뒤로 가려지지 않게 깃발 대폭 리포지셔닝 */
+      /* 💡 [Project 전용 - 실험] 모바일 깃발 높이를 크게 늘림 (-230px) */
       #projects-section {
-        top: -160px !important;
+        top: -230px !important;
       }
 
       .heading-section h1.big {
@@ -555,7 +555,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 💡 [위치 정밀 타격 스크립트] -->
+  <!-- 💡 [위치 정밀 타격 스크립트 - 강제력 업그레이드] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -572,9 +572,12 @@
             const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 110 : 80);
             
             const elementPosition = targetElement.getBoundingClientRect().top;
-            
-            // 💡 깃발 위치를 기준으로 정확하게 맞춥니다. (추가 불필요한 마이너스 제거하여 딱 맞춤)
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            let offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+            // 💡 만약 클릭한 메뉴가 Projects 이면 추가로 더 밀어서 완벽히 헤더 아래에 꽂히게 만듭니다.
+            if (targetId === '#projects-section') {
+              offsetPosition -= 150; // 다른 섹션보다 추가로 150px 만큼 더 상단으로 밀어올림!
+            }
 
             window.scrollTo({
               top: offsetPosition,
@@ -585,8 +588,9 @@
           // 1. 즉시 실행
           performScroll();
 
-          // 2. 외부 스크립트 간섭 시 한 번 더 고정
+          // 2. 다른 템플릿 기본 플러그인이 간섭하여 끝난 뒤 한 번 더 위치를 보정하도록 딜레이 실행
           setTimeout(performScroll, 250);
+          setTimeout(performScroll, 500);
 
           // 모바일 햄버거 메뉴 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
