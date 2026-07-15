@@ -22,23 +22,70 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
+<style>
     /* 전체 부드러운 스크롤 효과 유지 */
     html {
       scroll-behavior: smooth;
     }
 
-    /* [초강력 정렬 패치] 
-       가짜 깃발 높이에 전적으로 의존하지 않도록 기본 높이를 살짝 유지하되, 
-       실제 정밀 위치는 하단의 스마트 스크롤 스크립트가 책임집니다. */
+    /* ==========================================
+       [디자이너를 위한 정밀 레이아웃 & 여백 패치]
+       ========================================== */
+
+    /* 1. 각 섹션의 위아래 여백을 시원하게 넓혀서 타이틀 잘림 방지 */
+    section.ftco-section {
+      padding: 8em 0 !important; /* 위아래 여백을 넉넉히 8em으로 확장 */
+    }
+
+    /* About 섹션 전용 여백 보정 */
+    .ftco-about {
+      padding-top: 8em !important;
+      padding-bottom: 5em !important;
+    }
+
+    /* 2. 대제목(big)과 실제 타이틀(h2), 그리고 본문 사이의 시각적 계층감 개선 */
+    .heading-section h1.big {
+      font-size: 6.5rem !important;
+      opacity: 0.08 !important; /* 배경 글자를 은은하게 깔아 시선 분산 방지 */
+    }
+
+    .heading-section h2 {
+      font-size: 40px !important;
+      font-weight: 700 !important;
+      margin-bottom: 30px !important; /* 타이틀 바로 아래 여백 확보 */
+    }
+
+    /* 3. 타이틀 아래 본문(설명글, 카드 등)이 바로 붙지 않도록 위쪽 여백 추가 */
+    .heading-section p.categories,
+    .heading-section + .row,
+    .ftco-about .categories {
+      margin-top: 20px !important;
+    }
+
+    /* Award 카드 리스트 윗여백 조절 */
+    #resume-section-real .row {
+      margin-top: 30px !important;
+    }
+
+    /* Projects 카드 리스트 윗여백 조절 */
+    #projects-section-real .row {
+      margin-top: 20px !important;
+    }
+
+    /* 4. [초강력 정렬 패치] 자바스크립트 오프셋과 연동하여 타이틀 가림 원천 봉쇄 */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: -30px; 
+      top: -40px; 
       visibility: hidden;
     }
 
+    /* 모바일 환경 대응 여백 */
     @media (max-width: 767px) {
+      section.ftco-section {
+        padding: 6em 0 !important; /* 모바일은 화면이 작으므로 적절히 6em 적용 */
+      }
+
       .hero .one-third.img {
         background-image: none !important;
       }
@@ -54,7 +101,11 @@
       }
 
       .scroll-anchor {
-        top: -50px; 
+        top: -60px; 
+      }
+      
+      .heading-section h1.big {
+        font-size: 4.5rem !important; /* 모바일에서는 배경 글자 크기 축소 */
       }
     }
   </style>
