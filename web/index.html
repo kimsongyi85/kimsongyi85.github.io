@@ -46,12 +46,11 @@
       margin-bottom: 25px !important;
     }
 
-    /* 💡 [앵커 기본값] 
-       가짜 깃발들이 기본적으로 메뉴바 아래로 여유롭게 내려앉도록 공간을 만듭니다. */
+    /* 💡 [앵커 기본값 수정] PC 버전에서 헤더 두께에 맞춰 위로 좀 더 끌어올림 */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: 150px; 
+      top: 90px; 
       visibility: hidden;
     }
 
@@ -63,18 +62,17 @@
         padding-top: 5em !important;
       }
       
-      /* 💡 [수정] 모바일에서 bg_2.webp 이미지 영역만 숨기기 (첫 번째 슬라이더 아이템의 이미지) */
+      /* 💡 모바일에서 bg_2.webp 이미지 영역만 숨기기 (첫 번째 슬라이더 아이템의 이미지) */
       .hero .slider-item:first-child .one-third.img {
         display: none !important;
       }
       
-      /* 💡 [수정] 모바일에서 bg_1.png 이미지 영역 완전히 숨기기 */
+      /* 💡 모바일에서 bg_1.png 이미지 영역 완전히 숨기기 */
       .ftco-about .img-about {
         display: none !important;
       }
 
       /* 💡 두 번째 슬라이더(bg_3.webp) 등 기본 노출이 필요한 이미지 세팅 */
-      /* 첫 번째 슬라이더를 제외한 나머지 슬라이더의 이미지는 보이도록 설정 */
       .hero .slider-item:not(:first-child) .one-third.img {
         display: block !important;
         height: 320px !important;
@@ -92,12 +90,12 @@
       }
       .hero .slider-text {
         height: auto !important;
-        min-height: 500px !important; /* 텍스트와 이미지가 모두 들어갈 최소 공간 */
+        min-height: 500px !important; 
       }
 
-      /* 모바일 환경에서도 확실히 밀려 내려오도록 대폭 조정 */
+      /* 💡 [앵커 모바일값 수정] 모바일에서 가려지지 않고 컨텐츠가 높게 보이도록 위로 끌어올림 */
       .scroll-anchor {
-        top: 120px; 
+        top: 60px; 
       }
 
       .heading-section h1.big {
@@ -547,7 +545,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 💡 [강력 강제 패치 스크립트] -->
+  <!-- 💡 [위치 전면 수정된 스크립트] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -558,17 +556,15 @@
         if (targetElement) {
           e.preventDefault(); 
 
-          // 기존 템플릿의 스크롤 제어 이벤트를 완전히 덮어쓰기 위해 두 번의 타이밍(즉시 + 지연)으로 강제 스크롤 위치 보정
           const performScroll = () => {
             const navbar = document.querySelector('.ftco_navbar');
-            // 모바일과 PC 상황에 따른 완벽한 헤더 높이 구하기
+            // 모바일과 PC 상황에 따른 헤더 높이 반영
             const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 120 : 80);
             
-            // 타겟 엘리먼트의 정확한 화면상 위치
             const elementPosition = targetElement.getBoundingClientRect().top;
             
-            // 💡 넉넉하게 120px 여유 공간(Offset)을 추가로 주어 헤더 바로 아래에 정확히 본문 타이틀이 걸리도록 강제 이동시킵니다.
-            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 120;
+            // 💡 [변경] 불필요한 마진값(-120)을 없애고 정확히 상단 헤더 바로 아래 본문이 오도록 공식 수정
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
             window.scrollTo({
               top: offsetPosition,
@@ -576,13 +572,13 @@
             });
           };
 
-          // 1. 즉시 한 번 이동 시도
+          // 1. 즉시 이동
           performScroll();
 
-          // 2. 템플릿 라이브러리(Stellar, Waypoint 등)가 강제로 끌어올리는 간섭을 방지하기 위해 0.2초(200ms) 뒤 완벽하게 한 번 더 강제 고정
+          // 2. 외부 간섭 방지를 위해 0.2초(200ms) 뒤 완벽 재고정
           setTimeout(performScroll, 200);
 
-          // 모바일 햄버거 메뉴 레이어 닫기
+          // 모바일 햄버거 메뉴 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
           if (navbarCollapse && navbarCollapse.classList.contains('show')) {
             $('.navbar-collapse').collapse('hide');
