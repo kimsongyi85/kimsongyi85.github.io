@@ -46,17 +46,17 @@
       margin-bottom: 25px !important;
     }
 
-    /* 짤림 방지를 위해 깃발(기준선) 위치를 마이너스 영역으로 올려 타이틀 공간 확보 */
+    /* [PC 복구] 가장 잘 보였던 PC 기준선 수치로 복구 완료 */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: -120px; /* 타이틀 윗부분 여백 확보 */
+      top: -120px; 
       visibility: hidden;
     }
 
-    /* 💡 [Project 전용 - 2차 실험] PC에서 깃발 높이를 대폭 추가 상향 (-350px) */
+    /* [PC 복구] 프로젝트 PC 깃발 원복 */
     #projects-section {
-      top: -350px !important;
+      top: -120px !important;
     }
 
     @media (max-width: 767px) {
@@ -98,14 +98,14 @@
         min-height: 500px !important; 
       }
 
-      /* 모바일 메뉴바 높이를 고려한 모바일 깃발 기준선 설정 */
+      /* 모바일 공통 깃발 기본 정렬 */
       .scroll-anchor {
         top: -90px; 
       }
 
-      /* 💡 [Project 전용 - 2차 실험] 모바일 깃발 높이를 대폭 상향 (-320px) */
+      /* 프로젝트 전용 모바일 깃발 수치 조율 */
       #projects-section {
-        top: -320px !important;
+        top: -160px !important;
       }
 
       .heading-section h1.big {
@@ -555,7 +555,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 💡 [위치 정밀 타격 스크립트 - 2차 실험용] -->
+  <!-- 💡 [위치 정밀 타격 스크립트] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -567,15 +567,27 @@
           e.preventDefault(); 
 
           const performScroll = () => {
+            const width = window.innerWidth;
             const navbar = document.querySelector('.ftco_navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 110 : 80);
+            const navbarHeight = navbar ? navbar.offsetHeight : (width <= 767 ? 110 : 80);
             
             const elementPosition = targetElement.getBoundingClientRect().top;
             let offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-            // 💡 [실험] Projects 클릭 시 이전 오프셋(-150px)보다 100px을 더 끌어올려 총 -250px 적용!
-            if (targetId === '#projects-section') {
-              offsetPosition -= 250; 
+            // 💡 [모바일/태블릿 정밀 처방] 각 메뉴의 고유 높이에 맞춰 모바일/태블릿 타겟을 개별 조정합니다.
+            if (width <= 1024) { 
+              if (targetId === '#about-section') {
+                offsetPosition += 20; // About 영역 조정
+              } else if (targetId === '#resume-section') {
+                offsetPosition -= 10; // Award 영역 조정
+              } else if (targetId === '#services-section') {
+                offsetPosition -= 40; // Skill & Tools 영역 조정
+              } else if (targetId === '#projects-section') {
+                offsetPosition -= 150; // Project 영역은 넉넉하게 확 올려서 보장
+              }
+            } else {
+              // PC 환경인 경우엔 오직 가짜 깃발의 물리적 위치(CSS)만 기준으로 움직이게 설정 (영향 차단)
+              offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
             }
 
             window.scrollTo({
@@ -584,11 +596,10 @@
             });
           };
 
-          // 즉시 실행 및 템플릿 간섭 방지용 멀티 타이머 적용
+          // 정확하게 해당 위치에 고정되도록 타이밍 분할 추적 실행
           performScroll();
-          setTimeout(performScroll, 100);
-          setTimeout(performScroll, 250);
-          setTimeout(performScroll, 500);
+          setTimeout(performScroll, 150);
+          setTimeout(performScroll, 350);
 
           // 모바일 햄버거 메뉴 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
