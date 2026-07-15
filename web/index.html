@@ -32,8 +32,8 @@
     .scroll-anchor {
       display: block;
       position: relative;
-      /* PC에서는 위로 90px 올려놓기 */
-      top: -90px; 
+      /* [조정] 너무 많이 보이지 않도록 PC 여백을 -40px로 적당히 타이트하게 조절 */
+      top: -40px; 
       visibility: hidden;
     }
 
@@ -54,8 +54,8 @@
       }
 
       .scroll-anchor {
-        /* 모바일에서는 메뉴가 기니까 위로 180px 올려놓기 */
-        top: -180px; 
+        /* [조정] 모바일에서 이전 콘텐츠가 너무 많이 노출되는 것을 방지하기 위해 -100px로 축소 */
+        top: -100px; 
       }
     }
   </style>
@@ -140,7 +140,7 @@
     </div>
   </section>
 
-  <!-- [꼼수 적용] 실제 타이틀보다 위쪽으로 유도하는 깃발 -->
+  <!-- [가짜 깃발] About Me -->
   <span id="about-section" class="scroll-anchor"></span>
   <section class="ftco-about img ftco-section ftco-no-pb" id="about-section-real">
     <div class="container">
@@ -180,7 +180,7 @@
     </div>
   </section>
 
-  <!-- [꼼수 적용] 실제 타이틀보다 위쪽으로 유도하는 깃발 -->
+  <!-- [가짜 깃발] Award -->
   <span id="resume-section" class="scroll-anchor"></span>
   <section class="ftco-section ftco-no-pb" id="resume-section-real">
     <div class="container">
@@ -220,7 +220,7 @@
     </div>
   </section>
 
-  <!-- [꼼수 적용] 실제 타이틀보다 위쪽으로 유도하는 깃발 -->
+  <!-- [가짜 깃발] Skill&Tools -->
   <span id="services-section" class="scroll-anchor"></span>
   <section class="ftco-section" id="services-section-real">
     <div class="container">
@@ -350,7 +350,7 @@
     </div>
   </section>
 
-  <!-- [꼼수 적용] 실제 타이틀보다 위쪽으로 유도하는 깃발 -->
+  <!-- [가짜 깃발] Projects -->
   <span id="projects-section" class="scroll-anchor"></span>
   <section class="ftco-section ftco-project" id="projects-section-real">
     <div class="container">
@@ -516,8 +516,8 @@
         if (targetElement) {
           e.preventDefault(); // 기본 내장 점프 동작 정지
 
-          // 모바일(767px 이하)은 헤더 높이(180px), PC/태블릿은 (80px) 여백 부여
-          const headerOffset = window.innerWidth <= 767 ? 180 : 80;
+          // [조정] 깃발 간격 조절에 맞춰서 자바스크립트 오프셋값도 PC 40 / 모바일 100으로 최적화
+          const headerOffset = window.innerWidth <= 767 ? 100 : 40;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
