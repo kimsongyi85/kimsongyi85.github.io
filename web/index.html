@@ -1,75 +1,20 @@
 <!DOCTYPE html>
 <html lang="KO">
 <style>
-  /* [1] 768px 이상 (태블릿 & 데스크톱 공통) */
-  @media (min-width: 768px) {
-    .hero .one-third.img {
-      width: 100% !important;
-      position: absolute !important;
-      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-      height: 100% !important;
-      z-index: 1 !important;
-      /* background-image를 inherit 대신 원래대로 작동하도록 'initial' 혹은 원래 스타일을 따르도록 설정 */
-      background-image: var(--bg-image-fallback, inherit) !important; 
-    }
-    
-    /* 조금 더 안전하게, 브라우저가 inherit을 오해하지 못하도록 unset으로 초기화 */
-    .hero .one-third.img {
-      background-image: unset !important; /* 모바일의 none 설정을 지우고 원래 태그나 외부 CSS에 박혀있는 기본 이미지 주소로 초기화합니다 */
-    }
-
-    .hero .one-third.img::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.4) 100%) !important;
-      z-index: 2;
-    }
-
-    .hero .one-forth {
-      position: relative !important;
-      z-index: 5 !important;
-      width: 60% !important;
-      padding-left: 50px !important;
-    }
-  }
-
-  /* [2] 768px ~ 991px (태블릿 전용 세부 설정) */
-  @media (min-width: 768px) and (max-width: 991px) {
-    .hero .one-forth {
-      width: 55% !important;
-      padding-left: 30px !important;
-    }
-    .hero .one-forth h1 {
-      font-size: 40px !important;
-    }
-  }
-
-  /* [3] 767px 이하 (순수 모바일 전용) */
+  /* 오직 모바일(767px 이하)에서만 작동하는 최소한의 코드 */
   @media (max-width: 767px) {
     .hero .one-third.img {
-      width: 100% !important;
-      position: absolute !important;
-      top: 0; left: 0; right: 0; bottom: 0;
-      height: 100% !important;
-      z-index: 1 !important;
-      background-image: none !important; /* 모바일에서만 확실하게 이미지 제거 */
+      background-image: none !important; /* 모바일만 이미지 안 나오게 */
     }
-    
     .hero .one-third.img::after {
-      display: none !important; 
+      display: none !important; /* 가림막 제거 */
     }
-    
     .hero .one-forth {
-      position: relative !important;
-      z-index: 5 !important;
-      width: 100% !important;
-      padding: 40px 20px 20px 20px !important;
+      padding: 40px 20px 20px 20px !important; /* 모바일 여백 줄임 */
     }
-    
     .hero .slider-text {
       height: auto !important;
-      min-height: 420px !important;
+      min-height: 420px !important; /* 모바일 버튼 안 잘리게 */
     }
   }
 </style>
