@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="KO">
  <head>
-	 <style>
+<style>
   @media (max-width: 767px) {
-    /* 이 부분을 아래 내용으로 통째로 바꿔주세요 */
     .one-third.js-fullheight {
+      /* 높이를 텍스트와 버튼에 딱 맞춰서 자동으로 조절합니다 */
       height: auto !important;
-      min-height: 400px !important; /* 최소한의 높이를 줘서 이미지가 보이게 함 */
-      padding: 50px 20px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important; /* 내용물을 박스 중앙으로 정렬 */
-      background-position: center top !important; /* 배경 이미지를 위쪽으로 정렬 */
-      background-size: cover !important; /* 배경 이미지가 꽉 차게 유지 */
-    }
-    /* 텍스트 영역은 그대로 두셔도 됩니다 */
-    .one-fourth.d-flex {
-      padding-top: 0 !important;
-      margin-top: 0 !important;
-      justify-content: center !important;
+     
+      /* 위아래 여백을 줘서 글자가 너무 꽉 차지 않게 합니다 */
+      padding: 60px 20px !important;
+     
+      /* 핵심: 이미지를 박스 상단(top)에 맞춰서 정렬합니다 */
+      background-position: center top !important;
+      background-size: cover !important;
+     
+      /* 혹시나 이미지가 반복된다면 막아줍니다 */
+      background-repeat: no-repeat !important;
     }
   }
 </style>
