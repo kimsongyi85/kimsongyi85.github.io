@@ -23,44 +23,43 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* 1. 전체 화면 공통 스크롤 가려짐 방지 표준 속성 */
+    /* 전체 부드러운 스크롤 효과 유지 */
     html {
-      scroll-behavior: smooth; /* 스크롤이 부드럽게 움직이도록 처리 */
+      scroll-behavior: smooth;
     }
 
-    /* 가짜 앵커 깃발을 공중에 띄우는 꼼수 스타일 */
+    /* [초강력 정렬 패치] 
+       가짜 깃발 높이에 전적으로 의존하지 않도록 기본 높이를 살짝 유지하되, 
+       실제 정밀 위치는 하단의 스마트 스크롤 스크립트가 책임집니다. */
     .scroll-anchor {
       display: block;
       position: relative;
-      /* [조정] 다른 섹션들의 좁은 여백을 고려해 깃발을 너무 높이 올리지 않고 -30px로 타이트하게 내립니다. */
       top: -30px; 
       visibility: hidden;
     }
 
     @media (max-width: 767px) {
-      /* [기존 모바일 레이아웃 최적화 코드] */
       .hero .one-third.img {
-        background-image: none !important; /* 모바일만 우측 이미지 안 나오게 */
+        background-image: none !important;
       }
       .hero .one-third.img::after {
-        display: none !important; /* 가림막 제거 */
+        display: none !important;
       }
       .hero .one-forth {
-        padding: 40px 20px 20px 20px !important; /* 모바일 내부 여백 줄임 */
+        padding: 40px 20px 20px 20px !important;
       }
       .hero .slider-text {
         height: auto !important;
-        min-height: 420px !important; /* 모바일에서 하단 버튼 안 잘리게 */
+        min-height: 420px !important;
       }
 
       .scroll-anchor {
-        /* [조정] 모바일에서도 깃발을 과하게 올리지 않고 -60px 정도로 균형을 맞춥니다. */
-        top: -60px; 
+        top: -50px; 
       }
     }
   </style>
 </head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="150">
   
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
     <div class="container">
@@ -90,7 +89,7 @@
             <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_2.webp);">
               <div class="overlay"></div>
             </div>
-            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
+            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax-properties: { translateY: '70%' }>
               <div class="text">
                 <span class="subheading" style="color: #ffffff !important;">Hello!</span>
                 <h1 class="mb-4 mt-3"> 
@@ -116,7 +115,7 @@
             <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_3.webp);">
               <div class="overlay"></div>
             </div>
-            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
+            <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax-properties: { translateY: '70%' }>
               <div class="text">
                 <span class="subheading" style="letter-spacing: 1px; font-weight: 500;">BRANDED EXPERIENCE</span>
                 <h1 class="py-0" style="letter-spacing: 1px; font-weight: 700;">UI/UX & WEB</h1>
@@ -142,7 +141,6 @@
 
   <!-- [가짜 깃발] About Me -->
   <span id="about-section" class="scroll-anchor"></span>
-  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-about img ftco-section ftco-no-pb" id="about-section-real">
     <div class="container">
       <div class="row d-flex">
@@ -183,7 +181,6 @@
 
   <!-- [가짜 깃발] Award -->
   <span id="resume-section" class="scroll-anchor"></span>
-  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section ftco-no-pb" id="resume-section-real">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -224,7 +221,6 @@
 
   <!-- [가짜 깃발] Skill&Tools -->
   <span id="services-section" class="scroll-anchor"></span>
-  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section" id="services-section-real">
     <div class="container">
       <div class="row justify-content-center py-5 mt-5">
@@ -279,7 +275,6 @@
     </div>
   </section>
 
-  <!-- [조정] Tools 영역은 Skills 안에 묶여있는 구조이지만, 명확한 정렬을 위해 일반 섹션으로 둡니다. (가짜 깃발 없이 스크롤 흐름 연동) -->
   <section class="ftco-section" id="skills-section">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -356,7 +351,6 @@
 
   <!-- [가짜 깃발] Projects -->
   <span id="projects-section" class="scroll-anchor"></span>
-  <!-- [조정] 진짜 섹션 ID의 중복 방지를 위해 -real을 접미사로 붙였습니다. -->
   <section class="ftco-section ftco-project" id="projects-section-real">
     <div class="container">
       <div class="row justify-content-center pb-5">
@@ -506,32 +500,36 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 자바스크립트 스크롤 강제 보정 및 자동 닫힘 스크립트 -->
+  <!-- [강제 오버라이딩 패치] 기존 템플릿 스크롤 간섭 완벽 격파 스크립트 -->
   <script>
-    // 상단 햄버거 메뉴(.navbar-nav a)와 하단 푸터 링크(.list-unstyled a)가 모두 부드럽게 고정 위치로 내려갑니다.
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const targetId = this.getAttribute('href');
-        
-        // 단순 맨 위로 가는 '#' 링크는 기본 브라우저 작동에 맡김
         if (targetId === '#') return;
 
         const targetElement = document.querySelector(targetId);
-
         if (targetElement) {
-          e.preventDefault(); // 기본 내장 점프 동작 정지
+          e.preventDefault(); 
 
-          // [조정] CSS의 top 보정 수치(PC 30 / 모바일 60)와 완전히 동일하게 자바스크립트 오프셋을 맞췄습니다.
-          const headerOffset = window.innerWidth <= 767 ? 60 : 30;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          // [핵심] 기존 템플릿의 스크롤 이동 연산이 끝나는 타이밍을 노려 강제로 덮어씌웁니다.
+          setTimeout(() => {
+            // 상단 고정 헤더의 실시간 높이 구하기 (없거나 인식이 안 되면 기본값 PC 80px / 모바일 110px 적용)
+            const navbar = document.querySelector('.ftco_navbar');
+            const navbarHeight = navbar ? navbar.offsetHeight : (window.innerWidth <= 767 ? 110 : 80);
+            
+            // 타겟 엘리먼트의 정확한 화면상 절대 위치값 계산
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            
+            // 여유 마진 15px를 더 넉넉하게 주어 타이틀 가림을 원천 방지합니다.
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 15;
 
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-          
-          // 모바일에서 메뉴판 클릭하면 자동으로 창 접기
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }, 120); // 템플릿 스크롤 모션이 겹치지 않게 0.12초 뒤 강제 트리거
+
+          // 모바일 햄버거 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
           if (navbarCollapse && navbarCollapse.classList.contains('show')) {
             $('.navbar-collapse').collapse('hide');
