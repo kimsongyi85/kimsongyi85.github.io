@@ -46,7 +46,7 @@
       margin-bottom: 25px !important;
     }
 
-    /* [PC 복구] 가장 잘 보였던 PC 기준선 수치로 복구 완료 */
+    /* [PC 기준선] 가장 잘 보였던 오리지널 수치 */
     .scroll-anchor {
       display: block;
       position: relative;
@@ -54,7 +54,7 @@
       visibility: hidden;
     }
 
-    /* [PC 복구] 프로젝트 PC 깃발 원복 */
+    /* [PC 기준선] 프로젝트 PC 깃발 */
     #projects-section {
       top: -120px !important;
     }
@@ -574,19 +574,20 @@
             const elementPosition = targetElement.getBoundingClientRect().top;
             let offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-            // 💡 [모바일/태블릿 정밀 처방] 각 메뉴의 고유 높이에 맞춰 모바일/태블릿 타겟을 개별 조정합니다.
+            // 💡 [모바일/태블릿용 개별 타겟 보정 세팅]
             if (width <= 1024) { 
               if (targetId === '#about-section') {
-                offsetPosition += 20; // About 영역 조정
+                offsetPosition += 20; 
               } else if (targetId === '#resume-section') {
-                offsetPosition -= 10; // Award 영역 조정
+                offsetPosition -= 10; 
               } else if (targetId === '#services-section') {
-                offsetPosition -= 40; // Skill & Tools 영역 조정
+                // 💡 [Skill & Tools 단독 보정] 길고 무겁기 때문에 여유 있게 -120px만큼 위로 잡아당깁니다.
+                offsetPosition -= 120; 
               } else if (targetId === '#projects-section') {
-                offsetPosition -= 150; // Project 영역은 넉넉하게 확 올려서 보장
+                offsetPosition -= 150; 
               }
             } else {
-              // PC 환경인 경우엔 오직 가짜 깃발의 물리적 위치(CSS)만 기준으로 움직이게 설정 (영향 차단)
+              // [PC 원복 보장] PC 환경에서는 커스텀 스크립트 수치 개입을 전면 차단하여 기존 상태 유지
               offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
             }
 
@@ -596,12 +597,12 @@
             });
           };
 
-          // 정확하게 해당 위치에 고정되도록 타이밍 분할 추적 실행
+          // 정확하게 해당 위치에 정렬되도록 순차적 추적 실행
           performScroll();
           setTimeout(performScroll, 150);
           setTimeout(performScroll, 350);
 
-          // 모바일 햄버거 메뉴 닫기
+          // 모바일 햄버거 메뉴 자동 닫기
           const navbarCollapse = document.querySelector('.navbar-collapse');
           if (navbarCollapse && navbarCollapse.classList.contains('show')) {
             $('.navbar-collapse').collapse('hide');
