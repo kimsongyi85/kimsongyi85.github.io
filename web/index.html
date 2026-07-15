@@ -3,21 +3,12 @@
  <head>
 <style>
   @media (max-width: 767px) {
+    /* 모바일에서는 배경 이미지를 아예 제거하고 검정색 배경으로 고정 */
     .one-third.js-fullheight {
-      /* 높이를 텍스트 영역에 맞춰 자동으로 */
+      background-image: none !important;
+      background-color: #000000 !important;
       height: auto !important;
-     
-      /* 이미지가 잘리지 않고 전체 다 보이게 함 */
-      background-size: contain !important;
-     
-      /* 이미지가 바둑판처럼 반복되지 않게 함 */
-      background-repeat: no-repeat !important;
-     
-      /* 이미지를 중앙 상단에 배치 */
-      background-position: center top !important;
-     
-      /* 박스 위아래 여백을 줘서 텍스트랑 겹치지 않게 */
-      padding: 250px 20px 50px 20px !important;
+      padding: 100px 20px !important; /* 위아래 여백을 주어 텍스트와 버튼이 쾌적하게 보이게 함 */
     }
   }
 </style>
