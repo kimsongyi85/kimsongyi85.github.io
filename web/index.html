@@ -46,17 +46,20 @@
       margin-bottom: 25px !important;
     }
 
-    /* [PC 세팅] 전체적으로 시원하게 위로 밀착되도록 상향 조정 */
+    /* [PC 세팅] 모든 섹션이 상단 헤더에 걸리지 않고 동일한 높이로 정렬되도록 통일 */
     .scroll-anchor {
       display: block;
       position: relative;
-      top: -145px; 
+      top: -110px; 
       visibility: hidden;
     }
 
-    /* [PC 세팅] 프로젝트 영역 동일하게 더 위로 올려 밀착 */
     #projects-section {
-      top: -145px !important;
+      top: -110px !important;
+    }
+
+    #services-section {
+      top: -110px !important;
     }
 
     @media (max-width: 767px) {
@@ -98,12 +101,12 @@
         min-height: 500px !important; 
       }
 
-      /* 모바일 공통 깃발 기본 정렬 */
+      /* 모바일 공통 기본 정렬 */
       .scroll-anchor {
         top: -90px; 
       }
 
-      /* 모바일 프로젝트 타이틀이 잘 보일 수 있는 위치 확보 */
+      /* 모바일 프로젝트 정렬 유지 */
       #projects-section {
         top: -90px !important;
       }
@@ -555,7 +558,7 @@
   
   <script src="js/main.js"></script>
 
-  <!-- 💡 [위치 정밀 타격 스크립트] -->
+  <!-- 💡 [위치 정밀 타격 스크립트 - 최종 수정본] -->
   <script>
     document.querySelectorAll('.navbar-nav a[href^="#"], .list-unstyled a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -574,22 +577,22 @@
             const elementPosition = targetElement.getBoundingClientRect().top;
             let offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
-            // [모바일/태블릿용 개별 타겟 보정 세팅]
             if (width <= 1024) { 
+              // [모바일 & 태블릿 보정 세팅]
               if (targetId === '#about-section') {
                 offsetPosition += 20; 
               } else if (targetId === '#resume-section') {
                 offsetPosition -= 10; 
               } else if (targetId === '#services-section') {
-                // 💡 [피드백 적용] Skill&Tools는 'Skills' 타이틀 글씨가 가려지도록 깊게 올려 세팅합니다. (-155px)
-                offsetPosition -= 155; 
+                // 💡 [피드백 반영 - 모바일 전용] Skills 타이틀을 확실히 숨기기 위해 오프셋을 -280px로 크게 올려버립니다.
+                offsetPosition -= 280; 
               } else if (targetId === '#projects-section') {
-                // 프로젝트 섹션 타이틀 노출 상태 유지 (-70px)
                 offsetPosition -= 70; 
               }
             } else {
-              // [PC 수치 세팅] 전체 스크롤 시 기존보다 조금 더 시원하게 올라가 밀착되도록 조정 (-25px 추가)
-              offsetPosition = elementPosition + window.pageYOffset - navbarHeight - 25;
+              // 💡 [피드백 반영 - PC 전용] 
+              // 스크린샷 2번과 3번의 위치를 동일하게 맞추기 위해 모든 PC 오프셋 간격을 완벽히 통일합니다.
+              offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
             }
 
             window.scrollTo({
@@ -598,7 +601,7 @@
             });
           };
 
-          // 정확하게 해당 위치에 정렬되도록 순차적 추적 실행
+          // 모바일 및 다양한 기기 환경에서 순차적으로 스크롤을 끝까지 밀어주도록 실행
           performScroll();
           setTimeout(performScroll, 150);
           setTimeout(performScroll, 350);
