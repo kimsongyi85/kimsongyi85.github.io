@@ -17,6 +17,16 @@
       min-height: 420px !important; /* 모바일 버튼 안 잘리게 */
     }
   }
+
+	/* 모바일에서 햄버거 메뉴를 통해 이동 시, 상단 메뉴바에 타이틀이 가려지는 현상 방지 */
+#about-section, 
+#award-section,
+#resume-section, 
+#projects-section {
+  /* 상단 네비게이션바의 높이(약 70px~80px)만큼 여유 공간을 주고 스크롤이 멈추게 합니다 */
+  scroll-margin-top: 80px; 
+}
+	
 </style>
   <head>
 	
