@@ -63,7 +63,7 @@
         padding-top: 5em !important;
       }
       
-      /* 💡 [수정] 모바일에서 bg_2.webp 이미지 영역 숨기기 */
+      /* 💡 [수정] 모바일에서 bg_2.webp 이미지 영역만 숨기기 (첫 번째 슬라이더 아이템의 이미지) */
       .hero .slider-item:first-child .one-third.img {
         display: none !important;
       }
@@ -74,13 +74,14 @@
       }
 
       /* 💡 두 번째 슬라이더(bg_3.webp) 등 기본 노출이 필요한 이미지 세팅 */
-      .hero .one-third.img {
+      /* 첫 번째 슬라이더를 제외한 나머지 슬라이더의 이미지는 보이도록 설정 */
+      .hero .slider-item:not(:first-child) .one-third.img {
         display: block !important;
         height: 320px !important;
         background-size: cover !important;
         background-position: center top !important;
       }
-      .hero .one-third.img::after {
+      .hero .slider-item:not(:first-child) .one-third.img::after {
         display: block !important;
       }
       
