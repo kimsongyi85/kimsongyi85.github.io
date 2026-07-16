@@ -3,42 +3,15 @@
   <head>
 <style>
   @media (max-width: 767px) {
-    #about-section .img-about .img {
-      /* 1. 이미지 비율을 1:1 또는 4:5 정도로 유지 */
-      aspect-ratio: 4 / 5 !important;
-      
-      /* 2. 이미지가 박스에 꽉 차되, 중앙이 보이도록 설정 */
-      background-size: cover !important;
-      background-position: center center !important;
-      
-      /* 3. 고정 높이(min-height)를 제거하여 유동적으로 변경 */
-      min-height: auto !important;
-      
-      /* 4. 박스 자체의 높이 제한 해제 */
-      height: auto !important;
-    }
-    
-    /* 혹시 부모 요소가 높이를 강제하고 있다면 같이 초기화 */
-    #about-section .img-about {
-      min-height: auto !important;
-      height: auto !important;
-    }
-  }
-</style>
-	  <style>
-  /* 기존 코드들은 그대로 두시고, 이 내용만 스타일 태그 맨 아래에 추가하세요 */
-  @media (max-width: 767px) {
+    /* 1. 사진 영역을 깔끔하게 숨깁니다 */
     #about-section .img-about {
       display: none !important;
     }
-  }
-</style>
-<style>
-  @media (max-width: 767px) {
-    /* 각 섹션의 위쪽 간격을 조금만 줄여서 글자가 잘리지 않게 함 */
+    
+    /* 2. 섹션 간의 간격을 일정하게 유지하여 링크 위치를 정확하게 잡습니다 */
     .ftco-section {
-      padding-top: 2em !important;
-      padding-bottom: 2em !important;
+      padding-top: 60px !important;
+      padding-bottom: 60px !important;
     }
   }
 </style>
