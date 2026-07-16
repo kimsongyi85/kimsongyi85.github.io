@@ -75,9 +75,11 @@
   }
 
 }
-/* Award 섹션만 카드 높이 통일 */
-#resume-section .resume-wrap{
+/* PC + 태블릿에서만 높이 통일 */
+@media (min-width: 820px) {
+  #resume-section .resume-wrap {
     min-height: 380px;
+  }
 }
 	
 </style>
