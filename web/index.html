@@ -3,11 +3,10 @@
   <head>
 <style>
   @media (max-width: 767px) {
-    /* 사진을 숨기지 말고, 모바일에서 보기 좋게 크기만 줄입니다 */
+    /* 사진을 숨기지 말고, 모바일에서만 150px 정도로 작게 고정하세요 */
     #about-section .img-about {
-      width: 100% !important;
-      height: 250px !important; /* 높이를 고정해서 브라우저가 위치를 헷갈리지 않게 함 */
-      background-size: cover !important;
+      height: 150px !important; 
+      overflow: hidden !important;
     }
   }
 </style>
