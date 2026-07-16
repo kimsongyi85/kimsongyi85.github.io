@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="KO">
   <head>
-<style>
+	  
+/* 
   @media (max-width: 767px) {
-    /* About 섹션의 타이틀 영역만 깔끔하게 제거 */
     #about-section .heading-section { display: none !important; }
-    
-    /* About 섹션이 상단 메뉴바에 가려지지 않게 여백만 살짝 조정 */
     #about-section { padding-top: 80px !important; }
   }
+*/
+
+<style>
+  @media (max-width: 767px) {
+    /* 모든 섹션의 시작점에 메뉴바 높이만큼 여백 추가 */
+    section, .ftco-section {
+      scroll-margin-top: 70px !important; 
+    }
+  }
 </style>
-	  
 	  
 	  <title>Songyi Design</title>
     <meta charset="utf-8">
