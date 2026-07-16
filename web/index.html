@@ -2,38 +2,43 @@
 <html lang="KO">
  <head>
 <style>
-  @media (max-width: 767px) {
-    /* 1. About 섹션 배경 이미지 필터 적용 */
-    .ftco-about .img-about .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.4) !important;
-      z-index: 1;
-    }
-    .ftco-about .img-about { position: relative; }
+/* =========================
+   모바일 전용
+========================= */
+@media (max-width: 767px) {
 
-
+  /* About 섹션 이미지 */
+  .ftco-about .img-about {
+    position: relative;
   }
 
-    /* 2. 히어로 슬라이더 배경 이미지(bg_2, bg_3) 모바일에서 숨기기 */
-    .hero .slider-item .one-third.img {
-      display: none !important;
-    }
-
-	  @media (max-width: 767px) {
-    /* 기존 모바일 코드들 그대로 유지 */
-    ...
+  .ftco-about .img-about .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1;
   }
 
-    /* 3. 햄버거 메뉴 클릭 후 이동 시, 네비바에 콘텐츠 상단 안 가리게 처리 */
-    #home-section,
-    #about-section,
-    #resume-section,
-    #services-section,
-    #projects-section {
-      scroll-margin-top: 70px;
-    }
+  /* 히어로 오른쪽 배경 이미지는 모바일에서만 숨김 */
+  .hero .slider-item .one-third.img {
+    display: none !important;
   }
+
+}
+
+/* =========================
+   앵커 이동 시 네비에 안 가리게
+========================= */
+#home-section,
+#about-section,
+#resume-section,
+#services-section,
+#projects-section {
+  scroll-margin-top: 70px;
+}
 </style>
 	 
 	  
