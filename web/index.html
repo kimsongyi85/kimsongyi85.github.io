@@ -10,6 +10,27 @@
     }
   }
 </style>
+
+<style>
+  @media (max-width: 767px) {
+    /* 원래 있던 overlay 상자를 검은 반투명 필터로 만듭니다 */
+    .ftco-about .img-about .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); /* 0.4는 투명도입니다. 더 어둡게 하려면 0.6으로 올리세요 */
+      z-index: 1; /* 사진 위로 올라오게 설정 */
+    }
+    
+    /* 텍스트가 가려지지 않도록 위로 띄워줍니다 */
+    .ftco-about .img-about {
+      position: relative;
+    }
+  }
+</style>
+	 
 	  
 	  <title>Songyi Design</title>
     <meta charset="utf-8">
