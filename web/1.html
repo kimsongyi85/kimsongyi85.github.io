@@ -2,48 +2,89 @@
 <html lang="KO">
  <head>
 <style>
-  @media (max-width: 767px) {
-    /* 1. About 섹션 배경 이미지 필터 적용 */
-    .ftco-about .img-about .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.4) !important;
-      z-index: 1;
-    }
-    .ftco-about .img-about { position: relative; }
 
+/* =====================================
+   Custom Responsive Fix (2026)
+   Portfolio Override
+===================================== */
+	
+/* =========================
+   모바일 전용
+========================= */
+@media (max-width: 819px) {
 
+  /* About 섹션 이미지 */
+  .ftco-about .img-about {
+    position: relative;
   }
 
-    /* 2. 히어로 슬라이더 배경 이미지(bg_2, bg_3) 모바일에서 숨기기 */
-    .hero .slider-item .one-third.img {
-      display: none !important;
-    }
-
-	  @media (max-width: 767px) {
-    /* 기존 모바일 코드들 그대로 유지 */
-    ...
+  .ftco-about .img-about .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 1;
   }
 
-  /* 태블릿 가로모드 등 768px~1199px 구간: 히어로 이미지 옅게 처리 */
-  @media (min-width: 768px) and (max-width: 1199px) {
-    .hero .slider-item .one-third.img {
-      opacity: 0.7;
-    }
-
-    /* 3. 햄버거 메뉴 클릭 후 이동 시, 네비바에 콘텐츠 상단 안 가리게 처리 */
-    #home-section,
-    #about-section,
-    #resume-section,
-    #services-section,
-    #projects-section {
-      scroll-margin-top: 70px;
-    }
+  /* 히어로 오른쪽 배경 이미지는 모바일에서만 숨김 */
+  .hero .slider-item .one-third.img {
+    display: none !important;
   }
+
+}
+/* =========================
+   앵커 이동 시 네비에 안 가리게
+========================= */
+#home-section,
+#about-section,
+#resume-section,
+#services-section,
+#projects-section {
+  scroll-margin-top: 70px;
+}
+
+/* =========================
+   태블릿(iPad) 전용
+========================= */
+@media (min-width: 820px) and (max-width: 1024px) {
+
+  /* 왼쪽 텍스트 영역 */
+  .hero .slider-item .one-forth{
+    width: 60%;
+    padding-left: 50px;
+  }
+
+  /* 오른쪽 이미지 영역 */
+  .hero .slider-item .one-third.img{
+    width: 40%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+
+  /* 제목 */
+  .hero .slider-item h1{
+    font-size: 50px;
+    line-height: 1.1;
+  }
+
+  /* 본문 */
+  .hero .slider-item h6{
+    font-size: 16px;
+  }
+
+  /* 버튼 */
+  .hero .slider-item .btn{
+    padding: 12px 28px;
+  }
+
+}
+
 </style>
 	 
-	  
-	  <title>Songyi Design</title>
+ <title>Songyi Design</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -210,7 +251,7 @@
     					<span class="date">2021</span>
 						<h2><span class="date">동상</span> 해군 디자인 공모전 포스터</h2>
     					<p class="categories">주최: 대한민국 해군</p>
-    					<p class="categories"> 스마트한 해군(Smart Navy)을 의미하는 해군함,항공기,육상의 3중 네트워크를 표현했습니다.  </p>
+    					<p class="categories"> 스마트한 해군을 의미하는 해군함,항공기,육상의 3중 네트워크를 표현했습니다.  </p>
     				</div>
                  </div>
 				    <div class="col-md-4">
@@ -218,7 +259,7 @@
     					<span class="date">2022</span>
 						<h2><span class="date">맑은바다상</span> 해양오염 콘텐츠 디자인 포스터 </h2>
     					 <p class="categories">주최: 포스코, 해양경찰청</p>
-    					<p class="categories">바닷속 탄소흡수속도를 해결할 수 있는 희망인 블루카본을 주제로 바닷속의 집인 해양정원을 표현했습니다. </p>
+    					<p class="categories">블루카본을 주제로 바닷속의 집인 해양정원을 표현했습니다. </p>
     		</div>
                  </div>
 					<div class="col-md-4">
@@ -226,7 +267,7 @@
     					<span class="date">2023</span>
     					<h2><span class="date">장려상</span> 주택 건설현장 안전 포스터  </h2>
     					 <p class="categories">주최: 한국주택협회</p>
-    					<p class="categories">건설현장의 필수장비 중에서도 작고 강력한 안전고리, 생명과 위험을 대비되게 표현했습니다. </p>
+    					<p class="categories">생명과 위험을 대비시켜 안전고리의 중요성을 표현했습니다. </p>
     				</div>
                  </div>
                </div>
