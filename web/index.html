@@ -2,12 +2,19 @@
 <html lang="KO">
   <head>
 <style>
-  /* 현재 페이지(HTML)의 특정 섹션에만 적용하도록 클래스명 앞에 부모 요소를 더 구체적으로 명시 */
   @media (max-width: 767px) {
-    body #about-section .img-about .img {
-      background-size: 100% auto !important;
-      background-position: top center !important;
-      min-height: 600px !important;
+    #about-section .img-about .img {
+      /* 이미지가 잘리지 않고 비율을 유지하며 다 보입니다 */
+      background-size: contain !important; 
+      
+      /* 이미지가 중앙에 오게 합니다 */
+      background-position: center center !important; 
+      
+      /* 이미지가 다 보이고 남는 위아래 공간은 검은색(혹은 사이트 배경색)으로 채웁니다 */
+      background-color: #000000 !important; 
+      
+      /* 늘어짐 방지를 위해 비율에 맞게 높이를 조정합니다 */
+      min-height: 400px !important; 
     }
   }
 </style>
