@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="KO">
   <head>
+	  <style>
+  @media (max-width: 767px) {
+    /* About 섹션의 이미지를 선택 */
+    #about-section .img-about .img {
+      background-size: contain !important; /* 이미지를 자르지 않고 다 보여줌 */
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+      min-height: 300px; /* 모바일에서 이미지가 너무 작아지지 않게 최소 높이 설정 */
+    }
+  }
+</style>
+	  
     <title>Songyi Design</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
