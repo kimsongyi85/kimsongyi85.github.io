@@ -2,12 +2,12 @@
 <html lang="KO">
   <head>
 <style>
+  /* 현재 페이지(HTML)의 특정 섹션에만 적용하도록 클래스명 앞에 부모 요소를 더 구체적으로 명시 */
   @media (max-width: 767px) {
-    #about-section .img-about .img {
-      /* 이미지를 자르지 않고 강제로 비율을 맞추는 대신, 기준점을 상단(top)으로 고정 */
-      background-size: cover !important;
-      background-position: top center !important; 
-      min-height: 800px !important; /* 높이를 충분히 확보하여 이미지가 잘리는 범위 조절 */
+    body #about-section .img-about .img {
+      background-size: 100% auto !important;
+      background-position: top center !important;
+      min-height: 600px !important;
     }
   }
 </style>
