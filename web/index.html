@@ -18,6 +18,17 @@
       margin-top: -50px !important;
       padding-top: 50px !important;
     }
+
+    /* 3. 히어로 슬라이더 배경 이미지 어둡게 처리 (모바일 전용, 가독성 개선) */
+    .hero .slider-item .one-third.img {
+      position: relative;
+    }
+    .hero .slider-item .one-third.img .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.45) !important;
+      z-index: 1;
+    }
   }
 </style>
 	 
