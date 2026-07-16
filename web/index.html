@@ -4,17 +4,24 @@
 <style>
   @media (max-width: 767px) {
     #about-section .img-about .img {
-      /* 이미지가 잘리지 않고 비율을 유지하며 다 보입니다 */
-      background-size: contain !important; 
+      /* 1. 이미지 비율을 1:1 또는 4:5 정도로 유지 */
+      aspect-ratio: 4 / 5 !important;
       
-      /* 이미지가 중앙에 오게 합니다 */
-      background-position: center center !important; 
+      /* 2. 이미지가 박스에 꽉 차되, 중앙이 보이도록 설정 */
+      background-size: cover !important;
+      background-position: center center !important;
       
-      /* 이미지가 다 보이고 남는 위아래 공간은 검은색(혹은 사이트 배경색)으로 채웁니다 */
-      background-color: #000000 !important; 
+      /* 3. 고정 높이(min-height)를 제거하여 유동적으로 변경 */
+      min-height: auto !important;
       
-      /* 늘어짐 방지를 위해 비율에 맞게 높이를 조정합니다 */
-      min-height: 400px !important; 
+      /* 4. 박스 자체의 높이 제한 해제 */
+      height: auto !important;
+    }
+    
+    /* 혹시 부모 요소가 높이를 강제하고 있다면 같이 초기화 */
+    #about-section .img-about {
+      min-height: auto !important;
+      height: auto !important;
     }
   }
 </style>
