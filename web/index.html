@@ -18,6 +18,21 @@
     }
   }
 </style>
+	  <style>
+  @media (max-width: 767px) {
+    /* 1. About Me 섹션의 상단 여백을 대폭 늘립니다. */
+    /* 이렇게 하면 브라우저가 스크롤을 이동할 때, 타이틀이 아닌 본문 시작점이 맨 위로 옵니다. */
+    #about-section {
+      padding-top: 150px !important; /* 이 숫자를 키울수록 본문이 위로 올라옵니다 */
+      padding-bottom: 50px !important;
+    }
+
+    /* 2. 기존의 #about-section 타이틀을 아예 모바일에서 숨겨버립니다 (깔끔하게) */
+    #about-section .heading-section {
+      display: none !important;
+    }
+  }
+</style>
 	  
 	  
 	  
