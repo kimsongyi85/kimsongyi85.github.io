@@ -12,7 +12,15 @@
     }
     .ftco-about .img-about { position: relative; }
 
-  @media (max-width: 767px) {
+
+  }
+
+    /* 2. 히어로 슬라이더 배경 이미지(bg_2, bg_3) 모바일에서 숨기기 */
+    .hero .slider-item .one-third.img {
+      display: none !important;
+    }
+
+	  @media (max-width: 767px) {
     /* 기존 모바일 코드들 그대로 유지 */
     ...
   }
@@ -21,12 +29,6 @@
   @media (min-width: 768px) and (max-width: 1199px) {
     .hero .slider-item .one-third.img {
       opacity: 0.3;
-    }
-  }
-
-    /* 2. 히어로 슬라이더 배경 이미지(bg_2, bg_3) 모바일에서 숨기기 */
-    .hero .slider-item .one-third.img {
-      display: none !important;
     }
 
     /* 3. 햄버거 메뉴 클릭 후 이동 시, 네비바에 콘텐츠 상단 안 가리게 처리 */
