@@ -3,30 +3,11 @@
   <head>
 <style>
   @media (max-width: 767px) {
-    /* 1. 사진 영역을 깔끔하게 숨깁니다 */
+    /* 사진을 숨기지 말고, 모바일에서 보기 좋게 크기만 줄입니다 */
     #about-section .img-about {
-      display: none !important;
-    }
-    
-    /* 2. 섹션 간의 간격을 일정하게 유지하여 링크 위치를 정확하게 잡습니다 */
-    .ftco-section {
-      padding-top: 60px !important;
-      padding-bottom: 60px !important;
-    }
-  }
-</style>
-
-	  <style>
-  @media (max-width: 767px) {
-    /* 사진 숨김 */
-    #about-section .img-about {
-      display: none !important;
-    }
-    
-    /* 핵심: 섹션마다 충분한 높이를 강제로 확보 */
-    #about-section {
-      min-height: 500px !important; 
-      padding-top: 100px !important;
+      width: 100% !important;
+      height: 250px !important; /* 높이를 고정해서 브라우저가 위치를 헷갈리지 않게 함 */
+      background-size: cover !important;
     }
   }
 </style>
